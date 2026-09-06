@@ -1,0 +1,879 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LearnLens | My Students</title>
+
+    <link rel="stylesheet" href="my-students.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         LEFT SIDEBAR
+    ================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LearnLens Logo -->
+
+        <div class="logo">
+
+            <div class="logo-symbol">
+                ✦
+            </div>
+
+            <h1>
+                LearnLens
+            </h1>
+
+            <p>
+                Magical Learning
+            </p>
+
+        </div>
+
+
+
+        <!-- Teacher Profile -->
+
+        <div class="teacher-profile">
+
+            <div class="teacher-icon">
+                🧙‍♀️
+            </div>
+
+            <div>
+
+                <h3>
+                    Professor
+                </h3>
+
+                <p>
+                    Teacher
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             NAVIGATION MENU
+        ================================== -->
+
+        <nav class="menu">
+
+
+            <a href="teacher-dashboard.html">
+                🏰 Dashboard
+            </a>
+
+
+            <!-- My Students is currently active -->
+
+            <a href="my-students.html" class="active">
+                👨‍🎓 My Students
+            </a>
+
+
+            <a href="enter-marks.html">
+                📝 Enter Marks
+            </a>
+
+
+            <!-- Performance is now connected -->
+
+            <a href="performance.html">
+                📊 Performance
+            </a>
+
+
+            <a href="#">
+                📚 Weak Areas
+            </a>
+
+
+            <a href="#">
+                📋 Reports
+            </a>
+
+
+            <a href="#">
+                🔔 Notifications
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- Return to entrance -->
+
+        <div class="logout">
+
+            <a href="index.html">
+                🚪 Return to Entrance
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =================================
+         MAIN CONTENT
+    ================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================
+             PAGE HEADING
+        ================================== -->
+
+        <header class="page-heading">
+
+
+            <div>
+
+                <p class="gold-text">
+                    Hogwarts Study Records ✨
+                </p>
+
+                <h2>
+                    My Students
+                </h2>
+
+                <p class="description">
+                    Keep track of every student's learning journey.
+                </p>
+
+            </div>
+
+
+
+            <!-- Add Student Button -->
+
+            <button
+                class="add-student-button"
+                onclick="showAddStudentMessage()"
+            >
+
+                ✨ Add Student
+
+            </button>
+
+
+        </header>
+
+
+
+        <!-- =================================
+             STUDENT SUMMARY
+        ================================== -->
+
+        <section class="student-summary">
+
+
+            <!-- Total Students -->
+
+            <div class="summary-box">
+
+                <span>
+                    👨‍🎓
+                </span>
+
+                <div>
+
+                    <small>
+                        Total Students
+                    </small>
+
+                    <strong>
+                        30
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Advanced -->
+
+            <div class="summary-box">
+
+                <span>
+                    🟢
+                </span>
+
+                <div>
+
+                    <small>
+                        Advanced
+                    </small>
+
+                    <strong>
+                        12
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Moderate -->
+
+            <div class="summary-box">
+
+                <span>
+                    🟡
+                </span>
+
+                <div>
+
+                    <small>
+                        Moderate
+                    </small>
+
+                    <strong>
+                        13
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Slow Learners -->
+
+            <div class="summary-box">
+
+                <span>
+                    🔴
+                </span>
+
+                <div>
+
+                    <small>
+                        Slow Learners
+                    </small>
+
+                    <strong>
+                        5
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             SEARCH AND FILTER
+        ================================== -->
+
+        <section class="search-section">
+
+
+            <!-- Search -->
+
+            <div class="search-box">
+
+                <span>
+                    🔍
+                </span>
+
+                <input
+                    type="text"
+                    id="studentSearch"
+                    placeholder="Search by student name or roll number..."
+                    onkeyup="searchStudents()"
+                >
+
+            </div>
+
+
+
+            <!-- Category Filter -->
+
+            <select
+                id="categoryFilter"
+                onchange="filterStudents()"
+            >
+
+                <option value="all">
+                    All Students
+                </option>
+
+                <option value="advanced">
+                    Advanced
+                </option>
+
+                <option value="moderate">
+                    Moderate
+                </option>
+
+                <option value="slow">
+                    Slow Learner
+                </option>
+
+            </select>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             STUDENTS TABLE
+        ================================== -->
+
+        <section class="students-card">
+
+
+            <!-- Table heading -->
+
+            <div class="card-heading">
+
+                <div>
+
+                    <p class="gold-text">
+                        Student Register
+                    </p>
+
+                    <h3>
+                        Your Students
+                    </h3>
+
+                </div>
+
+                <span>
+                    📜
+                </span>
+
+            </div>
+
+
+
+            <!-- Table -->
+
+            <div class="table-container">
+
+
+                <table id="studentsTable">
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Student
+                            </th>
+
+                            <th>
+                                Roll No.
+                            </th>
+
+                            <th>
+                                Percentage
+                            </th>
+
+                            <th>
+                                Category
+                            </th>
+
+                            <th>
+                                Weakest Subject
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+
+                    <tbody>
+
+
+                        <!-- =================================
+                             STUDENT 1
+                        ================================== -->
+
+                        <tr data-category="advanced">
+
+                            <td>
+
+                                <strong>
+                                    Aarav Sharma
+                                </strong>
+
+                            </td>
+
+
+                            <td>
+                                01
+                            </td>
+
+
+                            <td>
+                                86%
+                            </td>
+
+
+                            <td>
+
+                                <span class="badge advanced">
+                                    Advanced
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                DBMS
+                            </td>
+
+
+                            <td>
+
+                                <!-- View button now opens
+                                     Performance Analysis -->
+
+                                <button
+                                    class="view-button"
+                                    onclick="window.location.href='performance.html'"
+                                >
+
+                                    View
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- =================================
+                             STUDENT 2
+                        ================================== -->
+
+                        <tr data-category="moderate">
+
+                            <td>
+
+                                <strong>
+                                    Riya Patil
+                                </strong>
+
+                            </td>
+
+
+                            <td>
+                                02
+                            </td>
+
+
+                            <td>
+                                68%
+                            </td>
+
+
+                            <td>
+
+                                <span class="badge moderate">
+                                    Moderate
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                Open Elective
+                            </td>
+
+
+                            <td>
+
+                                <button
+                                    class="view-button"
+                                    onclick="window.location.href='performance.html'"
+                                >
+
+                                    View
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- =================================
+                             STUDENT 3
+                        ================================== -->
+
+                        <tr data-category="slow">
+
+                            <td>
+
+                                <strong>
+                                    Kabir Joshi
+                                </strong>
+
+                            </td>
+
+
+                            <td>
+                                03
+                            </td>
+
+
+                            <td>
+                                44%
+                            </td>
+
+
+                            <td>
+
+                                <span class="badge slow">
+                                    Slow Learner
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                MIS
+                            </td>
+
+
+                            <td>
+
+                                <button
+                                    class="view-button"
+                                    onclick="window.location.href='performance.html'"
+                                >
+
+                                    View
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- =================================
+                             STUDENT 4
+                        ================================== -->
+
+                        <tr data-category="advanced">
+
+                            <td>
+
+                                <strong>
+                                    Ananya Deshmukh
+                                </strong>
+
+                            </td>
+
+
+                            <td>
+                                04
+                            </td>
+
+
+                            <td>
+                                91%
+                            </td>
+
+
+                            <td>
+
+                                <span class="badge advanced">
+                                    Advanced
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                CSF
+                            </td>
+
+
+                            <td>
+
+                                <button
+                                    class="view-button"
+                                    onclick="window.location.href='performance.html'"
+                                >
+
+                                    View
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- =================================
+                             STUDENT 5
+                        ================================== -->
+
+                        <tr data-category="moderate">
+
+                            <td>
+
+                                <strong>
+                                    Vihaan More
+                                </strong>
+
+                            </td>
+
+
+                            <td>
+                                05
+                            </td>
+
+
+                            <td>
+                                72%
+                            </td>
+
+
+                            <td>
+
+                                <span class="badge moderate">
+                                    Moderate
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                DBMS
+                            </td>
+
+
+                            <td>
+
+                                <button
+                                    class="view-button"
+                                    onclick="window.location.href='performance.html'"
+                                >
+
+                                    View
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             FOOTER
+        ================================== -->
+
+        <footer>
+
+            ✨ Every student has a unique learning journey.
+            LearnLens helps you understand it.
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================== -->
+
+    <script>
+
+
+        /*
+         * =================================
+         * SEARCH STUDENTS
+         * =================================
+         *
+         * This searches the student's
+         * name and roll number.
+         */
+
+        function searchStudents() {
+
+
+            const searchValue =
+                document
+                .getElementById("studentSearch")
+                .value
+                .toLowerCase();
+
+
+            const rows =
+                document.querySelectorAll(
+                    "#studentsTable tbody tr"
+                );
+
+
+            rows.forEach(function(row) {
+
+
+                const studentInformation =
+                    row.textContent.toLowerCase();
+
+
+                if (
+                    studentInformation.includes(searchValue)
+                ) {
+
+                    row.style.display = "";
+
+                }
+
+                else {
+
+                    row.style.display = "none";
+
+                }
+
+
+            });
+
+        }
+
+
+
+        /*
+         * =================================
+         * FILTER STUDENTS
+         * =================================
+         *
+         * This filters students according
+         * to their learner category.
+         */
+
+        function filterStudents() {
+
+
+            const selectedCategory =
+                document
+                .getElementById("categoryFilter")
+                .value;
+
+
+            const rows =
+                document.querySelectorAll(
+                    "#studentsTable tbody tr"
+                );
+
+
+            rows.forEach(function(row) {
+
+
+                const studentCategory =
+                    row.getAttribute("data-category");
+
+
+                if (
+                    selectedCategory === "all" ||
+                    studentCategory === selectedCategory
+                ) {
+
+                    row.style.display = "";
+
+                }
+
+                else {
+
+                    row.style.display = "none";
+
+                }
+
+
+            });
+
+        }
+
+
+
+        /*
+         * =================================
+         * ADD STUDENT
+         * =================================
+         *
+         * This is temporary.
+         *
+         * Later we will create a proper
+         * Add Student form.
+         */
+
+        function showAddStudentMessage() {
+
+
+            alert(
+
+                "✨ The Add Student feature " +
+                "will be created in a future step!"
+
+            );
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
+```
+
+

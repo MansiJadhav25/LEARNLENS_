@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LearnLens | Adaptive Learning</title>
+
+    <!-- Our CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating magical stars -->
+    <div class="stars"></div>
+
+    <!-- Main page -->
+    <main class="welcome-page">
+
+        <!-- Project name -->
+        <div class="brand">
+
+            <div class="magic-symbol">✦</div>
+
+            <h1>LearnLens</h1>
+
+            <p>Adaptive Learning Recommendation</p>
+
+        </div>
+
+
+        <!-- Welcome card -->
+        <section class="welcome-card">
+
+            <div class="owl">🦉</div>
+
+            <h2>Welcome, Young Scholar!</h2>
+
+            <p class="intro">
+                Every learner has their own magical learning journey.
+                Choose your path to begin.
+            </p>
+
+
+            <!-- Profile selection -->
+            <div class="profile-container">
+
+                <!-- Teacher -->
+                <div class="profile-card" onclick="chooseRole('teacher')">
+
+                    <div class="profile-icon">🧙‍♀️</div>
+
+                    <h3>Teacher</h3>
+
+                    <p>
+                        Enter student marks and discover
+                        their learning performance.
+                    </p>
+
+                    <button>
+                        Enter as Teacher
+                    </button>
+
+                </div>
+
+
+                <!-- Student -->
+                <div class="profile-card" onclick="chooseRole('student')">
+
+                    <div class="profile-icon">🎓</div>
+
+                    <h3>Student</h3>
+
+                    <p>
+                        Discover your performance,
+                        weak areas and learning path.
+                    </p>
+
+                    <button>
+                        Enter as Student
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Tagline -->
+        <p class="tagline">
+            ✨ Learn smarter • Discover your strengths • Improve your magic ✨
+        </p>
+
+    </main>
+
+
+    <!-- Our JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LearnLens | Enter Marks</title>
+
+    <link rel="stylesheet" href="enter-marks.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="magic-symbol">✦</div>
+
+            <h1>LearnLens</h1>
+
+            <p>Magical Learning</p>
+
+        </div>
+
+
+        <div class="teacher-profile">
+
+            <div class="teacher-icon">
+                🧙‍♀️
+            </div>
+
+            <div>
+                <h3>Professor</h3>
+                <p>Teacher</p>
+            </div>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="teacher-dashboard.html">
+                🏰 Dashboard
+            </a>
+
+            <a href="my-student.html">
+                👨‍🎓 My Students
+            </a>
+
+            <a href="#" class="active">
+                📝 Enter Marks
+            </a>
+
+            <a href="#">
+                📊 Performance
+            </a>
+
+            <a href="#">
+                📚 Weak Areas
+            </a>
+
+            <a href="#">
+                📋 Reports
+            </a>
+
+            <a href="#">
+                🔔 Notifications
+            </a>
+
+        </nav>
+
+
+        <div class="logout">
+
+            <a href="index.html">
+                🚪 Return to Entrance
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+
+        <!-- Heading -->
+
+        <header class="page-heading">
+
+            <div>
+
+                <p class="gold-text">
+                    Student Records
+                </p>
+
+                <h2>
+                    Enter Student Marks
+                </h2>
+
+                <p class="description">
+                    Record the student's marks and let LearnLens
+                    begin the performance analysis.
+                </p>
+
+            </div>
+
+            <div class="scroll-icon">
+                📜
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             MARKS FORM
+        ========================== -->
+
+        <section class="marks-card">
+
+            <div class="card-title">
+
+                <span>🪶</span>
+
+                <div>
+
+                    <h3>Student Information</h3>
+
+                    <p>
+                        Enter the details of the student.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="student-details">
+
+
+                <div class="input-group">
+
+                    <label for="studentName">
+                        Student Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Enter student name"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="rollNumber">
+                        Roll Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="rollNumber"
+                        placeholder="Enter roll number"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 SUBJECT MARKS
+            ========================== -->
+
+            <div class="subjects-title">
+
+                <span>📚</span>
+
+                <div>
+
+                    <h3>Subject Marks</h3>
+
+                    <p>
+                        Enter marks obtained out of 100.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="subjects">
+
+
+                <!-- MIS -->
+
+                <div class="subject-row">
+
+                    <div class="subject-info">
+
+                        <span class="subject-icon">
+                            🧮
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Mathematics for Intelligent System
+                            </strong>
+
+                            <small>
+                                MIS
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="marks-input">
+
+                        <input
+                            type="number"
+                            min="0"
+                            max="100"
+                            placeholder="00"
+                        >
+
+                        <span>/ 100</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DBMS -->
+
+                <div class="subject-row">
+
+                    <div class="subject-info">
+
+                        <span class="subject-icon">
+                            🗄️
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Database Management System
+                            </strong>
+
+                            <small>
+                                DBMS
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="marks-input">
+
+                        <input
+                            type="number"
+                            min="0"
+                            max="100"
+                            placeholder="00"
+                        >
+
+                        <span>/ 100</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CSF -->
+
+                <div class="subject-row">
+
+                    <div class="subject-info">
+
+                        <span class="subject-icon">
+                            💻
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Computer System Fundamentals
+                            </strong>
+
+                            <small>
+                                CSF
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="marks-input">
+
+                        <input
+                            type="number"
+                            min="0"
+                            max="100"
+                            placeholder="00"
+                        >
+
+                        <span>/ 100</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- UHV -->
+
+                <div class="subject-row">
+
+                    <div class="subject-info">
+
+                        <span class="subject-icon">
+                            🕊️
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Universal Human Values
+                            </strong>
+
+                            <small>
+                                UHV
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="marks-input">
+
+                        <input
+                            type="number"
+                            min="0"
+                            max="100"
+                            placeholder="00"
+                        >
+
+                        <span>/ 100</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Open Elective -->
+
+                <div class="subject-row">
+
+                    <div class="subject-info">
+
+                        <span class="subject-icon">
+                            ✨
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Open Elective
+                            </strong>
+
+                            <small>
+                                OE
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="marks-input">
+
+                        <input
+                            type="number"
+                            min="0"
+                            max="100"
+                            placeholder="00"
+                        >
+
+                        <span>/ 100</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Analyse button -->
+
+            <div class="form-actions">
+
+                <button class="back-button"
+                        onclick="window.location.href='teacher-dashboard.html'">
+
+                    ← Back
+
+                </button>
+
+
+                <button class="analyse-button"
+                        onclick="showAnalysisMessage()">
+
+                    ✨ Analyse Marks
+
+                </button>
+
+            </div>
+
+
+            <!-- Temporary message -->
+
+            <div id="analysisMessage" class="analysis-message">
+
+                <span>🔮</span>
+
+                <div>
+
+                    <strong>
+                        Ready for Analysis
+                    </strong>
+
+                    <p>
+                        Once the backend is connected,
+                        LearnLens will calculate the percentage,
+                        learner category and weak areas.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            ✨ Every mark tells a story. LearnLens helps you discover it.
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- Small JavaScript for now -->
+
+    <script>
+
+        function showAnalysisMessage() {
+
+            const message =
+                document.getElementById("analysisMessage");
+
+            message.classList.add("show");
+
+        }
+
+    </script>
+
+</body>
+
+</html>

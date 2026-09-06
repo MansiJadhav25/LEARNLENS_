@@ -1,0 +1,354 @@
+/* ---------------------------------
+   LearnLens
+   Magical Wizard School Theme
+---------------------------------- */
+
+
+/* Basic page settings */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #f5e7c8;
+
+    background:
+        radial-gradient(circle at top, #3b2856 0%, #17152b 45%, #090914 100%);
+
+    overflow-x: hidden;
+}
+
+
+/* ---------------------------------
+   Magical stars
+---------------------------------- */
+
+body::before,
+body::after {
+
+    content: "✦   ✧   ⋆   ✦   ✧   ⋆   ✦";
+
+    position: fixed;
+
+    width: 100%;
+
+    color: #f5d77a;
+
+    font-size: 20px;
+
+    letter-spacing: 30px;
+
+    opacity: 0.35;
+
+    pointer-events: none;
+}
+
+body::before {
+    top: 10%;
+}
+
+body::after {
+    bottom: 15%;
+}
+
+
+/* ---------------------------------
+   Main welcome page
+---------------------------------- */
+
+.welcome-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px 20px;
+}
+
+
+/* ---------------------------------
+   LearnLens branding
+---------------------------------- */
+
+.brand {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+
+.magic-symbol {
+
+    font-size: 35px;
+
+    color: #e7c45c;
+
+    margin-bottom: 5px;
+}
+
+
+.brand h1 {
+
+    font-size: 55px;
+
+    letter-spacing: 4px;
+
+    color: #e8c96b;
+
+    text-shadow:
+        0 0 10px rgba(232, 201, 107, 0.5),
+        0 0 25px rgba(232, 201, 107, 0.2);
+}
+
+
+.brand p {
+
+    margin-top: 5px;
+
+    font-size: 17px;
+
+    letter-spacing: 2px;
+
+    color: #d8c8a5;
+}
+
+
+/* ---------------------------------
+   Main magical card
+---------------------------------- */
+
+.welcome-card {
+
+    width: min(900px, 95%);
+
+    padding: 35px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(54, 40, 73, 0.95),
+            rgba(25, 22, 43, 0.98)
+        );
+
+    border: 1px solid #80652e;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 25px rgba(0, 0, 0, 0.7),
+        inset 0 0 30px rgba(231, 196, 92, 0.04);
+}
+
+
+/* Owl */
+
+.owl {
+
+    font-size: 50px;
+
+    margin-bottom: 10px;
+}
+
+
+.welcome-card h2 {
+
+    font-size: 30px;
+
+    color: #f1d789;
+
+    margin-bottom: 12px;
+}
+
+
+.intro {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    line-height: 1.6;
+
+    color: #d6c9ad;
+
+    font-size: 16px;
+}
+
+
+/* ---------------------------------
+   Teacher + Student cards
+---------------------------------- */
+
+.profile-container {
+
+    display: flex;
+
+    gap: 25px;
+
+    justify-content: center;
+
+    margin-top: 30px;
+}
+
+
+.profile-card {
+
+    width: 320px;
+
+    padding: 28px 22px;
+
+    background:
+        linear-gradient(
+            160deg,
+            rgba(67, 48, 88, 0.9),
+            rgba(27, 25, 48, 0.95)
+        );
+
+    border: 1px solid #71592c;
+
+    border-radius: 15px;
+
+    transition: 0.3s ease;
+
+    cursor: pointer;
+}
+
+
+.profile-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #e5c45f;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(229, 196, 95, 0.15);
+}
+
+
+.profile-icon {
+
+    font-size: 50px;
+
+    margin-bottom: 10px;
+}
+
+
+.profile-card h3 {
+
+    font-size: 25px;
+
+    color: #e8c96b;
+
+    margin-bottom: 10px;
+}
+
+
+.profile-card p {
+
+    min-height: 65px;
+
+    line-height: 1.5;
+
+    color: #cfc3aa;
+
+    font-size: 15px;
+}
+
+
+/* ---------------------------------
+   Buttons
+---------------------------------- */
+
+.profile-card button {
+
+    margin-top: 18px;
+
+    padding: 11px 20px;
+
+    border: 1px solid #cba94d;
+
+    border-radius: 8px;
+
+    background: #302343;
+
+    color: #f4d477;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.profile-card button:hover {
+
+    background: #4b3563;
+
+    color: #fff2bd;
+
+    box-shadow: 0 0 15px rgba(239, 208, 107, 0.25);
+}
+
+
+/* ---------------------------------
+   Bottom tagline
+---------------------------------- */
+
+.tagline {
+
+    margin-top: 22px;
+
+    color: #bcae94;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+}
+
+
+/* ---------------------------------
+   Mobile responsive design
+---------------------------------- */
+
+@media (max-width: 700px) {
+
+    .brand h1 {
+        font-size: 42px;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-card {
+        width: min(320px, 90%);
+    }
+
+    .welcome-card {
+        padding: 25px 15px;
+    }
+}

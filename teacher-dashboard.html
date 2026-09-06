@@ -1,0 +1,690 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LearnLens | Teacher Dashboard</title>
+
+    <!-- Teacher dashboard styling -->
+    <link rel="stylesheet" href="teacher-dashboard.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         LEFT SIDEBAR
+    ================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LearnLens logo -->
+
+        <div class="logo">
+
+            <div class="logo-symbol">✦</div>
+
+            <h1>LearnLens</h1>
+
+            <p>Magical Learning</p>
+
+        </div>
+
+
+
+        <!-- Teacher profile -->
+
+        <div class="teacher-profile">
+
+            <div class="teacher-icon">
+                🧙‍♀️
+            </div>
+
+            <div>
+
+                <h3>Professor</h3>
+
+                <p>Teacher</p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Navigation menu -->
+
+        <nav class="menu">
+
+
+            <!-- Dashboard -->
+
+            <a href="teacher-dashboard.html" class="active">
+                🏰 Dashboard
+            </a>
+
+
+            <!-- My Students -->
+
+            <a href="my-student.html">
+                👨‍🎓 My Students
+            </a>
+
+
+            <!-- Enter Marks -->
+
+            <a href="enter-marks.html">
+                📝 Enter Marks
+            </a>
+
+
+            <!-- Performance -->
+
+            <a href="#">
+                📊 Performance
+            </a>
+
+
+            <!-- Weak Areas -->
+
+            <a href="#">
+                📚 Weak Areas
+            </a>
+
+
+            <!-- Reports -->
+
+            <a href="#">
+                📋 Reports
+            </a>
+
+
+            <!-- Notifications -->
+
+            <a href="#">
+                🔔 Notifications
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- Return to welcome page -->
+
+        <div class="logout">
+
+            <a href="index.html">
+                🚪 Return to Entrance
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =================================
+         MAIN CONTENT
+    ================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================
+             TOP HEADER
+        ================================== -->
+
+        <header class="top-bar">
+
+
+            <div>
+
+                <p class="small-heading">
+                    Welcome back, Professor ✨
+                </p>
+
+                <h2>
+                    Teacher Dashboard
+                </h2>
+
+            </div>
+
+
+
+            <!-- Magical study hall box -->
+
+            <div class="date-box">
+
+                <span>📜</span>
+
+                <div>
+
+                    <small>Today's Study Hall</small>
+
+                    <strong>
+                        LearnLens Academy
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================
+             SUMMARY CARDS
+        ================================== -->
+
+        <section class="summary-cards">
+
+
+            <!-- Total students -->
+
+            <div class="summary-card">
+
+                <div class="card-icon">
+                    👨‍🎓
+                </div>
+
+                <div>
+
+                    <p>Total Students</p>
+
+                    <h3>30</h3>
+
+                    <span>
+                        Students in your class
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Marks entered -->
+
+            <div class="summary-card">
+
+                <div class="card-icon">
+                    📝
+                </div>
+
+                <div>
+
+                    <p>Marks Entered</p>
+
+                    <h3>24</h3>
+
+                    <span>
+                        6 students remaining
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Class average -->
+
+            <div class="summary-card">
+
+                <div class="card-icon">
+                    📊
+                </div>
+
+                <div>
+
+                    <p>Class Average</p>
+
+                    <h3>68%</h3>
+
+                    <span>
+                        Overall performance
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Weak areas -->
+
+            <div class="summary-card">
+
+                <div class="card-icon">
+                    ⚠️
+                </div>
+
+                <div>
+
+                    <p>Weak Areas</p>
+
+                    <h3>8</h3>
+
+                    <span>
+                        Areas need attention
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             QUICK ACTIONS
+        ================================== -->
+
+        <section class="section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="gold-text">
+                        Magical Tools
+                    </p>
+
+                    <h2>
+                        Quick Actions
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="quick-actions">
+
+
+                <!-- =================================
+                     ENTER MARKS
+
+                     THIS IS THE IMPORTANT CHANGE
+                     It now opens enter-marks.html
+                ================================== -->
+
+                <button
+                    class="action-card"
+                    onclick="window.location.href='enter-marks.html'"
+                >
+
+                    <span>📝</span>
+
+                    <div>
+
+                        <strong>
+                            Enter Marks
+                        </strong>
+
+                        <small>
+                            Add student marks
+                        </small>
+
+                    </div>
+
+                </button>
+
+
+
+                <!-- =================================
+                     VIEW PERFORMANCE
+                ================================== -->
+
+                <button
+                    class="action-card"
+                    onclick="showComingSoon('Performance Analysis')"
+                >
+
+                    <span>📊</span>
+
+                    <div>
+
+                        <strong>
+                            View Performance
+                        </strong>
+
+                        <small>
+                            Analyse student progress
+                        </small>
+
+                    </div>
+
+                </button>
+
+
+
+                <!-- =================================
+                     WEAK AREAS
+                ================================== -->
+
+                <button
+                    class="action-card"
+                    onclick="showComingSoon('Weak Areas')"
+                >
+
+                    <span>📚</span>
+
+                    <div>
+
+                        <strong>
+                            Weak Areas
+                        </strong>
+
+                        <small>
+                            Find topics needing attention
+                        </small>
+
+                    </div>
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             RECENT PERFORMANCE
+        ================================== -->
+
+        <section class="section">
+
+
+            <div class="section-heading">
+
+
+                <div>
+
+                    <p class="gold-text">
+                        Student Records
+                    </p>
+
+                    <h2>
+                        Recent Performance
+                    </h2>
+
+                </div>
+
+
+
+                <button
+                    class="view-button"
+                    onclick="showComingSoon('All Students')"
+                >
+
+                    View All Students →
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- Student performance table -->
+
+            <div class="table-container">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Student
+                            </th>
+
+                            <th>
+                                Roll No.
+                            </th>
+
+                            <th>
+                                Percentage
+                            </th>
+
+                            <th>
+                                Category
+                            </th>
+
+                            <th>
+                                Weakest Area
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+
+                    <tbody>
+
+
+                        <!-- Student 1 -->
+
+                        <tr>
+
+                            <td>
+                                <strong>
+                                    Student One
+                                </strong>
+                            </td>
+
+                            <td>
+                                01
+                            </td>
+
+                            <td>
+                                82%
+                            </td>
+
+                            <td>
+
+                                <span class="badge advanced">
+                                    Advanced
+                                </span>
+
+                            </td>
+
+                            <td>
+                                DBMS
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- Student 2 -->
+
+                        <tr>
+
+                            <td>
+                                <strong>
+                                    Student Two
+                                </strong>
+                            </td>
+
+                            <td>
+                                02
+                            </td>
+
+                            <td>
+                                68%
+                            </td>
+
+                            <td>
+
+                                <span class="badge moderate">
+                                    Moderate
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Open Elective
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- Student 3 -->
+
+                        <tr>
+
+                            <td>
+                                <strong>
+                                    Student Three
+                                </strong>
+                            </td>
+
+                            <td>
+                                03
+                            </td>
+
+                            <td>
+                                45%
+                            </td>
+
+                            <td>
+
+                                <span class="badge slow">
+                                    Slow Learner
+                                </span>
+
+                            </td>
+
+                            <td>
+                                MIS
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- Student 4 -->
+
+                        <tr>
+
+                            <td>
+                                <strong>
+                                    Student Four
+                                </strong>
+                            </td>
+
+                            <td>
+                                04
+                            </td>
+
+                            <td>
+                                76%
+                            </td>
+
+                            <td>
+
+                                <span class="badge advanced">
+                                    Advanced
+                                </span>
+
+                            </td>
+
+                            <td>
+                                CSF
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             FOOTER
+        ================================== -->
+
+        <footer>
+
+            <p>
+
+                ✨ Every student has their own learning magic.
+                LearnLens helps you discover it.
+
+            </p>
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- =================================
+         SMALL JAVASCRIPT
+    ================================== -->
+
+    <script>
+
+
+        /*
+         * This function is only temporary.
+         *
+         * Later, these buttons will open
+         * actual performance and weak-area pages.
+         */
+
+        function showComingSoon(featureName) {
+
+            alert(
+
+                featureName +
+                " page is coming in the next baby step! 🪄"
+
+            );
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
+```
