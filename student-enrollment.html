@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LearnLens | Student Enrollment</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            font-family: Georgia, serif;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #30213f,
+                    #100d16 70%
+                );
+
+            color: #e5d49a;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+        }
+
+
+        .enrollment-card {
+
+            width: 420px;
+
+            padding: 35px;
+
+            background: #19131f;
+
+            border: 1px solid #806633;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 0 30px rgba(190, 160, 80, 0.15);
+
+        }
+
+
+        .magic-icon {
+
+            text-align: center;
+
+            font-size: 42px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        h1 {
+
+            text-align: center;
+
+            margin: 0;
+
+            font-size: 30px;
+
+            color: #e3cb7b;
+
+        }
+
+
+        .subtitle {
+
+            text-align: center;
+
+            color: #918593;
+
+            font-size: 13px;
+
+            margin-bottom: 28px;
+
+        }
+
+
+        label {
+
+            display: block;
+
+            margin-top: 16px;
+
+            margin-bottom: 7px;
+
+            color: #d8c27c;
+
+            font-size: 13px;
+
+        }
+
+
+        input {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border-radius: 7px;
+
+            border: 1px solid #51422b;
+
+            background: #241c2d;
+
+            color: white;
+
+            outline: none;
+
+        }
+
+
+        input:focus {
+
+            border-color: #b99b4d;
+
+        }
+
+
+        button {
+
+            width: 100%;
+
+            margin-top: 25px;
+
+            padding: 13px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background: #9b7d3f;
+
+            color: #17131c;
+
+            font-family: Georgia, serif;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+        }
+
+
+        button:hover {
+
+            background: #c4a85b;
+
+        }
+
+
+        .back {
+
+            display: block;
+
+            text-align: center;
+
+            margin-top: 18px;
+
+            color: #8d8190;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+        }
+
+
+        .back:hover {
+
+            color: #d9c171;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="enrollment-card">
+
+
+        <div class="magic-icon">
+            🎓
+        </div>
+
+
+        <h1>
+            Student Enrollment
+        </h1>
+
+
+        <p class="subtitle">
+
+            Begin your magical learning journey
+            with LearnLens ✨
+
+        </p>
+
+
+
+        <form
+            id="studentForm"
+        >
+
+
+            <label for="studentName">
+                Student Name
+            </label>
+
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Enter your name"
+                required
+            >
+
+
+
+            <label for="studentRoll">
+                Roll Number
+            </label>
+
+            <input
+                type="text"
+                id="studentRoll"
+                placeholder="Enter your roll number"
+                required
+            >
+
+
+
+            <label for="studentEmail">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="studentEmail"
+                placeholder="Enter your email"
+                required
+            >
+
+
+
+            <label for="studentUsername">
+                Create Username
+            </label>
+
+            <input
+                type="text"
+                id="studentUsername"
+                placeholder="Choose a username"
+                required
+            >
+
+
+
+            <label for="studentPassword">
+                Create Password
+            </label>
+
+            <input
+                type="password"
+                id="studentPassword"
+                placeholder="Create a password"
+                required
+            >
+
+
+
+            <button type="submit">
+
+                ✨ Create Student Account
+
+            </button>
+
+
+        </form>
+
+
+
+        <a
+            href="index.html"
+            class="back"
+        >
+
+            ← Return to LearnLens Entrance
+
+        </a>
+
+
+    </div>
+
+
+
+    <script>
+
+
+        document
+            .getElementById("studentForm")
+            .addEventListener(
+                "submit",
+                function(event) {
+
+
+                    event.preventDefault();
+
+
+                    const student = {
+
+                        name:
+                            document
+                            .getElementById(
+                                "studentName"
+                            )
+                            .value
+                            .trim(),
+
+                        rollNumber:
+                            document
+                            .getElementById(
+                                "studentRoll"
+                            )
+                            .value
+                            .trim(),
+
+                        email:
+                            document
+                            .getElementById(
+                                "studentEmail"
+                            )
+                            .value
+                            .trim(),
+
+                        username:
+                            document
+                            .getElementById(
+                                "studentUsername"
+                            )
+                            .value
+                            .trim(),
+
+                        password:
+                            document
+                            .getElementById(
+                                "studentPassword"
+                            )
+                            .value
+
+                    };
+
+
+                    localStorage.setItem(
+                        "learnlensStudentAccount",
+                        JSON.stringify(student)
+                    );
+
+
+                    alert(
+                        "✨ Student account created successfully!"
+                    );
+
+
+                    // Go to login page
+
+                    window.location.href = "login.html?role=student";
+
+
+                }
+            );
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,773 @@
+/* ==========================================
+   LEARNLENS
+   STUDENT DASHBOARD
+   Magical Harry Potter Theme
+========================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            #29203f,
+            #100d1b 60%
+        );
+
+    color: #eee6d5;
+
+    min-height: 100vh;
+
+}
+
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar {
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 240px;
+
+    height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            #21182f,
+            #100d1b
+        );
+
+    border-right:
+        1px solid #5f4720;
+
+    padding: 25px 12px;
+
+}
+
+
+/* LOGO */
+
+.logo {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+
+}
+
+
+.magic-symbol {
+
+    color: #f4d35e;
+
+    font-size: 25px;
+
+}
+
+
+.logo h1 {
+
+    color: #f1d36b;
+
+    font-size: 32px;
+
+    margin-top: 5px;
+
+}
+
+
+.logo p {
+
+    color: #a99582;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+
+}
+
+
+/* STUDENT PROFILE */
+
+.student-profile {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px;
+
+    background: #29203b;
+
+    border:
+        1px solid #5f4720;
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.student-icon {
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #4b365f;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 23px;
+
+}
+
+
+.student-profile h3 {
+
+    color: #f1d36b;
+
+    font-size: 16px;
+
+}
+
+
+.student-profile p {
+
+    color: #aaa0a7;
+
+    font-size: 13px;
+
+    margin-top: 3px;
+
+}
+
+
+/* NAVIGATION */
+
+.menu a {
+
+    display: block;
+
+    text-decoration: none;
+
+    color: #ddd2c3;
+
+    padding: 12px 15px;
+
+    border-radius: 9px;
+
+    margin-bottom: 7px;
+
+    transition: 0.3s;
+
+}
+
+
+.menu a:hover {
+
+    background: #332641;
+
+    color: #f1d36b;
+
+}
+
+
+.menu a.active {
+
+    background: #493555;
+
+    color: #f1d36b;
+
+    border-left:
+        3px solid #f1d36b;
+
+}
+
+
+/* LOGOUT */
+
+.logout {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 20px;
+
+}
+
+
+.logout a {
+
+    color: #c7b9aa;
+
+    text-decoration: none;
+
+}
+
+
+.logout a:hover {
+
+    color: #f1d36b;
+
+}
+
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.main-content {
+
+    margin-left: 240px;
+
+    padding: 35px 40px;
+
+    max-width: 1400px;
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.top-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.welcome {
+
+    color: #dcb84d;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.top-heading h2 {
+
+    color: #f3d66e;
+
+    font-size: 35px;
+
+    margin: 8px 0;
+
+}
+
+
+.description {
+
+    color: #aaa0a7;
+
+    line-height: 1.6;
+
+}
+
+
+.heading-icon {
+
+    font-size: 60px;
+
+}
+
+
+/* ==========================================
+   WELCOME CARD
+========================================== */
+
+.welcome-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2d213d,
+            #211a31
+        );
+
+    border:
+        1px solid #705526;
+
+    border-radius: 16px;
+
+    padding: 28px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.welcome-icon {
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    background: #3a2b4e;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 38px;
+
+}
+
+
+.welcome-card h2 {
+
+    color: #f1d36b;
+
+    margin: 6px 0;
+
+}
+
+
+.welcome-card p:last-child {
+
+    color: #aaa0a9;
+
+    line-height: 1.6;
+
+}
+
+
+/* ==========================================
+   GOLD TEXT
+========================================== */
+
+.gold-text {
+
+    color: #dcb84d;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* ==========================================
+   SUMMARY
+========================================== */
+
+.summary-section {
+
+    margin-bottom: 35px;
+
+}
+
+
+.summary-section > h2 {
+
+    color: #f1d36b;
+
+    margin:
+        8px 0 20px;
+
+}
+
+
+.summary-cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.summary-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background: #211a31;
+
+    border:
+        1px solid #5a4524;
+
+    border-radius: 15px;
+
+    padding: 22px;
+
+    min-height: 125px;
+
+    transition: 0.3s;
+
+}
+
+
+.summary-card:hover {
+
+    transform: translateY(-4px);
+
+    border-color: #c9a947;
+
+}
+
+
+.summary-icon {
+
+    width: 55px;
+    height: 55px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #3a2b4e;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 26px;
+
+}
+
+
+.summary-card p {
+
+    color: #a9a0a9;
+
+    font-size: 13px;
+
+}
+
+
+.summary-card h3 {
+
+    color: #f1d36b;
+
+    font-size: 20px;
+
+    margin: 7px 0;
+
+}
+
+
+.summary-card span {
+
+    color: #777080;
+
+    font-size: 12px;
+
+}
+
+
+/* ==========================================
+   QUICK ACTIONS
+========================================== */
+
+.quick-section {
+
+    margin-bottom: 35px;
+
+}
+
+
+.quick-section h2 {
+
+    color: #f1d36b;
+
+    margin:
+        8px 0 20px;
+
+}
+
+
+.quick-actions {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.quick-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    text-decoration: none;
+
+    background: #211a31;
+
+    border:
+        1px solid #5a4524;
+
+    border-radius: 15px;
+
+    padding: 22px;
+
+    transition: 0.3s;
+
+}
+
+
+.quick-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #c9a947;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,0.3);
+
+}
+
+
+.quick-icon {
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 12px;
+
+    background: #3a2b4e;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 27px;
+
+}
+
+
+.quick-card h3 {
+
+    color: #eee0b1;
+
+    margin-bottom: 5px;
+
+}
+
+
+.quick-card p {
+
+    color: #99909d;
+
+    font-size: 14px;
+
+}
+
+
+/* ==========================================
+   ADVICE CARD
+========================================== */
+
+.advice-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2d213d,
+            #211a31
+        );
+
+    border:
+        1px solid #705526;
+
+    border-radius: 15px;
+
+    padding: 28px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.advice-icon {
+
+    font-size: 40px;
+
+}
+
+
+.advice-card h2 {
+
+    color: #f2d36c;
+
+    margin:
+        6px 0;
+
+}
+
+
+.advice-card p:last-child {
+
+    color: #aaa0a9;
+
+    line-height: 1.6;
+
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+
+    text-align: center;
+
+    color: #756b79;
+
+    padding: 25px;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .summary-cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .sidebar {
+
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+
+    }
+
+
+    .logout {
+
+        position: relative;
+
+        left: 0;
+
+        bottom: auto;
+
+        margin-top: 20px;
+
+    }
+
+
+    .main-content {
+
+        margin-left: 0;
+
+        padding: 20px;
+
+    }
+
+
+    .summary-cards {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .quick-actions {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .top-heading {
+
+        align-items: flex-start;
+
+    }
+
+
+    .heading-icon {
+
+        font-size: 40px;
+
+    }
+
+}

@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Reports | LearnLens</title>
+
+    <link rel="stylesheet"
+          href="student-reports.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="magic-symbol">
+                ✦
+            </div>
+
+            <h1>
+                LearnLens
+            </h1>
+
+            <p>
+                Magical Learning
+            </p>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="student-profile.html">
+                🏰 My Profile
+            </a>
+
+            <a href="student-performance.html">
+                📊 My Performance
+            </a>
+
+            <a href="student-weak-areas.html">
+                ⚠️ Weak Areas
+            </a>
+
+            <a href="recommendations.html">
+                🎓 Recommendations
+            </a>
+
+            <a href="study-schedule.html">
+                📅 Study Schedule
+            </a>
+
+            <a href="student-reports.html"
+               class="active">
+                📜 Reports
+            </a>
+
+            <a href="student-notifications.html">
+                🔔 Notifications
+            </a>
+
+        </nav>
+
+
+        <div class="student-profile">
+
+            <div class="student-icon">
+                🧙‍♀️
+            </div>
+
+            <div>
+
+                <h3 id="sidebarName">
+                    Student
+                </h3>
+
+                <p>
+                    Young Scholar
+                </p>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="page-heading">
+
+            <div>
+
+                <p class="gold-text">
+                    ✨ Academic Summary
+                </p>
+
+                <h2>
+                    My Academic Report
+                </h2>
+
+                <p class="description">
+                    A simple summary of your learning performance.
+                </p>
+
+            </div>
+
+
+            <div class="heading-icon">
+                📜
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             STUDENT INFORMATION
+        ========================== -->
+
+        <section class="student-card">
+
+            <div>
+
+                <p class="small-heading">
+                    Young Scholar
+                </p>
+
+                <h2 id="studentName">
+                    Student Name
+                </h2>
+
+                <p>
+                    Roll Number:
+                    <strong id="rollNumber">
+                        -
+                    </strong>
+                </p>
+
+            </div>
+
+
+            <div class="category-box">
+
+                <span id="categoryIcon">
+                    🪄
+                </span>
+
+                <div>
+
+                    <small>
+                        Learning Category
+                    </small>
+
+                    <strong id="category">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SUMMARY CARDS
+        ========================== -->
+
+        <section class="summary-grid">
+
+
+            <div class="summary-card">
+
+                <div class="card-icon">
+                    📊
+                </div>
+
+                <div>
+
+                    <small>
+                        Overall Percentage
+                    </small>
+
+                    <h2 id="percentage">
+                        0%
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="card-icon">
+                    ⭐
+                </div>
+
+                <div>
+
+                    <small>
+                        Average Marks
+                    </small>
+
+                    <h2 id="average">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="card-icon">
+                    💪
+                </div>
+
+                <div>
+
+                    <small>
+                        Strongest Subject
+                    </small>
+
+                    <h2 id="strongestSubject">
+                        -
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card weak">
+
+                <div class="card-icon">
+                    ⚠️
+                </div>
+
+                <div>
+
+                    <small>
+                        Weakest Subject
+                    </small>
+
+                    <h2 id="weakestSubject">
+                        -
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             SUBJECT REPORT
+        ========================== -->
+
+        <section class="report-card">
+
+            <div class="section-title">
+
+                <span>
+                    📚
+                </span>
+
+                <div>
+
+                    <h3>
+                        Subject-wise Report
+                    </h3>
+
+                    <p>
+                        Your marks in each subject.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div id="subjectReport"
+                 class="subject-report">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PROFESSOR'S ASSESSMENT
+        ========================== -->
+
+        <section class="assessment-card">
+
+            <div class="assessment-icon">
+                🧙‍♂️
+            </div>
+
+
+            <div>
+
+                <p class="gold-text">
+                    Professor's Assessment
+                </p>
+
+                <h2 id="assessmentTitle">
+                    Keep Learning
+                </h2>
+
+                <p id="assessmentMessage">
+                    Keep working consistently and
+                    continue improving your weak areas.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             NEXT STEP
+        ========================== -->
+
+        <section class="next-step">
+
+            <div>
+
+                <h2>
+                    🪄 Your Next Step
+                </h2>
+
+                <p>
+                    Focus on your weakest subject and
+                    explore the recommended learning resources.
+                </p>
+
+            </div>
+
+
+            <button onclick="openRecommendations()">
+                🎓 View Recommendations
+            </button>
+
+        </section>
+
+
+
+        <footer>
+
+            ✨ LearnLens — Every learner has
+            their own magical path.
+
+        </footer>
+
+
+    </main>
+
+
+
+    <script>
+
+
+        // =========================================
+        // CHECK STUDENT LOGIN
+        // =========================================
+
+        const role =
+            localStorage.getItem(
+                "learnlensLoggedInRole"
+            );
+
+
+        if (role !== "student") {
+
+            alert(
+                "🔐 Please login as a student first."
+            );
+
+            window.location.href =
+                "login.html";
+
+        }
+
+
+
+        // =========================================
+        // GET CURRENT STUDENT
+        // =========================================
+
+        const savedStudent =
+            localStorage.getItem(
+                "learnlensCurrentStudent"
+            );
+
+
+        if (!savedStudent) {
+
+            alert(
+                "⚠️ Student information not found."
+            );
+
+            window.location.href =
+                "student-profile.html";
+
+        }
+
+
+        const student =
+            JSON.parse(savedStudent);
+
+
+
+        // =========================================
+        // DISPLAY STUDENT INFORMATION
+        // =========================================
+
+        document.getElementById(
+            "studentName"
+        ).textContent =
+            student.name;
+
+
+        document.getElementById(
+            "sidebarName"
+        ).textContent =
+            student.name;
+
+
+        document.getElementById(
+            "rollNumber"
+        ).textContent =
+            student.rollNumber;
+
+
+        document.getElementById(
+            "category"
+        ).textContent =
+            student.category;
+
+
+        document.getElementById(
+            "categoryIcon"
+        ).textContent =
+            student.categoryIcon || "🪄";
+
+
+        document.getElementById(
+            "percentage"
+        ).textContent =
+            student.percentage + "%";
+
+
+        document.getElementById(
+            "average"
+        ).textContent =
+            student.average;
+
+
+        document.getElementById(
+            "strongestSubject"
+        ).textContent =
+            shortSubjectName(
+                student.strongestSubject
+            );
+
+
+        document.getElementById(
+            "weakestSubject"
+        ).textContent =
+            shortSubjectName(
+                student.weakestSubject
+            );
+
+
+
+        // =========================================
+        // SUBJECT NAME
+        // =========================================
+
+        function shortSubjectName(subject) {
+
+            if (!subject) {
+                return "-";
+            }
+
+
+            if (
+                subject.includes(
+                    "Mathematics"
+                )
+            ) {
+
+                return "MIS";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Database"
+                )
+            ) {
+
+                return "DBMS";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Computer System"
+                )
+            ) {
+
+                return "CSF";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Universal"
+                )
+            ) {
+
+                return "UHV";
+
+            }
+
+
+            return "Open Elective";
+
+        }
+
+
+
+        // =========================================
+        // SUBJECTS
+        // =========================================
+
+        const subjects = [
+
+            {
+                name:
+                    "Mathematics for Intelligent System",
+
+                short:
+                    "MIS"
+            },
+
+            {
+                name:
+                    "Database Management System",
+
+                short:
+                    "DBMS"
+            },
+
+            {
+                name:
+                    "Computer System Fundamentals",
+
+                short:
+                    "CSF"
+            },
+
+            {
+                name:
+                    "Universal Human Values",
+
+                short:
+                    "UHV"
+            },
+
+            {
+                name:
+                    "Open Elective",
+
+                short:
+                    "Open Elective"
+            }
+
+        ];
+
+
+
+        // =========================================
+        // GET MARKS
+        // =========================================
+
+        const marks =
+            student.marks || {};
+
+
+
+        const subjectReport =
+            document.getElementById(
+                "subjectReport"
+            );
+
+
+
+        // =========================================
+        // CREATE SUBJECT REPORT
+        // =========================================
+
+        subjects.forEach(
+            function(subject) {
+
+                if (
+                    marks[subject.name] === undefined
+                ) {
+
+                    return;
+
+                }
+
+
+                const mark =
+                    Number(
+                        marks[subject.name]
+                    );
+
+
+                let status =
+                    "Good";
+
+
+                let statusClass =
+                    "good";
+
+
+                if (mark < 50) {
+
+                    status =
+                        "Needs Attention";
+
+                    statusClass =
+                        "weak";
+
+                }
+
+                else if (mark < 60) {
+
+                    status =
+                        "Needs Practice";
+
+                    statusClass =
+                        "practice";
+
+                }
+
+
+                const row =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                row.className =
+                    "report-row";
+
+
+                row.innerHTML = `
+
+                    <div class="subject-name">
+
+                        <strong>
+                            ${subject.short}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="mark-area">
+
+                        <strong>
+                            ${mark}/100
+                        </strong>
+
+                        <div class="progress-background">
+
+                            <div
+                                class="progress-bar"
+                                style="width:${mark}%">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="status ${statusClass}">
+                        ${status}
+                    </span>
+
+                `;
+
+
+                subjectReport.appendChild(
+                    row
+                );
+
+            }
+        );
+
+
+
+        // =========================================
+        // PROFESSOR ASSESSMENT
+        // =========================================
+
+        const assessmentTitle =
+            document.getElementById(
+                "assessmentTitle"
+            );
+
+
+        const assessmentMessage =
+            document.getElementById(
+                "assessmentMessage"
+            );
+
+
+        if (
+            student.category ===
+            "Advanced Learner"
+        ) {
+
+            assessmentTitle.textContent =
+                "Excellent Progress! ✨";
+
+
+            assessmentMessage.textContent =
+                "You are performing very well. " +
+                "Keep challenging yourself and continue " +
+                "strengthening every subject.";
+
+        }
+
+
+        else if (
+            student.category ===
+            "Moderate Learner"
+        ) {
+
+            assessmentTitle.textContent =
+                "Good Progress! 🌟";
+
+
+            assessmentMessage.textContent =
+                "You are making steady progress. " +
+                "Spend some extra time on your weaker " +
+                "subjects and you can improve further.";
+
+        }
+
+
+        else {
+
+            assessmentTitle.textContent =
+                "More Practice Needed 📚";
+
+
+            assessmentMessage.textContent =
+                "Do not worry. Everyone learns at a " +
+                "different pace. Follow your study schedule " +
+                "and practise your weaker subjects regularly.";
+
+        }
+
+
+
+        // =========================================
+        // RECOMMENDATIONS
+        // =========================================
+
+        function openRecommendations() {
+
+            localStorage.setItem(
+                "learnlensRecommendationSubject",
+                student.weakestSubject
+            );
+
+
+            window.location.href =
+                "recommendations.html";
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

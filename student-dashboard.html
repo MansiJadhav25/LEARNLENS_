@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>LearnLens | Student Dashboard</title>
+
+    <link rel="stylesheet"
+          href="student-dashboard.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <div class="magic-symbol">
+                ✦
+            </div>
+
+            <h1>
+                LearnLens
+            </h1>
+
+            <p>
+                Magical Learning
+            </p>
+
+        </div>
+
+
+
+        <!-- STUDENT PROFILE -->
+
+        <div class="student-profile">
+
+            <div class="student-icon">
+                🎓
+            </div>
+
+            <div>
+
+                <h3 id="sideStudentName">
+                    Student
+                </h3>
+
+                <p>
+                    Young Scholar
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="menu">
+
+            <a href="student-dashboard.html"
+               class="active">
+                🏰 Dashboard
+            </a>
+
+
+            <a href="student-profile.html">
+                👤 My Profile
+            </a>
+
+
+            <a href="performance.html">
+                📊 Performance
+            </a>
+
+
+            <a href="#">
+                ⚠️ Weak Areas
+            </a>
+
+
+            <a href="recommendation.html">
+                🎥 Recommendations
+            </a>
+
+
+            <a href="recommendation.html#schedule">
+                🗓️ Study Schedule
+            </a>
+
+
+            <a href="#">
+                📋 My Reports
+            </a>
+
+
+            <a href="#">
+                🔔 Notifications
+            </a>
+
+        </nav>
+
+
+
+        <!-- RETURN -->
+
+        <div class="logout">
+
+            <a href="index.html">
+                🚪 Return to Entrance
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =========================================
+             HEADER
+        ========================================== -->
+
+        <header class="top-heading">
+
+            <div>
+
+                <p class="welcome">
+                    Welcome back, Young Scholar ✨
+                </p>
+
+                <h2>
+                    Student Dashboard
+                </h2>
+
+                <p class="description">
+                    Your magical learning journey begins here.
+                </p>
+
+            </div>
+
+
+            <div class="heading-icon">
+                🔮
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================================
+             WELCOME CARD
+        ========================================== -->
+
+        <section class="welcome-card">
+
+            <div class="welcome-icon">
+                🧙‍♂️
+            </div>
+
+            <div>
+
+                <p class="gold-text">
+                    Your Learning Journey
+                </p>
+
+                <h2>
+                    Hello, <span id="studentName">
+                        Student
+                    </span>! ✨
+                </h2>
+
+                <p id="welcomeMessage">
+                    LearnLens is ready to guide you.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             PERFORMANCE SUMMARY
+        ========================================== -->
+
+        <section class="summary-section">
+
+            <p class="gold-text">
+                📜 Your Magical Record
+            </p>
+
+            <h2>
+                Performance Overview
+            </h2>
+
+
+
+            <div class="summary-cards">
+
+
+                <!-- PERCENTAGE -->
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        📊
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Overall Percentage
+                        </p>
+
+                        <h3 id="percentage">
+                            0%
+                        </h3>
+
+                        <span>
+                            Overall performance
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CATEGORY -->
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        🎯
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Learning Category
+                        </p>
+
+                        <h3 id="category">
+                            -
+                        </h3>
+
+                        <span>
+                            Your learning level
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STRONGEST -->
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        🏆
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Strongest Subject
+                        </p>
+
+                        <h3 id="strongestSubject">
+                            -
+                        </h3>
+
+                        <span id="strongestMarks">
+                            - marks
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- WEAKEST -->
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        ⚠️
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Weakest Subject
+                        </p>
+
+                        <h3 id="weakestSubject">
+                            -
+                        </h3>
+
+                        <span id="weakestMarks">
+                            - marks
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             QUICK ACTIONS
+        ========================================== -->
+
+        <section class="quick-section">
+
+            <p class="gold-text">
+                🪄 Magical Tools
+            </p>
+
+            <h2>
+                Continue Your Learning
+            </h2>
+
+
+
+            <div class="quick-actions">
+
+
+                <!-- PROFILE -->
+
+                <a href="student-profile.html"
+                   class="quick-card">
+
+                    <div class="quick-icon">
+                        👤
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            My Profile
+                        </h3>
+
+                        <p>
+                            View your student profile
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- PERFORMANCE -->
+
+                <a href="performance.html"
+                   class="quick-card">
+
+                    <div class="quick-icon">
+                        📊
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            My Performance
+                        </h3>
+
+                        <p>
+                            Explore your marks and progress
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- RECOMMENDATIONS -->
+
+                <a href="recommendation.html"
+                   class="quick-card">
+
+                    <div class="quick-icon">
+                        🎥
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Recommendations
+                        </h3>
+
+                        <p>
+                            Get personalised learning resources
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- SCHEDULE -->
+
+                <a href="recommendation.html#schedule"
+                   class="quick-card">
+
+                    <div class="quick-icon">
+                        🗓️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Study Schedule
+                        </h3>
+
+                        <p>
+                            Follow your 7-day learning plan
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             LEARNING ADVICE
+        ========================================== -->
+
+        <section class="advice-card">
+
+            <div class="advice-icon">
+                ✨
+            </div>
+
+            <div>
+
+                <p class="gold-text">
+                    A Message From LearnLens
+                </p>
+
+                <h2>
+                    Your learning magic
+                </h2>
+
+                <p id="adviceMessage">
+                    Every learner has their own journey.
+                    Keep learning, practising and improving
+                    one step at a time.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             FOOTER
+        ========================================== -->
+
+        <footer>
+
+            ✨ Learn smarter • Improve every day •
+            Discover your magic ✨
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+
+        /* =========================================
+           CHECK STUDENT LOGIN
+        ========================================== */
+
+        function checkStudentLogin() {
+
+            const role =
+                localStorage.getItem(
+                    "learnlensLoggedInRole"
+                );
+
+
+            if (role !== "student") {
+
+                alert(
+                    "🔐 Please login as a student first."
+                );
+
+
+                window.location.href =
+                    "login.html";
+
+
+                return false;
+
+            }
+
+
+            return true;
+
+        }
+
+
+
+        /* =========================================
+           LOAD STUDENT
+        ========================================== */
+
+        function loadStudentDashboard() {
+
+
+            if (!checkStudentLogin()) {
+
+                return;
+
+            }
+
+
+
+            const savedStudent =
+                localStorage.getItem(
+                    "learnlensCurrentStudent"
+                );
+
+
+
+            /* =====================================
+               NO STUDENT FOUND
+            ===================================== */
+
+            if (!savedStudent) {
+
+                alert(
+                    "🪄 Student record not found. Please ask your teacher to enter your marks first."
+                );
+
+
+                window.location.href =
+                    "login.html";
+
+
+                return;
+
+            }
+
+
+
+            let student;
+
+
+            try {
+
+                student =
+                    JSON.parse(
+                        savedStudent
+                    );
+
+            }
+
+            catch (error) {
+
+                alert(
+                    "⚠️ Student information could not be loaded."
+                );
+
+
+                return;
+
+            }
+
+
+
+            /* =====================================
+               STUDENT NAME
+            ===================================== */
+
+            const studentName =
+                student.name ||
+                "Student";
+
+
+            document.getElementById(
+                "studentName"
+            ).textContent =
+                studentName;
+
+
+            document.getElementById(
+                "sideStudentName"
+            ).textContent =
+                studentName;
+
+
+
+            /* =====================================
+               PERCENTAGE
+            ===================================== */
+
+            const percentage =
+                Number(
+                    student.percentage || 0
+                );
+
+
+            document.getElementById(
+                "percentage"
+            ).textContent =
+                percentage.toFixed(2) +
+                "%";
+
+
+
+            /* =====================================
+               CATEGORY
+            ===================================== */
+
+            document.getElementById(
+                "category"
+            ).textContent =
+                student.category ||
+                "Learner";
+
+
+
+            /* =====================================
+               STRONGEST SUBJECT
+            ===================================== */
+
+            document.getElementById(
+                "strongestSubject"
+            ).textContent =
+                shortSubjectName(
+                    student.strongestSubject
+                );
+
+
+            document.getElementById(
+                "strongestMarks"
+            ).textContent =
+                (
+                    student.strongestMarks ||
+                    0
+                ) +
+                " / 100";
+
+
+
+            /* =====================================
+               WEAKEST SUBJECT
+            ===================================== */
+
+            document.getElementById(
+                "weakestSubject"
+            ).textContent =
+                shortSubjectName(
+                    student.weakestSubject
+                );
+
+
+            document.getElementById(
+                "weakestMarks"
+            ).textContent =
+                (
+                    student.weakestMarks ||
+                    0
+                ) +
+                " / 100";
+
+
+
+            /* =====================================
+               WELCOME MESSAGE
+            ===================================== */
+
+            document.getElementById(
+                "welcomeMessage"
+            ).textContent =
+                createWelcomeMessage(
+                    student
+                );
+
+
+
+            /* =====================================
+               ADVICE MESSAGE
+            ===================================== */
+
+            document.getElementById(
+                "adviceMessage"
+            ).textContent =
+                createAdviceMessage(
+                    student
+                );
+
+        }
+
+
+
+        /* =========================================
+           WELCOME MESSAGE
+        ========================================== */
+
+        function createWelcomeMessage(
+            student
+        ) {
+
+
+            if (
+                student.percentage >= 80
+            ) {
+
+                return (
+                    "Excellent work, " +
+                    student.name +
+                    "! Your magical learning journey is going wonderfully. Keep challenging yourself! 🪄"
+                );
+
+            }
+
+
+            if (
+                student.percentage >= 50
+            ) {
+
+                return (
+                    "Good progress, " +
+                    student.name +
+                    "! Keep practising and focus especially on your weakest subject. 🌟"
+                );
+
+            }
+
+
+            return (
+                "Don't worry, " +
+                student.name +
+                "! Every great learner starts somewhere. Let's strengthen your basics together. ✨"
+            );
+
+        }
+
+
+
+        /* =========================================
+           ADVICE MESSAGE
+        ========================================== */
+
+        function createAdviceMessage(
+            student
+        ) {
+
+
+            const marks =
+                Number(
+                    student.weakestMarks || 0
+                );
+
+
+            if (marks < 40) {
+
+                return (
+                    "Your " +
+                    shortSubjectName(
+                        student.weakestSubject
+                    ) +
+                    " needs extra attention. Start with the basics, use your recommended videos and practise a little every day. You can do it! 🪄"
+                );
+
+            }
+
+
+            if (marks < 60) {
+
+                return (
+                    "You have a foundation in " +
+                    shortSubjectName(
+                        student.weakestSubject
+                    ) +
+                    ". Regular practice and revision can help you improve even more. Keep going! 🌟"
+                );
+
+            }
+
+
+            return (
+                "Your weakest subject is already at a good level. Keep revising it while challenging yourself with harder questions. Keep shining! ✨"
+            );
+
+        }
+
+
+
+        /* =========================================
+           SHORT SUBJECT NAMES
+        ========================================== */
+
+        function shortSubjectName(
+            subject
+        ) {
+
+
+            if (!subject) {
+
+                return "-";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Mathematics"
+                )
+            ) {
+
+                return "MIS";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Database"
+                )
+            ) {
+
+                return "DBMS";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Computer System"
+                )
+            ) {
+
+                return "CSF";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Universal"
+                )
+            ) {
+
+                return "UHV";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Open Elective"
+                )
+            ) {
+
+                return "Open Elective";
+
+            }
+
+
+            return subject;
+
+        }
+
+
+
+        /* =========================================
+           LOAD PAGE
+        ========================================== */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            loadStudentDashboard
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>LearnLens | Weak Areas</title>
+
+    <link rel="stylesheet"
+          href="./weak-areas.css">
+
+</head>
+
+<body>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="magic-symbol">✦</div>
+
+            <h1>LearnLens</h1>
+
+            <p>Magical Learning</p>
+
+        </div>
+
+
+        <div class="teacher-profile">
+
+            <div class="teacher-icon">🧙‍♀️</div>
+
+            <div>
+
+                <h3>Professor</h3>
+
+                <p>Teacher</p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="teacher-dashboard.html">
+                🏰 Dashboard
+            </a>
+
+            <a href="my-student.html">
+                🧑‍🎓 My Students
+            </a>
+
+            <a href="enter-marks.html">
+                📝 Enter Marks
+            </a>
+
+            <a href="performance.html">
+                📊 Performance
+            </a>
+
+            <a href="weak-areas.html" class="active">
+                📚 Weak Areas
+            </a>
+
+        </nav>
+
+
+        <div class="logout">
+
+            <a href="index.html">
+                🚪 Return to Entrance
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+
+        <header class="page-heading">
+
+            <div>
+
+                <p class="gold-text">
+                    ⚠️ Student Analysis
+                </p>
+
+                <h2>
+                    Weak Areas
+                </h2>
+
+                <p class="description">
+                    Identify the subjects where students
+                    need more attention.
+                </p>
+
+            </div>
+
+            <div class="heading-icon">
+                📚
+            </div>
+
+        </header>
+
+
+
+        <!-- MAIN RESULT -->
+
+        <section class="focus-card">
+
+            <div class="focus-icon">
+                ⚠️
+            </div>
+
+            <div>
+
+                <p>
+                    Subject Needing Most Attention
+                </p>
+
+                <h2 id="focusSubject">
+                    No data available
+                </h2>
+
+                <span id="focusMessage">
+                    Enter student marks to see weak areas.
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SUBJECT TABLE -->
+
+        <section class="table-card">
+
+            <div class="section-title">
+
+                <span>📊</span>
+
+                <div>
+
+                    <h3>
+                        Subject-wise Analysis
+                    </h3>
+
+                    <p>
+                        Based on the marks entered for students.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Subject
+                        </th>
+
+                        <th>
+                            Weak Students
+                        </th>
+
+                        <th>
+                            Average Marks
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="weakAreaTable">
+
+                </tbody>
+
+            </table>
+
+
+            <div id="emptyMessage"
+                 class="empty-message">
+
+                🪄 No student records available yet.
+
+            </div>
+
+        </section>
+
+
+
+        <footer>
+
+            ✨ LearnLens — Helping teachers
+            understand every learner.
+
+        </footer>
+
+
+    </main>
+
+
+
+    <script>
+
+        // =========================================
+        // CHECK TEACHER LOGIN
+        // =========================================
+
+        const role =
+            localStorage.getItem(
+                "learnlensLoggedInRole"
+            );
+
+
+        if (role !== "teacher") {
+
+            alert(
+                "🔐 Please login as a teacher first."
+            );
+
+            window.location.href =
+                "login.html";
+
+        }
+
+
+
+        // =========================================
+        // SUBJECTS
+        // =========================================
+
+        const subjects = [
+
+            "Mathematics for Intelligent System",
+
+            "Database Management System",
+
+            "Computer System Fundamentals",
+
+            "Universal Human Values",
+
+            "Open Elective"
+
+        ];
+
+
+
+        // =========================================
+        // LOAD STUDENTS
+        // =========================================
+
+        function loadWeakAreas() {
+
+            const savedStudents =
+                localStorage.getItem(
+                    "learnlensStudents"
+                );
+
+
+            const students =
+                savedStudents
+                    ? JSON.parse(savedStudents)
+                    : [];
+
+
+            const table =
+                document.getElementById(
+                    "weakAreaTable"
+                );
+
+
+            const emptyMessage =
+                document.getElementById(
+                    "emptyMessage"
+                );
+
+
+            table.innerHTML = "";
+
+
+            // No students
+
+            if (students.length === 0) {
+
+                emptyMessage.style.display =
+                    "block";
+
+                document.getElementById(
+                    "focusSubject"
+                ).textContent =
+                    "No data available";
+
+                document.getElementById(
+                    "focusMessage"
+                ).textContent =
+                    "Enter student marks to see weak areas.";
+
+                return;
+
+            }
+
+
+            emptyMessage.style.display =
+                "none";
+
+
+
+            // =====================================
+            // ANALYSE EACH SUBJECT
+            // =====================================
+
+            const results = [];
+
+
+            subjects.forEach(
+                function(subject) {
+
+                    let totalMarks = 0;
+
+                    let weakStudents = 0;
+
+                    let studentsWithMarks = 0;
+
+
+                    students.forEach(
+                        function(student) {
+
+                            if (
+                                student.marks &&
+                                student.marks[subject] !== undefined
+                            ) {
+
+                                const mark =
+                                    Number(
+                                        student.marks[subject]
+                                    );
+
+
+                                totalMarks += mark;
+
+                                studentsWithMarks++;
+
+
+                                // Below 50 = weak
+
+                                if (mark < 50) {
+
+                                    weakStudents++;
+
+                                }
+
+                            }
+
+                        }
+                    );
+
+
+                    let average = 0;
+
+
+                    if (
+                        studentsWithMarks > 0
+                    ) {
+
+                        average =
+                            totalMarks /
+                            studentsWithMarks;
+
+                    }
+
+
+                    results.push({
+
+                        subject: subject,
+
+                        weakStudents:
+                            weakStudents,
+
+                        average:
+                            average
+
+                    });
+
+                }
+            );
+
+
+
+            // =====================================
+            // FIND MOST IMPORTANT WEAK AREA
+            // =====================================
+
+            let focus =
+                results[0];
+
+
+            results.forEach(
+                function(item) {
+
+                    if (
+                        item.weakStudents >
+                        focus.weakStudents
+                    ) {
+
+                        focus = item;
+
+                    }
+
+                    else if (
+                        item.weakStudents ===
+                        focus.weakStudents &&
+                        item.average <
+                        focus.average
+                    ) {
+
+                        focus = item;
+
+                    }
+
+                }
+            );
+
+
+            document.getElementById(
+                "focusSubject"
+            ).textContent =
+                shortSubjectName(
+                    focus.subject
+                );
+
+
+            document.getElementById(
+                "focusMessage"
+            ).textContent =
+                focus.weakStudents +
+                " student(s) need attention in this subject.";
+
+
+
+            // =====================================
+            // DISPLAY TABLE
+            // =====================================
+
+            results.forEach(
+                function(item) {
+
+                    const row =
+                        document.createElement(
+                            "tr"
+                        );
+
+
+                    let status =
+                        "Good";
+
+
+                    if (
+                        item.average < 50
+                    ) {
+
+                        status =
+                            "Needs Attention";
+
+                    }
+
+                    else if (
+                        item.average < 60
+                    ) {
+
+                        status =
+                            "Needs Practice";
+
+                    }
+
+
+                    row.innerHTML = `
+
+                        <td>
+                            <strong>
+                                ${shortSubjectName(item.subject)}
+                            </strong>
+                        </td>
+
+                        <td>
+                            ${item.weakStudents}
+                        </td>
+
+                        <td>
+                            ${item.average.toFixed(1)}%
+                        </td>
+
+                        <td>
+                            <span class="status">
+                                ${status}
+                            </span>
+                        </td>
+
+                    `;
+
+
+                    table.appendChild(row);
+
+                }
+            );
+
+        }
+
+
+
+        // =========================================
+        // SHORT SUBJECT NAMES
+        // =========================================
+
+        function shortSubjectName(subject) {
+
+            if (
+                subject.includes("Mathematics")
+            ) {
+
+                return "MIS";
+
+            }
+
+
+            if (
+                subject.includes("Database")
+            ) {
+
+                return "DBMS";
+
+            }
+
+
+            if (
+                subject.includes("Computer System")
+            ) {
+
+                return "CSF";
+
+            }
+
+
+            if (
+                subject.includes("Universal")
+            ) {
+
+                return "UHV";
+
+            }
+
+
+            return "Open Elective";
+
+        }
+
+
+
+        // =========================================
+        // START
+        // =========================================
+
+        loadWeakAreas();
+
+    </script>
+
+</body>
+
+</html>

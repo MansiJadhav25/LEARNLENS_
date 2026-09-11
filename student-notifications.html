@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Notifications | LearnLens</title>
+
+    <link rel="stylesheet"
+          href="student-notifications.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="magic-symbol">
+                ✦
+            </div>
+
+            <h1>
+                LearnLens
+            </h1>
+
+            <p>
+                Magical Learning
+            </p>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="student-profile.html">
+                🏰 My Profile
+            </a>
+
+            <a href="student-performance.html">
+                📊 My Performance
+            </a>
+
+            <a href="student-weak-areas.html">
+                ⚠️ Weak Areas
+            </a>
+
+            <a href="recommendations.html">
+                🎓 Recommendations
+            </a>
+
+            <a href="study-schedule.html">
+                📅 Study Schedule
+            </a>
+
+            <a href="student-reports.html">
+                📜 Reports
+            </a>
+
+            <a href="student-notifications.html"
+               class="active">
+                🔔 Notifications
+            </a>
+
+        </nav>
+
+
+        <div class="student-profile">
+
+            <div class="student-icon">
+                🧙‍♀️
+            </div>
+
+            <div>
+
+                <h3 id="sidebarName">
+                    Student
+                </h3>
+
+                <p>
+                    Young Scholar
+                </p>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+
+        <header class="page-heading">
+
+            <div>
+
+                <p class="gold-text">
+                    ✨ Magical Messages
+                </p>
+
+                <h2>
+                    Notifications
+                </h2>
+
+                <p class="description">
+                    Important updates and learning reminders.
+                </p>
+
+            </div>
+
+
+            <div class="heading-icon">
+                🔔
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             WELCOME
+        ========================== -->
+
+        <section class="welcome-card">
+
+            <div class="owl">
+                🦉
+            </div>
+
+            <div>
+
+                <p>
+                    Welcome back,
+                </p>
+
+                <h2 id="studentName">
+                    Young Scholar
+                </h2>
+
+                <span>
+                    Your magical learning journey continues!
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             NOTIFICATIONS
+        ========================== -->
+
+        <section class="notifications-card">
+
+            <div class="section-title">
+
+                <span>
+                    🔔
+                </span>
+
+                <div>
+
+                    <h3>
+                        Your Latest Updates
+                    </h3>
+
+                    <p>
+                        Stay updated with your learning progress.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div id="notificationList">
+
+            </div>
+
+        </section>
+
+
+
+        <footer>
+
+            ✨ LearnLens — Keep learning,
+            keep growing.
+
+        </footer>
+
+
+    </main>
+
+
+
+    <script>
+
+
+        // =========================================
+        // CHECK STUDENT LOGIN
+        // =========================================
+
+        const role =
+            localStorage.getItem(
+                "learnlensLoggedInRole"
+            );
+
+
+        if (role !== "student") {
+
+            alert(
+                "🔐 Please login as a student first."
+            );
+
+            window.location.href =
+                "login.html";
+
+        }
+
+
+
+        // =========================================
+        // GET CURRENT STUDENT
+        // =========================================
+
+        const savedStudent =
+            localStorage.getItem(
+                "learnlensCurrentStudent"
+            );
+
+
+        if (!savedStudent) {
+
+            alert(
+                "⚠️ Student information not found."
+            );
+
+            window.location.href =
+                "student-profile.html";
+
+        }
+
+
+        const student =
+            JSON.parse(savedStudent);
+
+
+
+        // =========================================
+        // DISPLAY NAME
+        // =========================================
+
+        document.getElementById(
+            "studentName"
+        ).textContent =
+            student.name;
+
+
+        document.getElementById(
+            "sidebarName"
+        ).textContent =
+            student.name;
+
+
+
+        // =========================================
+        // NOTIFICATION LIST
+        // =========================================
+
+        const notificationList =
+            document.getElementById(
+                "notificationList"
+            );
+
+
+        const notifications = [];
+
+
+
+        // Welcome notification
+
+        notifications.push({
+
+            icon: "✨",
+
+            title: "Welcome to LearnLens",
+
+            message:
+                "Your performance information is ready. " +
+                "Explore your profile and learning journey.",
+
+            type: "normal"
+
+        });
+
+
+
+        // Performance notification
+
+        if (
+            student.percentage !== undefined
+        ) {
+
+            notifications.push({
+
+                icon: "📊",
+
+                title: "Performance Updated",
+
+                message:
+                    "Your current overall performance is " +
+                    student.percentage +
+                    "%. Keep working consistently!",
+
+                type: "normal"
+
+            });
+
+        }
+
+
+
+        // Weak area notification
+
+        if (
+            student.weakestSubject
+        ) {
+
+            notifications.push({
+
+                icon: "⚠️",
+
+                title: "Focus Area",
+
+                message:
+                    student.weakestSubject +
+                    " is currently your weakest subject. " +
+                    "Spend some extra study time on it.",
+
+                type: "warning"
+
+            });
+
+        }
+
+
+
+        // Recommendation notification
+
+        notifications.push({
+
+            icon: "🎓",
+
+            title: "New Learning Resources",
+
+            message:
+                "Videos and study notes are available " +
+                "for your weak subject.",
+
+            type: "normal"
+
+        });
+
+
+
+        // Schedule notification
+
+        notifications.push({
+
+            icon: "📅",
+
+            title: "Study Schedule",
+
+            message:
+                "Your 7-day personalized study schedule " +
+                "is ready. Follow it step by step.",
+
+            type: "normal"
+
+        });
+
+
+
+        // =========================================
+        // DISPLAY NOTIFICATIONS
+        // =========================================
+
+        notifications.forEach(
+            function(notification) {
+
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                item.className =
+                    "notification-item " +
+                    notification.type;
+
+
+                item.innerHTML = `
+
+                    <div class="notification-icon">
+
+                        ${notification.icon}
+
+                    </div>
+
+
+                    <div class="notification-content">
+
+                        <h3>
+                            ${notification.title}
+                        </h3>
+
+                        <p>
+                            ${notification.message}
+                        </p>
+
+                    </div>
+
+
+                    <div class="notification-dot">
+                        ✦
+                    </div>
+
+                `;
+
+
+                notificationList.appendChild(
+                    item
+                );
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>

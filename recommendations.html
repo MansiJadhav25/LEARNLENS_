@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recommendations | LearnLens</title>
+
+    <link rel="stylesheet" href="recommendations.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo-area">
+            <h1>🪄 LearnLens</h1>
+            <p>Magical Learning</p>
+        </div>
+
+        <div class="profile">
+            <div class="profile-icon">👨‍🎓</div>
+
+            <h3 id="studentName">
+                Student
+            </h3>
+
+            <p>
+                Student
+            </p>
+        </div>
+
+        <nav>
+
+            <a href="student-profile.html">
+                🏰 Profile
+            </a>
+
+            <a href="student-performance.html">
+                📊 Performance
+            </a>
+
+            <a href="weak-areas.html">
+                🔮 Weak Areas
+            </a>
+
+            <a href="recommendations.html" class="active">
+                📚 Recommendations
+            </a>
+
+            <a href="student-reports.html">
+                📜 Reports
+            </a>
+
+            <a href="student-notifications.html">
+                🔔 Notifications
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <header class="page-header">
+
+            <h1>📚 Magical Recommendations</h1>
+
+            <p>
+                Personalized learning resources based on your performance.
+            </p>
+
+        </header>
+
+
+        <!-- ================= WEAK SUBJECT ================= -->
+
+        <section class="weak-subject-card">
+
+            <div class="magic-icon">
+                🔮
+            </div>
+
+            <div>
+
+                <p class="small-title">
+                    Your focus area
+                </p>
+
+                <h2 id="weakSubject">
+                    Loading...
+                </h2>
+
+                <p id="weakMessage">
+                    Preparing your magical learning resources...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= VIDEOS ================= -->
+
+        <section class="recommendation-section">
+
+            <h2>🎬 Recommended Videos</h2>
+
+            <p class="section-description">
+                Watch these videos to strengthen your understanding.
+            </p>
+
+            <div id="videoContainer" class="resource-grid">
+                <!-- Videos appear here -->
+            </div>
+
+        </section>
+
+
+        <!-- ================= NOTES ================= -->
+
+        <section class="recommendation-section">
+
+            <h2>📖 Recommended Notes</h2>
+
+            <p class="section-description">
+                Use these notes for quick revision and practice.
+            </p>
+
+            <div id="notesContainer" class="notes-grid">
+                <!-- Notes appear here -->
+            </div>
+
+        </section>
+
+
+        <!-- ================= STUDY SUGGESTION ================= -->
+
+        <section class="study-tip">
+
+            <h2>🪄 Professor's Advice</h2>
+
+            <p id="studyAdvice">
+                Keep practising your weak subject regularly.
+            </p>
+
+        </section>
+
+
+        <!-- ================= SCHEDULE BUTTON ================= -->
+
+        <section class="schedule-card">
+
+            <h2>📅 Ready to Study?</h2>
+
+            <p>
+                Follow a simple 7-day magical study plan.
+            </p>
+
+            <button onclick="openSchedule()">
+                🪄 View Today's Schedule
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        // -----------------------------------------
+        // GET CURRENT STUDENT
+        // -----------------------------------------
+
+        const currentStudent =
+            JSON.parse(
+                localStorage.getItem(
+                    "learnlensCurrentStudent"
+                )
+            );
+
+
+        // -----------------------------------------
+        // CHECK STUDENT
+        // -----------------------------------------
+
+        if (!currentStudent) {
+
+            alert(
+                "⚠️ No student information found."
+            );
+
+            window.location.href =
+                "login.html";
+        }
+
+
+        // -----------------------------------------
+        // DISPLAY STUDENT NAME
+        // -----------------------------------------
+
+        document.getElementById(
+            "studentName"
+        ).textContent =
+            currentStudent.name;
+
+
+        // -----------------------------------------
+        // GET WEAK SUBJECT
+        // -----------------------------------------
+
+        let weakSubject =
+            localStorage.getItem(
+                "learnlensRecommendationSubject"
+            );
+
+
+        // If no subject was saved,
+        // use the student's weakest subject.
+
+        if (!weakSubject) {
+
+            weakSubject =
+                currentStudent.weakestSubject;
+        }
+
+
+        document.getElementById(
+            "weakSubject"
+        ).textContent =
+            weakSubject;
+
+
+        document.getElementById(
+            "weakMessage"
+        ).textContent =
+            "This subject needs a little more attention. " +
+            "Use the resources below to improve your understanding.";
+
+
+        // -----------------------------------------
+        // RECOMMENDATION DATA
+        // -----------------------------------------
+
+        const recommendationData = {
+
+            "Mathematics for Intelligent System": {
+
+                videos: [
+
+                    {
+                        title:
+                            "Mathematics for Machine Learning",
+
+                        link:
+                            "https://www.youtube.com/results?search_query=mathematics+for+machine+learning"
+                    },
+
+                    {
+                        title:
+                            "Linear Algebra Basics",
+
+                        link:
+                            "https://www.youtube.com/results?search_query=linear+algebra+for+machine+learning"
+                    },
+
+                    {
+                        title:
+                            "Probability and Statistics",
+
+                        link:
+                            "https://www.youtube.com/results?search_query=probability+statistics+for+machine+learning"
+                    }
+
+                ],
+
+                notes: [
+
+                    "Matrices and Vectors",
+
+                    "Probability Formulas",
+
+                    "Statistics and Important Numericals"
+
+                ],
+
+                advice:
+                    "Practise formulas first and then solve numerical problems every day."
+            },
+
+
+            "Database Management System": {
+
+                videos: [
+
+                    {
+                        title:
+                            "DBMS Complete Basics",
+
+                        link:
+                            "https://www.youtube.com/results?search_query=DBMS+complete+course+for+beginners"
+                    },
+
+                    {
+                        title:
+                            "SQL for Beginners",
+
+                        link:
+                            "https://www.youtube.com/results?search_query=SQL+for+beginners"
+                    },
+
+                    {
+                        title:
+                            "Database Normalization",
+
+                        link:
+                            "https://www.youtube.com/results?search_query=DBMS+normalization+explained"
+                    }
+
+                ],
+
+                notes: [
+
+                    "Primary Key and Foreign Key",
+
+                    "SELECT, INSERT, UPDATE and DELETE",
+
+                    "Normalization and Database Concepts"
+
+                ],
+
+                advice:
+                    "Practise SQL queries regularly and revise database concepts with examples."
+            },
+
+
+            "Computer System Fundamentals": {
+
+                videos: [
+
+                    {
+                        title:
+                            "Computer Fundamentals",
+
+                        link:
+                            "https://www.youtube.com/results?search_query=computer+fundamentals+for+beginners"
+                    },
+
+                    {
+                        title:
+                            "Computer Organization",
+
+                        link:
+                            "https://www.youtube.com/results?search_query=computer+organization+basics"
+                    },
+
+                    {
+                        title:
+                            "Operating System Basics",
+
+                        link:
+                            "https://www.youtube.com/results?search_query=operating+system+basics+for+beginners"
+                    }
+
+                ],
+
+                notes: [
+
+                    "Computer Components",
+
+                    "Computer Organization",
+
+                    "Operating System Basics"
+
+                ],
+
+                advice:
+                    "Understand the basic concepts first and use diagrams wherever possible."
+            },
+
+
+            "Universal Human Values": {
+
+                videos: [
+
+                    {
+                        title:
+                            "Universal Human Values Basics",
+
+                        link:
+                            "https://www.youtube.com/results?search_query=Universal+Human+Values+basics"
+                    },
+
+                    {
+                        title:
+                            "Understanding Human Values",
+
+                        link:
+                            "https://www.youtube.com/results?search_query=human+values+engineering"
+                    },
+
+                    {
+                        title:
+                            "Harmony and Human Values",
+
+                        link:
+                            "https://www.youtube.com/results?search_query=harmony+universal+human+values"
+                    }
+
+                ],
+
+                notes: [
+
+                    "Intention and Competence",
+
+                    "Harmony in Human Relationships",
+
+                    "Understanding Human Values"
+
+                ],
+
+                advice:
+                    "Read the concepts carefully and connect them with simple real-life examples."
+            },
+
+
+            "Open Elective": {
+
+                videos: [
+
+                    {
+                        title:
+                            "Open Elective Learning Resources",
+
+                        link:
+                            "https://www.youtube.com/results?search_query=open+elective+study+resources"
+                    },
+
+                    {
+                        title:
+                            "Study Skills for Students",
+
+                        link:
+                            "https://www.youtube.com/results?search_query=study+skills+for+college+students"
+                    },
+
+                    {
+                        title:
+                            "Effective Revision Techniques",
+
+                        link:
+                            "https://www.youtube.com/results?search_query=effective+revision+techniques"
+                    }
+
+                ],
+
+                notes: [
+
+                    "Important Topics",
+
+                    "Quick Revision Notes",
+
+                    "Practice Questions"
+
+                ],
+
+                advice:
+                    "Revise important topics regularly and practise questions before exams."
+            }
+
+        };
+
+
+        // -----------------------------------------
+        // GET RESOURCES
+        // -----------------------------------------
+
+        const resources =
+            recommendationData[weakSubject];
+
+
+        const videoContainer =
+            document.getElementById(
+                "videoContainer"
+            );
+
+
+        const notesContainer =
+            document.getElementById(
+                "notesContainer"
+            );
+
+
+        // -----------------------------------------
+        // SHOW VIDEOS
+        // -----------------------------------------
+
+        if (resources) {
+
+            resources.videos.forEach(
+                function(video) {
+
+                    const card =
+                        document.createElement(
+                            "div"
+                        );
+
+                    card.className =
+                        "resource-card";
+
+
+                    card.innerHTML = `
+
+                        <div class="resource-icon">
+                            🎬
+                        </div>
+
+                        <h3>
+                            ${video.title}
+                        </h3>
+
+                        <a
+                            href="${video.link}"
+                            target="_blank"
+                        >
+                            Watch Video →
+                        </a>
+
+                    `;
+
+
+                    videoContainer.appendChild(card);
+
+                }
+            );
+
+
+            // -----------------------------------------
+            // SHOW NOTES
+            // -----------------------------------------
+
+            resources.notes.forEach(
+                function(note) {
+
+                    const card =
+                        document.createElement(
+                            "div"
+                        );
+
+                    card.className =
+                        "note-card";
+
+
+                    card.innerHTML = `
+
+                        <div class="note-icon">
+                            📖
+                        </div>
+
+                        <h3>
+                            ${note}
+                        </h3>
+
+                        <p>
+                            Revise this topic carefully.
+                        </p>
+
+                    `;
+
+
+                    notesContainer.appendChild(card);
+
+                }
+            );
+
+
+            // -----------------------------------------
+            // SHOW ADVICE
+            // -----------------------------------------
+
+            document.getElementById(
+                "studyAdvice"
+            ).textContent =
+                resources.advice;
+
+        }
+        else {
+
+            videoContainer.innerHTML = `
+
+                <p>
+                    🪄 No recommendation data found
+                    for this subject yet.
+                </p>
+
+            `;
+
+            notesContainer.innerHTML = `
+
+                <p>
+                    📖 Notes for this subject
+                    will be added soon.
+                </p>
+
+            `;
+
+        }
+
+
+        // -----------------------------------------
+        // OPEN STUDY SCHEDULE
+        // -----------------------------------------
+
+        function openSchedule() {
+
+            window.location.href =
+                "study-schedule.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LearnLens | Teacher Enrollment</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            font-family: Georgia, serif;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #30213f,
+                    #100d16 70%
+                );
+
+            color: #e5d49a;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+        }
+
+
+        .enrollment-card {
+
+            width: 420px;
+
+            padding: 35px;
+
+            background: #19131f;
+
+            border: 1px solid #806633;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 0 30px rgba(190, 160, 80, 0.15);
+
+        }
+
+
+        .magic-icon {
+
+            text-align: center;
+
+            font-size: 42px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        h1 {
+
+            text-align: center;
+
+            margin: 0;
+
+            font-size: 30px;
+
+            color: #e3cb7b;
+
+        }
+
+
+        .subtitle {
+
+            text-align: center;
+
+            color: #918593;
+
+            font-size: 13px;
+
+            margin-bottom: 28px;
+
+        }
+
+
+        label {
+
+            display: block;
+
+            margin-top: 16px;
+
+            margin-bottom: 7px;
+
+            color: #d8c27c;
+
+            font-size: 13px;
+
+        }
+
+
+        input {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border-radius: 7px;
+
+            border: 1px solid #51422b;
+
+            background: #241c2d;
+
+            color: white;
+
+            outline: none;
+
+        }
+
+
+        input:focus {
+
+            border-color: #b99b4d;
+
+        }
+
+
+        button {
+
+            width: 100%;
+
+            margin-top: 25px;
+
+            padding: 13px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background: #9b7d3f;
+
+            color: #17131c;
+
+            font-family: Georgia, serif;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+        }
+
+
+        button:hover {
+
+            background: #c4a85b;
+
+        }
+
+
+        .back {
+
+            display: block;
+
+            text-align: center;
+
+            margin-top: 18px;
+
+            color: #8d8190;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+        }
+
+
+        .back:hover {
+
+            color: #d9c171;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="enrollment-card">
+
+
+        <div class="magic-icon">
+            🧙‍♀️
+        </div>
+
+
+        <h1>
+            Teacher Enrollment
+        </h1>
+
+
+        <p class="subtitle">
+
+            Begin your magical teaching journey
+            with LearnLens ✨
+
+        </p>
+
+
+
+        <form
+            id="teacherForm"
+        >
+
+
+            <label for="teacherName">
+                Teacher Name
+            </label>
+
+            <input
+                type="text"
+                id="teacherName"
+                placeholder="Enter your name"
+                required
+            >
+
+
+
+            <label for="teacherEmail">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="teacherEmail"
+                placeholder="Enter your email"
+                required
+            >
+
+
+
+            <label for="teacherUsername">
+                Create Username
+            </label>
+
+            <input
+                type="text"
+                id="teacherUsername"
+                placeholder="Choose a username"
+                required
+            >
+
+
+
+            <label for="teacherPassword">
+                Create Password
+            </label>
+
+            <input
+                type="password"
+                id="teacherPassword"
+                placeholder="Create a password"
+                required
+            >
+
+
+
+            <button type="submit">
+
+                ✨ Create Teacher Account
+
+            </button>
+
+
+        </form>
+
+
+
+        <a
+            href="index.html"
+            class="back"
+        >
+
+            ← Return to LearnLens Entrance
+
+        </a>
+
+
+    </div>
+
+
+
+    <script>
+
+
+        document
+            .getElementById("teacherForm")
+            .addEventListener(
+                "submit",
+                function(event) {
+
+
+                    event.preventDefault();
+
+
+                    const teacher = {
+
+                        name:
+                            document
+                            .getElementById(
+                                "teacherName"
+                            )
+                            .value
+                            .trim(),
+
+                        email:
+                            document
+                            .getElementById(
+                                "teacherEmail"
+                            )
+                            .value
+                            .trim(),
+
+                        username:
+                            document
+                            .getElementById(
+                                "teacherUsername"
+                            )
+                            .value
+                            .trim(),
+
+                        password:
+                            document
+                            .getElementById(
+                                "teacherPassword"
+                            )
+                            .value
+
+                    };
+
+
+                    localStorage.setItem(
+                        "learnlensTeacher",
+                        JSON.stringify(teacher)
+                    );
+
+
+                    alert(
+                        "✨ Teacher account created successfully!"
+                    );
+
+
+                    // Go to login page
+
+                    window.location.href = "login.html?role=teacher";
+
+
+                }
+            );
+
+
+    </script>
+
+
+</body>
+
+</html>

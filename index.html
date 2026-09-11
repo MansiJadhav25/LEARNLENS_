@@ -6,100 +6,1018 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>LearnLens | Adaptive Learning</title>
+    <title>LearnLens - Magical Learning</title>
 
-    <!-- Our CSS file -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* =========================================
+           LEARNLENS - MAGICAL LANDING PAGE
+           ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Georgia, "Times New Roman", serif;
+            color: #f8f0ff;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(145, 92, 190, 0.25), transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(87, 48, 130, 0.3), transparent 35%),
+                linear-gradient(135deg, #10051c, #24103b, #13081f);
+
+            overflow-x: hidden;
+        }
+
+        /* =========================================
+           STARS
+           ========================================= */
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            color: #f7d978;
+            font-size: 14px;
+            animation: twinkle 2.5s infinite alternate;
+        }
+
+        .star:nth-child(1) {
+            top: 8%;
+            left: 12%;
+        }
+
+        .star:nth-child(2) {
+            top: 15%;
+            left: 75%;
+            animation-delay: 0.5s;
+        }
+
+        .star:nth-child(3) {
+            top: 28%;
+            left: 88%;
+            animation-delay: 1s;
+        }
+
+        .star:nth-child(4) {
+            top: 40%;
+            left: 8%;
+            animation-delay: 1.5s;
+        }
+
+        .star:nth-child(5) {
+            top: 55%;
+            left: 20%;
+            animation-delay: 0.8s;
+        }
+
+        .star:nth-child(6) {
+            top: 68%;
+            left: 90%;
+            animation-delay: 1.2s;
+        }
+
+        .star:nth-child(7) {
+            top: 82%;
+            left: 15%;
+            animation-delay: 0.3s;
+        }
+
+        .star:nth-child(8) {
+            top: 88%;
+            left: 72%;
+            animation-delay: 1.7s;
+        }
+
+        .star:nth-child(9) {
+            top: 32%;
+            left: 48%;
+            animation-delay: 0.9s;
+        }
+
+        .star:nth-child(10) {
+            top: 75%;
+            left: 50%;
+            animation-delay: 1.4s;
+        }
+
+        @keyframes twinkle {
+            from {
+                opacity: 0.25;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+        }
+
+        /* =========================================
+           MAIN CONTAINER
+           ========================================= */
+
+        .page {
+            min-height: 100vh;
+            position: relative;
+            z-index: 1;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* =========================================
+           NAVBAR
+           ========================================= */
+
+        nav {
+            width: 100%;
+            padding: 22px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            border-bottom: 1px solid rgba(247, 217, 120, 0.18);
+
+            background: rgba(10, 3, 18, 0.35);
+            backdrop-filter: blur(8px);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-symbol {
+            width: 46px;
+            height: 46px;
+
+            border: 2px solid #d7af52;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 24px;
+
+            box-shadow:
+                0 0 15px rgba(215, 175, 82, 0.35);
+        }
+
+        .logo-text h2 {
+            color: #f3cf69;
+            font-size: 25px;
+            letter-spacing: 1px;
+        }
+
+        .logo-text p {
+            color: #bba9ca;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+        }
+
+        .nav-tag {
+            color: #d8c6e4;
+            font-size: 14px;
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+
+        .hero {
+            flex: 1;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 70px 20px 50px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .owl {
+            font-size: 76px;
+            margin-bottom: 15px;
+
+            filter: drop-shadow(0 0 18px rgba(247, 217, 120, 0.3));
+
+            animation: floatOwl 3s ease-in-out infinite;
+        }
+
+        @keyframes floatOwl {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .welcome {
+            color: #d7af52;
+            font-size: 15px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 86px);
+
+            color: #f5d77a;
+
+            letter-spacing: 3px;
+
+            text-shadow:
+                0 0 10px rgba(245, 215, 122, 0.2),
+                0 0 30px rgba(145, 92, 190, 0.25);
+
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            font-size: clamp(18px, 3vw, 25px);
+            color: #e5d6eb;
+
+            margin-bottom: 20px;
+        }
+
+        .description {
+            max-width: 650px;
+            margin: 0 auto 35px;
+
+            color: #bbaec6;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* =========================================
+           MAGIC LINE
+           ========================================= */
+
+        .magic-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 15px;
+
+            margin: 20px auto 35px;
+            max-width: 420px;
+        }
+
+        .line {
+            height: 1px;
+            flex: 1;
+
+            background: linear-gradient(
+                to right,
+                transparent,
+                #d7af52,
+                transparent
+            );
+        }
+
+        .magic-line span {
+            color: #f3cf69;
+            font-size: 18px;
+        }
+
+        /* =========================================
+           ENTER BUTTON
+           ========================================= */
+
+        .enter-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 17px 38px;
+
+            border: 1px solid #d7af52;
+            border-radius: 40px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6f3d91,
+                    #3e1d5b
+                );
+
+            color: #fff4cf;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 17px;
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 0 18px rgba(215, 175, 82, 0.15),
+                inset 0 0 15px rgba(255, 255, 255, 0.04);
+
+            transition: 0.3s ease;
+        }
+
+        .enter-button:hover {
+            transform: translateY(-4px);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #8050a2,
+                    #512771
+                );
+
+            box-shadow:
+                0 0 30px rgba(215, 175, 82, 0.35);
+
+            color: white;
+        }
+
+        .enter-button span {
+            margin-left: 10px;
+            font-size: 20px;
+        }
+
+        /* =========================================
+           FEATURES
+           ========================================= */
+
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: 18px;
+
+            margin-top: 55px;
+        }
+
+        .feature {
+            width: 180px;
+
+            padding: 18px 15px;
+
+            border: 1px solid rgba(215, 175, 82, 0.16);
+            border-radius: 14px;
+
+            background: rgba(255, 255, 255, 0.035);
+
+            transition: 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+
+            border-color: rgba(215, 175, 82, 0.45);
+
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .feature-icon {
+            font-size: 27px;
+            margin-bottom: 8px;
+        }
+
+        .feature h3 {
+            color: #e7c86d;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .feature p {
+            color: #a99bb2;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+
+        footer {
+            text-align: center;
+
+            padding: 20px;
+
+            color: #806f8e;
+            font-size: 11px;
+
+            border-top: 1px solid rgba(247, 217, 120, 0.1);
+        }
+
+        /* =========================================
+           ROLE POPUP
+           ========================================= */
+
+        .role-overlay {
+            display: none;
+
+            position: fixed;
+            inset: 0;
+
+            background: rgba(7, 2, 13, 0.82);
+
+            backdrop-filter: blur(8px);
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
+
+            z-index: 100;
+        }
+
+        .role-overlay.show {
+            display: flex;
+        }
+
+        .role-box {
+            width: 100%;
+            max-width: 560px;
+
+            padding: 40px 30px;
+
+            border: 1px solid rgba(215, 175, 82, 0.45);
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(52, 25, 76, 0.98),
+                    rgba(20, 8, 31, 0.98)
+                );
+
+            box-shadow:
+                0 0 50px rgba(0, 0, 0, 0.55);
+
+            text-align: center;
+
+            position: relative;
+        }
+
+        .close-button {
+            position: absolute;
+
+            right: 18px;
+            top: 15px;
+
+            width: 35px;
+            height: 35px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.06);
+
+            color: #d7af52;
+
+            font-size: 20px;
+
+            cursor: pointer;
+        }
+
+        .close-button:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .role-box .wand {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .role-box h2 {
+            color: #f3cf69;
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .role-box > p {
+            color: #bcaec7;
+            margin-bottom: 28px;
+            font-size: 14px;
+        }
+
+        .role-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .role-card {
+            padding: 25px 18px;
+
+            border: 1px solid rgba(215, 175, 82, 0.2);
+            border-radius: 16px;
+
+            background: rgba(255, 255, 255, 0.035);
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+        }
+
+        .role-card:hover {
+            transform: translateY(-5px);
+
+            border-color: #d7af52;
+
+            background: rgba(111, 61, 145, 0.22);
+
+            box-shadow:
+                0 0 20px rgba(215, 175, 82, 0.12);
+        }
+
+        .role-icon {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .role-card h3 {
+            color: #f1d57b;
+            margin-bottom: 7px;
+        }
+
+        .role-card p {
+            color: #a99bb2;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 18px 5%;
+            }
+
+            .nav-tag {
+                display: none;
+            }
+
+            .hero {
+                padding: 45px 18px 35px;
+            }
+
+            .owl {
+                font-size: 60px;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .features {
+                gap: 10px;
+            }
+
+            .feature {
+                width: 145px;
+            }
+
+            .role-options {
+                grid-template-columns: 1fr;
+            }
+
+            .role-box {
+                padding: 35px 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Floating magical stars -->
-    <div class="stars"></div>
+    <!-- =========================================
+         BACKGROUND STARS
+         ========================================= -->
 
-    <!-- Main page -->
-    <main class="welcome-page">
+    <div class="stars">
 
-        <!-- Project name -->
-        <div class="brand">
+        <span class="star">✦</span>
+        <span class="star">✧</span>
+        <span class="star">✦</span>
+        <span class="star">✧</span>
+        <span class="star">✦</span>
+        <span class="star">✧</span>
+        <span class="star">✦</span>
+        <span class="star">✧</span>
+        <span class="star">✦</span>
+        <span class="star">✧</span>
 
-            <div class="magic-symbol">✦</div>
-
-            <h1>LearnLens</h1>
-
-            <p>Adaptive Learning Recommendation</p>
-
-        </div>
-
-
-        <!-- Welcome card -->
-        <section class="welcome-card">
-
-            <div class="owl">🦉</div>
-
-            <h2>Welcome, Young Scholar!</h2>
-
-            <p class="intro">
-                Every learner has their own magical learning journey.
-                Choose your path to begin.
-            </p>
+    </div>
 
 
-            <!-- Profile selection -->
-            <div class="profile-container">
+    <div class="page">
 
-                <!-- Teacher -->
-                <div class="profile-card" onclick="chooseRole('teacher')">
+        <!-- =========================================
+             NAVIGATION
+             ========================================= -->
 
-                    <div class="profile-icon">🧙‍♀️</div>
+        <nav>
 
-                    <h3>Teacher</h3>
+            <div class="logo">
 
-                    <p>
-                        Enter student marks and discover
-                        their learning performance.
-                    </p>
-
-                    <button>
-                        Enter as Teacher
-                    </button>
-
+                <div class="logo-symbol">
+                    🪄
                 </div>
 
+                <div class="logo-text">
 
-                <!-- Student -->
-                <div class="profile-card" onclick="chooseRole('student')">
+                    <h2>LearnLens</h2>
 
-                    <div class="profile-icon">🎓</div>
-
-                    <h3>Student</h3>
-
-                    <p>
-                        Discover your performance,
-                        weak areas and learning path.
-                    </p>
-
-                    <button>
-                        Enter as Student
-                    </button>
+                    <p>MAGICAL LEARNING</p>
 
                 </div>
 
             </div>
 
-        </section>
+            <div class="nav-tag">
+                ✦ Every learner has a magical path ✦
+            </div>
+
+        </nav>
 
 
-        <!-- Tagline -->
-        <p class="tagline">
-            ✨ Learn smarter • Discover your strengths • Improve your magic ✨
-        </p>
+        <!-- =========================================
+             HERO SECTION
+             ========================================= -->
 
-    </main>
+        <main class="hero">
+
+            <div class="hero-content">
+
+                <div class="owl">
+                    🦉
+                </div>
+
+                <div class="welcome">
+                    Welcome, Young Scholar
+                </div>
+
+                <h1>
+                    LearnLens
+                </h1>
+
+                <div class="subtitle">
+                    Adaptive Learning Recommendation System
+                </div>
+
+                <p class="description">
+
+                    Discover your unique learning path through the
+                    magic of personalized education. LearnLens studies
+                    your performance and guides you toward the areas
+                    where you can grow stronger.
+
+                </p>
 
 
-    <!-- Our JavaScript file -->
-    <script src="script.js"></script>
+                <!-- MAGIC DIVIDER -->
+
+                <div class="magic-line">
+
+                    <div class="line"></div>
+
+                    <span>✦</span>
+
+                    <div class="line"></div>
+
+                </div>
+
+
+                <!-- ENTER BUTTON -->
+
+                <button
+                    class="enter-button"
+                    onclick="openRoleSelection()">
+
+                    🏰 Enter the Hall
+
+                    <span>→</span>
+
+                </button>
+
+
+                <!-- =========================================
+                     FEATURES
+                     ========================================= -->
+
+                <div class="features">
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            📊
+                        </div>
+
+                        <h3>
+                            Performance
+                        </h3>
+
+                        <p>
+                            Understand your academic progress.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ⚡
+                        </div>
+
+                        <h3>
+                            Weak Areas
+                        </h3>
+
+                        <p>
+                            Discover where you need more practice.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            📚
+                        </div>
+
+                        <h3>
+                            Resources
+                        </h3>
+
+                        <p>
+                            Get learning resources for your needs.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            📅
+                        </div>
+
+                        <h3>
+                            Study Plan
+                        </h3>
+
+                        <p>
+                            Follow a simple personalized schedule.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <!-- =========================================
+             FOOTER
+             ========================================= -->
+
+        <footer>
+
+            ✦ LearnLens — Where every learner discovers their path ✦
+
+        </footer>
+
+    </div>
+
+
+    <!-- =========================================
+         ROLE SELECTION POPUP
+         ========================================= -->
+
+    <div
+        class="role-overlay"
+        id="roleOverlay">
+
+        <div class="role-box">
+
+            <button
+                class="close-button"
+                onclick="closeRoleSelection()">
+
+                ×
+
+            </button>
+
+
+            <div class="wand">
+                🪄
+            </div>
+
+            <h2>
+                Choose Your Path
+            </h2>
+
+            <p>
+                Tell us who you are before entering the magical hall.
+            </p>
+
+
+            <div class="role-options">
+
+
+                <!-- TEACHER -->
+
+                <div
+                    class="role-card"
+                    onclick="goToTeacher()">
+
+                    <div class="role-icon">
+                        👨‍🏫
+                    </div>
+
+                    <h3>
+                        Professor
+                    </h3>
+
+                    <p>
+                        Manage students, enter marks and monitor
+                        their academic performance.
+                    </p>
+
+                </div>
+
+
+                <!-- STUDENT -->
+
+                <div
+                    class="role-card"
+                    onclick="goToStudent()">
+
+                    <div class="role-icon">
+                        🧑‍🎓
+                    </div>
+
+                    <h3>
+                        Young Scholar
+                    </h3>
+
+                    <p>
+                        View your performance, discover weak areas
+                        and explore your learning resources.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+         ========================================= -->
+
+    <script>
+
+        /*
+         * Open the role selection popup
+         */
+
+        function openRoleSelection() {
+
+            document
+                .getElementById("roleOverlay")
+                .classList
+                .add("show");
+
+        }
+
+
+        /*
+         * Close the role selection popup
+         */
+
+        function closeRoleSelection() {
+
+            document
+                .getElementById("roleOverlay")
+                .classList
+                .remove("show");
+
+        }
+
+
+        /*
+         * Teacher path
+         *
+         * Teacher first goes to the
+         * teacher enrollment page.
+         */
+
+        function goToTeacher() {
+
+            localStorage.setItem(
+                "learnlensSelectedRole",
+                "teacher"
+            );
+
+            window.location.href =
+                "teacher-enrollment.html";
+
+        }
+
+
+        /*
+         * Student path
+         *
+         * Student first goes to the
+         * student enrollment page.
+         */
+
+        function goToStudent() {
+
+            localStorage.setItem(
+                "learnlensSelectedRole",
+                "student"
+            );
+
+            window.location.href =
+                "student-enrollment.html";
+
+        }
+
+
+        /*
+         * Close popup when user clicks
+         * outside the role box.
+         */
+
+        document
+            .getElementById("roleOverlay")
+            .addEventListener("click", function(event) {
+
+                if (event.target === this) {
+
+                    closeRoleSelection();
+
+                }
+
+            });
+
+
+        /*
+         * Close popup with Escape key.
+         */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+
+                    closeRoleSelection();
+
+                }
+
+            }
+        );
+
+    </script>
 
 </body>
 

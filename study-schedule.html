@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Study Schedule | LearnLens</title>
+
+    <link rel="stylesheet" href="study-schedule.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo-area">
+            <h1>🪄 LearnLens</h1>
+            <p>Magical Learning</p>
+        </div>
+
+        <div class="profile">
+
+            <div class="profile-icon">
+                👨‍🎓
+            </div>
+
+            <h3 id="studentName">
+                Student
+            </h3>
+
+            <p>
+                Young Scholar
+            </p>
+
+        </div>
+
+        <nav>
+
+            <a href="student-profile.html">
+                🏰 Profile
+            </a>
+
+            <a href="student-performance.html">
+                📊 Performance
+            </a>
+
+            <a href="weak-areas.html">
+                🔮 Weak Areas
+            </a>
+
+            <a href="recommendations.html">
+                📚 Recommendations
+            </a>
+
+            <a href="study-schedule.html" class="active">
+                📅 Study Schedule
+            </a>
+
+            <a href="student-reports.html">
+                📜 Reports
+            </a>
+
+            <a href="student-notifications.html">
+                🔔 Notifications
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <header class="page-header">
+
+            <h1>📅 Your Magical Study Schedule</h1>
+
+            <p>
+                A simple 7-day plan created according to your learning needs.
+            </p>
+
+        </header>
+
+
+        <!-- ================= STUDENT INFO ================= -->
+
+        <section class="student-card">
+
+            <div class="student-icon">
+                👨‍🎓
+            </div>
+
+            <div>
+
+                <h2 id="displayName">
+                    Student
+                </h2>
+
+                <p>
+                    Your focus subject:
+                    <strong id="weakSubject">
+                        -
+                    </strong>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SCHEDULE ================= -->
+
+        <section class="schedule-section">
+
+            <h2>🪄 7-Day Study Plan</h2>
+
+            <p class="section-description">
+                Follow one small task each day and improve step by step.
+            </p>
+
+
+            <div id="scheduleContainer">
+
+                <!-- Schedule will appear here -->
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MOTIVATION ================= -->
+
+        <section class="motivation-card">
+
+            <div class="wand">
+                🪄
+            </div>
+
+            <h2>
+                Remember, Young Scholar!
+            </h2>
+
+            <p>
+                You don't have to learn everything in one day.
+                Small progress every day creates great results.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        // -----------------------------------------
+        // GET CURRENT STUDENT
+        // -----------------------------------------
+
+        const currentStudent =
+            JSON.parse(
+                localStorage.getItem(
+                    "learnlensCurrentStudent"
+                )
+            );
+
+
+        // -----------------------------------------
+        // CHECK STUDENT
+        // -----------------------------------------
+
+        if (!currentStudent) {
+
+            alert(
+                "⚠️ Student information not found."
+            );
+
+            window.location.href =
+                "login.html";
+        }
+
+
+        // -----------------------------------------
+        // DISPLAY STUDENT
+        // -----------------------------------------
+
+        document.getElementById(
+            "studentName"
+        ).textContent =
+            currentStudent.name;
+
+
+        document.getElementById(
+            "displayName"
+        ).textContent =
+            currentStudent.name;
+
+
+        document.getElementById(
+            "weakSubject"
+        ).textContent =
+            currentStudent.weakestSubject;
+
+
+        // -----------------------------------------
+        // GET WEAK SUBJECT
+        // -----------------------------------------
+
+        const weakSubject =
+            currentStudent.weakestSubject;
+
+
+        // -----------------------------------------
+        // CREATE 7-DAY SCHEDULE
+        // -----------------------------------------
+
+        const schedule = [
+
+            {
+                day: "Day 1",
+                title: "Understand the Basics",
+                task:
+                    "Read the basic concepts of " +
+                    weakSubject +
+                    " for 30 minutes.",
+                time: "30 minutes"
+            },
+
+            {
+                day: "Day 2",
+                title: "Watch & Learn",
+                task:
+                    "Watch one recommended learning video about " +
+                    weakSubject +
+                    " and write down important points.",
+                time: "40 minutes"
+            },
+
+            {
+                day: "Day 3",
+                title: "Make Your Notes",
+                task:
+                    "Create short notes for the important topics of " +
+                    weakSubject +
+                    ".",
+                time: "30 minutes"
+            },
+
+            {
+                day: "Day 4",
+                title: "Practice",
+                task:
+                    "Solve practice questions related to " +
+                    weakSubject +
+                    ".",
+                time: "45 minutes"
+            },
+
+            {
+                day: "Day 5",
+                title: "Revise",
+                task:
+                    "Revise the topics studied during the first four days.",
+                time: "30 minutes"
+            },
+
+            {
+                day: "Day 6",
+                title: "Test Yourself",
+                task:
+                    "Try solving questions without looking at your notes.",
+                time: "45 minutes"
+            },
+
+            {
+                day: "Day 7",
+                title: "Final Review",
+                task:
+                    "Review your mistakes and revise the topics that still feel difficult.",
+                time: "40 minutes"
+            }
+
+        ];
+
+
+        // -----------------------------------------
+        // DISPLAY SCHEDULE
+        // -----------------------------------------
+
+        const scheduleContainer =
+            document.getElementById(
+                "scheduleContainer"
+            );
+
+
+        schedule.forEach(
+            function(item, index) {
+
+                const card =
+                    document.createElement(
+                        "div"
+                    );
+
+                card.className =
+                    "schedule-card";
+
+
+                card.innerHTML = `
+
+                    <div class="day-number">
+                        ${index + 1}
+                    </div>
+
+                    <div class="schedule-content">
+
+                        <span class="day">
+                            ${item.day}
+                        </span>
+
+                        <h3>
+                            ${item.title}
+                        </h3>
+
+                        <p>
+                            ${item.task}
+                        </p>
+
+                        <div class="time">
+                            ⏰ ${item.time}
+                        </div>
+
+                    </div>
+
+                `;
+
+
+                scheduleContainer.appendChild(
+                    card
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

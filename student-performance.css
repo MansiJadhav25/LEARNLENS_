@@ -1,0 +1,395 @@
+/* =========================================
+   LEARNLENS - STUDENT PERFORMANCE
+   Magical Harry Potter Theme
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(circle at top, rgba(111, 78, 170, 0.25), transparent 35%),
+        linear-gradient(135deg, #120d24, #241344, #100b20);
+    color: #f7f0ff;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+
+    background: linear-gradient(
+        180deg,
+        #180d30,
+        #241346,
+        #12091f
+    );
+
+    border-right: 2px solid #d6a84f;
+    padding: 28px 18px;
+
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 8px;
+    color: #f4cf70;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.subtitle {
+    text-align: center;
+    color: #cbb9e8;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+
+    text-decoration: none;
+    color: #eee4ff;
+
+    padding: 13px 15px;
+    margin: 8px 0;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.sidebar a:hover {
+    background: rgba(214, 168, 79, 0.18);
+    color: #f4cf70;
+    transform: translateX(4px);
+}
+
+.sidebar a.active {
+    background: linear-gradient(
+        90deg,
+        rgba(214, 168, 79, 0.3),
+        rgba(126, 87, 170, 0.25)
+    );
+
+    border-left: 4px solid #f4cf70;
+    color: #f4cf70;
+}
+
+
+/* =========================================
+   PROFILE AREA IN SIDEBAR
+========================================= */
+
+.profile-box {
+    position: absolute;
+    bottom: 25px;
+    left: 18px;
+    right: 18px;
+
+    text-align: center;
+
+    padding: 15px;
+
+    border: 1px solid rgba(214, 168, 79, 0.5);
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.profile-icon {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.profile-name {
+    color: #f4cf70;
+    font-weight: bold;
+}
+
+.profile-role {
+    color: #bcaed2;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+    margin-left: 250px;
+    padding: 40px;
+
+    min-height: 100vh;
+}
+
+.welcome {
+    color: #d8c7ef;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.page-title {
+    color: #f4cf70;
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+
+.page-subtitle {
+    color: #c6b8d8;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   STUDENT HEADER
+========================================= */
+
+.student-header {
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(214, 168, 79, 0.35);
+    border-radius: 18px;
+
+    padding: 25px;
+    margin-bottom: 25px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.student-header h2 {
+    color: #f4cf70;
+    margin-bottom: 10px;
+}
+
+.student-header p {
+    color: #d3c5e3;
+    margin: 6px 0;
+}
+
+
+/* =========================================
+   STAT CARDS
+========================================= */
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: linear-gradient(
+        145deg,
+        rgba(92, 54, 133, 0.55),
+        rgba(36, 19, 68, 0.8)
+    );
+
+    border: 1px solid rgba(214, 168, 79, 0.35);
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    min-height: 135px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: #d6a84f;
+}
+
+.stat-icon {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.stat-title {
+    color: #c5b6d9;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    color: #f4cf70;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.category-box {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border-radius: 20px;
+
+    background: rgba(54, 180, 106, 0.15);
+
+    border: 1px solid rgba(54, 180, 106, 0.5);
+
+    color: #70e39a;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   CHART SECTION
+========================================= */
+
+.chart-card {
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(214, 168, 79, 0.35);
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    margin-bottom: 30px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.chart-card h2 {
+    color: #f4cf70;
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    position: relative;
+    height: 380px;
+}
+
+
+/* =========================================
+   FOCUS AREA
+========================================= */
+
+.focus-card {
+    background: linear-gradient(
+        135deg,
+        rgba(126, 87, 170, 0.25),
+        rgba(214, 168, 79, 0.1)
+    );
+
+    border: 1px solid rgba(214, 168, 79, 0.4);
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+}
+
+.focus-card h2 {
+    color: #f4cf70;
+    margin-bottom: 10px;
+}
+
+.focus-card p {
+    color: #d8cbe6;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.magic-button {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #d6a84f,
+        #a97924
+    );
+
+    color: #1a0e2b;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    margin-top: 15px;
+}
+
+.magic-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 18px rgba(214, 168, 79, 0.35);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .profile-box {
+        position: static;
+        margin-top: 20px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 25px;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+}

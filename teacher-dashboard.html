@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,12 +5,13 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>LearnLens | Teacher Dashboard</title>
 
-    <!-- Teacher dashboard styling -->
-    <link rel="stylesheet" href="teacher-dashboard.css">
+    <link rel="stylesheet"
+          href="teacher-dashboard.css">
 
 </head>
 
@@ -19,28 +19,36 @@
 <body>
 
 
-    <!-- =================================
-         LEFT SIDEBAR
-    ================================== -->
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
 
     <aside class="sidebar">
 
 
-        <!-- LearnLens logo -->
+        <!-- LOGO -->
 
         <div class="logo">
 
-            <div class="logo-symbol">✦</div>
+            <div class="logo-symbol">
+                ✦
+            </div>
 
-            <h1>LearnLens</h1>
+            <h1>
+                LearnLens
+            </h1>
 
-            <p>Magical Learning</p>
+            <p>
+                Magical Learning
+            </p>
 
         </div>
 
 
 
-        <!-- Teacher profile -->
+        <!-- =========================================
+             TEACHER PROFILE
+        ========================================== -->
 
         <div class="teacher-profile">
 
@@ -50,9 +58,13 @@
 
             <div>
 
-                <h3>Professor</h3>
+                <h3>
+                    Professor
+                </h3>
 
-                <p>Teacher</p>
+                <p>
+                    Teacher
+                </p>
 
             </div>
 
@@ -60,57 +72,80 @@
 
 
 
-        <!-- Navigation menu -->
+        <!-- =========================================
+             TEACHER NAVIGATION
+        ========================================== -->
 
         <nav class="menu">
 
 
-            <!-- Dashboard -->
+            <!-- DASHBOARD -->
 
-            <a href="teacher-dashboard.html" class="active">
+            <a href="teacher-dashboard.html"
+               class="active">
+
                 🏰 Dashboard
+
             </a>
 
 
-            <!-- My Students -->
+
+            <!-- MY STUDENTS -->
 
             <a href="my-student.html">
+
                 👨‍🎓 My Students
+
             </a>
 
 
-            <!-- Enter Marks -->
+
+            <!-- ENTER MARKS -->
 
             <a href="enter-marks.html">
+
                 📝 Enter Marks
+
             </a>
 
 
-            <!-- Performance -->
 
-            <a href="#">
+            <!-- PERFORMANCE -->
+
+            <a href="performance.html">
+
                 📊 Performance
+
             </a>
 
 
-            <!-- Weak Areas -->
 
-            <a href="#">
-                📚 Weak Areas
+            <!-- WEAK AREAS -->
+
+            <a href="weak-areas.html">
+
+                ⚠️ Weak Areas
+
             </a>
 
 
-            <!-- Reports -->
 
-            <a href="#">
+            <!-- REPORTS -->
+
+            <a href="reports.html">
+
                 📋 Reports
+
             </a>
 
 
-            <!-- Notifications -->
 
-            <a href="#">
+            <!-- NOTIFICATIONS -->
+
+            <a href="notifications.html">
+
                 🔔 Notifications
+
             </a>
 
 
@@ -118,12 +153,16 @@
 
 
 
-        <!-- Return to welcome page -->
+        <!-- =========================================
+             RETURN TO ENTRANCE
+        ========================================== -->
 
         <div class="logout">
 
             <a href="index.html">
+
                 🚪 Return to Entrance
+
             </a>
 
         </div>
@@ -133,43 +172,61 @@
 
 
 
-    <!-- =================================
+    <!-- =========================================
          MAIN CONTENT
-    ================================== -->
+    ========================================== -->
 
     <main class="main-content">
 
 
-        <!-- =================================
-             TOP HEADER
-        ================================== -->
 
-        <header class="top-bar">
+        <!-- =========================================
+             HEADER
+        ========================================== -->
+
+        <header class="top-heading">
 
 
             <div>
 
-                <p class="small-heading">
+                <p class="welcome">
+
                     Welcome back, Professor ✨
+
                 </p>
 
+
                 <h2>
+
                     Teacher Dashboard
+
                 </h2>
+
+
+                <p class="description">
+
+                    Monitor your students and analyse
+                    their learning performance.
+
+                </p>
 
             </div>
 
 
 
-            <!-- Magical study hall box -->
+            <div class="study-hall">
 
-            <div class="date-box">
+                <span>
+                    📜
+                </span>
 
-                <span>📜</span>
 
                 <div>
 
-                    <small>Today's Study Hall</small>
+                    <small>
+                        Today's Study Hall
+                    </small>
+
 
                     <strong>
                         LearnLens Academy
@@ -184,26 +241,33 @@
 
 
 
-        <!-- =================================
+        <!-- =========================================
              SUMMARY CARDS
-        ================================== -->
+        ========================================== -->
 
         <section class="summary-cards">
 
 
-            <!-- Total students -->
+            <!-- TOTAL STUDENTS -->
 
             <div class="summary-card">
 
-                <div class="card-icon">
-                    👨‍🎓
+                <div class="summary-icon">
+                    🧑‍🎓
                 </div>
+
 
                 <div>
 
-                    <p>Total Students</p>
+                    <p>
+                        Total Students
+                    </p>
 
-                    <h3>30</h3>
+
+                    <h3 id="totalStudents">
+                        0
+                    </h3>
+
 
                     <span>
                         Students in your class
@@ -215,22 +279,29 @@
 
 
 
-            <!-- Marks entered -->
+            <!-- MARKS ENTERED -->
 
             <div class="summary-card">
 
-                <div class="card-icon">
+                <div class="summary-icon">
                     📝
                 </div>
 
+
                 <div>
 
-                    <p>Marks Entered</p>
+                    <p>
+                        Marks Entered
+                    </p>
 
-                    <h3>24</h3>
 
-                    <span>
-                        6 students remaining
+                    <h3 id="marksEntered">
+                        0
+                    </h3>
+
+
+                    <span id="marksMessage">
+                        No students added yet
                     </span>
 
                 </div>
@@ -239,19 +310,26 @@
 
 
 
-            <!-- Class average -->
+            <!-- CLASS AVERAGE -->
 
             <div class="summary-card">
 
-                <div class="card-icon">
+                <div class="summary-icon">
                     📊
                 </div>
 
+
                 <div>
 
-                    <p>Class Average</p>
+                    <p>
+                        Class Average
+                    </p>
 
-                    <h3>68%</h3>
+
+                    <h3 id="classAverage">
+                        0%
+                    </h3>
+
 
                     <span>
                         Overall performance
@@ -263,22 +341,29 @@
 
 
 
-            <!-- Weak areas -->
+            <!-- WEAK AREAS -->
 
             <div class="summary-card">
 
-                <div class="card-icon">
+                <div class="summary-icon">
                     ⚠️
                 </div>
 
+
                 <div>
 
-                    <p>Weak Areas</p>
+                    <p>
+                        Weak Areas
+                    </p>
 
-                    <h3>8</h3>
+
+                    <h3 id="weakAreas">
+                        0
+                    </h3>
+
 
                     <span>
-                        Areas need attention
+                        Subjects needing attention
                     </span>
 
                 </div>
@@ -290,115 +375,202 @@
 
 
 
-        <!-- =================================
+        <!-- =========================================
              QUICK ACTIONS
-        ================================== -->
+        ========================================== -->
 
-        <section class="section">
+        <section class="quick-section">
 
 
-            <div class="section-heading">
+            <p class="gold-text">
 
-                <div>
+                Magical Tools
 
-                    <p class="gold-text">
-                        Magical Tools
-                    </p>
+            </p>
 
-                    <h2>
-                        Quick Actions
-                    </h2>
 
-                </div>
+            <h2>
 
-            </div>
+                Quick Actions
+
+            </h2>
 
 
 
             <div class="quick-actions">
 
 
-                <!-- =================================
-                     ENTER MARKS
+                <!-- ENTER MARKS -->
 
-                     THIS IS THE IMPORTANT CHANGE
-                     It now opens enter-marks.html
-                ================================== -->
+                <a href="enter-marks.html"
+                   class="quick-card">
 
-                <button
-                    class="action-card"
-                    onclick="window.location.href='enter-marks.html'"
-                >
 
-                    <span>📝</span>
+                    <div class="quick-icon">
+                        📝
+                    </div>
+
 
                     <div>
 
-                        <strong>
+                        <h3>
                             Enter Marks
-                        </strong>
+                        </h3>
 
-                        <small>
-                            Add student marks
-                        </small>
+
+                        <p>
+                            Add or update student marks
+                        </p>
 
                     </div>
 
-                </button>
+
+                </a>
 
 
 
-                <!-- =================================
-                     VIEW PERFORMANCE
-                ================================== -->
+                <!-- MY STUDENTS -->
 
-                <button
-                    class="action-card"
-                    onclick="showComingSoon('Performance Analysis')"
-                >
+                <a href="my-student.html"
+                   class="quick-card">
 
-                    <span>📊</span>
+
+                    <div class="quick-icon">
+                        👨‍🎓
+                    </div>
+
 
                     <div>
 
-                        <strong>
+                        <h3>
+                            My Students
+                        </h3>
+
+
+                        <p>
+                            View all student records
+                        </p>
+
+                    </div>
+
+
+                </a>
+
+
+
+                <!-- PERFORMANCE -->
+
+                <a href="performance.html"
+                   class="quick-card">
+
+
+                    <div class="quick-icon">
+                        📊
+                    </div>
+
+
+                    <div>
+
+                        <h3>
                             View Performance
-                        </strong>
+                        </h3>
 
-                        <small>
-                            Analyse student progress
-                        </small>
+
+                        <p>
+                            Analyse student performance
+                        </p>
 
                     </div>
 
-                </button>
+
+                </a>
 
 
 
-                <!-- =================================
-                     WEAK AREAS
-                ================================== -->
+                <!-- WEAK AREAS -->
 
-                <button
-                    class="action-card"
-                    onclick="showComingSoon('Weak Areas')"
-                >
+                <a href="weak-areas.html"
+                   class="quick-card">
 
-                    <span>📚</span>
+
+                    <div class="quick-icon">
+                        ⚠️
+                    </div>
+
 
                     <div>
 
-                        <strong>
+                        <h3>
                             Weak Areas
-                        </strong>
+                        </h3>
 
-                        <small>
-                            Find topics needing attention
-                        </small>
+
+                        <p>
+                            Find subjects needing attention
+                        </p>
 
                     </div>
 
-                </button>
+
+                </a>
+
+
+
+                <!-- REPORTS -->
+
+                <a href="reports.html"
+                   class="quick-card">
+
+
+                    <div class="quick-icon">
+                        📋
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Reports
+                        </h3>
+
+
+                        <p>
+                            View student reports
+                        </p>
+
+                    </div>
+
+
+                </a>
+
+
+
+                <!-- NOTIFICATIONS -->
+
+                <a href="notifications.html"
+                   class="quick-card">
+
+
+                    <div class="quick-icon">
+                        🔔
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Notifications
+                        </h3>
+
+
+                        <p>
+                            View important updates
+                        </p>
+
+                    </div>
+
+
+                </a>
 
 
             </div>
@@ -408,11 +580,11 @@
 
 
 
-        <!-- =================================
+        <!-- =========================================
              RECENT PERFORMANCE
-        ================================== -->
+        ========================================== -->
 
-        <section class="section">
+        <section class="recent-section">
 
 
             <div class="section-heading">
@@ -421,34 +593,38 @@
                 <div>
 
                     <p class="gold-text">
+
                         Student Records
+
                     </p>
 
+
                     <h2>
+
                         Recent Performance
+
                     </h2>
 
                 </div>
 
 
 
-                <button
-                    class="view-button"
-                    onclick="showComingSoon('All Students')"
-                >
+                <a href="my-student.html">
 
                     View All Students →
 
-                </button>
+                </a>
 
 
             </div>
 
 
 
-            <!-- Student performance table -->
+            <!-- =====================================
+                 STUDENT TABLE
+            ====================================== -->
 
-            <div class="table-container">
+            <div class="table-card">
 
 
                 <table>
@@ -484,148 +660,45 @@
 
 
 
-                    <tbody>
-
-
-                        <!-- Student 1 -->
-
-                        <tr>
-
-                            <td>
-                                <strong>
-                                    Student One
-                                </strong>
-                            </td>
-
-                            <td>
-                                01
-                            </td>
-
-                            <td>
-                                82%
-                            </td>
-
-                            <td>
-
-                                <span class="badge advanced">
-                                    Advanced
-                                </span>
-
-                            </td>
-
-                            <td>
-                                DBMS
-                            </td>
-
-                        </tr>
-
-
-
-                        <!-- Student 2 -->
-
-                        <tr>
-
-                            <td>
-                                <strong>
-                                    Student Two
-                                </strong>
-                            </td>
-
-                            <td>
-                                02
-                            </td>
-
-                            <td>
-                                68%
-                            </td>
-
-                            <td>
-
-                                <span class="badge moderate">
-                                    Moderate
-                                </span>
-
-                            </td>
-
-                            <td>
-                                Open Elective
-                            </td>
-
-                        </tr>
-
-
-
-                        <!-- Student 3 -->
-
-                        <tr>
-
-                            <td>
-                                <strong>
-                                    Student Three
-                                </strong>
-                            </td>
-
-                            <td>
-                                03
-                            </td>
-
-                            <td>
-                                45%
-                            </td>
-
-                            <td>
-
-                                <span class="badge slow">
-                                    Slow Learner
-                                </span>
-
-                            </td>
-
-                            <td>
-                                MIS
-                            </td>
-
-                        </tr>
-
-
-
-                        <!-- Student 4 -->
-
-                        <tr>
-
-                            <td>
-                                <strong>
-                                    Student Four
-                                </strong>
-                            </td>
-
-                            <td>
-                                04
-                            </td>
-
-                            <td>
-                                76%
-                            </td>
-
-                            <td>
-
-                                <span class="badge advanced">
-                                    Advanced
-                                </span>
-
-                            </td>
-
-                            <td>
-                                CSF
-                            </td>
-
-                        </tr>
-
+                    <tbody id="recentStudents">
 
                     </tbody>
 
 
                 </table>
+
+
+
+                <!-- EMPTY MESSAGE -->
+
+                <div id="emptyMessage"
+                     class="empty-message">
+
+
+                    <div>
+                        🪄
+                    </div>
+
+
+                    <h3>
+                        No Student Records Yet
+                    </h3>
+
+
+                    <p>
+                        Enter your first student's marks
+                        to begin the magical analysis.
+                    </p>
+
+
+                    <a href="enter-marks.html">
+
+                        ✨ Enter Marks
+
+                    </a>
+
+
+                </div>
 
 
             </div>
@@ -635,18 +708,14 @@
 
 
 
-        <!-- =================================
+        <!-- =========================================
              FOOTER
-        ================================== -->
+        ========================================== -->
 
         <footer>
 
-            <p>
-
-                ✨ Every student has their own learning magic.
-                LearnLens helps you discover it.
-
-            </p>
+            ✨ LearnLens — Every student has
+            a unique learning journey.
 
         </footer>
 
@@ -655,30 +724,509 @@
 
 
 
-    <!-- =================================
-         SMALL JAVASCRIPT
-    ================================== -->
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
     <script>
 
 
-        /*
-         * This function is only temporary.
-         *
-         * Later, these buttons will open
-         * actual performance and weak-area pages.
-         */
+        // =========================================
+        // CHECK TEACHER LOGIN
+        // =========================================
 
-        function showComingSoon(featureName) {
+        const loggedInRole =
+            localStorage.getItem(
+                "learnlensLoggedInRole"
+            );
+
+
+        if (loggedInRole !== "teacher") {
 
             alert(
+                "🔐 Please login as a teacher first."
+            );
 
-                featureName +
-                " page is coming in the next baby step! 🪄"
 
+            window.location.href =
+                "login.html";
+
+        }
+
+
+
+        // =========================================
+        // GET STUDENTS
+        // =========================================
+
+        function getStudents() {
+
+
+            const savedData =
+                localStorage.getItem(
+                    "learnlensStudents"
+                );
+
+
+            if (!savedData) {
+
+                return [];
+
+            }
+
+
+            try {
+
+                return JSON.parse(
+                    savedData
+                );
+
+            }
+
+            catch (error) {
+
+                console.log(
+                    "Student data could not be loaded."
+                );
+
+                return [];
+
+            }
+
+        }
+
+
+
+        // =========================================
+        // UPDATE DASHBOARD
+        // =========================================
+
+        function updateDashboard() {
+
+
+            const students =
+                getStudents();
+
+
+
+            // =====================================
+            // TOTAL STUDENTS
+            // =====================================
+
+            document.getElementById(
+                "totalStudents"
+            ).textContent =
+                students.length;
+
+
+
+            // =====================================
+            // MARKS ENTERED
+            // =====================================
+
+            let studentsWithMarks = 0;
+
+
+            students.forEach(
+                function(student) {
+
+
+                    if (
+                        student.marks &&
+                        Object.keys(
+                            student.marks
+                        ).length > 0
+                    ) {
+
+                        studentsWithMarks++;
+
+                    }
+
+                }
+            );
+
+
+            document.getElementById(
+                "marksEntered"
+            ).textContent =
+                studentsWithMarks;
+
+
+
+            // =====================================
+            // MARKS MESSAGE
+            // =====================================
+
+            const marksMessage =
+                document.getElementById(
+                    "marksMessage"
+                );
+
+
+            if (students.length === 0) {
+
+                marksMessage.textContent =
+                    "No students added yet";
+
+            }
+
+            else if (
+                studentsWithMarks ===
+                students.length
+            ) {
+
+                marksMessage.textContent =
+                    "All student marks entered";
+
+            }
+
+            else {
+
+                const remaining =
+                    students.length -
+                    studentsWithMarks;
+
+
+                marksMessage.textContent =
+                    remaining +
+                    " student(s) remaining";
+
+            }
+
+
+
+            // =====================================
+            // CLASS AVERAGE
+            // =====================================
+
+            let totalPercentage = 0;
+
+
+            students.forEach(
+                function(student) {
+
+                    totalPercentage +=
+                        Number(
+                            student.percentage || 0
+                        );
+
+                }
+            );
+
+
+            let classAverage = 0;
+
+
+            if (students.length > 0) {
+
+                classAverage =
+                    totalPercentage /
+                    students.length;
+
+            }
+
+
+            document.getElementById(
+                "classAverage"
+            ).textContent =
+                classAverage.toFixed(1) +
+                "%";
+
+
+
+            // =====================================
+            // WEAK AREAS
+            // =====================================
+
+            const weakSubjects =
+                new Set();
+
+
+            students.forEach(
+                function(student) {
+
+
+                    if (
+                        student.weakestSubject
+                    ) {
+
+                        weakSubjects.add(
+                            student.weakestSubject
+                        );
+
+                    }
+
+                }
+            );
+
+
+            document.getElementById(
+                "weakAreas"
+            ).textContent =
+                weakSubjects.size;
+
+
+
+            // =====================================
+            // RECENT STUDENTS
+            // =====================================
+
+            displayRecentStudents(
+                students
             );
 
         }
+
+
+
+        // =========================================
+        // DISPLAY RECENT STUDENTS
+        // =========================================
+
+        function displayRecentStudents(
+            students
+        ) {
+
+
+            const table =
+                document.getElementById(
+                    "recentStudents"
+                );
+
+
+            const emptyMessage =
+                document.getElementById(
+                    "emptyMessage"
+                );
+
+
+            table.innerHTML = "";
+
+
+
+            // =====================================
+            // NO STUDENTS
+            // =====================================
+
+            if (students.length === 0) {
+
+                emptyMessage.style.display =
+                    "block";
+
+                return;
+
+            }
+
+
+            emptyMessage.style.display =
+                "none";
+
+
+
+            // =====================================
+            // SHOW LATEST 5 STUDENTS
+            // =====================================
+
+            const recentStudents =
+                students
+                .slice(-5)
+                .reverse();
+
+
+
+            recentStudents.forEach(
+                function(student)
+                {
+
+
+                    const row =
+                        document.createElement(
+                            "tr"
+                        );
+
+
+
+                    // =================================
+                    // CATEGORY
+                    // =================================
+
+                    let categoryClass =
+                        "moderate";
+
+
+                    let categoryIcon =
+                        "🟡";
+
+
+                    if (
+                        student.category ===
+                        "Advanced Learner"
+                    ) {
+
+                        categoryClass =
+                            "advanced";
+
+                        categoryIcon =
+                            "🟢";
+
+                    }
+
+
+                    else if (
+                        student.category ===
+                        "Slow Learner"
+                    ) {
+
+                        categoryClass =
+                            "slow";
+
+                        categoryIcon =
+                            "🔴";
+
+                    }
+
+
+
+                    // =================================
+                    // TABLE ROW
+                    // =================================
+
+                    row.innerHTML = `
+
+                        <td>
+
+                            <strong>
+                                ${student.name || "Student"}
+                            </strong>
+
+                        </td>
+
+
+                        <td>
+                            ${student.rollNumber || "--"}
+                        </td>
+
+
+                        <td>
+                            ${student.percentage || 0}%
+                        </td>
+
+
+                        <td>
+
+                            <span class="category-badge ${categoryClass}">
+
+                                ${categoryIcon}
+
+                                ${student.category || "Moderate Learner"}
+
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            ${shortSubjectName(
+                                student.weakestSubject
+                            )}
+
+                        </td>
+
+                    `;
+
+
+                    table.appendChild(
+                        row
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        // =========================================
+        // SHORT SUBJECT NAMES
+        // =========================================
+
+        function shortSubjectName(subject) {
+
+
+            if (!subject) {
+
+                return "--";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Mathematics"
+                )
+            ) {
+
+                return "MIS";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Database"
+                )
+            ) {
+
+                return "DBMS";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Computer System"
+                )
+            ) {
+
+                return "CSF";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Universal"
+                )
+            ) {
+
+                return "UHV";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Open Elective"
+                )
+            ) {
+
+                return "Open Elective";
+
+            }
+
+
+            return subject;
+
+        }
+
+
+
+        // =========================================
+        // LOAD DASHBOARD
+        // =========================================
+
+        updateDashboard();
 
 
     </script>
@@ -687,4 +1235,3 @@
 </body>
 
 </html>
-```

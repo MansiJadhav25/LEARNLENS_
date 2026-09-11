@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Profile | LearnLens</title>
+
+    <link rel="stylesheet" href="student-profile.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo-area">
+            <h1>🪄 LearnLens</h1>
+            <p>Magical Learning</p>
+        </div>
+
+
+        <div class="profile">
+
+            <div class="profile-icon">
+                👨‍🎓
+            </div>
+
+            <h3 id="sidebarName">
+                Student
+            </h3>
+
+            <p>
+                Young Scholar
+            </p>
+
+        </div>
+
+
+        <nav>
+
+            <a href="student-profile.html" class="active">
+                🏰 My Profile
+            </a>
+
+            <a href="student-performance.html">
+                📊 Performance
+            </a>
+
+            <a href="student-weak-areas.html">
+                🔮 Weak Areas
+            </a>
+
+            <a href="recommendations.html">
+                📚 Recommendations
+            </a>
+
+            <a href="study-schedule.html">
+                📅 Study Schedule
+            </a>
+
+            <a href="student-reports.html">
+                📜 Reports
+            </a>
+
+            <a href="student-notifications.html">
+                🔔 Notifications
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <header class="page-header">
+
+            <h1>
+                🪄 Welcome, Young Scholar!
+            </h1>
+
+            <p>
+                Here is your magical learning profile.
+            </p>
+
+        </header>
+
+
+        <!-- ================= STUDENT PROFILE ================= -->
+
+        <section class="profile-card">
+
+            <div class="large-student-icon">
+                👨‍🎓
+            </div>
+
+
+            <div class="student-info">
+
+                <h2 id="studentName">
+                    Student
+                </h2>
+
+                <p>
+                    Roll Number:
+                    <strong id="rollNumber">
+                        -
+                    </strong>
+                </p>
+
+                <p>
+                    Learner Level:
+                    <strong id="category">
+                        -
+                    </strong>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PERFORMANCE SUMMARY ================= -->
+
+        <section class="summary-grid">
+
+            <div class="summary-card">
+
+                <span>
+                    📈 Percentage
+                </span>
+
+                <strong id="percentage">
+                    0%
+                </strong>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>
+                    ⭐ Average
+                </span>
+
+                <strong id="average">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>
+                    ✨ Strongest Subject
+                </span>
+
+                <strong id="strongestSubject">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>
+                    🔮 Weakest Subject
+                </span>
+
+                <strong id="weakestSubject">
+                    -
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LEARNING STATUS ================= -->
+
+        <section class="status-card">
+
+            <h2>
+                🧙‍♂️ Professor's Assessment
+            </h2>
+
+            <p id="assessment">
+                Loading your assessment...
+            </p>
+
+        </section>
+
+
+        <!-- ================= QUICK ACTIONS ================= -->
+
+        <section class="actions-section">
+
+            <h2>
+                ✨ Continue Your Learning
+            </h2>
+
+
+            <div class="action-grid">
+
+                <a href="student-performance.html"
+                   class="action-card">
+
+                    <div>
+                        📊
+                    </div>
+
+                    <h3>
+                        View Performance
+                    </h3>
+
+                    <p>
+                        See your subject-wise marks.
+                    </p>
+
+                </a>
+
+
+                <a href="recommendations.html"
+                   class="action-card">
+
+                    <div>
+                        📚
+                    </div>
+
+                    <h3>
+                        Study Resources
+                    </h3>
+
+                    <p>
+                        Get videos and notes for your weak area.
+                    </p>
+
+                </a>
+
+
+                <a href="study-schedule.html"
+                   class="action-card">
+
+                    <div>
+                        📅
+                    </div>
+
+                    <h3>
+                        Study Schedule
+                    </h3>
+
+                    <p>
+                        Follow your 7-day study plan.
+                    </p>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        // -----------------------------------------
+        // CHECK STUDENT LOGIN
+        // -----------------------------------------
+
+        const role =
+            localStorage.getItem(
+                "learnlensLoggedInRole"
+            );
+
+
+        if (role !== "student") {
+
+            alert(
+                "🔐 Please login as a student first."
+            );
+
+            window.location.href =
+                "login.html";
+        }
+
+
+        // -----------------------------------------
+        // GET CURRENT STUDENT
+        // -----------------------------------------
+
+        const currentStudent =
+            JSON.parse(
+                localStorage.getItem(
+                    "learnlensCurrentStudent"
+                )
+            );
+
+
+        if (!currentStudent) {
+
+            alert(
+                "⚠️ Student information not found."
+            );
+
+            window.location.href =
+                "login.html";
+        }
+
+
+        // -----------------------------------------
+        // DISPLAY STUDENT INFORMATION
+        // -----------------------------------------
+
+        document.getElementById(
+            "sidebarName"
+        ).textContent =
+            currentStudent.name;
+
+
+        document.getElementById(
+            "studentName"
+        ).textContent =
+            currentStudent.name;
+
+
+        document.getElementById(
+            "rollNumber"
+        ).textContent =
+            currentStudent.rollNumber;
+
+
+        document.getElementById(
+            "category"
+        ).textContent =
+            (currentStudent.categoryIcon || "") +
+            " " +
+            currentStudent.category;
+
+
+        document.getElementById(
+            "percentage"
+        ).textContent =
+            currentStudent.percentage + "%";
+
+
+        document.getElementById(
+            "average"
+        ).textContent =
+            currentStudent.average;
+
+
+        document.getElementById(
+            "strongestSubject"
+        ).textContent =
+            currentStudent.strongestSubject;
+
+
+        document.getElementById(
+            "weakestSubject"
+        ).textContent =
+            currentStudent.weakestSubject;
+
+
+        // -----------------------------------------
+        // PROFESSOR'S ASSESSMENT
+        // -----------------------------------------
+
+        let assessment = "";
+
+
+        if (
+            currentStudent.category ===
+            "Advanced Learner"
+        ) {
+
+            assessment =
+                "Excellent work! 🌟 " +
+                "You are performing at an advanced level. " +
+                "Keep challenging yourself and continue improving.";
+
+        }
+        else if (
+            currentStudent.category ===
+            "Moderate Learner"
+        ) {
+
+            assessment =
+                "You are making good progress! 🪄 " +
+                "Focus a little more on your weak subject " +
+                "and you can reach the advanced level.";
+
+        }
+        else {
+
+            assessment =
+                "Every great wizard starts by learning the basics. 🧙‍♂️ " +
+                "Spend some extra time practising your weak subject " +
+                "and improve step by step.";
+
+        }
+
+
+        document.getElementById(
+            "assessment"
+        ).textContent =
+            assessment;
+
+
+        // -----------------------------------------
+        // SAVE WEAK SUBJECT FOR RECOMMENDATIONS
+        // -----------------------------------------
+
+        localStorage.setItem(
+            "learnlensRecommendationSubject",
+            currentStudent.weakestSubject
+        );
+
+    </script>
+
+</body>
+
+</html>

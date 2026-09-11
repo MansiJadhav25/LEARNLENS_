@@ -1,797 +1,471 @@
-html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>LearnLens | Performance Analysis</title>
+    <title>Performance | LearnLens</title>
 
     <link rel="stylesheet" href="performance.css">
 
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 
 <body>
 
-
-    <!-- =================================
-         SIDEBAR
-    ================================== -->
+    <!-- ================= SIDEBAR ================= -->
 
     <aside class="sidebar">
 
-
-        <!-- LearnLens logo -->
-
-        <div class="logo">
-
-            <div class="logo-symbol">
-                ✦
-            </div>
-
-            <h1>
-                LearnLens
-            </h1>
-
-            <p>
-                Magical Learning
-            </p>
-
+        <div class="logo-area">
+            <h1>🪄 LearnLens</h1>
+            <p>Magical Learning</p>
         </div>
 
-
-
-        <!-- Teacher profile -->
-
-        <div class="teacher-profile">
-
-            <div class="teacher-icon">
-                🧙‍♀️
-            </div>
-
-            <div>
-
-                <h3>
-                    Professor
-                </h3>
-
-                <p>
-                    Teacher
-                </p>
-
-            </div>
-
+        <div class="profile">
+            <div class="profile-icon">👨‍🏫</div>
+            <h3>Professor</h3>
+            <p>Teacher</p>
         </div>
 
-
-
-        <!-- Navigation -->
-
-        <nav class="menu">
-
+        <nav>
 
             <a href="teacher-dashboard.html">
                 🏰 Dashboard
             </a>
 
-
-            <a href="my-students.html">
+            <a href="my-student.html">
                 👨‍🎓 My Students
             </a>
 
-
             <a href="enter-marks.html">
-                📝 Enter Marks
+                ✍️ Enter Marks
             </a>
-
 
             <a href="performance.html" class="active">
                 📊 Performance
             </a>
 
-
-            <a href="#">
-                📚 Weak Areas
+            <a href="weak-areas.html">
+                🔮 Weak Areas
             </a>
 
-
-            <a href="#">
-                📋 Reports
+            <a href="reports.html">
+                📜 Reports
             </a>
 
-
-            <a href="#">
+            <a href="notifications.html">
                 🔔 Notifications
             </a>
 
-
         </nav>
-
-
-
-        <!-- Return to entrance -->
-
-        <div class="logout">
-
-            <a href="index.html">
-                🚪 Return to Entrance
-            </a>
-
-        </div>
-
 
     </aside>
 
 
-
-    <!-- =================================
-         MAIN CONTENT
-    ================================== -->
+    <!-- ================= MAIN CONTENT ================= -->
 
     <main class="main-content">
 
+        <header class="page-header">
 
-        <!-- =================================
-             PAGE HEADING
-        ================================== -->
+            <h1>📊 Student Performance</h1>
 
-        <header class="page-heading">
-
-
-            <div>
-
-                <p class="gold-text">
-                    Magical Academic Records ✨
-                </p>
-
-                <h2>
-                    Performance Analysis
-                </h2>
-
-                <p class="description">
-                    Understand the student's learning journey
-                    through marks and performance patterns.
-                </p>
-
-            </div>
-
-
-            <!-- Student selector -->
-
-            <div class="student-selector">
-
-                <label>
-                    Select Student
-                </label>
-
-                <select>
-
-                    <option>
-                        Aarav Sharma - Roll 01
-                    </option>
-
-                    <option>
-                        Riya Patil - Roll 02
-                    </option>
-
-                    <option>
-                        Kabir Joshi - Roll 03
-                    </option>
-
-                    <option>
-                        Ananya Deshmukh - Roll 04
-                    </option>
-
-                    <option>
-                        Vihaan More - Roll 05
-                    </option>
-
-                </select>
-
-            </div>
-
+            <p>
+                Analyse your student's magical learning journey.
+            </p>
 
         </header>
 
 
+        <!-- ================= STUDENT INFO ================= -->
 
-        <!-- =================================
-             STUDENT INTRODUCTION
-        ================================== -->
+        <section class="student-header">
 
-        <section class="student-banner">
-
-
-            <div class="student-avatar">
-                🧙
+            <div class="student-icon">
+                👨‍🎓
             </div>
 
+            <div>
 
-            <div class="student-info">
+                <h2 id="studentName">
+                    Student
+                </h2>
 
                 <p>
-                    Student Record
+                    Roll Number:
+                    <span id="rollNumber">-</span>
                 </p>
 
-                <h3>
-                    Aarav Sharma
-                </h3>
+            </div>
 
-                <span>
-                    Roll No. 01 • B.Tech Data Science
+        </section>
+
+
+        <!-- ================= SUMMARY ================= -->
+
+        <section class="summary-grid">
+
+            <div class="summary-card">
+
+                <span>📈 Percentage</span>
+
+                <strong id="percentage">
+                    0%
+                </strong>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>⭐ Average</span>
+
+                <strong id="average">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>🏆 Category</span>
+
+                <strong id="category">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>🔻 Weakest Subject</span>
+
+                <strong id="weakestSubject">
+                    -
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= BAR CHART ================= -->
+
+        <section class="chart-section">
+
+            <h2>📚 Subject-wise Performance</h2>
+
+            <p class="chart-description">
+                This chart shows how the student is performing
+                in each subject.
+            </p>
+
+            <div class="chart-box">
+
+                <canvas id="performanceChart"></canvas>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STRONGEST SUBJECT ================= -->
+
+        <section class="strength-card">
+
+            <h2>✨ Strongest Subject</h2>
+
+            <p id="strongestSubject">
+                -
+            </p>
+
+            <strong id="strongestMarks">
+                -
+            </strong>
+
+        </section>
+
+
+        <!-- ================= WEAK AREA ================= -->
+
+        <section class="weak-card">
+
+            <h2>🔮 Weak Area</h2>
+
+            <p>
+                Your weakest subject is:
+            </p>
+
+            <button
+                id="weakSubjectButton"
+                onclick="openRecommendations()"
+            >
+                🔮 <span id="weakSubjectButtonText">
+                    View Weak Subject
                 </span>
-
-            </div>
-
-
-            <div class="category advanced">
-
-                🟢 Advanced Learner
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =================================
-             PERFORMANCE SUMMARY CARDS
-        ================================== -->
-
-        <section class="summary-cards">
-
-
-            <!-- Percentage -->
-
-            <div class="summary-card">
-
-                <div class="summary-icon">
-                    📊
-                </div>
-
-                <div>
-
-                    <p>
-                        Overall Percentage
-                    </p>
-
-                    <h3>
-                        86%
-                    </h3>
-
-                    <span>
-                        Excellent performance
-                    </span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Average -->
-
-            <div class="summary-card">
-
-                <div class="summary-icon">
-                    ⭐
-                </div>
-
-                <div>
-
-                    <p>
-                        Average Marks
-                    </p>
-
-                    <h3>
-                        86 / 100
-                    </h3>
-
-                    <span>
-                        Across all subjects
-                    </span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Strongest -->
-
-            <div class="summary-card">
-
-                <div class="summary-icon">
-                    🏆
-                </div>
-
-                <div>
-
-                    <p>
-                        Strongest Subject
-                    </p>
-
-                    <h3>
-                        DBMS
-                    </h3>
-
-                    <span>
-                        94 marks
-                    </span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Weakest -->
-
-            <div class="summary-card warning">
-
-                <div class="summary-icon">
-                    ⚠️
-                </div>
-
-                <div>
-
-                    <p>
-                        Weakest Subject
-                    </p>
-
-                    <h3>
-                        MIS
-                    </h3>
-
-                    <span>
-                        Needs more practice
-                    </span>
-
-                </div>
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =================================
-             CHART + PERFORMANCE DETAILS
-        ================================== -->
-
-        <section class="analysis-grid">
-
-
-            <!-- =================================
-                 SUBJECT PERFORMANCE CHART
-            ================================== -->
-
-            <div class="chart-card">
-
-
-                <div class="card-heading">
-
-                    <div>
-
-                        <p class="gold-text">
-                            Magical Performance Chart
-                        </p>
-
-                        <h3>
-                            Subject-wise Marks
-                        </h3>
-
-                    </div>
-
-                    <span>
-                        📈
-                    </span>
-
-                </div>
-
-
-
-                <!-- Chart -->
-
-                <div class="chart">
-
-
-                    <!-- MIS -->
-
-                    <div class="chart-row">
-
-                        <div class="subject-name">
-                            MIS
-                        </div>
-
-                        <div class="bar-background">
-
-                            <div
-                                class="bar"
-                                style="width: 74%;"
-                            >
-
-                                <span>
-                                    74
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- DBMS -->
-
-                    <div class="chart-row">
-
-                        <div class="subject-name">
-                            DBMS
-                        </div>
-
-                        <div class="bar-background">
-
-                            <div
-                                class="bar"
-                                style="width: 94%;"
-                            >
-
-                                <span>
-                                    94
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- CSF -->
-
-                    <div class="chart-row">
-
-                        <div class="subject-name">
-                            CSF
-                        </div>
-
-                        <div class="bar-background">
-
-                            <div
-                                class="bar"
-                                style="width: 87%;"
-                            >
-
-                                <span>
-                                    87
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- UHV -->
-
-                    <div class="chart-row">
-
-                        <div class="subject-name">
-                            UHV
-                        </div>
-
-                        <div class="bar-background">
-
-                            <div
-                                class="bar"
-                                style="width: 89%;"
-                            >
-
-                                <span>
-                                    89
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- Open Elective -->
-
-                    <div class="chart-row">
-
-                        <div class="subject-name">
-                            OE
-                        </div>
-
-                        <div class="bar-background">
-
-                            <div
-                                class="bar"
-                                style="width: 86%;"
-                            >
-
-                                <span>
-                                    86
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-                <div class="chart-note">
-
-                    📜 Higher bars represent stronger
-                    performance in that subject.
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- =================================
-                 LEARNING CATEGORY
-            ================================== -->
-
-            <div class="category-card">
-
-
-                <div class="card-heading">
-
-                    <div>
-
-                        <p class="gold-text">
-                            Learner Profile
-                        </p>
-
-                        <h3>
-                            Learning Category
-                        </h3>
-
-                    </div>
-
-                    <span>
-                        🎓
-                    </span>
-
-                </div>
-
-
-
-                <div class="category-circle">
-
-                    <div>
-
-                        <strong>
-                            86%
-                        </strong>
-
-                        <small>
-                            Overall
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="category-result">
-
-                    <span>
-                        🟢
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Advanced Learner
-                        </strong>
-
-                        <p>
-                            This student is performing
-                            above the expected level.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =================================
-             STRENGTHS AND WEAKNESS
-        ================================== -->
-
-        <section class="insight-grid">
-
-
-            <!-- Strength -->
-
-            <div class="insight-card strength">
-
-
-                <div class="insight-icon">
-                    ✨
-                </div>
-
-
-                <div>
-
-                    <p class="gold-text">
-                        Student Strength
-                    </p>
-
-                    <h3>
-                        Database Management System
-                    </h3>
-
-                    <p>
-                        The student has shown strong understanding
-                        in DBMS with a score of 94 marks.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- Weakness -->
-
-            <div class="insight-card weakness">
-
-
-                <div class="insight-icon">
-                    ⚠️
-                </div>
-
-
-                <div>
-
-                    <p class="gold-text">
-                        Area Requiring Attention
-                    </p>
-
-                    <h3>
-                        Mathematics for Intelligent System
-                    </h3>
-
-                    <p>
-                        MIS is currently the weakest subject.
-                        Additional practice and learning material
-                        can help improve this area.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =================================
-             ACTION BUTTONS
-        ================================== -->
-
-        <section class="actions">
-
-
-            <button
-                onclick="window.location.href='my-students.html'"
-                class="back-button"
-            >
-
-                ← Back to Students
-
             </button>
 
-
-            <button
-                onclick="showRecommendationMessage()"
-                class="recommend-button"
-            >
-
-                ✨ View Learning Recommendations
-
-            </button>
-
+            <p class="hint">
+                Click the button to get learning videos,
+                notes and study material.
+            </p>
 
         </section>
-
-
-
-        <!-- Temporary message -->
-
-        <div
-            id="recommendationMessage"
-            class="recommendation-message"
-        >
-
-            🔮 Learning recommendations will be
-            available in the next LearnLens module.
-
-        </div>
-
-
-
-        <!-- =================================
-             FOOTER
-        ================================== -->
-
-        <footer>
-
-            ✨ Every mark reveals a little more
-            about the learner.
-
-        </footer>
-
 
     </main>
 
 
-
-    <!-- =================================
-         JAVASCRIPT
-    ================================== -->
+    <!-- ================= JAVASCRIPT ================= -->
 
     <script>
 
+        // -----------------------------------------
+        // CHECK TEACHER LOGIN
+        // -----------------------------------------
 
-        /*
-         * Temporary recommendation message.
-         *
-         * Later this button will open the
-         * actual recommendation page.
-         */
+        const role =
+            localStorage.getItem("learnlensLoggedInRole");
 
-        function showRecommendationMessage() {
+        if (role !== "teacher") {
 
-            const message =
-                document.getElementById(
-                    "recommendationMessage"
-                );
+            alert("🔐 Please login as a teacher first.");
 
-
-            message.classList.add("show");
-
+            window.location.href = "login.html";
         }
 
 
-    </script>
+        // -----------------------------------------
+        // GET CURRENT STUDENT
+        // -----------------------------------------
 
+        const currentStudent =
+            JSON.parse(
+                localStorage.getItem("learnlensCurrentStudent")
+            );
+
+
+        if (!currentStudent) {
+
+            alert("⚠️ Please select a student first.");
+
+            window.location.href =
+                "my-student.html";
+        }
+
+
+        // -----------------------------------------
+        // STUDENT INFORMATION
+        // -----------------------------------------
+
+        document.getElementById("studentName")
+            .textContent =
+            currentStudent.name;
+
+        document.getElementById("rollNumber")
+            .textContent =
+            currentStudent.rollNumber;
+
+        document.getElementById("percentage")
+            .textContent =
+            currentStudent.percentage + "%";
+
+        document.getElementById("average")
+            .textContent =
+            currentStudent.average;
+
+        document.getElementById("category")
+            .textContent =
+            (currentStudent.categoryIcon || "") +
+            " " +
+            currentStudent.category;
+
+        document.getElementById("weakestSubject")
+            .textContent =
+            currentStudent.weakestSubject;
+
+
+        // -----------------------------------------
+        // STRONGEST SUBJECT
+        // -----------------------------------------
+
+        document.getElementById("strongestSubject")
+            .textContent =
+            currentStudent.strongestSubject;
+
+        document.getElementById("strongestMarks")
+            .textContent =
+            currentStudent.strongestMarks + " / 100";
+
+
+        // -----------------------------------------
+        // WEAK SUBJECT BUTTON
+        // -----------------------------------------
+
+        document.getElementById(
+            "weakSubjectButtonText"
+        ).textContent =
+            currentStudent.weakestSubject +
+            " Recommendations";
+
+
+        // -----------------------------------------
+        // SUBJECT NAME
+        // -----------------------------------------
+
+        function shortSubjectName(subject) {
+
+            const names = {
+
+                "Mathematics for Intelligent System":
+                    "MIS",
+
+                "Database Management System":
+                    "DBMS",
+
+                "Computer System Fundamentals":
+                    "CSF",
+
+                "Universal Human Values":
+                    "UHV",
+
+                "Open Elective":
+                    "Open Elective"
+
+            };
+
+            return names[subject] || subject;
+        }
+
+
+        // -----------------------------------------
+        // PREPARE CHART DATA
+        // -----------------------------------------
+
+        const subjects = [];
+
+        const marks = [];
+
+
+        Object.entries(currentStudent.marks)
+            .forEach(function([subject, mark]) {
+
+                subjects.push(
+                    shortSubjectName(subject)
+                );
+
+                marks.push(mark);
+
+            });
+
+
+        // -----------------------------------------
+        // CREATE BAR CHART
+        // -----------------------------------------
+
+        const chartArea =
+            document.getElementById(
+                "performanceChart"
+            );
+
+
+        new Chart(chartArea, {
+
+            type: "bar",
+
+            data: {
+
+                labels: subjects,
+
+                datasets: [
+
+                    {
+
+                        label: "Marks",
+
+                        data: marks,
+
+                        borderWidth: 1
+
+                    }
+
+                ]
+
+            },
+
+            options: {
+
+                responsive: true,
+
+                maintainAspectRatio: false,
+
+                scales: {
+
+                    y: {
+
+                        beginAtZero: true,
+
+                        max: 100,
+
+                        title: {
+
+                            display: true,
+
+                            text: "Marks"
+
+                        }
+
+                    },
+
+                    x: {
+
+                        title: {
+
+                            display: true,
+
+                            text: "Subjects"
+
+                        }
+
+                    }
+
+                },
+
+                plugins: {
+
+                    legend: {
+
+                        display: true
+
+                    }
+
+                }
+
+            }
+
+        });
+
+
+        // -----------------------------------------
+        // OPEN RECOMMENDATIONS
+        // -----------------------------------------
+
+        function openRecommendations() {
+
+            localStorage.setItem(
+                "learnlensRecommendationSubject",
+                currentStudent.weakestSubject
+            );
+
+            window.location.href =
+                "recommendations.html";
+        }
+
+    </script>
 
 </body>
 

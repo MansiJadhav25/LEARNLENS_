@@ -764,3 +764,66 @@ footer {
     }
 
 }
+/* =========================================
+   ANALYSIS RESULT
+========================================= */
+
+.analysis-message {
+
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+    background: #29213b;
+
+    border: 1px solid #5c492b;
+
+    color: #d7c681;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.analysis-message.show {
+
+    display: flex;
+
+}
+
+
+.analysis-message > span {
+
+    font-size: 30px;
+
+}
+
+
+.analysis-message strong {
+
+    display: block;
+
+    color: #e4cb72;
+
+    font-size: 15px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.analysis-message p {
+
+    color: #a69a82;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+}

@@ -16,22 +16,35 @@
 
 <body>
 
-    <!-- =========================
+
+    <!-- =========================================
          SIDEBAR
-    ========================== -->
+    ========================================== -->
 
     <aside class="sidebar">
 
+
+        <!-- LearnLens Logo -->
+
         <div class="logo">
 
-            <div class="magic-symbol">✦</div>
+            <div class="magic-symbol">
+                ✦
+            </div>
 
-            <h1>LearnLens</h1>
+            <h1>
+                LearnLens
+            </h1>
 
-            <p>Magical Learning</p>
+            <p>
+                Magical Learning
+            </p>
 
         </div>
 
+
+
+        <!-- Teacher Profile -->
 
         <div class="teacher-profile">
 
@@ -40,45 +53,68 @@
             </div>
 
             <div>
-                <h3>Professor</h3>
-                <p>Teacher</p>
+
+                <h3>
+                    Professor
+                </h3>
+
+                <p>
+                    Teacher
+                </p>
+
             </div>
 
         </div>
 
 
+
+        <!-- =========================================
+             NAVIGATION
+        ========================================== -->
+
         <nav class="menu">
+
 
             <a href="teacher-dashboard.html">
                 🏰 Dashboard
             </a>
 
+
             <a href="my-student.html">
                 👨‍🎓 My Students
             </a>
+
 
             <a href="#" class="active">
                 📝 Enter Marks
             </a>
 
-            <a href="#">
+
+            <a href="performance.html">
                 📊 Performance
             </a>
+
 
             <a href="#">
                 📚 Weak Areas
             </a>
 
+
             <a href="#">
                 📋 Reports
             </a>
+
 
             <a href="#">
                 🔔 Notifications
             </a>
 
+
         </nav>
 
+
+
+        <!-- Return to Entrance -->
 
         <div class="logout">
 
@@ -88,20 +124,24 @@
 
         </div>
 
+
     </aside>
 
 
 
-    <!-- =========================
+    <!-- =========================================
          MAIN CONTENT
-    ========================== -->
+    ========================================== -->
 
     <main class="main-content">
 
 
-        <!-- Heading -->
+        <!-- =========================================
+             PAGE HEADING
+        ========================================== -->
 
         <header class="page-heading">
+
 
             <div>
 
@@ -120,27 +160,38 @@
 
             </div>
 
+
             <div class="scroll-icon">
                 📜
             </div>
+
 
         </header>
 
 
 
-        <!-- =========================
+        <!-- =========================================
              MARKS FORM
-        ========================== -->
+        ========================================== -->
 
         <section class="marks-card">
 
+
+            <!-- =====================================
+                 STUDENT INFORMATION
+            ====================================== -->
+
             <div class="card-title">
 
-                <span>🪶</span>
+                <span>
+                    🪶
+                </span>
 
                 <div>
 
-                    <h3>Student Information</h3>
+                    <h3>
+                        Student Information
+                    </h3>
 
                     <p>
                         Enter the details of the student.
@@ -151,8 +202,11 @@
             </div>
 
 
+
             <div class="student-details">
 
+
+                <!-- Student Name -->
 
                 <div class="input-group">
 
@@ -169,6 +223,9 @@
                 </div>
 
 
+
+                <!-- Roll Number -->
+
                 <div class="input-group">
 
                     <label for="rollNumber">
@@ -183,20 +240,26 @@
 
                 </div>
 
+
             </div>
 
 
-            <!-- =========================
+
+            <!-- =====================================
                  SUBJECT MARKS
-            ========================== -->
+            ====================================== -->
 
             <div class="subjects-title">
 
-                <span>📚</span>
+                <span>
+                    📚
+                </span>
 
                 <div>
 
-                    <h3>Subject Marks</h3>
+                    <h3>
+                        Subject Marks
+                    </h3>
 
                     <p>
                         Enter marks obtained out of 100.
@@ -207,12 +270,16 @@
             </div>
 
 
+
             <div class="subjects">
 
 
-                <!-- MIS -->
+                <!-- =================================
+                     MIS
+                ================================== -->
 
                 <div class="subject-row">
+
 
                     <div class="subject-info">
 
@@ -239,22 +306,29 @@
 
                         <input
                             type="number"
+                            id="misMarks"
                             min="0"
                             max="100"
                             placeholder="00"
                         >
 
-                        <span>/ 100</span>
+                        <span>
+                            / 100
+                        </span>
 
                     </div>
+
 
                 </div>
 
 
 
-                <!-- DBMS -->
+                <!-- =================================
+                     DBMS
+                ================================== -->
 
                 <div class="subject-row">
+
 
                     <div class="subject-info">
 
@@ -281,22 +355,29 @@
 
                         <input
                             type="number"
+                            id="dbmsMarks"
                             min="0"
                             max="100"
                             placeholder="00"
                         >
 
-                        <span>/ 100</span>
+                        <span>
+                            / 100
+                        </span>
 
                     </div>
+
 
                 </div>
 
 
 
-                <!-- CSF -->
+                <!-- =================================
+                     CSF
+                ================================== -->
 
                 <div class="subject-row">
+
 
                     <div class="subject-info">
 
@@ -323,22 +404,29 @@
 
                         <input
                             type="number"
+                            id="csfMarks"
                             min="0"
                             max="100"
                             placeholder="00"
                         >
 
-                        <span>/ 100</span>
+                        <span>
+                            / 100
+                        </span>
 
                     </div>
+
 
                 </div>
 
 
 
-                <!-- UHV -->
+                <!-- =================================
+                     UHV
+                ================================== -->
 
                 <div class="subject-row">
+
 
                     <div class="subject-info">
 
@@ -365,22 +453,29 @@
 
                         <input
                             type="number"
+                            id="uhvMarks"
                             min="0"
                             max="100"
                             placeholder="00"
                         >
 
-                        <span>/ 100</span>
+                        <span>
+                            / 100
+                        </span>
 
                     </div>
+
 
                 </div>
 
 
 
-                <!-- Open Elective -->
+                <!-- =================================
+                     OPEN ELECTIVE
+                ================================== -->
 
                 <div class="subject-row">
+
 
                     <div class="subject-info">
 
@@ -407,71 +502,107 @@
 
                         <input
                             type="number"
+                            id="oeMarks"
                             min="0"
                             max="100"
                             placeholder="00"
                         >
 
-                        <span>/ 100</span>
+                        <span>
+                            / 100
+                        </span>
 
                     </div>
 
+
                 </div>
+
 
             </div>
 
 
 
-            <!-- Analyse button -->
+            <!-- =========================================
+                 FORM ACTION BUTTONS
+            ========================================== -->
 
             <div class="form-actions">
 
-                <button class="back-button"
-                        onclick="window.location.href='teacher-dashboard.html'">
+
+                <!-- Back button -->
+
+                <button
+                    class="back-button"
+                    onclick="window.location.href='teacher-dashboard.html'"
+                >
 
                     ← Back
 
                 </button>
 
 
-                <button class="analyse-button"
-                        onclick="showAnalysisMessage()">
+
+                <!-- Analyse button -->
+
+                <button
+                    class="analyse-button"
+                    onclick="analyseStudentMarks()"
+                >
 
                     ✨ Analyse Marks
 
                 </button>
 
+
             </div>
 
 
-            <!-- Temporary message -->
 
-            <div id="analysisMessage" class="analysis-message">
+            <!-- =========================================
+                 ANALYSIS RESULT
+            ========================================== -->
 
-                <span>🔮</span>
+            <div
+                id="analysisMessage"
+                class="analysis-message"
+            >
+
+                <span id="resultIcon">
+                    🔮
+                </span>
+
 
                 <div>
 
-                    <strong>
+                    <strong id="resultTitle">
                         Ready for Analysis
                     </strong>
 
-                    <p>
-                        Once the backend is connected,
-                        LearnLens will calculate the percentage,
-                        learner category and weak areas.
+
+                    <p id="resultText">
+                        Enter the student's marks and click
+                        Analyse Marks.
                     </p>
+
 
                 </div>
 
+
             </div>
+
 
         </section>
 
 
+
+        <!-- =========================================
+             FOOTER
+        ========================================== -->
+
         <footer>
 
-            ✨ Every mark tells a story. LearnLens helps you discover it.
+            ✨ Every mark tells a story.
+            LearnLens helps you discover it.
 
         </footer>
 
@@ -480,20 +611,516 @@
 
 
 
-    <!-- Small JavaScript for now -->
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
     <script>
 
-        function showAnalysisMessage() {
 
-            const message =
-                document.getElementById("analysisMessage");
+        /*
+         * =========================================
+         * LEARNLENS MARKS ANALYSIS
+         * =========================================
+         *
+         * This function:
+         *
+         * 1. Gets student information
+         * 2. Gets marks
+         * 3. Calculates average
+         * 4. Calculates percentage
+         * 5. Finds strongest subject
+         * 6. Finds weakest subject
+         * 7. Classifies the learner
+         * 8. Saves the student
+         */
 
-            message.classList.add("show");
+
+        function analyseStudentMarks() {
+
+
+            // =====================================
+            // STEP 1 — GET STUDENT INFORMATION
+            // =====================================
+
+            const studentName =
+                document
+                .getElementById("studentName")
+                .value
+                .trim();
+
+
+            const rollNumber =
+                document
+                .getElementById("rollNumber")
+                .value
+                .trim();
+
+
+
+            // =====================================
+            // STEP 2 — GET SUBJECT MARKS
+            // =====================================
+
+            const marks = {
+
+                "Mathematics for Intelligent System":
+                    Number(
+                        document
+                        .getElementById("misMarks")
+                        .value
+                    ),
+
+                "Database Management System":
+                    Number(
+                        document
+                        .getElementById("dbmsMarks")
+                        .value
+                    ),
+
+                "Computer System Fundamentals":
+                    Number(
+                        document
+                        .getElementById("csfMarks")
+                        .value
+                    ),
+
+                "Universal Human Values":
+                    Number(
+                        document
+                        .getElementById("uhvMarks")
+                        .value
+                    ),
+
+                "Open Elective":
+                    Number(
+                        document
+                        .getElementById("oeMarks")
+                        .value
+                    )
+
+            };
+
+
+
+            // =====================================
+            // STEP 3 — CHECK STUDENT INFORMATION
+            // =====================================
+
+            if (
+                studentName === "" ||
+                rollNumber === ""
+            ) {
+
+                showMessage(
+                    "⚠️",
+                    "Missing Student Information",
+                    "Please enter the student's name and roll number."
+                );
+
+                return;
+
+            }
+
+
+
+            // =====================================
+            // STEP 4 — CHECK MARKS
+            // =====================================
+
+            const subjectNames =
+                Object.keys(marks);
+
+
+            for (
+                let i = 0;
+                i < subjectNames.length;
+                i++
+            ) {
+
+
+                const subject =
+                    subjectNames[i];
+
+
+                const mark =
+                    marks[subject];
+
+
+                if (
+                    isNaN(mark) ||
+                    mark < 0 ||
+                    mark > 100
+                ) {
+
+                    showMessage(
+                        "⚠️",
+                        "Invalid Marks",
+                        "Please enter marks between 0 and 100 for every subject."
+                    );
+
+                    return;
+
+                }
+
+            }
+
+
+
+            // =====================================
+            // STEP 5 — CALCULATE TOTAL MARKS
+            // =====================================
+
+            let totalMarks = 0;
+
+
+            for (
+                let subject in marks
+            ) {
+
+                totalMarks += marks[subject];
+
+            }
+
+
+
+            // =====================================
+            // STEP 6 — CALCULATE AVERAGE
+            // =====================================
+
+            const numberOfSubjects =
+                subjectNames.length;
+
+
+            const average =
+                totalMarks /
+                numberOfSubjects;
+
+
+            const percentage =
+                average;
+
+
+
+            // =====================================
+            // STEP 7 — FIND STRONGEST SUBJECT
+            // =====================================
+
+            let strongestSubject =
+                subjectNames[0];
+
+
+            for (
+                let i = 1;
+                i < subjectNames.length;
+                i++
+            ) {
+
+                const currentSubject =
+                    subjectNames[i];
+
+
+                if (
+                    marks[currentSubject] >
+                    marks[strongestSubject]
+                ) {
+
+                    strongestSubject =
+                        currentSubject;
+
+                }
+
+            }
+
+
+
+            // =====================================
+            // STEP 8 — FIND WEAKEST SUBJECT
+            // =====================================
+
+            let weakestSubject =
+                subjectNames[0];
+
+
+            for (
+                let i = 1;
+                i < subjectNames.length;
+                i++
+            ) {
+
+                const currentSubject =
+                    subjectNames[i];
+
+
+                if (
+                    marks[currentSubject] <
+                    marks[weakestSubject]
+                ) {
+
+                    weakestSubject =
+                        currentSubject;
+
+                }
+
+            }
+
+
+
+            // =====================================
+            // STEP 9 — CLASSIFY THE STUDENT
+            // =====================================
+
+            let category;
+            let categoryIcon;
+
+
+            if (percentage >= 80) {
+
+                category =
+                    "Advanced Learner";
+
+                categoryIcon =
+                    "🟢";
+
+            }
+
+            else if (percentage >= 50) {
+
+                category =
+                    "Moderate Learner";
+
+                categoryIcon =
+                    "🟡";
+
+            }
+
+            else {
+
+                category =
+                    "Slow Learner";
+
+                categoryIcon =
+                    "🔴";
+
+            }
+
+
+
+            // =====================================
+            // STEP 10 — CREATE STUDENT RECORD
+            // =====================================
+
+            const studentRecord = {
+
+                name: studentName,
+
+                rollNumber: rollNumber,
+
+                marks: marks,
+
+                totalMarks: totalMarks,
+
+                average:
+                    Number(
+                        average.toFixed(2)
+                    ),
+
+                percentage:
+                    Number(
+                        percentage.toFixed(2)
+                    ),
+
+                category: category,
+
+                categoryIcon: categoryIcon,
+
+                strongestSubject:
+                    strongestSubject,
+
+                strongestMarks:
+                    marks[strongestSubject],
+
+                weakestSubject:
+                    weakestSubject,
+
+                weakestMarks:
+                    marks[weakestSubject],
+
+                savedAt:
+                    new Date().toLocaleString()
+
+            };
+
+
+
+            // =====================================
+            // STEP 11 — GET OLD STUDENT RECORDS
+            // =====================================
+
+            let students =
+                JSON.parse(
+                    localStorage.getItem(
+                        "learnlensStudents"
+                    )
+                ) || [];
+
+
+
+            // =====================================
+            // STEP 12 — CHECK IF ROLL NUMBER
+            //             ALREADY EXISTS
+            // =====================================
+
+            const existingStudentIndex =
+                students.findIndex(
+                    function(student) {
+
+                        return (
+                            student.rollNumber ===
+                            rollNumber
+                        );
+
+                    }
+                );
+
+
+
+            // =====================================
+            // STEP 13 — UPDATE OR ADD STUDENT
+            // =====================================
+
+            if (
+                existingStudentIndex !== -1
+            ) {
+
+                students[
+                    existingStudentIndex
+                ] = studentRecord;
+
+            }
+
+            else {
+
+                students.push(
+                    studentRecord
+                );
+
+            }
+
+
+
+            // =====================================
+            // STEP 14 — SAVE TO BROWSER
+            // =====================================
+
+            localStorage.setItem(
+                "learnlensStudents",
+                JSON.stringify(students)
+            );
+
+
+
+            // =====================================
+            // STEP 15 — SAVE CURRENT STUDENT
+            // =====================================
+
+            localStorage.setItem(
+                "learnlensCurrentStudent",
+                JSON.stringify(studentRecord)
+            );
+
+
+
+            // =====================================
+            // STEP 16 — SHOW RESULT
+            // =====================================
+
+            showMessage(
+
+                categoryIcon,
+
+                "Analysis Complete! ✨",
+
+                studentName +
+                " has been classified as " +
+                category +
+                ". " +
+                "Percentage: " +
+                percentage.toFixed(2) +
+                "%. " +
+                "Strongest subject: " +
+                strongestSubject +
+                ". " +
+                "Weakest subject: " +
+                weakestSubject +
+                "."
+
+            );
+
 
         }
 
+
+
+        /*
+         * =========================================
+         * SHOW RESULT MESSAGE
+         * =========================================
+         */
+
+        function showMessage(
+            icon,
+            title,
+            message
+        ) {
+
+
+            const resultBox =
+                document.getElementById(
+                    "analysisMessage"
+                );
+
+
+            const resultIcon =
+                document.getElementById(
+                    "resultIcon"
+                );
+
+
+            const resultTitle =
+                document.getElementById(
+                    "resultTitle"
+                );
+
+
+            const resultText =
+                document.getElementById(
+                    "resultText"
+                );
+
+
+            resultIcon.textContent =
+                icon;
+
+
+            resultTitle.textContent =
+                title;
+
+
+            resultText.textContent =
+                message;
+
+
+            resultBox.classList.add(
+                "show"
+            );
+
+
+        }
+
+
     </script>
+
 
 </body>
 

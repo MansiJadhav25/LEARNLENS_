@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Performance | LearnLens</title>
+
+    <link rel="stylesheet" href="./student-performance.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            🪄 LearnLens
+            <span>Magical Learning</span>
+        </div>
+
+        <nav>
+
+            <a href="student-profile.html">
+                🏰 My Profile
+            </a>
+
+            <a href="student-performance.html" class="active">
+                📊 My Performance
+            </a>
+
+            <a href="student-weak-areas.html">
+                ⚠️ Weak Areas
+            </a>
+
+            <a href="recommendations.html">
+                🎓 Recommendations
+            </a>
+
+            <a href="study-schedule.html">
+                📅 Study Schedule
+            </a>
+
+            <a href="student-reports.html">
+                📜 Reports
+            </a>
+
+            <a href="student-notifications.html">
+                🔔 Notifications
+            </a>
+
+        </nav>
+
+        <div class="profile-box">
+
+            <div class="profile-icon">
+                🧙
+            </div>
+
+            <div>
+                <strong id="studentNameSidebar">
+                    Student
+                </strong>
+
+                <small>
+                    Young Scholar
+                </small>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <div class="top-section">
+
+            <div>
+                <p class="magic-text">
+                    ✨ Welcome, Young Scholar
+                </p>
+
+                <h1>
+                    My Performance
+                </h1>
+
+                <p>
+                    See how you are performing in each subject.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- STUDENT INFORMATION -->
+        <section class="student-card">
+
+            <div class="student-details">
+
+                <h2 id="studentName">
+                    Student Name
+                </h2>
+
+                <p>
+                    Roll Number:
+                    <strong id="rollNumber">-</strong>
+                </p>
+
+            </div>
+
+            <div class="category-box">
+
+                <span id="categoryIcon">
+                    🪄
+                </span>
+
+                <div>
+
+                    <small>
+                        Learning Category
+                    </small>
+
+                    <strong id="category">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PERFORMANCE SUMMARY -->
+        <section class="summary-grid">
+
+            <div class="summary-card">
+
+                <span>📈</span>
+
+                <div>
+                    <small>Percentage</small>
+                    <h2 id="percentage">0%</h2>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>⭐</span>
+
+                <div>
+                    <small>Average Marks</small>
+                    <h2 id="average">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>💪</span>
+
+                <div>
+                    <small>Strongest Subject</small>
+                    <h2 id="strongestSubject">-</h2>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card weak-card">
+
+                <span>⚠️</span>
+
+                <div>
+                    <small>Weakest Subject</small>
+                    <h2 id="weakestSubject">-</h2>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GRAPH -->
+        <section class="chart-card">
+
+            <div class="section-heading">
+
+                <h2>
+                    📊 Subject-wise Performance
+                </h2>
+
+                <p>
+                    Your marks in each subject
+                </p>
+
+            </div>
+
+            <div class="chart-container">
+
+                <canvas id="performanceChart"></canvas>
+
+            </div>
+
+        </section>
+
+
+        <!-- WEAK AREA -->
+        <section class="weak-area-card">
+
+            <div>
+
+                <span class="warning-icon">
+                    ⚠️
+                </span>
+
+                <div>
+
+                    <h2>
+                        Your Focus Area
+                    </h2>
+
+                    <p>
+                        You should spend a little more time improving:
+                    </p>
+
+                    <strong id="focusSubject">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <button onclick="openRecommendations()">
+                🪄 View Recommendations
+            </button>
+
+        </section>
+
+
+    </main>
+
+
+    <script>
+
+        // --------------------------------
+        // CHECK STUDENT LOGIN
+        // --------------------------------
+
+        const loggedInRole =
+            localStorage.getItem("learnlensLoggedInRole");
+
+        if (loggedInRole !== "student") {
+
+            alert(
+                "🔐 Please login as a student first."
+            );
+
+            window.location.href = "login.html";
+        }
+
+
+        // --------------------------------
+        // GET CURRENT STUDENT
+        // --------------------------------
+
+        const studentData =
+            localStorage.getItem(
+                "learnlensCurrentStudent"
+            );
+
+
+        if (!studentData) {
+
+            alert(
+                "⚠️ Student information not found."
+            );
+
+            window.location.href =
+                "student-profile.html";
+        }
+
+
+        const student =
+            JSON.parse(studentData);
+
+
+        // --------------------------------
+        // DISPLAY STUDENT INFORMATION
+        // --------------------------------
+
+        document.getElementById("studentName").textContent =
+            student.name;
+
+        document.getElementById("studentNameSidebar").textContent =
+            student.name;
+
+        document.getElementById("rollNumber").textContent =
+            student.rollNumber;
+
+        document.getElementById("category").textContent =
+            student.category;
+
+        document.getElementById("categoryIcon").textContent =
+            student.categoryIcon || "🪄";
+
+        document.getElementById("percentage").textContent =
+            student.percentage + "%";
+
+        document.getElementById("average").textContent =
+            student.average;
+
+        document.getElementById("strongestSubject").textContent =
+            shortSubjectName(student.strongestSubject);
+
+        document.getElementById("weakestSubject").textContent =
+            shortSubjectName(student.weakestSubject);
+
+        document.getElementById("focusSubject").textContent =
+            student.weakestSubject;
+
+
+        // --------------------------------
+        // SHORT SUBJECT NAMES
+        // --------------------------------
+
+        function shortSubjectName(subject) {
+
+            if (!subject) {
+                return "-";
+            }
+
+            if (
+                subject ===
+                "Mathematics for Intelligent System"
+            ) {
+                return "MIS";
+            }
+
+            if (
+                subject ===
+                "Database Management System"
+            ) {
+                return "DBMS";
+            }
+
+            if (
+                subject ===
+                "Computer System Fundamentals"
+            ) {
+                return "CSF";
+            }
+
+            if (
+                subject ===
+                "Universal Human Values"
+            ) {
+                return "UHV";
+            }
+
+            return subject;
+        }
+
+
+        // --------------------------------
+        // SUBJECT MARKS
+        // --------------------------------
+
+        const marks =
+            student.marks || {};
+
+
+        const labels = [
+            "MIS",
+            "DBMS",
+            "CSF",
+            "UHV",
+            "Open Elective"
+        ];
+
+
+        const values = [
+
+            marks[
+                "Mathematics for Intelligent System"
+            ] || 0,
+
+            marks[
+                "Database Management System"
+            ] || 0,
+
+            marks[
+                "Computer System Fundamentals"
+            ] || 0,
+
+            marks[
+                "Universal Human Values"
+            ] || 0,
+
+            marks[
+                "Open Elective"
+            ] || 0
+
+        ];
+
+
+        // --------------------------------
+        // CREATE PERFORMANCE CHART
+        // --------------------------------
+
+        const ctx =
+            document
+                .getElementById(
+                    "performanceChart"
+                )
+                .getContext("2d");
+
+
+        new Chart(ctx, {
+
+            type: "bar",
+
+            data: {
+
+                labels: labels,
+
+                datasets: [
+
+                    {
+
+                        label: "Marks",
+
+                        data: values,
+
+                        borderWidth: 1
+
+                    }
+
+                ]
+
+            },
+
+            options: {
+
+                responsive: true,
+
+                maintainAspectRatio: false,
+
+                scales: {
+
+                    y: {
+
+                        beginAtZero: true,
+
+                        max: 100,
+
+                        ticks: {
+
+                            stepSize: 10
+
+                        }
+
+                    }
+
+                },
+
+                plugins: {
+
+                    legend: {
+
+                        display: false
+
+                    }
+
+                }
+
+            }
+
+        });
+
+
+        // --------------------------------
+        // OPEN RECOMMENDATIONS
+        // --------------------------------
+
+        function openRecommendations() {
+
+            localStorage.setItem(
+                "learnlensRecommendationSubject",
+                student.weakestSubject
+            );
+
+            window.location.href =
+                "recommendations.html";
+        }
+
+    </script>
+
+</body>
+</html>

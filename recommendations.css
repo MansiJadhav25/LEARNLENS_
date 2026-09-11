@@ -1,0 +1,464 @@
+/* =========================================
+   LEARNLENS - RECOMMENDATIONS
+   Magical Learning Theme
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(circle at top, rgba(111, 78, 170, 0.25), transparent 35%),
+        linear-gradient(135deg, #120d24, #241344, #100b20);
+    color: #f7f0ff;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    background: linear-gradient(
+        180deg,
+        #180d30,
+        #241346,
+        #12091f
+    );
+
+    border-right: 2px solid #d6a84f;
+
+    padding: 28px 16px;
+
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.5);
+
+    z-index: 10;
+}
+
+.logo {
+    color: #f4cf70;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.subtitle {
+    color: #cbb9e8;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.profile {
+    padding: 12px 0;
+    margin-bottom: 20px;
+
+    border-top: 1px solid rgba(214, 168, 79, 0.2);
+    border-bottom: 1px solid rgba(214, 168, 79, 0.2);
+}
+
+.profile-icon {
+    font-size: 25px;
+}
+
+.profile h3 {
+    color: #f4cf70;
+    margin: 5px 0;
+}
+
+.profile p {
+    color: #c7b8d9;
+    font-size: 14px;
+}
+
+
+/* Sidebar links */
+
+.sidebar a {
+    display: block;
+
+    padding: 10px 12px;
+    margin: 5px 0;
+
+    color: #e9ddf5;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: rgba(214, 168, 79, 0.15);
+    color: #f4cf70;
+    transform: translateX(4px);
+}
+
+.sidebar a.active {
+    background: rgba(214, 168, 79, 0.18);
+    color: #f4cf70;
+
+    border-left: 4px solid #f4cf70;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+    margin-left: 250px;
+
+    padding: 45px;
+
+    min-height: 100vh;
+
+    max-width: 1200px;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    color: #f4cf70;
+
+    font-size: 38px;
+
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    color: #cdbfe0;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   FOCUS AREA
+========================================= */
+
+.focus-card {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(126, 87, 170, 0.30),
+            rgba(214, 168, 79, 0.10)
+        );
+
+    border: 1px solid rgba(214, 168, 79, 0.4);
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    margin-bottom: 30px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.focus-card h3 {
+    color: #cdbfe0;
+
+    font-size: 15px;
+
+    margin-bottom: 8px;
+}
+
+.focus-card h2 {
+    color: #f4cf70;
+
+    font-size: 26px;
+
+    margin-bottom: 10px;
+}
+
+.focus-card p {
+    color: #d7cbe5;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.section {
+    margin-bottom: 35px;
+}
+
+.section-title {
+    color: #f4cf70;
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
+
+.section-description {
+    color: #c8b9d8;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   RESOURCE CARDS
+========================================= */
+
+.resource-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 20px;
+}
+
+.resource-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(71, 42, 105, 0.60),
+            rgba(25, 14, 47, 0.90)
+        );
+
+    border: 1px solid rgba(214, 168, 79, 0.30);
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    min-height: 170px;
+
+    transition: 0.3s;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #d6a84f;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.resource-icon {
+    font-size: 28px;
+
+    margin-bottom: 12px;
+}
+
+.resource-card h3 {
+    color: #f4cf70;
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+.resource-card p {
+    color: #d0c2df;
+
+    line-height: 1.5;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+.resource-card a {
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: linear-gradient(
+        135deg,
+        #d6a84f,
+        #a97924
+    );
+
+    color: #1b102c;
+
+    padding: 9px 15px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.resource-card a:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(214, 168, 79, 0.3);
+}
+
+
+/* =========================================
+   NOTES
+========================================= */
+
+.notes-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 20px;
+}
+
+.note-card {
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(214, 168, 79, 0.30);
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    transition: 0.3s;
+}
+
+.note-card:hover {
+    border-color: #d6a84f;
+
+    transform: translateY(-4px);
+}
+
+.note-card h3 {
+    color: #f4cf70;
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+.note-card p {
+    color: #d0c2df;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   PROFESSOR'S ADVICE
+========================================= */
+
+.advice-card {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(214, 168, 79, 0.14),
+            rgba(126, 87, 170, 0.20)
+        );
+
+    border: 1px solid rgba(214, 168, 79, 0.45);
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    margin-top: 20px;
+}
+
+.advice-card h2 {
+    color: #f4cf70;
+
+    margin-bottom: 12px;
+}
+
+.advice-card p {
+    color: #e0d5eb;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.magic-button {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 12px 22px;
+
+    background: linear-gradient(
+        135deg,
+        #d6a84f,
+        #a97924
+    );
+
+    color: #1b102c;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.magic-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 7px 20px rgba(214, 168, 79, 0.35);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 850px) {
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+
+        padding: 25px;
+    }
+
+    .resource-grid,
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+}
