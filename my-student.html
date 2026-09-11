@@ -2,394 +2,1669 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Students | LearnLens</title>
+    <title>My Students - LearnLens</title>
 
-    <link rel="stylesheet" href="my-student.css">
+
+    <style>
+
+        /* =====================================================
+           LEARNLENS - MY STUDENTS
+           ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(120, 70, 160, 0.25),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(80, 40, 120, 0.25),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #10051c,
+                    #24103b,
+                    #13081f
+                );
+
+            color: #f8f0ff;
+
+        }
+
+
+        /* =====================================================
+           PAGE LAYOUT
+           ===================================================== */
+
+        .page {
+
+            display: flex;
+
+            min-height: 100vh;
+
+        }
+
+
+        /* =====================================================
+           SIDEBAR
+           ===================================================== */
+
+        .sidebar {
+
+            width: 250px;
+
+            min-height: 100vh;
+
+            padding: 25px 16px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(20, 7, 31, 0.98),
+                    rgba(38, 17, 55, 0.98)
+                );
+
+            border-right: 1px solid rgba(215, 175, 82, 0.25);
+
+            position: fixed;
+
+            left: 0;
+            top: 0;
+
+            bottom: 0;
+
+        }
+
+
+        .brand {
+
+            text-align: center;
+
+            padding-bottom: 25px;
+
+            border-bottom:
+                1px solid
+                rgba(215, 175, 82, 0.15);
+
+        }
+
+
+        .brand-icon {
+
+            font-size: 42px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .brand h1 {
+
+            color: #f3cf69;
+
+            font-size: 25px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .brand p {
+
+            color: #a99bb2;
+
+            font-size: 11px;
+
+            margin-top: 5px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* =====================================================
+           PROFESSOR BOX
+           ===================================================== */
+
+        .professor-box {
+
+            margin: 22px 0;
+
+            padding: 15px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255, 255, 255, 0.04);
+
+            border:
+                1px solid
+                rgba(215, 175, 82, 0.15);
+
+            text-align: center;
+
+        }
+
+
+        .professor-icon {
+
+            font-size: 32px;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .professor-box strong {
+
+            color: #f3cf69;
+
+            font-size: 14px;
+
+        }
+
+
+        .professor-box span {
+
+            display: block;
+
+            color: #9e91a8;
+
+            font-size: 11px;
+
+            margin-top: 4px;
+
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+           ===================================================== */
+
+        .menu {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+
+        }
+
+
+        .menu a {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 12px 14px;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            color: #c7b8d1;
+
+            font-size: 13px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .menu a:hover {
+
+            background:
+                rgba(215, 175, 82, 0.08);
+
+            color: #f3cf69;
+
+            transform: translateX(3px);
+
+        }
+
+
+        .menu a.active {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(111, 61, 145, 0.45),
+                    rgba(111, 61, 145, 0.15)
+                );
+
+            color: #f3cf69;
+
+            border-left:
+                3px solid #d7af52;
+
+        }
+
+
+        .menu-icon {
+
+            font-size: 18px;
+
+            width: 23px;
+
+            text-align: center;
+
+        }
+
+
+        /* =====================================================
+           MAIN CONTENT
+           ===================================================== */
+
+        .main {
+
+            margin-left: 250px;
+
+            width: calc(100% - 250px);
+
+            padding: 35px 40px;
+
+        }
+
+
+        /* =====================================================
+           TOP HEADER
+           ===================================================== */
+
+        .top-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .heading-area h2 {
+
+            color: #f3cf69;
+
+            font-size: 30px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .heading-area p {
+
+            color: #aaa0b2;
+
+            font-size: 14px;
+
+        }
+
+
+        .magic-symbol {
+
+            font-size: 40px;
+
+            opacity: 0.8;
+
+        }
+
+
+        /* =====================================================
+           SUMMARY CARD
+           ===================================================== */
+
+        .summary {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .summary-card {
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            background:
+                rgba(255, 255, 255, 0.04);
+
+            border:
+                1px solid
+                rgba(215, 175, 82, 0.15);
+
+        }
+
+
+        .summary-card .icon {
+
+            font-size: 25px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .summary-card .number {
+
+            color: #f3cf69;
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+        }
+
+
+        .summary-card .label {
+
+            color: #9f91a9;
+
+            font-size: 12px;
+
+            margin-top: 4px;
+
+        }
+
+
+        /* =====================================================
+           STUDENT SECTION
+           ===================================================== */
+
+        .section-title {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .section-title h3 {
+
+            color: #e6d4ee;
+
+            font-size: 20px;
+
+        }
+
+
+        .section-title span {
+
+            color: #9c8ca8;
+
+            font-size: 12px;
+
+        }
+
+
+        /* =====================================================
+           STUDENT GRID
+           ===================================================== */
+
+        .student-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(280px, 1fr)
+                );
+
+            gap: 20px;
+
+        }
+
+
+        /* =====================================================
+           STUDENT CARD
+           ===================================================== */
+
+        .student-card {
+
+            position: relative;
+
+            padding: 24px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(62, 29, 91, 0.7),
+                    rgba(24, 10, 37, 0.8)
+                );
+
+            border:
+                1px solid
+                rgba(215, 175, 82, 0.18);
+
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.18);
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .student-card:hover {
+
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(215, 175, 82, 0.45);
+
+            box-shadow:
+                0 15px 35px
+                rgba(0, 0, 0, 0.3);
+
+        }
+
+
+        /* =====================================================
+           CARD TOP
+           ===================================================== */
+
+        .student-top {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            padding-bottom: 17px;
+
+            margin-bottom: 17px;
+
+            border-bottom:
+                1px solid
+                rgba(255, 255, 255, 0.07);
+
+        }
+
+
+        .student-avatar {
+
+            width: 52px;
+            height: 52px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background:
+                rgba(215, 175, 82, 0.1);
+
+            border:
+                1px solid
+                rgba(215, 175, 82, 0.3);
+
+            font-size: 27px;
+
+        }
+
+
+        .student-name {
+
+            color: #f2d57b;
+
+            font-size: 18px;
+
+            margin-bottom: 4px;
+
+        }
+
+
+        .roll-number {
+
+            color: #9e91a8;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =====================================================
+           CATEGORY
+           ===================================================== */
+
+        .category {
+
+            display: inline-block;
+
+            margin-bottom: 18px;
+
+            padding: 6px 11px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255, 255, 255, 0.06);
+
+            color: #ded1e7;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =====================================================
+           PERFORMANCE DETAILS
+           ===================================================== */
+
+        .details {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 12px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .detail {
+
+            padding: 12px;
+
+            border-radius: 10px;
+
+            background:
+                rgba(255, 255, 255, 0.035);
+
+        }
+
+
+        .detail-label {
+
+            color: #93849e;
+
+            font-size: 10px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .detail-value {
+
+            color: #f1e5f5;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =====================================================
+           WEAK SUBJECT
+           ===================================================== */
+
+        .weak-area {
+
+            padding: 12px;
+
+            border-radius: 10px;
+
+            background:
+                rgba(150, 70, 70, 0.12);
+
+            border:
+                1px solid
+                rgba(210, 100, 100, 0.15);
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .weak-area-label {
+
+            color: #9d899e;
+
+            font-size: 10px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .weak-area-value {
+
+            color: #e7b1b1;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =====================================================
+           VIEW PERFORMANCE BUTTON
+           ===================================================== */
+
+        .performance-button {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #b9943f;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6f3d91,
+                    #43215f
+                );
+
+            color: #fff2c7;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 13px;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .performance-button:hover {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #8050a2,
+                    #512771
+                );
+
+            box-shadow:
+                0 0 18px
+                rgba(215, 175, 82, 0.2);
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* =====================================================
+           EMPTY STATE
+           ===================================================== */
+
+        .empty-state {
+
+            display: none;
+
+            text-align: center;
+
+            padding: 70px 20px;
+
+            border-radius: 18px;
+
+            border:
+                1px dashed
+                rgba(215, 175, 82, 0.25);
+
+            background:
+                rgba(255, 255, 255, 0.025);
+
+        }
+
+
+        .empty-icon {
+
+            font-size: 55px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .empty-state h3 {
+
+            color: #e8d6ef;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .empty-state p {
+
+            color: #9d91a6;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .sidebar {
+
+                width: 210px;
+
+            }
+
+            .main {
+
+                margin-left: 210px;
+
+                width: calc(100% - 210px);
+
+                padding: 25px;
+
+            }
+
+            .summary {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .page {
+
+                display: block;
+
+            }
+
+            .sidebar {
+
+                position: relative;
+
+                width: 100%;
+
+                min-height: auto;
+
+            }
+
+            .main {
+
+                margin-left: 0;
+
+                width: 100%;
+
+                padding: 20px;
+
+            }
+
+            .menu {
+
+                display: grid;
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+            .summary {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .top-header {
+
+                align-items: flex-start;
+
+            }
+
+            .magic-symbol {
+
+                display: none;
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <!-- ================= SIDEBAR ================= -->
+
+<div class="page">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
 
     <aside class="sidebar">
 
-        <div class="logo-area">
-            <h1>🪄 LearnLens</h1>
-            <p>Magical Learning</p>
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🪄
+            </div>
+
+            <h1>
+                LearnLens
+            </h1>
+
+            <p>
+                MAGICAL LEARNING
+            </p>
+
         </div>
 
-        <div class="profile">
-            <div class="profile-icon">👨‍🏫</div>
-            <h3>Professor</h3>
-            <p>Teacher</p>
+
+        <div class="professor-box">
+
+            <div class="professor-icon">
+                👨‍🏫
+            </div>
+
+            <strong>
+                Professor
+            </strong>
+
+            <span>
+                Teacher Portal
+            </span>
+
         </div>
 
-        <nav>
+
+        <nav class="menu">
+
 
             <a href="teacher-dashboard.html">
-                🏰 Dashboard
+
+                <span class="menu-icon">
+                    🏰
+                </span>
+
+                Dashboard
+
             </a>
 
-            <a href="my-student.html" class="active">
-                👨‍🎓 My Students
+
+            <a
+                href="my-student.html"
+                class="active">
+
+                <span class="menu-icon">
+                    🧑‍🎓
+                </span>
+
+                My Students
+
             </a>
+
 
             <a href="enter-marks.html">
-                ✍️ Enter Marks
+
+                <span class="menu-icon">
+                    📝
+                </span>
+
+                Enter Marks
+
             </a>
+
 
             <a href="performance.html">
-                📊 Performance
+
+                <span class="menu-icon">
+                    📊
+                </span>
+
+                Performance
+
             </a>
+
 
             <a href="weak-areas.html">
-                🔮 Weak Areas
+
+                <span class="menu-icon">
+                    📚
+                </span>
+
+                Weak Areas
+
             </a>
+
 
             <a href="reports.html">
-                📜 Reports
+
+                <span class="menu-icon">
+                    📜
+                </span>
+
+                Reports
+
             </a>
 
+
             <a href="notifications.html">
-                🔔 Notifications
+
+                <span class="menu-icon">
+                    🔔
+                </span>
+
+                Notifications
+
             </a>
+
 
         </nav>
 
     </aside>
 
 
-    <!-- ================= MAIN CONTENT ================= -->
 
-    <main class="main-content">
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
 
-        <header class="page-header">
+    <main class="main">
 
-            <div>
-                <h1>👨‍🎓 My Students</h1>
+
+        <!-- HEADER -->
+
+        <div class="top-header">
+
+            <div class="heading-area">
+
+                <h2>
+                    🧑‍🎓 My Students
+                </h2>
 
                 <p>
-                    View the students whose marks have been entered.
+                    Welcome, Professor. Here are the young
+                    scholars under your guidance.
                 </p>
-            </div>
-
-        </header>
-
-
-        <!-- ================= STUDENT LIST ================= -->
-
-        <section class="students-section">
-
-            <div class="section-title">
-
-                <h2>📚 Student Records</h2>
-
-                <span id="studentCount">
-                    0 Students
-                </span>
 
             </div>
 
 
-            <!-- Students will appear here -->
+            <div class="magic-symbol">
+                ✦
+            </div>
 
-            <div id="studentList" class="student-list">
+        </div>
 
-                <div class="empty-message">
 
-                    <div class="empty-icon">🪄</div>
 
-                    <h2>No Students Yet</h2>
+        <!-- =================================================
+             SUMMARY
+             ================================================= -->
 
-                    <p>
-                        No student marks have been entered yet.
-                    </p>
+        <section class="summary">
 
-                    <a href="enter-marks.html" class="magic-button">
-                        ✍️ Enter Student Marks
-                    </a>
 
+            <div class="summary-card">
+
+                <div class="icon">
+                    🧑‍🎓
+                </div>
+
+                <div
+                    class="number"
+                    id="totalStudents">
+
+                    0
+
+                </div>
+
+                <div class="label">
+                    Total Students
                 </div>
 
             </div>
 
+
+            <div class="summary-card">
+
+                <div class="icon">
+                    ⭐
+                </div>
+
+                <div
+                    class="number"
+                    id="advancedStudents">
+
+                    0
+
+                </div>
+
+                <div class="label">
+                    Advanced Learners
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="icon">
+                    📈
+                </div>
+
+                <div
+                    class="number"
+                    id="classAverage">
+
+                    0%
+
+                </div>
+
+                <div class="label">
+                    Class Average
+                </div>
+
+            </div>
+
+
         </section>
+
+
+
+        <!-- =================================================
+             STUDENT LIST
+             ================================================= -->
+
+        <div class="section-title">
+
+            <h3>
+                Your Young Scholars
+            </h3>
+
+            <span id="studentCountText">
+                0 students
+            </span>
+
+        </div>
+
+
+        <div
+            class="student-grid"
+            id="studentGrid">
+
+        </div>
+
+
+        <!-- EMPTY STATE -->
+
+        <div
+            class="empty-state"
+            id="emptyState">
+
+            <div class="empty-icon">
+                🦉
+            </div>
+
+            <h3>
+                No Students Yet
+            </h3>
+
+            <p>
+                No student records have been added yet.
+                <br>
+                Go to <b>Enter Marks</b> and add your
+                first young scholar.
+            </p>
+
+        </div>
+
 
     </main>
 
+</div>
 
-    <!-- ================= JAVASCRIPT ================= -->
 
-    <script>
 
-        // -----------------------------------------
-        // CHECK TEACHER LOGIN
-        // -----------------------------------------
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
 
-        const loggedInRole =
-            localStorage.getItem("learnlensLoggedInRole");
+<script>
 
-        if (loggedInRole !== "teacher") {
 
-            alert("🔐 Please login as a teacher first.");
+    /* =====================================================
+       TEACHER LOGIN CHECK
+       ===================================================== */
 
-            window.location.href = "login.html";
-        }
+    const loggedInRole =
+        localStorage.getItem(
+            "learnlensLoggedInRole"
+        );
 
 
-        // -----------------------------------------
-        // GET STUDENTS FROM LOCAL STORAGE
-        // -----------------------------------------
+    if (loggedInRole !== "teacher") {
 
-        function getStudents() {
+        alert(
+            "⚠️ Please login as a Professor first."
+        );
 
-            const students =
-                JSON.parse(
-                    localStorage.getItem("learnlensStudents")
-                ) || [];
+        window.location.href =
+            "index.html";
 
-            return students;
-        }
+    }
 
 
-        // -----------------------------------------
-        // DISPLAY STUDENTS
-        // -----------------------------------------
 
-        function displayStudents() {
+    /* =====================================================
+       GET STUDENTS FROM LOCAL STORAGE
+       ===================================================== */
 
-            const students = getStudents();
+    function getStudents() {
 
-            const studentList =
-                document.getElementById("studentList");
+        return JSON.parse(
+            localStorage.getItem(
+                "learnlensStudents"
+            )
+        ) || [];
 
-            const studentCount =
-                document.getElementById("studentCount");
+    }
 
 
-            // Update student count
 
-            studentCount.textContent =
-                students.length +
-                (students.length === 1 ? " Student" : " Students");
+    /* =====================================================
+       DISPLAY STUDENTS
+       ===================================================== */
 
+    function displayStudents() {
 
-            // If no students exist
 
-            if (students.length === 0) {
+        const students =
+            getStudents();
 
-                studentList.innerHTML = `
 
-                    <div class="empty-message">
-
-                        <div class="empty-icon">🪄</div>
-
-                        <h2>No Students Yet</h2>
-
-                        <p>
-                            No student marks have been entered yet.
-                        </p>
-
-                        <a
-                            href="enter-marks.html"
-                            class="magic-button"
-                        >
-                            ✍️ Enter Student Marks
-                        </a>
-
-                    </div>
-
-                `;
-
-                return;
-            }
-
-
-            // Clear old content
-
-            studentList.innerHTML = "";
-
-
-            // Create card for every student
-
-            students.forEach(function(student) {
-
-                const card =
-                    document.createElement("div");
-
-                card.className = "student-card";
-
-
-                // Category class
-
-                let categoryClass = "moderate";
-
-                if (
-                    student.category ===
-                    "Advanced Learner"
-                ) {
-
-                    categoryClass = "advanced";
-
-                }
-                else if (
-                    student.category ===
-                    "Slow Learner"
-                ) {
-
-                    categoryClass = "slow";
-                }
-
-
-                card.innerHTML = `
-
-                    <div class="student-top">
-
-                        <div class="student-icon">
-                            👨‍🎓
-                        </div>
-
-                        <div>
-
-                            <h2>
-                                ${student.name}
-                            </h2>
-
-                            <p>
-                                Roll No: ${student.rollNumber}
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="student-details">
-
-                        <div class="detail-box">
-
-                            <span>Percentage</span>
-
-                            <strong>
-                                ${student.percentage}%
-                            </strong>
-
-                        </div>
-
-
-                        <div class="detail-box">
-
-                            <span>Average</span>
-
-                            <strong>
-                                ${student.average}
-                            </strong>
-
-                        </div>
-
-
-                        <div class="detail-box">
-
-                            <span>Category</span>
-
-                            <strong
-                                class="category ${categoryClass}"
-                            >
-                                ${student.categoryIcon || ""}
-                                ${student.category}
-                            </strong>
-
-                        </div>
-
-
-                        <div class="detail-box">
-
-                            <span>Weakest Subject</span>
-
-                            <strong>
-                                ${student.weakestSubject}
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="student-actions">
-
-                        <button
-                            onclick="viewStudent('${student.rollNumber}')"
-                            class="view-button"
-                        >
-                            📊 View Performance
-                        </button>
-
-                    </div>
-
-                `;
-
-
-                studentList.appendChild(card);
-
-            });
-
-        }
-
-
-        // -----------------------------------------
-        // VIEW STUDENT PERFORMANCE
-        // -----------------------------------------
-
-        function viewStudent(rollNumber) {
-
-            const students = getStudents();
-
-
-            const student =
-                students.find(function(item) {
-
-                    return item.rollNumber === rollNumber;
-
-                });
-
-
-            if (!student) {
-
-                alert("⚠️ Student record not found.");
-
-                return;
-            }
-
-
-            // Save selected student
-
-            localStorage.setItem(
-                "learnlensCurrentStudent",
-                JSON.stringify(student)
+        const studentGrid =
+            document.getElementById(
+                "studentGrid"
             );
 
 
-            // Open performance page
+        const emptyState =
+            document.getElementById(
+                "emptyState"
+            );
 
-            window.location.href =
-                "performance.html";
+
+        const totalStudents =
+            document.getElementById(
+                "totalStudents"
+            );
+
+
+        const advancedStudents =
+            document.getElementById(
+                "advancedStudents"
+            );
+
+
+        const classAverage =
+            document.getElementById(
+                "classAverage"
+            );
+
+
+        const studentCountText =
+            document.getElementById(
+                "studentCountText"
+            );
+
+
+        /* ---------------------------------------------
+           CLEAR OLD DATA
+           --------------------------------------------- */
+
+        studentGrid.innerHTML = "";
+
+
+        /* ---------------------------------------------
+           NO STUDENTS
+           --------------------------------------------- */
+
+        if (students.length === 0) {
+
+            studentGrid.style.display =
+                "none";
+
+            emptyState.style.display =
+                "block";
+
+            totalStudents.textContent =
+                "0";
+
+            advancedStudents.textContent =
+                "0";
+
+            classAverage.textContent =
+                "0%";
+
+            studentCountText.textContent =
+                "0 students";
+
+            return;
+
         }
 
 
-        // -----------------------------------------
-        // LOAD STUDENTS WHEN PAGE OPENS
-        // -----------------------------------------
+        /* ---------------------------------------------
+           SHOW STUDENTS
+           --------------------------------------------- */
 
-        displayStudents();
+        studentGrid.style.display =
+            "grid";
 
-    </script>
+        emptyState.style.display =
+            "none";
+
+
+        totalStudents.textContent =
+            students.length;
+
+
+        studentCountText.textContent =
+            students.length +
+            (
+                students.length === 1
+                    ? " student"
+                    : " students"
+            );
+
+
+
+        /* =================================================
+           ADVANCED STUDENTS
+           ================================================= */
+
+        let advancedCount = 0;
+
+
+        students.forEach(function(student) {
+
+            if (
+                student.category ===
+                "Advanced Learner"
+            ) {
+
+                advancedCount++;
+
+            }
+
+        });
+
+
+        advancedStudents.textContent =
+            advancedCount;
+
+
+
+        /* =================================================
+           CLASS AVERAGE
+           ================================================= */
+
+        let totalPercentage = 0;
+
+
+        students.forEach(function(student) {
+
+            totalPercentage +=
+                Number(
+                    student.percentage
+                ) || 0;
+
+        });
+
+
+        const average =
+            students.length > 0
+                ? totalPercentage /
+                  students.length
+                : 0;
+
+
+        classAverage.textContent =
+            average.toFixed(1) + "%";
+
+
+
+        /* =================================================
+           CREATE STUDENT CARDS
+           ================================================= */
+
+        students.forEach(function(student, index) {
+
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "student-card";
+
+
+            /* ---------------------------------------------
+               CATEGORY ICON
+               --------------------------------------------- */
+
+            let categoryIcon =
+                student.categoryIcon ||
+                "🧙";
+
+
+
+            /* ---------------------------------------------
+               CATEGORY
+               --------------------------------------------- */
+
+            let category =
+                student.category ||
+                "Not Classified";
+
+
+
+            /* ---------------------------------------------
+               CREATE CARD
+               --------------------------------------------- */
+
+            card.innerHTML = `
+
+                <div class="student-top">
+
+                    <div class="student-avatar">
+                        🧑‍🎓
+                    </div>
+
+                    <div>
+
+                        <div class="student-name">
+                            ${escapeHTML(
+                                student.name ||
+                                "Unknown Student"
+                            )}
+                        </div>
+
+                        <div class="roll-number">
+
+                            Roll No:
+                            ${escapeHTML(
+                                student.rollNumber ||
+                                "-"
+                            )}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="category">
+
+                    ${categoryIcon}
+                    ${escapeHTML(category)}
+
+                </div>
+
+
+                <div class="details">
+
+
+                    <div class="detail">
+
+                        <div class="detail-label">
+                            Percentage
+                        </div>
+
+                        <div class="detail-value">
+
+                            ${Number(
+                                student.percentage || 0
+                            ).toFixed(1)}%
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <div class="detail-label">
+                            Average Marks
+                        </div>
+
+                        <div class="detail-value">
+
+                            ${Number(
+                                student.average || 0
+                            ).toFixed(1)}
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <div class="detail-label">
+                            Strongest Subject
+                        </div>
+
+                        <div class="detail-value">
+
+                            ${escapeHTML(
+                                student.strongestSubject ||
+                                "-"
+                            )}
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <div class="detail-label">
+                            Strongest Marks
+                        </div>
+
+                        <div class="detail-value">
+
+                            ${student.strongestMarks ?? "-"}
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="weak-area">
+
+                    <div class="weak-area-label">
+                        ⚠️ Area Needing Attention
+                    </div>
+
+                    <div class="weak-area-value">
+
+                        ${escapeHTML(
+                            student.weakestSubject ||
+                            "No weak area found"
+                        )}
+
+                        ${
+                            student.weakestMarks !== undefined
+                                ? " — " +
+                                  student.weakestMarks +
+                                  " marks"
+                                : ""
+                        }
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="performance-button"
+                    onclick="viewPerformance(${index})">
+
+                    📊 View Performance
+
+                </button>
+
+            `;
+
+
+            studentGrid.appendChild(card);
+
+        });
+
+    }
+
+
+
+    /* =====================================================
+       VIEW STUDENT PERFORMANCE
+       ===================================================== */
+
+    function viewPerformance(index) {
+
+
+        const students =
+            getStudents();
+
+
+        const student =
+            students[index];
+
+
+        if (!student) {
+
+            alert(
+                "⚠️ Student record could not be found."
+            );
+
+            return;
+
+        }
+
+
+        /*
+         * Save selected student.
+         *
+         * performance.html will read this
+         * information from localStorage.
+         */
+
+        localStorage.setItem(
+            "learnlensCurrentStudent",
+            JSON.stringify(student)
+        );
+
+
+        window.location.href =
+            "performance.html";
+
+    }
+
+
+
+    /* =====================================================
+       SAFE TEXT FUNCTION
+       ===================================================== */
+
+    function escapeHTML(value) {
+
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+
+    }
+
+
+
+    /* =====================================================
+       LOAD PAGE
+       ===================================================== */
+
+    displayStudents();
+
+
+</script>
+
 
 </body>
 
 </html>
-
-
-
