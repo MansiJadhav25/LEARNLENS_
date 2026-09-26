@@ -1,0 +1,597 @@
+/* =========================================================
+   LEARNLENS - MINIMAL ACADEMIC THEME
+   Shared theme for all LearnLens pages
+   ========================================================= */
+
+
+/* =========================
+   1. BASIC PAGE STYLE
+   ========================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #f5f7fa !important;
+    color: #243447 !important;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif !important;
+}
+
+
+/* =========================
+   2. SIDEBAR
+   ========================= */
+
+.sidebar {
+    background: #17324d !important;
+    color: #ffffff !important;
+
+    border-right: 1px solid #d9e1e8 !important;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.06) !important;
+}
+
+.sidebar * {
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif !important;
+}
+
+.sidebar .logo,
+.logo {
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+.sidebar .logo span,
+.logo span {
+    color: #ffffff !important;
+}
+
+.sidebar .subtitle,
+.sidebar small,
+.logo-subtitle {
+    color: #cbd7e3 !important;
+}
+
+
+/* =========================
+   3. SIDEBAR PROFILE
+   ========================= */
+
+.teacher-profile,
+.student-profile,
+.profile-card {
+    background: #234967 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
+}
+
+.teacher-profile *,
+.student-profile *,
+.profile-card * {
+    color: inherit !important;
+}
+
+
+/* =========================
+   4. SIDEBAR MENU
+   ========================= */
+
+.sidebar .menu a,
+.sidebar .menu-item,
+.sidebar nav a {
+    color: #dce6ef !important;
+    background: transparent !important;
+
+    border-radius: 7px !important;
+    text-shadow: none !important;
+}
+
+.sidebar .menu a:hover,
+.sidebar .menu-item:hover,
+.sidebar nav a:hover {
+    background: #234967 !important;
+    color: #ffffff !important;
+}
+
+.sidebar .menu a.active,
+.sidebar .menu-item.active,
+.sidebar nav a.active {
+    background: #2f78ad !important;
+    color: #ffffff !important;
+
+    border-left: 3px solid #f4c95d !important;
+    box-shadow: none !important;
+}
+
+
+/* =========================
+   5. SIDEBAR DIVIDERS
+   ========================= */
+
+.sidebar hr,
+.sidebar .divider {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+
+/* =========================
+   6. MAIN CONTENT
+   ========================= */
+
+.main-content {
+    background: #f5f7fa !important;
+    color: #243447 !important;
+}
+
+
+/* =========================
+   7. HEADINGS
+   ========================= */
+
+.page-heading,
+.page-heading h1,
+.page-heading h2,
+h1,
+h2 {
+    color: #17324d !important;
+    text-shadow: none !important;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    color: #244b6b !important;
+    text-shadow: none !important;
+}
+
+.page-heading p,
+.page-heading span,
+.subtitle,
+.description {
+    color: #66788a !important;
+}
+
+
+/* =========================
+   8. REMOVE MAGICAL GOLD TEXT
+   ========================= */
+
+.magical-title,
+.magic-title,
+.gold-text {
+    color: #17324d !important;
+    text-shadow: none !important;
+}
+
+
+/* =========================
+   9. GENERAL CARDS
+   ========================= */
+
+.card,
+.dashboard-card,
+.stat-card,
+.focus-card,
+.table-card,
+.content-card,
+.analysis-card,
+.section-card,
+.info-card {
+    background: #ffffff !important;
+
+    border: 1px solid #dce4eb !important;
+    border-radius: 10px !important;
+
+    box-shadow:
+        0 2px 8px rgba(23, 50, 77, 0.06) !important;
+
+    color: #243447 !important;
+}
+
+
+/* =========================
+   10. DASHBOARD STAT CARDS
+   ========================= */
+
+.stat-card {
+    background: #ffffff !important;
+    border: 1px solid #dce4eb !important;
+    color: #243447 !important;
+}
+
+.stat-card h3,
+.stat-card h4,
+.stat-card .title,
+.stat-card .label {
+    color: #617487 !important;
+}
+
+.stat-card .number,
+.stat-card .value,
+.stat-card strong {
+    color: #17324d !important;
+}
+
+
+/* =========================
+   11. OLD PURPLE CARD FIX
+   ========================= */
+
+.quick-action,
+.quick-action-card,
+.action-card,
+.dashboard-action,
+.tool-card {
+    background: #ffffff !important;
+
+    border: 1px solid #dce4eb !important;
+
+    color: #243447 !important;
+
+    box-shadow:
+        0 2px 8px rgba(23, 50, 77, 0.06) !important;
+}
+
+.quick-action *,
+.quick-action-card *,
+.action-card *,
+.dashboard-action *,
+.tool-card * {
+    text-shadow: none !important;
+}
+
+.quick-action h3,
+.quick-action-card h3,
+.action-card h3,
+.dashboard-action h3,
+.tool-card h3 {
+    color: #17324d !important;
+}
+
+
+/* =========================
+   12. FOCUS / ATTENTION CARD
+   ========================= */
+
+.focus-card {
+    background: #ffffff !important;
+
+    border-left: 4px solid #2f78ad !important;
+}
+
+.focus-card h2,
+.focus-card h3,
+.focus-card strong {
+    color: #17324d !important;
+}
+
+.focus-card p {
+    color: #66788a !important;
+}
+
+
+/* =========================
+   13. SECTION HEADINGS
+   ========================= */
+
+.section-title,
+.section-heading {
+    color: #17324d !important;
+    text-shadow: none !important;
+}
+
+.section-label,
+.eyebrow,
+.small-heading {
+    color: #2f78ad !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   14. TABLES
+   ========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff !important;
+    color: #243447 !important;
+}
+
+thead,
+.table-header {
+    background: #eef3f7 !important;
+}
+
+th {
+    color: #40576b !important;
+    font-weight: 600 !important;
+    border-bottom: 1px solid #dce4eb !important;
+}
+
+td {
+    color: #34495e !important;
+    border-bottom: 1px solid #edf1f4 !important;
+}
+
+tbody tr {
+    background: #ffffff !important;
+}
+
+tbody tr:hover {
+    background: #f7f9fb !important;
+}
+
+
+/* =========================
+   15. BUTTONS
+   ========================= */
+
+button,
+.btn,
+.button,
+.primary-btn {
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif !important;
+
+    border-radius: 7px !important;
+
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+button,
+.primary-btn,
+.btn-primary,
+.button-primary {
+    background: #2f78ad !important;
+    color: #ffffff !important;
+
+    border: 1px solid #2f78ad !important;
+}
+
+button:hover,
+.primary-btn:hover,
+.btn-primary:hover,
+.button-primary:hover {
+    background: #255f8a !important;
+    border-color: #255f8a !important;
+}
+
+
+/* =========================
+   16. SECONDARY BUTTON
+   ========================= */
+
+.secondary-btn,
+.btn-secondary,
+.button-secondary {
+    background: #ffffff !important;
+    color: #2f78ad !important;
+
+    border: 1px solid #b8c9d8 !important;
+}
+
+.secondary-btn:hover,
+.btn-secondary:hover,
+.button-secondary:hover {
+    background: #eef5fa !important;
+}
+
+
+/* =========================
+   17. LINKS
+   ========================= */
+
+a {
+    color: #2f78ad;
+}
+
+a:hover {
+    color: #255f8a;
+}
+
+
+/* =========================
+   18. INPUTS
+   ========================= */
+
+input,
+select,
+textarea {
+    background: #ffffff !important;
+    color: #243447 !important;
+
+    border: 1px solid #cfd9e2 !important;
+    border-radius: 7px !important;
+
+    box-shadow: none !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none !important;
+
+    border-color: #2f78ad !important;
+
+    box-shadow:
+        0 0 0 2px rgba(47, 120, 173, 0.12) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b1 !important;
+}
+
+
+/* =========================
+   19. LABELS
+   ========================= */
+
+label {
+    color: #40576b !important;
+    font-weight: 600 !important;
+}
+
+
+/* =========================
+   20. BADGES
+   ========================= */
+
+.badge,
+.status,
+.category,
+.status-badge {
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+
+/* Good */
+
+.good,
+.status-good,
+.badge-good {
+    background: #e8f4ed !important;
+    color: #28734d !important;
+}
+
+
+/* Needs Practice */
+
+.needs-practice,
+.status-practice,
+.badge-practice {
+    background: #fff5df !important;
+    color: #8a6500 !important;
+}
+
+
+/* Needs Attention */
+
+.needs-attention,
+.status-attention,
+.badge-attention {
+    background: #fdecec !important;
+    color: #a33a3a !important;
+}
+
+
+/* =========================
+   21. PROGRESS BARS
+   ========================= */
+
+.progress,
+.progress-bar-container {
+    background: #e8edf2 !important;
+    border-radius: 20px !important;
+}
+
+.progress-bar {
+    background: #2f78ad !important;
+    border-radius: 20px !important;
+}
+
+
+/* =========================
+   22. ICON BOXES
+   ========================= */
+
+.icon-box,
+.stat-icon,
+.card-icon {
+    background: #edf4f8 !important;
+    color: #2f78ad !important;
+
+    border-radius: 8px !important;
+}
+
+
+/* =========================
+   23. TOP RIGHT INFORMATION BOX
+   ========================= */
+
+.top-card,
+.header-card,
+.study-hall,
+.today-card {
+    background: #ffffff !important;
+
+    color: #17324d !important;
+
+    border: 1px solid #dce4eb !important;
+    box-shadow: none !important;
+}
+
+
+/* =========================
+   24. REMOVE GLOW / MAGIC EFFECTS
+   ========================= */
+
+* {
+    text-shadow: none;
+}
+
+.glow,
+.magic-glow,
+.magical-glow {
+    box-shadow: none !important;
+}
+
+
+/* =========================
+   25. RESPONSIVE
+   ========================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 220px !important;
+    }
+
+    .main-content {
+        margin-left: 220px !important;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        position: relative !important;
+        width: 100% !important;
+        min-height: auto !important;
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    .stat-card,
+    .dashboard-card,
+    .quick-action,
+    .action-card {
+        width: 100% !important;
+    }
+}

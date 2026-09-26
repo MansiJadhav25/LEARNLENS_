@@ -1,7 +1,6 @@
-/* =========================================
-   LEARNLENS - RECOMMENDATIONS
-   Magical Learning Theme
-========================================= */
+/* ===============================
+   BASIC RESET
+================================ */
 
 * {
     margin: 0;
@@ -9,456 +8,879 @@
     box-sizing: border-box;
 }
 
+
+/* ===============================
+   BODY
+================================ */
+
 body {
-    font-family: Georgia, "Times New Roman", serif;
-    background:
-        radial-gradient(circle at top, rgba(111, 78, 170, 0.25), transparent 35%),
-        linear-gradient(135deg, #120d24, #241344, #100b20);
-    color: #f7f0ff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f7fa;
+
+    color: #263746;
+
     min-height: 100vh;
 }
 
 
-/* =========================================
+/* ===============================
    SIDEBAR
-========================================= */
+================================ */
 
 .sidebar {
+
     position: fixed;
+
     left: 0;
     top: 0;
 
     width: 250px;
     height: 100vh;
 
-    background: linear-gradient(
-        180deg,
-        #180d30,
-        #241346,
-        #12091f
-    );
+    background: #193b5a;
 
-    border-right: 2px solid #d6a84f;
+    padding: 25px 18px;
 
-    padding: 28px 16px;
-
-    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.5);
-
-    z-index: 10;
+    color: white;
 }
 
-.logo {
-    color: #f4cf70;
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 3px;
+
+/* ===============================
+   LOGO
+================================ */
+
+.logo-area {
+
+    text-align: center;
+
+    margin-bottom: 28px;
 }
 
-.subtitle {
-    color: #cbb9e8;
+
+.logo-area h1 {
+
+    color: white;
+
+    font-size: 25px;
+
+    letter-spacing: 0.5px;
+}
+
+
+.logo-area p {
+
+    color: #cbd8e3;
+
+    margin-top: 6px;
+
     font-size: 14px;
-    margin-bottom: 25px;
 }
+
+
+/* ===============================
+   PROFILE
+================================ */
 
 .profile {
-    padding: 12px 0;
-    margin-bottom: 20px;
 
-    border-top: 1px solid rgba(214, 168, 79, 0.2);
-    border-bottom: 1px solid rgba(214, 168, 79, 0.2);
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px 10px;
+
+    border-top: 1px solid #42627d;
+
+    border-bottom: 1px solid #42627d;
+
+    margin-bottom: 22px;
 }
+
 
 .profile-icon {
-    font-size: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1f8;
+
+    border-radius: 50%;
+
+    font-size: 23px;
 }
+
 
 .profile h3 {
-    color: #f4cf70;
-    margin: 5px 0;
-}
 
-.profile p {
-    color: #c7b8d9;
+    color: white;
+
     font-size: 14px;
 }
 
 
-/* Sidebar links */
+.profile p {
 
-.sidebar a {
+    color: #cbd8e3;
+
+    font-size: 12px;
+
+    margin-top: 4px;
+}
+
+
+/* ===============================
+   NAVIGATION
+================================ */
+
+.menu a {
+
     display: block;
 
-    padding: 10px 12px;
-    margin: 5px 0;
+    padding: 12px 14px;
 
-    color: #e9ddf5;
+    margin-bottom: 7px;
+
+    border-radius: 6px;
+
+    color: #dce6ee;
 
     text-decoration: none;
 
-    border-radius: 8px;
+    font-size: 14px;
 
-    transition: 0.3s;
-}
-
-.sidebar a:hover {
-    background: rgba(214, 168, 79, 0.15);
-    color: #f4cf70;
-    transform: translateX(4px);
-}
-
-.sidebar a.active {
-    background: rgba(214, 168, 79, 0.18);
-    color: #f4cf70;
-
-    border-left: 4px solid #f4cf70;
+    transition: 0.2s ease;
 }
 
 
-/* =========================================
+.menu a:hover {
+
+    background: #284f70;
+
+    color: white;
+}
+
+
+.menu a.active {
+
+    background: #347db3;
+
+    color: white;
+
+    font-weight: 600;
+
+    border-left: 4px solid white;
+
+    padding-left: 10px;
+}
+
+
+/* ===============================
    MAIN CONTENT
-========================================= */
+================================ */
 
 .main-content {
+
     margin-left: 250px;
 
-    padding: 45px;
+    padding: 35px 40px;
 
     min-height: 100vh;
-
-    max-width: 1200px;
 }
 
 
-/* =========================================
+/* ===============================
    PAGE HEADER
-========================================= */
+================================ */
 
 .page-header {
-    margin-bottom: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
 }
+
 
 .page-header h1 {
-    color: #f4cf70;
 
-    font-size: 38px;
+    color: #183b5b;
 
-    margin-bottom: 8px;
+    font-size: 30px;
+
+    font-weight: 600;
 }
+
 
 .page-header p {
-    color: #cdbfe0;
 
-    font-size: 16px;
+    color: #71808e;
+
+    margin-top: 7px;
+
+    font-size: 15px;
 }
 
 
-/* =========================================
-   FOCUS AREA
-========================================= */
+.header-icon {
 
-.focus-card {
-    background:
-        linear-gradient(
-            135deg,
-            rgba(126, 87, 170, 0.30),
-            rgba(214, 168, 79, 0.10)
-        );
+    width: 48px;
+    height: 48px;
 
-    border: 1px solid rgba(214, 168, 79, 0.4);
+    display: flex;
 
-    border-radius: 18px;
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1f8;
+
+    color: #347db3;
+
+    border-radius: 8px;
+
+    font-size: 22px;
+}
+
+
+/* ===============================
+   WEAK SUBJECT CARD
+================================ */
+
+.weak-subject-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    background: white;
+
+    border: 1px solid #dce4ea;
+
+    border-left: 4px solid #b87916;
+
+    border-radius: 10px;
+
+    padding: 23px 25px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 3px 10px rgba(25, 59, 90, 0.05);
+}
+
+
+.focus-icon {
+
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #fff5df;
+
+    color: #b87916;
+
+    border-radius: 8px;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+
+.small-title {
+
+    color: #71808e;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+
+.weak-subject-card h2 {
+
+    color: #183b5b;
+
+    font-size: 23px;
+
+    margin-bottom: 5px;
+}
+
+
+.weak-subject-card > div:last-child > p:last-child {
+
+    color: #71808e;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* ===============================
+   RECOMMENDATION SECTION
+================================ */
+
+.recommendation-section {
+
+    background: white;
+
+    border: 1px solid #dce4ea;
+
+    border-radius: 10px;
 
     padding: 25px;
 
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-.focus-card h3 {
-    color: #cdbfe0;
-
-    font-size: 15px;
-
-    margin-bottom: 8px;
-}
-
-.focus-card h2 {
-    color: #f4cf70;
-
-    font-size: 26px;
-
-    margin-bottom: 10px;
-}
-
-.focus-card p {
-    color: #d7cbe5;
-
-    line-height: 1.6;
+    box-shadow:
+        0 3px 10px rgba(25, 59, 90, 0.05);
 }
 
 
-/* =========================================
-   SECTION
-========================================= */
+/* ===============================
+   SECTION HEADING
+================================ */
 
-.section {
-    margin-bottom: 35px;
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
 }
 
-.section-title {
-    color: #f4cf70;
 
-    font-size: 25px;
+.section-icon {
 
-    margin-bottom: 8px;
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1f8;
+
+    color: #347db3;
+
+    border-radius: 7px;
+
+    font-size: 17px;
+
+    font-weight: bold;
 }
+
+
+.section-heading h2 {
+
+    color: #183b5b;
+
+    font-size: 20px;
+
+    margin-bottom: 4px;
+}
+
 
 .section-description {
-    color: #c8b9d8;
 
-    margin-bottom: 20px;
+    color: #71808e;
+
+    font-size: 13px;
 }
 
 
-/* =========================================
-   RESOURCE CARDS
-========================================= */
+/* ===============================
+   VIDEO GRID
+================================ */
 
 .resource-grid {
+
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(240px, 1fr));
+        repeat(3, 1fr);
 
-    gap: 20px;
+    gap: 16px;
 }
+
+
+/* ===============================
+   VIDEO CARD
+================================ */
 
 .resource-card {
-    background:
-        linear-gradient(
-            145deg,
-            rgba(71, 42, 105, 0.60),
-            rgba(25, 14, 47, 0.90)
-        );
 
-    border: 1px solid rgba(214, 168, 79, 0.30);
+    background: #f8fafc;
 
-    border-radius: 16px;
+    border: 1px solid #e1e7ec;
 
-    padding: 22px;
+    border-radius: 8px;
 
-    min-height: 170px;
+    padding: 20px;
 
-    transition: 0.3s;
-
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: 0.2s ease;
 }
+
 
 .resource-card:hover {
-    transform: translateY(-5px);
 
-    border-color: #d6a84f;
+    border-color: #347db3;
+
+    transform: translateY(-2px);
 
     box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.35);
+        0 5px 14px rgba(25, 59, 90, 0.08);
 }
+
 
 .resource-icon {
-    font-size: 28px;
 
-    margin-bottom: 12px;
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1f8;
+
+    color: #347db3;
+
+    border-radius: 7px;
+
+    margin-bottom: 15px;
+
+    font-weight: bold;
 }
+
 
 .resource-card h3 {
-    color: #f4cf70;
 
-    font-size: 19px;
+    color: #183b5b;
 
-    margin-bottom: 10px;
-}
+    font-size: 15px;
 
-.resource-card p {
-    color: #d0c2df;
+    line-height: 1.4;
 
-    line-height: 1.5;
+    min-height: 42px;
 
     margin-bottom: 15px;
 }
 
 
-/* =========================================
-   LINKS
-========================================= */
-
 .resource-card a {
+
     display: inline-block;
+
+    color: #347db3;
 
     text-decoration: none;
 
-    background: linear-gradient(
-        135deg,
-        #d6a84f,
-        #a97924
-    );
+    font-size: 13px;
 
-    color: #1b102c;
-
-    padding: 9px 15px;
-
-    border-radius: 8px;
-
-    font-weight: bold;
-
-    transition: 0.3s;
+    font-weight: 600;
 }
+
 
 .resource-card a:hover {
-    transform: translateY(-2px);
 
-    box-shadow:
-        0 5px 15px rgba(214, 168, 79, 0.3);
+    text-decoration: underline;
 }
 
 
-/* =========================================
-   NOTES
-========================================= */
+/* ===============================
+   NOTES GRID
+================================ */
 
 .notes-grid {
+
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(240px, 1fr));
+        repeat(3, 1fr);
 
-    gap: 20px;
+    gap: 16px;
 }
+
+
+/* ===============================
+   NOTE CARD
+================================ */
 
 .note-card {
-    background: rgba(255, 255, 255, 0.055);
 
-    border: 1px solid rgba(214, 168, 79, 0.30);
+    background: #f8fafc;
 
-    border-radius: 16px;
+    border: 1px solid #e1e7ec;
 
-    padding: 22px;
+    border-radius: 8px;
 
-    transition: 0.3s;
+    padding: 20px;
 }
 
-.note-card:hover {
-    border-color: #d6a84f;
 
-    transform: translateY(-4px);
+.note-icon {
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1f8;
+
+    color: #347db3;
+
+    border-radius: 7px;
+
+    margin-bottom: 15px;
 }
+
 
 .note-card h3 {
-    color: #f4cf70;
 
-    font-size: 18px;
+    color: #183b5b;
 
-    margin-bottom: 10px;
+    font-size: 15px;
+
+    line-height: 1.4;
+
+    margin-bottom: 8px;
 }
+
 
 .note-card p {
-    color: #d0c2df;
 
-    line-height: 1.6;
+    color: #71808e;
+
+    font-size: 13px;
+
+    line-height: 1.5;
 }
 
 
-/* =========================================
-   PROFESSOR'S ADVICE
-========================================= */
+/* ===============================
+   STUDY TIP
+================================ */
 
-.advice-card {
-    background:
-        linear-gradient(
-            135deg,
-            rgba(214, 168, 79, 0.14),
-            rgba(126, 87, 170, 0.20)
-        );
+.study-tip {
 
-    border: 1px solid rgba(214, 168, 79, 0.45);
+    display: flex;
 
-    border-radius: 18px;
+    align-items: center;
 
-    padding: 25px;
+    gap: 16px;
 
-    margin-top: 20px;
-}
+    background: white;
 
-.advice-card h2 {
-    color: #f4cf70;
+    border: 1px solid #dce4ea;
 
-    margin-bottom: 12px;
-}
-
-.advice-card p {
-    color: #e0d5eb;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================
-   BUTTON
-========================================= */
-
-.magic-button {
-    display: inline-block;
-
-    margin-top: 20px;
-
-    padding: 12px 22px;
-
-    background: linear-gradient(
-        135deg,
-        #d6a84f,
-        #a97924
-    );
-
-    color: #1b102c;
-
-    text-decoration: none;
+    border-left: 4px solid #347db3;
 
     border-radius: 10px;
 
-    font-weight: bold;
+    padding: 22px 25px;
 
-    transition: 0.3s;
-}
-
-.magic-button:hover {
-    transform: translateY(-3px);
+    margin-bottom: 20px;
 
     box-shadow:
-        0 7px 20px rgba(214, 168, 79, 0.35);
+        0 3px 10px rgba(25, 59, 90, 0.05);
 }
 
 
-/* =========================================
-   RESPONSIVE
-========================================= */
+.advice-icon {
+
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f5ee;
+
+    color: #28764c;
+
+    border-radius: 7px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+
+.study-tip h2 {
+
+    color: #183b5b;
+
+    font-size: 18px;
+
+    margin-bottom: 5px;
+}
+
+
+.study-tip p {
+
+    color: #71808e;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* ===============================
+   SCHEDULE CARD
+================================ */
+
+.schedule-card {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: white;
+
+    border: 1px solid #dce4ea;
+
+    border-radius: 10px;
+
+    padding: 22px 25px;
+
+    box-shadow:
+        0 3px 10px rgba(25, 59, 90, 0.05);
+}
+
+
+.schedule-card h2 {
+
+    color: #183b5b;
+
+    font-size: 19px;
+
+    margin-bottom: 5px;
+}
+
+
+.schedule-card p {
+
+    color: #71808e;
+
+    font-size: 13px;
+}
+
+
+.schedule-card button {
+
+    border: none;
+
+    background: #347db3;
+
+    color: white;
+
+    padding: 11px 18px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+}
+
+
+.schedule-card button:hover {
+
+    background: #286895;
+}
+
+
+/* ===============================
+   EMPTY MESSAGE
+================================ */
+
+.empty-message {
+
+    color: #71808e;
+
+    font-size: 14px;
+
+    padding: 15px 0;
+}
+
+
+/* ===============================
+   FOOTER
+================================ */
+
+footer {
+
+    text-align: center;
+
+    color: #8997a3;
+
+    font-size: 12px;
+
+    padding: 25px 0 10px;
+}
+
+
+/* ===============================
+   TABLET
+================================ */
+
+@media (max-width: 950px) {
+
+    .resource-grid,
+    .notes-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* ===============================
+   SMALL TABLET
+================================ */
 
 @media (max-width: 850px) {
 
     .sidebar {
+
         position: relative;
 
         width: 100%;
 
         height: auto;
+
+        padding: 20px;
     }
+
 
     .main-content {
+
         margin-left: 0;
 
-        padding: 25px;
+        padding: 25px 20px;
     }
+
+
+    .menu a {
+
+        display: inline-block;
+
+        margin-right: 5px;
+
+        margin-bottom: 5px;
+    }
+
+
+    .schedule-card {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .schedule-card button {
+
+        width: 100%;
+    }
+
+}
+
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .main-content {
+
+        padding: 20px 15px;
+    }
+
+
+    .page-header h1 {
+
+        font-size: 25px;
+    }
+
 
     .resource-grid,
     .notes-grid {
+
         grid-template-columns: 1fr;
     }
+
+
+    .weak-subject-card {
+
+        align-items: flex-start;
+
+        padding: 20px;
+    }
+
+
+    .recommendation-section {
+
+        padding: 18px;
+    }
+
+
+    .study-tip {
+
+        align-items: flex-start;
+
+        padding: 20px;
+    }
+
 }

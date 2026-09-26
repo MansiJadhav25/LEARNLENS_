@@ -2,23 +2,30 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Student Profile | LearnLens</title>
 
     <link rel="stylesheet" href="student-profile.css">
+
 </head>
 
+
 <body>
+
 
     <!-- ================= SIDEBAR ================= -->
 
     <aside class="sidebar">
 
         <div class="logo-area">
-            <h1>🪄 LearnLens</h1>
-            <p>Magical Learning</p>
+
+            <h1>LearnLens</h1>
+
+            <p>Adaptive Learning</p>
+
         </div>
 
 
@@ -33,16 +40,18 @@
             </h3>
 
             <p>
-                Young Scholar
+                Student
             </p>
 
         </div>
 
 
+        <!-- ================= NAVIGATION ================= -->
+
         <nav>
 
             <a href="student-profile.html" class="active">
-                🏰 My Profile
+                🏠 My Profile
             </a>
 
             <a href="student-performance.html">
@@ -50,11 +59,11 @@
             </a>
 
             <a href="student-weak-areas.html">
-                🔮 Weak Areas
+                ⚠️ Weak Areas
             </a>
 
             <a href="recommendations.html">
-                📚 Recommendations
+                🎓 Recommendations
             </a>
 
             <a href="study-schedule.html">
@@ -74,26 +83,36 @@
     </aside>
 
 
+
     <!-- ================= MAIN CONTENT ================= -->
 
     <main class="main-content">
 
+
+        <!-- ================= HEADER ================= -->
+
         <header class="page-header">
 
-            <h1>
-                🪄 Welcome, Young Scholar!
-            </h1>
+            <div>
 
-            <p>
-                Here is your magical learning profile.
-            </p>
+                <h1>
+                    Welcome, <span id="headerName">Student</span>
+                </h1>
+
+                <p>
+                    View your academic profile and learning progress.
+                </p>
+
+            </div>
 
         </header>
 
 
-        <!-- ================= STUDENT PROFILE ================= -->
+
+        <!-- ================= STUDENT PROFILE CARD ================= -->
 
         <section class="profile-card">
+
 
             <div class="large-student-icon">
                 👨‍🎓
@@ -114,7 +133,7 @@
                 </p>
 
                 <p>
-                    Learner Level:
+                    Learner Category:
                     <strong id="category">
                         -
                     </strong>
@@ -122,17 +141,20 @@
 
             </div>
 
+
         </section>
+
 
 
         <!-- ================= PERFORMANCE SUMMARY ================= -->
 
         <section class="summary-grid">
 
+
             <div class="summary-card">
 
                 <span>
-                    📈 Percentage
+                    Percentage
                 </span>
 
                 <strong id="percentage">
@@ -142,10 +164,11 @@
             </div>
 
 
+
             <div class="summary-card">
 
                 <span>
-                    ⭐ Average
+                    Average Marks
                 </span>
 
                 <strong id="average">
@@ -155,10 +178,11 @@
             </div>
 
 
+
             <div class="summary-card">
 
                 <span>
-                    ✨ Strongest Subject
+                    Strongest Subject
                 </span>
 
                 <strong id="strongestSubject">
@@ -168,10 +192,11 @@
             </div>
 
 
+
             <div class="summary-card">
 
                 <span>
-                    🔮 Weakest Subject
+                    Weakest Subject
                 </span>
 
                 <strong id="weakestSubject">
@@ -180,39 +205,84 @@
 
             </div>
 
+
         </section>
 
 
-        <!-- ================= LEARNING STATUS ================= -->
+
+        <!-- ================= ASSESSMENT ================= -->
 
         <section class="status-card">
 
-            <h2>
-                🧙‍♂️ Professor's Assessment
-            </h2>
+            <div class="section-heading">
 
-            <p id="assessment">
-                Loading your assessment...
-            </p>
+                <div class="section-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <h2>
+                        Professor's Assessment
+                    </h2>
+
+                    <p>
+                        A short overview of your current academic performance.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="assessment-box">
+
+                <p id="assessment">
+                    Loading your assessment...
+                </p>
+
+            </div>
 
         </section>
+
 
 
         <!-- ================= QUICK ACTIONS ================= -->
 
         <section class="actions-section">
 
-            <h2>
-                ✨ Continue Your Learning
-            </h2>
+
+            <div class="section-heading">
+
+                <div class="section-icon">
+                    →
+                </div>
+
+                <div>
+
+                    <h2>
+                        Continue Learning
+                    </h2>
+
+                    <p>
+                        Choose what you want to explore next.
+                    </p>
+
+                </div>
+
+            </div>
+
 
 
             <div class="action-grid">
 
+
+                <!-- PERFORMANCE -->
+
                 <a href="student-performance.html"
                    class="action-card">
 
-                    <div>
+                    <div class="action-icon">
                         📊
                     </div>
 
@@ -221,16 +291,19 @@
                     </h3>
 
                     <p>
-                        See your subject-wise marks.
+                        See your subject-wise marks and performance graph.
                     </p>
 
                 </a>
 
 
+
+                <!-- RECOMMENDATIONS -->
+
                 <a href="recommendations.html"
                    class="action-card">
 
-                    <div>
+                    <div class="action-icon">
                         📚
                     </div>
 
@@ -239,16 +312,19 @@
                     </h3>
 
                     <p>
-                        Get videos and notes for your weak area.
+                        Get learning videos and notes for your weak areas.
                     </p>
 
                 </a>
 
 
+
+                <!-- SCHEDULE -->
+
                 <a href="study-schedule.html"
                    class="action-card">
 
-                    <div>
+                    <div class="action-icon">
                         📅
                     </div>
 
@@ -257,21 +333,25 @@
                     </h3>
 
                     <p>
-                        Follow your 7-day study plan.
+                        Follow your personalized 7-day study plan.
                     </p>
 
                 </a>
+
 
             </div>
 
         </section>
 
+
     </main>
+
 
 
     <!-- ================= JAVASCRIPT ================= -->
 
     <script>
+
 
         // -----------------------------------------
         // CHECK STUDENT LOGIN
@@ -286,12 +366,14 @@
         if (role !== "student") {
 
             alert(
-                "🔐 Please login as a student first."
+                "Please login as a student first."
             );
 
             window.location.href =
                 "login.html";
+
         }
+
 
 
         // -----------------------------------------
@@ -309,12 +391,14 @@
         if (!currentStudent) {
 
             alert(
-                "⚠️ Student information not found."
+                "Student information not found."
             );
 
             window.location.href =
                 "login.html";
+
         }
+
 
 
         // -----------------------------------------
@@ -323,6 +407,12 @@
 
         document.getElementById(
             "sidebarName"
+        ).textContent =
+            currentStudent.name;
+
+
+        document.getElementById(
+            "headerName"
         ).textContent =
             currentStudent.name;
 
@@ -371,6 +461,7 @@
             currentStudent.weakestSubject;
 
 
+
         // -----------------------------------------
         // PROFESSOR'S ASSESSMENT
         // -----------------------------------------
@@ -384,36 +475,41 @@
         ) {
 
             assessment =
-                "Excellent work! 🌟 " +
-                "You are performing at an advanced level. " +
+                "Excellent work! You are performing at an advanced level. " +
                 "Keep challenging yourself and continue improving.";
 
         }
+
+
         else if (
             currentStudent.category ===
             "Moderate Learner"
         ) {
 
             assessment =
-                "You are making good progress! 🪄 " +
+                "You are making good progress. " +
                 "Focus a little more on your weak subject " +
-                "and you can reach the advanced level.";
+                "and continue working towards the advanced level.";
 
         }
+
+
         else {
 
             assessment =
-                "Every great wizard starts by learning the basics. 🧙‍♂️ " +
-                "Spend some extra time practising your weak subject " +
+                "Start with the basics and keep practising regularly. " +
+                "Spend some extra time on your weak subject " +
                 "and improve step by step.";
 
         }
+
 
 
         document.getElementById(
             "assessment"
         ).textContent =
             assessment;
+
 
 
         // -----------------------------------------
@@ -425,7 +521,9 @@
             currentStudent.weakestSubject
         );
 
+
     </script>
+
 
 </body>
 

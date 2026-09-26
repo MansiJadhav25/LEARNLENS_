@@ -1,23 +1,39 @@
+/* ===============================
+   BASIC RESET
+================================ */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* ===============================
+   BODY
+================================ */
+
 body {
-    font-family: Georgia, "Times New Roman", serif;
 
-    background: #100b20;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-    color: #f5e6b3;
+    background: #f4f7fa;
+
+    color: #263746;
 
     min-height: 100vh;
 }
 
 
-/* ================= SIDEBAR ================= */
+/* ===============================
+   SIDEBAR
+================================ */
 
 .sidebar {
+
     position: fixed;
 
     left: 0;
@@ -26,15 +42,20 @@ body {
     width: 250px;
     height: 100vh;
 
-    background: #1b1235;
-
-    border-right: 2px solid #c9a227;
+    background: #193b5a;
 
     padding: 25px 18px;
+
+    color: white;
 }
 
 
+/* ===============================
+   LOGO
+================================ */
+
 .logo-area {
+
     text-align: center;
 
     margin-bottom: 30px;
@@ -42,148 +63,213 @@ body {
 
 
 .logo-area h1 {
-    color: #d4af37;
 
     font-size: 25px;
+
+    color: white;
+
+    letter-spacing: 0.5px;
 }
 
 
 .logo-area p {
-    color: #b9a8d5;
 
-    margin-top: 5px;
+    margin-top: 6px;
+
+    color: #cbd8e3;
+
+    font-size: 14px;
 }
 
 
-/* PROFILE */
+/* ===============================
+   PROFILE IN SIDEBAR
+================================ */
 
 .profile {
+
     text-align: center;
 
-    padding: 15px;
+    padding: 18px 10px;
 
-    border-top: 1px solid #5e4b86;
-    border-bottom: 1px solid #5e4b86;
+    border-top: 1px solid #42627d;
+
+    border-bottom: 1px solid #42627d;
 
     margin-bottom: 25px;
 }
 
 
 .profile-icon {
-    font-size: 40px;
-}
 
+    width: 55px;
+    height: 55px;
 
-.profile h3 {
-    color: #d4af37;
-
-    margin-top: 8px;
-}
-
-
-.profile p {
-    color: #b9a8d5;
-
-    margin-top: 4px;
-}
-
-
-/* ================= NAVIGATION ================= */
-
-nav a {
-    display: block;
-
-    padding: 13px 15px;
-
-    margin-bottom: 8px;
-
-    border-radius: 8px;
-
-    color: #e8dff5;
-
-    text-decoration: none;
-
-    transition: 0.3s;
-}
-
-
-nav a:hover {
-    background: #32205c;
-
-    color: #ffd95a;
-}
-
-
-nav a.active {
-    background: #3a2768;
-
-    color: #ffd95a;
-
-    border-left: 4px solid #d4af37;
-}
-
-
-/* ================= MAIN ================= */
-
-.main-content {
-    margin-left: 250px;
-
-    padding: 40px;
-}
-
-
-/* ================= HEADER ================= */
-
-.page-header {
-    margin-bottom: 25px;
-}
-
-
-.page-header h1 {
-    color: #d4af37;
-
-    font-size: 34px;
-}
-
-
-.page-header p {
-    color: #b9a8d5;
-
-    margin-top: 8px;
-}
-
-
-/* ================= PROFILE CARD ================= */
-
-.profile-card {
-    display: flex;
-
-    align-items: center;
-
-    gap: 25px;
-
-    background: #19112f;
-
-    border: 1px solid #d4af37;
-
-    border-radius: 15px;
-
-    padding: 25px;
-
-    margin-bottom: 25px;
-}
-
-
-.large-student-icon {
-    width: 85px;
-    height: 85px;
+    margin: auto;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    background: #342254;
+    background: #e8f1f8;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+}
+
+
+.profile h3 {
+
+    margin-top: 10px;
+
+    color: white;
+
+    font-size: 16px;
+}
+
+
+.profile p {
+
+    margin-top: 5px;
+
+    color: #cbd8e3;
+
+    font-size: 13px;
+}
+
+
+/* ===============================
+   NAVIGATION
+================================ */
+
+nav a {
+
+    display: block;
+
+    padding: 12px 14px;
+
+    margin-bottom: 7px;
+
+    border-radius: 6px;
+
+    color: #dce6ee;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+
+nav a:hover {
+
+    background: #284f70;
+
+    color: white;
+}
+
+
+nav a.active {
+
+    background: #347db3;
+
+    color: white;
+
+    font-weight: 600;
+
+    border-left: 4px solid white;
+
+    padding-left: 10px;
+}
+
+
+/* ===============================
+   MAIN CONTENT
+================================ */
+
+.main-content {
+
+    margin-left: 250px;
+
+    padding: 35px 40px;
+
+    min-height: 100vh;
+}
+
+
+/* ===============================
+   PAGE HEADER
+================================ */
+
+.page-header {
+
+    margin-bottom: 25px;
+}
+
+
+.page-header h1 {
+
+    color: #183b5b;
+
+    font-size: 30px;
+
+    font-weight: 600;
+}
+
+
+.page-header p {
+
+    margin-top: 7px;
+
+    color: #71808e;
+
+    font-size: 15px;
+}
+
+
+/* ===============================
+   PROFILE CARD
+================================ */
+
+.profile-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    background: white;
+
+    border: 1px solid #dce4ea;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 3px 10px rgba(25, 59, 90, 0.06);
+}
+
+
+.large-student-icon {
+
+    width: 85px;
+    height: 85px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1f8;
 
     border-radius: 50%;
 
@@ -192,218 +278,417 @@ nav a.active {
 
 
 .student-info h2 {
-    color: #f1d77a;
 
-    font-size: 27px;
+    color: #183b5b;
+
+    font-size: 25px;
 
     margin-bottom: 10px;
 }
 
 
 .student-info p {
-    color: #b9a8d5;
 
-    margin-top: 5px;
-}
+    color: #687985;
 
-
-.student-info strong {
-    color: #d4af37;
-}
-
-
-/* ================= SUMMARY ================= */
-
-.summary-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 18px;
-
-    margin-bottom: 25px;
-}
-
-
-.summary-card {
-    background: #21163d;
-
-    border: 1px solid #5b4780;
-
-    border-radius: 12px;
-
-    padding: 20px;
-
-    text-align: center;
-}
-
-
-.summary-card span {
-    display: block;
-
-    color: #b9a8d5;
-
-    margin-bottom: 10px;
+    margin-top: 6px;
 
     font-size: 14px;
 }
 
 
+.student-info strong {
+
+    color: #347db3;
+}
+
+
+/* ===============================
+   SUMMARY GRID
+================================ */
+
+.summary-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 22px;
+}
+
+
+/* ===============================
+   SUMMARY CARD
+================================ */
+
+.summary-card {
+
+    background: white;
+
+    border: 1px solid #dce4ea;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    min-height: 110px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 3px 10px rgba(25, 59, 90, 0.05);
+}
+
+
+.summary-card span {
+
+    display: block;
+
+    color: #71808e;
+
+    font-size: 13px;
+
+    margin-bottom: 9px;
+}
+
+
 .summary-card strong {
-    color: #d4af37;
+
+    color: #183b5b;
 
     font-size: 20px;
+
+    font-weight: 600;
 }
 
 
-/* ================= ASSESSMENT ================= */
+/* ===============================
+   COMMON SECTION HEADING
+================================ */
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+
+.section-icon {
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1f8;
+
+    color: #347db3;
+
+    border-radius: 7px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+.section-heading h2 {
+
+    color: #183b5b;
+
+    font-size: 20px;
+
+    font-weight: 600;
+}
+
+
+.section-heading p {
+
+    margin-top: 4px;
+
+    color: #71808e;
+
+    font-size: 13px;
+}
+
+
+/* ===============================
+   ASSESSMENT
+================================ */
 
 .status-card {
-    background: #19112f;
 
-    border: 1px solid #5e4b86;
+    background: white;
 
-    border-radius: 15px;
+    border: 1px solid #dce4ea;
+
+    border-radius: 10px;
 
     padding: 25px;
 
-    margin-bottom: 25px;
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 3px 10px rgba(25, 59, 90, 0.05);
 }
 
 
-.status-card h2 {
-    color: #f1d77a;
+.assessment-box {
 
-    margin-bottom: 12px;
+    background: #f5f9fc;
+
+    border-left: 4px solid #347db3;
+
+    border-radius: 5px;
+
+    padding: 16px 18px;
 }
 
 
-.status-card p {
-    color: #b9a8d5;
+.assessment-box p {
+
+    color: #526575;
 
     line-height: 1.6;
+
+    font-size: 14px;
 }
 
 
-/* ================= ACTIONS ================= */
+/* ===============================
+   ACTION SECTION
+================================ */
 
 .actions-section {
-    background: #19112f;
 
-    border: 1px solid #4d3975;
+    background: white;
 
-    border-radius: 15px;
+    border: 1px solid #dce4ea;
+
+    border-radius: 10px;
 
     padding: 25px;
+
+    box-shadow:
+        0 3px 10px rgba(25, 59, 90, 0.05);
 }
 
 
-.actions-section h2 {
-    color: #f1d77a;
-
-    margin-bottom: 20px;
-}
-
+/* ===============================
+   ACTION GRID
+================================ */
 
 .action-grid {
+
     display: grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 18px;
+    gap: 16px;
 }
 
 
+/* ===============================
+   ACTION CARD
+================================ */
+
 .action-card {
-    background: #21163d;
 
-    border: 1px solid #5b4780;
+    background: #f8fafc;
 
-    border-radius: 12px;
+    border: 1px solid #dce4ea;
 
-    padding: 22px;
+    border-radius: 8px;
+
+    padding: 20px;
 
     text-decoration: none;
 
-    transition: 0.3s;
+    transition: 0.2s ease;
 }
 
 
 .action-card:hover {
-    transform: translateY(-4px);
 
-    border-color: #d4af37;
+    border-color: #347db3;
 
-    background: #281b48;
+    background: #f1f7fb;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 14px rgba(25, 59, 90, 0.08);
 }
 
 
-.action-card div {
-    font-size: 30px;
+.action-icon {
 
-    margin-bottom: 10px;
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1f8;
+
+    border-radius: 7px;
+
+    font-size: 21px;
+
+    margin-bottom: 13px;
 }
 
 
 .action-card h3 {
-    color: #d4af37;
 
-    margin-bottom: 8px;
+    color: #183b5b;
+
+    font-size: 16px;
+
+    margin-bottom: 7px;
 }
 
 
 .action-card p {
-    color: #a997c5;
+
+    color: #71808e;
+
+    font-size: 13px;
 
     line-height: 1.5;
 }
 
 
-/* ================= MOBILE ================= */
+/* ===============================
+   TABLET
+================================ */
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
+
+    .summary-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .action-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media (max-width: 800px) {
 
     .sidebar {
+
         position: relative;
 
         width: 100%;
 
         height: auto;
-    }
-
-
-    .main-content {
-        margin-left: 0;
 
         padding: 20px;
     }
 
 
-    .summary-grid {
-        grid-template-columns: 1fr 1fr;
+    .main-content {
+
+        margin-left: 0;
+
+        padding: 25px 20px;
+    }
+
+
+    nav a {
+
+        display: inline-block;
+
+        margin-right: 5px;
+
+        margin-bottom: 5px;
+    }
+
+
+    .profile-card {
+
+        flex-direction: column;
+
+        text-align: center;
     }
 
 
     .action-grid {
+
         grid-template-columns: 1fr;
     }
 
 }
 
 
-@media (max-width: 600px) {
+/* ===============================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 550px) {
 
     .summary-grid {
+
         grid-template-columns: 1fr;
     }
 
 
-    .profile-card {
-        flex-direction: column;
+    .main-content {
 
-        text-align: center;
+        padding: 20px 15px;
+    }
+
+
+    .page-header h1 {
+
+        font-size: 25px;
+    }
+
+
+    .profile-card {
+
+        padding: 20px;
+    }
+
+
+    .status-card,
+    .actions-section {
+
+        padding: 20px;
     }
 
 }

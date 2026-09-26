@@ -25,31 +25,48 @@
 
     <aside class="sidebar">
 
-        <div class="logo">
-
-            <div class="magic-symbol">
-                ✦
-            </div>
+        <div class="logo-area">
 
             <h1>
                 LearnLens
             </h1>
 
             <p>
-                Magical Learning
+                Student Learning Portal
             </p>
 
         </div>
 
 
-        <nav class="menu">
+        <!-- STUDENT PROFILE -->
+
+        <div class="student-profile">
+
+            <div class="student-icon">
+                👨‍🎓
+            </div>
+
+            <h3 id="sidebarName">
+                Student
+            </h3>
+
+            <p>
+                Student
+            </p>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav>
 
             <a href="student-profile.html">
-                🏰 My Profile
+                🏠 Profile
             </a>
 
             <a href="student-performance.html">
-                📊 My Performance
+                📊 Performance
             </a>
 
             <a href="student-weak-areas.html">
@@ -75,27 +92,6 @@
 
         </nav>
 
-
-        <div class="student-profile">
-
-            <div class="student-icon">
-                🧙‍♀️
-            </div>
-
-            <div>
-
-                <h3 id="sidebarName">
-                    Student
-                </h3>
-
-                <p>
-                    Young Scholar
-                </p>
-
-            </div>
-
-        </div>
-
     </aside>
 
 
@@ -107,30 +103,17 @@
     <main class="main-content">
 
 
-        <!-- HEADER -->
+        <!-- PAGE HEADER -->
 
         <header class="page-heading">
 
-            <div>
+            <h1>
+                My Academic Report
+            </h1>
 
-                <p class="gold-text">
-                    ✨ Academic Summary
-                </p>
-
-                <h2>
-                    My Academic Report
-                </h2>
-
-                <p class="description">
-                    A simple summary of your learning performance.
-                </p>
-
-            </div>
-
-
-            <div class="heading-icon">
-                📜
-            </div>
+            <p>
+                A simple summary of your academic performance.
+            </p>
 
         </header>
 
@@ -142,10 +125,10 @@
 
         <section class="student-card">
 
-            <div>
+            <div class="student-details">
 
-                <p class="small-heading">
-                    Young Scholar
+                <p class="label">
+                    Student
                 </p>
 
                 <h2 id="studentName">
@@ -165,7 +148,7 @@
             <div class="category-box">
 
                 <span id="categoryIcon">
-                    🪄
+                    🎓
                 </span>
 
                 <div>
@@ -259,9 +242,9 @@
 
 
 
-            <div class="summary-card weak">
+            <div class="summary-card">
 
-                <div class="card-icon">
+                <div class="card-icon warning">
                     ⚠️
                 </div>
 
@@ -290,29 +273,23 @@
 
         <section class="report-card">
 
-            <div class="section-title">
+            <div class="section-heading">
 
-                <span>
-                    📚
-                </span>
+                <h2>
+                    Subject-wise Report
+                </h2>
 
-                <div>
-
-                    <h3>
-                        Subject-wise Report
-                    </h3>
-
-                    <p>
-                        Your marks in each subject.
-                    </p>
-
-                </div>
+                <p>
+                    Your marks and performance in each subject.
+                </p>
 
             </div>
 
 
             <div id="subjectReport"
                  class="subject-report">
+
+                <!-- Subject rows will appear here -->
 
             </div>
 
@@ -321,20 +298,19 @@
 
 
         <!-- =========================
-             PROFESSOR'S ASSESSMENT
+             PROFESSOR ASSESSMENT
         ========================== -->
 
         <section class="assessment-card">
 
             <div class="assessment-icon">
-                🧙‍♂️
+                ✓
             </div>
-
 
             <div>
 
-                <p class="gold-text">
-                    Professor's Assessment
+                <p class="assessment-label">
+                    Academic Assessment
                 </p>
 
                 <h2 id="assessmentTitle">
@@ -361,7 +337,7 @@
             <div>
 
                 <h2>
-                    🪄 Your Next Step
+                    Continue Learning
                 </h2>
 
                 <p>
@@ -373,17 +349,18 @@
 
 
             <button onclick="openRecommendations()">
-                🎓 View Recommendations
+                View Recommendations
             </button>
 
         </section>
 
 
 
+        <!-- FOOTER -->
+
         <footer>
 
-            ✨ LearnLens — Every learner has
-            their own magical path.
+            LearnLens — Your learning journey, one step at a time.
 
         </footer>
 
@@ -391,6 +368,10 @@
     </main>
 
 
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
     <script>
 
@@ -476,7 +457,7 @@
         document.getElementById(
             "categoryIcon"
         ).textContent =
-            student.categoryIcon || "🪄";
+            student.categoryIcon || "🎓";
 
 
         document.getElementById(
@@ -509,7 +490,7 @@
 
 
         // =========================================
-        // SUBJECT NAME
+        // SHORT SUBJECT NAMES
         // =========================================
 
         function shortSubjectName(subject) {
@@ -620,12 +601,11 @@
 
 
         // =========================================
-        // GET MARKS
+        // GET STUDENT MARKS
         // =========================================
 
         const marks =
             student.marks || {};
-
 
 
         const subjectReport =
@@ -742,7 +722,7 @@
 
 
         // =========================================
-        // PROFESSOR ASSESSMENT
+        // ACADEMIC ASSESSMENT
         // =========================================
 
         const assessmentTitle =
@@ -763,7 +743,7 @@
         ) {
 
             assessmentTitle.textContent =
-                "Excellent Progress! ✨";
+                "Excellent Progress!";
 
 
             assessmentMessage.textContent =
@@ -780,13 +760,13 @@
         ) {
 
             assessmentTitle.textContent =
-                "Good Progress! 🌟";
+                "Good Progress!";
 
 
             assessmentMessage.textContent =
                 "You are making steady progress. " +
                 "Spend some extra time on your weaker " +
-                "subjects and you can improve further.";
+                "subjects to improve further.";
 
         }
 
@@ -794,7 +774,7 @@
         else {
 
             assessmentTitle.textContent =
-                "More Practice Needed 📚";
+                "More Practice Needed";
 
 
             assessmentMessage.textContent =
@@ -807,7 +787,7 @@
 
 
         // =========================================
-        // RECOMMENDATIONS
+        // OPEN RECOMMENDATIONS
         // =========================================
 
         function openRecommendations() {
@@ -822,7 +802,6 @@
                 "recommendations.html";
 
         }
-
 
     </script>
 

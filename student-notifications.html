@@ -25,31 +25,48 @@
 
     <aside class="sidebar">
 
-        <div class="logo">
-
-            <div class="magic-symbol">
-                ✦
-            </div>
+        <div class="logo-area">
 
             <h1>
                 LearnLens
             </h1>
 
             <p>
-                Magical Learning
+                Student Learning Portal
             </p>
 
         </div>
 
 
-        <nav class="menu">
+        <!-- STUDENT PROFILE -->
+
+        <div class="student-profile">
+
+            <div class="student-icon">
+                👨‍🎓
+            </div>
+
+            <h3 id="sidebarName">
+                Student
+            </h3>
+
+            <p>
+                Student
+            </p>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav>
 
             <a href="student-profile.html">
-                🏰 My Profile
+                🏠 Profile
             </a>
 
             <a href="student-performance.html">
-                📊 My Performance
+                📊 Performance
             </a>
 
             <a href="student-weak-areas.html">
@@ -75,27 +92,6 @@
 
         </nav>
 
-
-        <div class="student-profile">
-
-            <div class="student-icon">
-                🧙‍♀️
-            </div>
-
-            <div>
-
-                <h3 id="sidebarName">
-                    Student
-                </h3>
-
-                <p>
-                    Young Scholar
-                </p>
-
-            </div>
-
-        </div>
-
     </aside>
 
 
@@ -107,41 +103,30 @@
     <main class="main-content">
 
 
+        <!-- PAGE HEADER -->
+
         <header class="page-heading">
 
-            <div>
+            <h1>
+                Notifications
+            </h1>
 
-                <p class="gold-text">
-                    ✨ Magical Messages
-                </p>
-
-                <h2>
-                    Notifications
-                </h2>
-
-                <p class="description">
-                    Important updates and learning reminders.
-                </p>
-
-            </div>
-
-
-            <div class="heading-icon">
-                🔔
-            </div>
+            <p>
+                Important updates and reminders about your learning progress.
+            </p>
 
         </header>
 
 
 
         <!-- =========================
-             WELCOME
+             WELCOME CARD
         ========================== -->
 
         <section class="welcome-card">
 
-            <div class="owl">
-                🦉
+            <div class="welcome-icon">
+                👨‍🎓
             </div>
 
             <div>
@@ -151,11 +136,11 @@
                 </p>
 
                 <h2 id="studentName">
-                    Young Scholar
+                    Student
                 </h2>
 
                 <span>
-                    Your magical learning journey continues!
+                    Here are your latest learning updates.
                 </span>
 
             </div>
@@ -170,28 +155,22 @@
 
         <section class="notifications-card">
 
-            <div class="section-title">
+            <div class="section-heading">
 
-                <span>
-                    🔔
-                </span>
+                <h2>
+                    Latest Updates
+                </h2>
 
-                <div>
-
-                    <h3>
-                        Your Latest Updates
-                    </h3>
-
-                    <p>
-                        Stay updated with your learning progress.
-                    </p>
-
-                </div>
+                <p>
+                    Stay updated with your academic progress and learning activities.
+                </p>
 
             </div>
 
 
             <div id="notificationList">
+
+                <!-- Notifications will appear here -->
 
             </div>
 
@@ -199,10 +178,11 @@
 
 
 
+        <!-- FOOTER -->
+
         <footer>
 
-            ✨ LearnLens — Keep learning,
-            keep growing.
+            LearnLens — Keep learning, keep growing.
 
         </footer>
 
@@ -210,6 +190,10 @@
     </main>
 
 
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
     <script>
 
@@ -265,7 +249,7 @@
 
 
         // =========================================
-        // DISPLAY NAME
+        // DISPLAY STUDENT NAME
         // =========================================
 
         document.getElementById(
@@ -282,7 +266,7 @@
 
 
         // =========================================
-        // NOTIFICATION LIST
+        // CREATE NOTIFICATIONS
         // =========================================
 
         const notificationList =
@@ -295,7 +279,9 @@
 
 
 
-        // Welcome notification
+        // =========================================
+        // WELCOME NOTIFICATION
+        // =========================================
 
         notifications.push({
 
@@ -313,7 +299,9 @@
 
 
 
-        // Performance notification
+        // =========================================
+        // PERFORMANCE NOTIFICATION
+        // =========================================
 
         if (
             student.percentage !== undefined
@@ -338,7 +326,9 @@
 
 
 
-        // Weak area notification
+        // =========================================
+        // WEAK AREA NOTIFICATION
+        // =========================================
 
         if (
             student.weakestSubject
@@ -363,7 +353,9 @@
 
 
 
-        // Recommendation notification
+        // =========================================
+        // RECOMMENDATION NOTIFICATION
+        // =========================================
 
         notifications.push({
 
@@ -381,7 +373,9 @@
 
 
 
-        // Schedule notification
+        // =========================================
+        // STUDY SCHEDULE NOTIFICATION
+        // =========================================
 
         notifications.push({
 
@@ -405,7 +399,6 @@
 
         notifications.forEach(
             function(notification) {
-
 
                 const item =
                     document.createElement(
@@ -440,8 +433,8 @@
                     </div>
 
 
-                    <div class="notification-dot">
-                        ✦
+                    <div class="notification-status">
+                        ●
                     </div>
 
                 `;

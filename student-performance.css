@@ -1,7 +1,6 @@
-/* =========================================
-   LEARNLENS - STUDENT PERFORMANCE
-   Magical Harry Potter Theme
-========================================= */
+/* ===============================
+   BASIC RESET
+================================ */
 
 * {
     margin: 0;
@@ -9,387 +8,769 @@
     box-sizing: border-box;
 }
 
+
+/* ===============================
+   BODY
+================================ */
+
 body {
-    font-family: Georgia, "Times New Roman", serif;
-    background:
-        radial-gradient(circle at top, rgba(111, 78, 170, 0.25), transparent 35%),
-        linear-gradient(135deg, #120d24, #241344, #100b20);
-    color: #f7f0ff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f7fa;
+
+    color: #263746;
+
     min-height: 100vh;
 }
 
 
-/* =========================================
+/* ===============================
    SIDEBAR
-========================================= */
+================================ */
 
 .sidebar {
+
     position: fixed;
+
     left: 0;
     top: 0;
+
     width: 250px;
     height: 100vh;
 
-    background: linear-gradient(
-        180deg,
-        #180d30,
-        #241346,
-        #12091f
-    );
+    background: #193b5a;
 
-    border-right: 2px solid #d6a84f;
-    padding: 28px 18px;
+    padding: 25px 18px;
 
-    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.5);
+    color: white;
 }
 
-.logo {
+
+/* ===============================
+   LOGO
+================================ */
+
+.logo-area {
+
     text-align: center;
-    margin-bottom: 8px;
-    color: #f4cf70;
+
+    margin-bottom: 28px;
+}
+
+
+.logo-area h1 {
+
+    color: white;
+
     font-size: 25px;
-    font-weight: bold;
+
+    letter-spacing: 0.5px;
 }
 
-.subtitle {
-    text-align: center;
-    color: #cbb9e8;
+
+.logo-area p {
+
+    color: #cbd8e3;
+
+    margin-top: 6px;
+
     font-size: 14px;
-    margin-bottom: 30px;
-}
-
-.sidebar a {
-    display: block;
-
-    text-decoration: none;
-    color: #eee4ff;
-
-    padding: 13px 15px;
-    margin: 8px 0;
-
-    border-radius: 10px;
-
-    transition: 0.3s;
-    font-size: 15px;
-}
-
-.sidebar a:hover {
-    background: rgba(214, 168, 79, 0.18);
-    color: #f4cf70;
-    transform: translateX(4px);
-}
-
-.sidebar a.active {
-    background: linear-gradient(
-        90deg,
-        rgba(214, 168, 79, 0.3),
-        rgba(126, 87, 170, 0.25)
-    );
-
-    border-left: 4px solid #f4cf70;
-    color: #f4cf70;
 }
 
 
-/* =========================================
-   PROFILE AREA IN SIDEBAR
-========================================= */
+/* ===============================
+   SIDEBAR PROFILE
+================================ */
 
 .profile-box {
-    position: absolute;
-    bottom: 25px;
-    left: 18px;
-    right: 18px;
 
-    text-align: center;
+    display: flex;
 
-    padding: 15px;
+    align-items: center;
 
-    border: 1px solid rgba(214, 168, 79, 0.5);
-    border-radius: 14px;
+    gap: 10px;
 
-    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 10px;
+
+    border-top: 1px solid #42627d;
+
+    border-bottom: 1px solid #42627d;
+
+    margin-bottom: 22px;
 }
+
 
 .profile-icon {
-    font-size: 30px;
-    margin-bottom: 5px;
+
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1f8;
+
+    border-radius: 50%;
+
+    font-size: 24px;
 }
 
-.profile-name {
-    color: #f4cf70;
-    font-weight: bold;
+
+.profile-box strong {
+
+    display: block;
+
+    color: white;
+
+    font-size: 14px;
 }
 
-.profile-role {
-    color: #bcaed2;
-    font-size: 13px;
+
+.profile-box small {
+
+    display: block;
+
+    color: #cbd8e3;
+
+    margin-top: 4px;
+
+    font-size: 12px;
 }
 
 
-/* =========================================
+/* ===============================
+   NAVIGATION
+================================ */
+
+nav a {
+
+    display: block;
+
+    padding: 12px 14px;
+
+    margin-bottom: 7px;
+
+    border-radius: 6px;
+
+    color: #dce6ee;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+
+nav a:hover {
+
+    background: #284f70;
+
+    color: white;
+}
+
+
+nav a.active {
+
+    background: #347db3;
+
+    color: white;
+
+    font-weight: 600;
+
+    border-left: 4px solid white;
+
+    padding-left: 10px;
+}
+
+
+/* ===============================
    MAIN CONTENT
-========================================= */
+================================ */
 
 .main-content {
+
     margin-left: 250px;
-    padding: 40px;
+
+    padding: 35px 40px;
 
     min-height: 100vh;
 }
 
-.welcome {
-    color: #d8c7ef;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
 
-.page-title {
-    color: #f4cf70;
-    font-size: 38px;
-    margin-bottom: 8px;
-}
+/* ===============================
+   PAGE HEADER
+================================ */
 
-.page-subtitle {
-    color: #c6b8d8;
-    font-size: 16px;
-    margin-bottom: 30px;
-}
+.page-header {
 
-
-/* =========================================
-   STUDENT HEADER
-========================================= */
-
-.student-header {
-    background: rgba(255, 255, 255, 0.06);
-
-    border: 1px solid rgba(214, 168, 79, 0.35);
-    border-radius: 18px;
-
-    padding: 25px;
     margin-bottom: 25px;
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.student-header h2 {
-    color: #f4cf70;
-    margin-bottom: 10px;
-}
-
-.student-header p {
-    color: #d3c5e3;
-    margin: 6px 0;
 }
 
 
-/* =========================================
-   STAT CARDS
-========================================= */
+.page-header h1 {
 
-.stats-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 18px;
-    margin-bottom: 30px;
+    color: #183b5b;
+
+    font-size: 30px;
+
+    font-weight: 600;
 }
 
-.stat-card {
-    background: linear-gradient(
-        145deg,
-        rgba(92, 54, 133, 0.55),
-        rgba(36, 19, 68, 0.8)
-    );
 
-    border: 1px solid rgba(214, 168, 79, 0.35);
+.page-header p {
 
-    border-radius: 16px;
+    margin-top: 7px;
 
-    padding: 20px;
+    color: #71808e;
 
-    min-height: 135px;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-
-    transition: 0.3s;
+    font-size: 15px;
 }
 
-.stat-card:hover {
-    transform: translateY(-5px);
-    border-color: #d6a84f;
+
+/* ===============================
+   STUDENT CARD
+================================ */
+
+.student-card {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: white;
+
+    border: 1px solid #dce4ea;
+
+    border-radius: 10px;
+
+    padding: 22px 25px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 3px 10px rgba(25, 59, 90, 0.05);
 }
 
-.stat-icon {
-    font-size: 25px;
-    margin-bottom: 10px;
-}
 
-.stat-title {
-    color: #c5b6d9;
-    font-size: 13px;
+.student-details h2 {
+
+    color: #183b5b;
+
+    font-size: 23px;
+
     margin-bottom: 8px;
 }
 
-.stat-value {
-    color: #f4cf70;
-    font-size: 22px;
-    font-weight: bold;
+
+.student-details p {
+
+    color: #71808e;
+
+    font-size: 14px;
 }
 
 
-/* =========================================
+.student-details strong {
+
+    color: #347db3;
+}
+
+
+/* ===============================
    CATEGORY
-========================================= */
+================================ */
 
 .category-box {
-    display: inline-block;
 
-    padding: 8px 16px;
+    display: flex;
 
-    border-radius: 20px;
+    align-items: center;
 
-    background: rgba(54, 180, 106, 0.15);
+    gap: 10px;
 
-    border: 1px solid rgba(54, 180, 106, 0.5);
+    background: #f5f9fc;
 
-    color: #70e39a;
+    border: 1px solid #dce4ea;
 
-    font-weight: bold;
+    border-radius: 7px;
+
+    padding: 12px 16px;
+
+    min-width: 190px;
 }
 
 
-/* =========================================
-   CHART SECTION
-========================================= */
+.category-box > span {
 
-.chart-card {
-    background: rgba(255, 255, 255, 0.06);
+    width: 35px;
+    height: 35px;
 
-    border: 1px solid rgba(214, 168, 79, 0.35);
+    display: flex;
 
-    border-radius: 18px;
+    align-items: center;
+    justify-content: center;
 
-    padding: 25px;
+    background: #e8f1f8;
 
-    margin-bottom: 30px;
+    border-radius: 50%;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    color: #347db3;
+
+    font-size: 16px;
 }
 
-.chart-card h2 {
-    color: #f4cf70;
+
+.category-box small {
+
+    display: block;
+
+    color: #71808e;
+
+    font-size: 11px;
+
+    margin-bottom: 4px;
+}
+
+
+.category-box strong {
+
+    display: block;
+
+    color: #183b5b;
+
+    font-size: 13px;
+}
+
+
+/* ===============================
+   SUMMARY
+================================ */
+
+.summary-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+
     margin-bottom: 20px;
 }
 
-.chart-container {
-    position: relative;
-    height: 380px;
+
+.summary-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    background: white;
+
+    border: 1px solid #dce4ea;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    min-height: 100px;
+
+    box-shadow:
+        0 3px 10px rgba(25, 59, 90, 0.05);
 }
 
 
-/* =========================================
-   FOCUS AREA
-========================================= */
+.summary-icon {
 
-.focus-card {
-    background: linear-gradient(
-        135deg,
-        rgba(126, 87, 170, 0.25),
-        rgba(214, 168, 79, 0.1)
-    );
+    width: 42px;
+    height: 42px;
 
-    border: 1px solid rgba(214, 168, 79, 0.4);
+    flex-shrink: 0;
 
-    border-radius: 18px;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1f8;
+
+    color: #347db3;
+
+    border-radius: 7px;
+
+    font-size: 19px;
+
+    font-weight: bold;
+}
+
+
+.summary-card small {
+
+    display: block;
+
+    color: #71808e;
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+}
+
+
+.summary-card h2 {
+
+    color: #183b5b;
+
+    font-size: 19px;
+
+    font-weight: 600;
+}
+
+
+/* ===============================
+   CHART CARD
+================================ */
+
+.chart-card {
+
+    background: white;
+
+    border: 1px solid #dce4ea;
+
+    border-radius: 10px;
 
     padding: 25px;
 
-    margin-bottom: 25px;
-}
+    margin-bottom: 20px;
 
-.focus-card h2 {
-    color: #f4cf70;
-    margin-bottom: 10px;
-}
-
-.focus-card p {
-    color: #d8cbe6;
-    line-height: 1.6;
+    box-shadow:
+        0 3px 10px rgba(25, 59, 90, 0.05);
 }
 
 
-/* =========================================
-   BUTTON
-========================================= */
+/* ===============================
+   SECTION HEADING
+================================ */
 
-.magic-button {
-    display: inline-block;
+.section-heading {
 
-    padding: 12px 22px;
+    display: flex;
 
-    border: none;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+
+.section-icon {
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1f8;
+
+    color: #347db3;
+
+    border-radius: 7px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+.section-heading h2 {
+
+    color: #183b5b;
+
+    font-size: 20px;
+
+    font-weight: 600;
+}
+
+
+.section-heading p {
+
+    color: #71808e;
+
+    margin-top: 4px;
+
+    font-size: 13px;
+}
+
+
+/* ===============================
+   CHART
+================================ */
+
+.chart-container {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 350px;
+}
+
+
+/* ===============================
+   FOCUS AREA
+================================ */
+
+.weak-area-card {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: white;
+
+    border: 1px solid #dce4ea;
+
+    border-left: 4px solid #347db3;
+
     border-radius: 10px;
 
-    background: linear-gradient(
-        135deg,
-        #d6a84f,
-        #a97924
-    );
+    padding: 22px 25px;
 
-    color: #1a0e2b;
+    box-shadow:
+        0 3px 10px rgba(25, 59, 90, 0.05);
+}
 
-    text-decoration: none;
+
+.focus-information {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.warning-icon {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #fff5df;
+
+    color: #b87916;
+
+    border-radius: 7px;
 
     font-weight: bold;
 
+    font-size: 20px;
+}
+
+
+.weak-area-card h2 {
+
+    color: #183b5b;
+
+    font-size: 18px;
+
+    margin-bottom: 5px;
+}
+
+
+.weak-area-card p {
+
+    color: #71808e;
+
+    font-size: 13px;
+
+    margin-bottom: 6px;
+}
+
+
+.weak-area-card strong {
+
+    color: #347db3;
+
+    font-size: 15px;
+}
+
+
+/* ===============================
+   BUTTON
+================================ */
+
+.weak-area-card button {
+
+    border: none;
+
+    background: #347db3;
+
+    color: white;
+
+    padding: 11px 18px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
     cursor: pointer;
 
-    transition: 0.3s;
+    transition: 0.2s ease;
 
-    margin-top: 15px;
-}
-
-.magic-button:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 5px 18px rgba(214, 168, 79, 0.35);
+    white-space: nowrap;
 }
 
 
-/* =========================================
-   RESPONSIVE
-========================================= */
+.weak-area-card button:hover {
 
-@media (max-width: 1100px) {
+    background: #286895;
+}
 
-    .stats-container {
-        grid-template-columns: repeat(2, 1fr);
+
+/* ===============================
+   TABLET
+================================ */
+
+@media (max-width: 1050px) {
+
+    .summary-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
 }
+
+
+/* ===============================
+   MOBILE
+================================ */
 
 @media (max-width: 800px) {
 
     .sidebar {
+
         position: relative;
+
         width: 100%;
+
         height: auto;
+
+        padding: 20px;
     }
 
-    .profile-box {
-        position: static;
-        margin-top: 20px;
-    }
 
     .main-content {
+
         margin-left: 0;
-        padding: 25px;
+
+        padding: 25px 20px;
     }
 
-    .stats-container {
+
+    nav a {
+
+        display: inline-block;
+
+        margin-right: 5px;
+
+        margin-bottom: 5px;
+    }
+
+
+    .student-card {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .category-box {
+
+        width: 100%;
+    }
+
+
+    .weak-area-card {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .weak-area-card button {
+
+        width: 100%;
+    }
+
+}
+
+
+/* ===============================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 550px) {
+
+    .summary-grid {
+
         grid-template-columns: 1fr;
+    }
+
+
+    .main-content {
+
+        padding: 20px 15px;
+    }
+
+
+    .page-header h1 {
+
+        font-size: 25px;
+    }
+
+
+    .chart-card {
+
+        padding: 18px;
+    }
+
+
+    .chart-container {
+
+        height: 280px;
     }
 
 }

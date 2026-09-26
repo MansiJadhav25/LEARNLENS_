@@ -11,31 +11,34 @@
     <title>LearnLens | Weak Areas</title>
 
     <link rel="stylesheet"
-          href="./weak-areas.css">
+          href="weak-areas.css">
 
 </head>
+
 
 <body>
 
 
-    <!-- SIDEBAR -->
+    <!-- ================================
+         SIDEBAR
+    ================================= -->
 
     <aside class="sidebar">
 
-        <div class="logo">
-
-            <div class="magic-symbol">✦</div>
+        <div class="logo-area">
 
             <h1>LearnLens</h1>
 
-            <p>Magical Learning</p>
+            <p>Adaptive Learning</p>
 
         </div>
 
 
         <div class="teacher-profile">
 
-            <div class="teacher-icon">🧙‍♀️</div>
+            <div class="teacher-icon">
+                👨‍🏫
+            </div>
 
             <div>
 
@@ -51,11 +54,11 @@
         <nav class="menu">
 
             <a href="teacher-dashboard.html">
-                🏰 Dashboard
+                🏠 Dashboard
             </a>
 
             <a href="my-student.html">
-                🧑‍🎓 My Students
+                👨‍🎓 My Students
             </a>
 
             <a href="enter-marks.html">
@@ -66,8 +69,17 @@
                 📊 Performance
             </a>
 
-            <a href="weak-areas.html" class="active">
-                📚 Weak Areas
+            <a href="weak-areas.html"
+               class="active">
+                ⚠️ Weak Areas
+            </a>
+
+            <a href="reports.html">
+                📋 Reports
+            </a>
+
+            <a href="notifications.html">
+                🔔 Notifications
             </a>
 
         </nav>
@@ -76,7 +88,7 @@
         <div class="logout">
 
             <a href="index.html">
-                🚪 Return to Entrance
+                ← Return to Entrance
             </a>
 
         </div>
@@ -85,17 +97,21 @@
 
 
 
-    <!-- MAIN CONTENT -->
+    <!-- ================================
+         MAIN CONTENT
+    ================================= -->
 
     <main class="main-content">
 
+
+        <!-- PAGE HEADER -->
 
         <header class="page-heading">
 
             <div>
 
-                <p class="gold-text">
-                    ⚠️ Student Analysis
+                <p class="section-label">
+                    STUDENT ANALYSIS
                 </p>
 
                 <h2>
@@ -109,6 +125,7 @@
 
             </div>
 
+
             <div class="heading-icon">
                 📚
             </div>
@@ -117,7 +134,9 @@
 
 
 
-        <!-- MAIN RESULT -->
+        <!-- ================================
+             MAIN FOCUS CARD
+        ================================= -->
 
         <section class="focus-card">
 
@@ -127,7 +146,7 @@
 
             <div>
 
-                <p>
+                <p class="focus-label">
                     Subject Needing Most Attention
                 </p>
 
@@ -145,13 +164,18 @@
 
 
 
-        <!-- SUBJECT TABLE -->
+        <!-- ================================
+             SUBJECT ANALYSIS
+        ================================= -->
 
         <section class="table-card">
 
+
             <div class="section-title">
 
-                <span>📊</span>
+                <div class="section-icon">
+                    📊
+                </div>
 
                 <div>
 
@@ -168,46 +192,67 @@
             </div>
 
 
-            <table>
 
-                <thead>
+            <div class="table-container">
 
-                    <tr>
+                <table>
 
-                        <th>
-                            Subject
-                        </th>
+                    <thead>
 
-                        <th>
-                            Weak Students
-                        </th>
+                        <tr>
 
-                        <th>
-                            Average Marks
-                        </th>
+                            <th>
+                                Subject
+                            </th>
 
-                        <th>
-                            Status
-                        </th>
+                            <th>
+                                Weak Students
+                            </th>
 
-                    </tr>
+                            <th>
+                                Average Marks
+                            </th>
 
-                </thead>
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
 
 
-                <tbody id="weakAreaTable">
+                    <tbody id="weakAreaTable">
 
-                </tbody>
+                    </tbody>
 
-            </table>
+                </table>
+
+            </div>
+
 
 
             <div id="emptyMessage"
                  class="empty-message">
 
-                🪄 No student records available yet.
+                <div class="empty-icon">
+                    📋
+                </div>
+
+                <h3>
+                    No Student Records Available
+                </h3>
+
+                <p>
+                    Enter student marks to begin the analysis.
+                </p>
+
+                <a href="enter-marks.html">
+                    Enter Marks
+                </a>
 
             </div>
+
 
         </section>
 
@@ -215,8 +260,8 @@
 
         <footer>
 
-            ✨ LearnLens — Helping teachers
-            understand every learner.
+            LearnLens — Helping teachers understand
+            every learner.
 
         </footer>
 
@@ -225,11 +270,16 @@
 
 
 
+    <!-- ================================
+         JAVASCRIPT
+    ================================= -->
+
     <script>
 
-        // =========================================
+
+        // =================================
         // CHECK TEACHER LOGIN
-        // =========================================
+        // =================================
 
         const role =
             localStorage.getItem(
@@ -250,9 +300,9 @@
 
 
 
-        // =========================================
+        // =================================
         // SUBJECTS
-        // =========================================
+        // =================================
 
         const subjects = [
 
@@ -270,11 +320,12 @@
 
 
 
-        // =========================================
-        // LOAD STUDENTS
-        // =========================================
+        // =================================
+        // LOAD WEAK AREAS
+        // =================================
 
         function loadWeakAreas() {
+
 
             const savedStudents =
                 localStorage.getItem(
@@ -303,26 +354,31 @@
             table.innerHTML = "";
 
 
-            // No students
+
+            // No students yet
 
             if (students.length === 0) {
 
                 emptyMessage.style.display =
                     "block";
 
+
                 document.getElementById(
                     "focusSubject"
                 ).textContent =
                     "No data available";
+
 
                 document.getElementById(
                     "focusMessage"
                 ).textContent =
                     "Enter student marks to see weak areas.";
 
+
                 return;
 
             }
+
 
 
             emptyMessage.style.display =
@@ -330,15 +386,16 @@
 
 
 
-            // =====================================
+            // =================================
             // ANALYSE EACH SUBJECT
-            // =====================================
+            // =================================
 
             const results = [];
 
 
             subjects.forEach(
                 function(subject) {
+
 
                     let totalMarks = 0;
 
@@ -347,13 +404,16 @@
                     let studentsWithMarks = 0;
 
 
+
                     students.forEach(
                         function(student) {
+
 
                             if (
                                 student.marks &&
                                 student.marks[subject] !== undefined
                             ) {
+
 
                                 const mark =
                                     Number(
@@ -364,6 +424,7 @@
                                 totalMarks += mark;
 
                                 studentsWithMarks++;
+
 
 
                                 // Below 50 = weak
@@ -380,6 +441,7 @@
                     );
 
 
+
                     let average = 0;
 
 
@@ -392,6 +454,7 @@
                             studentsWithMarks;
 
                     }
+
 
 
                     results.push({
@@ -411,9 +474,9 @@
 
 
 
-            // =====================================
-            // FIND MOST IMPORTANT WEAK AREA
-            // =====================================
+            // =================================
+            // FIND MAIN WEAK AREA
+            // =================================
 
             let focus =
                 results[0];
@@ -421,6 +484,7 @@
 
             results.forEach(
                 function(item) {
+
 
                     if (
                         item.weakStudents >
@@ -430,6 +494,7 @@
                         focus = item;
 
                     }
+
 
                     else if (
                         item.weakStudents ===
@@ -444,6 +509,7 @@
 
                 }
             );
+
 
 
             document.getElementById(
@@ -462,12 +528,13 @@
 
 
 
-            // =====================================
+            // =================================
             // DISPLAY TABLE
-            // =====================================
+            // =================================
 
             results.forEach(
                 function(item) {
+
 
                     const row =
                         document.createElement(
@@ -496,6 +563,7 @@
                             "Needs Practice";
 
                     }
+
 
 
                     row.innerHTML = `
@@ -532,11 +600,12 @@
 
 
 
-        // =========================================
+        // =================================
         // SHORT SUBJECT NAMES
-        // =========================================
+        // =================================
 
         function shortSubjectName(subject) {
+
 
             if (
                 subject.includes("Mathematics")
@@ -580,13 +649,14 @@
 
 
 
-        // =========================================
+        // =================================
         // START
-        // =========================================
+        // =================================
 
         loadWeakAreas();
 
     </script>
+
 
 </body>
 

@@ -10,13 +10,18 @@
 
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
     background: #f4f7fa;
 
     color: #263746;
 
     min-height: 100vh;
+
 }
 
 
@@ -45,8 +50,8 @@ body {
     display: flex;
 
     flex-direction: column;
-}
 
+}
 
 
 /* LOGO */
@@ -57,7 +62,9 @@ body {
 
     padding-bottom: 25px;
 
-    border-bottom: 1px solid rgba(255,255,255,0.15);
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.15);
 
 }
 
@@ -67,8 +74,6 @@ body {
     font-size: 28px;
 
     font-weight: 700;
-
-    letter-spacing: 0.5px;
 
 }
 
@@ -85,7 +90,7 @@ body {
 
 
 
-/* TEACHER PROFILE */
+/* TEACHER */
 
 .teacher-profile {
 
@@ -97,7 +102,9 @@ body {
 
     padding: 22px 8px;
 
-    border-bottom: 1px solid rgba(255,255,255,0.15);
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.15);
 
 }
 
@@ -245,7 +252,7 @@ body {
 
 
 /* =================================
-   PAGE HEADER
+   PAGE HEADING
 ================================= */
 
 .page-heading {
@@ -320,42 +327,56 @@ body {
 
 
 /* =================================
-   FOCUS CARD
+   SUMMARY
 ================================= */
 
-.focus-card {
+.summary-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 28px;
+
+}
+
+
+.summary-card {
 
     background: white;
 
     border: 1px solid #dce4ea;
 
-    border-left: 5px solid #347db3;
-
     border-radius: 10px;
 
-    padding: 25px 28px;
+    padding: 20px;
 
     display: flex;
 
     align-items: center;
 
-    gap: 20px;
+    gap: 15px;
 
-    margin-bottom: 28px;
-
-    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    box-shadow:
+        0 3px 12px
+        rgba(0,0,0,0.05);
 
 }
 
 
-.focus-icon {
+.summary-icon {
 
-    width: 52px;
-    height: 52px;
+    width: 45px;
+    height: 45px;
 
-    background: #fff4df;
+    background: #e7f0f7;
 
-    border-radius: 10px;
+    color: #347db3;
+
+    border-radius: 9px;
 
     display: flex;
 
@@ -363,48 +384,41 @@ body {
 
     justify-content: center;
 
-    font-size: 24px;
+    font-size: 20px;
 
 }
 
 
-.focus-label {
+.summary-card span {
 
-    font-size: 13px;
+    display: block;
 
     color: #6c7b88;
+
+    font-size: 12px;
 
     margin-bottom: 5px;
 
 }
 
 
-.focus-card h2 {
+.summary-card strong {
 
-    font-size: 25px;
+    display: block;
 
     color: #183b5b;
 
-    margin-bottom: 5px;
-
-}
-
-
-.focus-card span {
-
-    color: #6c7b88;
-
-    font-size: 14px;
+    font-size: 22px;
 
 }
 
 
 
 /* =================================
-   TABLE CARD
+   REPORT CARD
 ================================= */
 
-.table-card {
+.report-card {
 
     background: white;
 
@@ -414,7 +428,9 @@ body {
 
     padding: 28px;
 
-    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    box-shadow:
+        0 3px 12px
+        rgba(0,0,0,0.05);
 
 }
 
@@ -494,6 +510,8 @@ table {
 
     border-collapse: collapse;
 
+    min-width: 850px;
+
 }
 
 
@@ -508,28 +526,30 @@ th {
 
     text-align: left;
 
-    padding: 14px 16px;
+    padding: 14px 15px;
 
     color: #40566a;
 
-    font-size: 13px;
+    font-size: 12px;
 
-    font-weight: 700;
-
-    border-bottom: 1px solid #dce4ea;
+    border-bottom:
+        1px solid
+        #dce4ea;
 
 }
 
 
 td {
 
-    padding: 17px 16px;
+    padding: 16px 15px;
 
-    font-size: 14px;
+    font-size: 13px;
 
     color: #526574;
 
-    border-bottom: 1px solid #edf1f4;
+    border-bottom:
+        1px solid
+        #edf1f4;
 
 }
 
@@ -549,23 +569,21 @@ tbody tr:hover {
 
 
 
-/* =================================
-   STATUS
-================================= */
+/* CATEGORY */
 
-.status {
+.category {
 
     display: inline-block;
-
-    padding: 6px 11px;
-
-    border-radius: 20px;
 
     background: #edf4f8;
 
     color: #347db3;
 
-    font-size: 12px;
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
 
     font-weight: 600;
 
@@ -585,8 +603,6 @@ tbody tr:hover {
 
     padding: 45px 20px;
 
-    color: #6c7b88;
-
 }
 
 
@@ -605,16 +621,18 @@ tbody tr:hover {
 
     font-size: 18px;
 
-    margin-bottom: 7px;
+    margin-bottom: 8px;
 
 }
 
 
 .empty-message p {
 
-    margin-bottom: 18px;
+    color: #6c7b88;
 
     font-size: 14px;
+
+    margin-bottom: 18px;
 
 }
 
@@ -623,11 +641,11 @@ tbody tr:hover {
 
     display: inline-block;
 
-    text-decoration: none;
-
     background: #347db3;
 
     color: white;
+
+    text-decoration: none;
 
     padding: 10px 18px;
 
@@ -641,6 +659,59 @@ tbody tr:hover {
 .empty-message a:hover {
 
     background: #286894;
+
+}
+
+
+
+/* =================================
+   INFORMATION CARD
+================================= */
+
+.info-card {
+
+    margin-top: 22px;
+
+    background: #edf4f8;
+
+    border: 1px solid #d7e5ee;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    display: flex;
+
+    gap: 15px;
+
+}
+
+
+.info-icon {
+
+    font-size: 21px;
+
+}
+
+
+.info-card h3 {
+
+    color: #183b5b;
+
+    font-size: 15px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.info-card p {
+
+    color: #617381;
+
+    font-size: 13px;
+
+    line-height: 1.6;
 
 }
 
@@ -670,7 +741,19 @@ footer {
    RESPONSIVE
 ================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
+
+    .summary-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 850px) {
 
     .sidebar {
 
@@ -709,9 +792,9 @@ footer {
 
     }
 
-    .page-heading {
+    .summary-grid {
 
-        align-items: flex-start;
+        grid-template-columns: 1fr;
 
     }
 

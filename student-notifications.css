@@ -1,3 +1,7 @@
+/* ==============================
+   BASIC RESET
+============================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,528 +9,526 @@
 }
 
 
+/* ==============================
+   BODY
+============================== */
+
 body {
+    font-family: Arial, Helvetica, sans-serif;
 
-    font-family:
-        "Segoe UI",
-        Arial,
-        sans-serif;
+    background: #f4f7fa;
 
-    background:
-        radial-gradient(
-            circle at top,
-            #30205c,
-            #160d2c 60%,
-            #0d071b
-        );
-
-    color: #f5e9c8;
+    color: #263746;
 
     min-height: 100vh;
-
-    display: flex;
-
 }
 
 
-/* =========================
+/* ==============================
    SIDEBAR
-========================= */
+============================== */
 
 .sidebar {
+    position: fixed;
+
+    left: 0;
+    top: 0;
 
     width: 250px;
+    height: 100vh;
 
-    min-height: 100vh;
-
-    background:
-        linear-gradient(
-            180deg,
-            #21133f,
-            #120a24
-        );
-
-    border-right:
-        1px solid #c9a227;
+    background: #193b5a;
 
     padding: 25px 18px;
 
-    position: fixed;
+    border-right: 1px solid #d7e0e8;
 
-    top: 0;
-    bottom: 0;
-    left: 0;
-
-    display: flex;
-
-    flex-direction: column;
-
+    overflow-y: auto;
 }
 
 
-.logo {
+/* ==============================
+   LOGO
+============================== */
 
+.logo-area {
     text-align: center;
 
-    margin-bottom: 35px;
-
+    margin-bottom: 30px;
 }
 
 
-.magic-symbol {
-
-    color: #e8c75c;
+.logo-area h1 {
+    color: #ffffff;
 
     font-size: 25px;
 
+    font-weight: 600;
 }
 
 
-.logo h1 {
+.logo-area p {
+    color: #c9d7e4;
 
-    color: #e8c75c;
+    margin-top: 6px;
 
-    font-size: 25px;
-
+    font-size: 13px;
 }
 
 
-.logo p {
-
-    color: #bbaed8;
-
-    font-size: 12px;
-
-}
-
-
-.menu {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 10px;
-
-}
-
-
-.menu a {
-
-    text-decoration: none;
-
-    color: #d8cdea;
-
-    padding: 13px 15px;
-
-    border-radius: 10px;
-
-    transition: 0.3s;
-
-}
-
-
-.menu a:hover {
-
-    background: #38235e;
-
-    color: #f4d77b;
-
-}
-
-
-.menu a.active {
-
-    background:
-        linear-gradient(
-            90deg,
-            #5a357d,
-            #3a235d
-        );
-
-    color: #f4d77b;
-
-    border-left:
-        3px solid #e5c04a;
-
-}
-
-
-/* =========================
+/* ==============================
    STUDENT PROFILE
-========================= */
+============================== */
 
 .student-profile {
+    text-align: center;
 
-    margin-top: auto;
+    padding: 18px 10px;
 
-    display: flex;
+    border-top: 1px solid #42627d;
 
-    align-items: center;
+    border-bottom: 1px solid #42627d;
 
-    gap: 12px;
-
-    padding: 14px;
-
-    background: #261643;
-
-    border-radius: 12px;
-
-    border: 1px solid #594477;
-
+    margin-bottom: 25px;
 }
 
 
 .student-icon {
+    width: 55px;
+    height: 55px;
 
-    font-size: 30px;
+    margin: 0 auto 10px;
 
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1f8;
+
+    border-radius: 50%;
+
+    font-size: 28px;
 }
 
 
 .student-profile h3 {
+    color: #ffffff;
 
-    color: #f1d875;
+    font-size: 16px;
 
+    font-weight: 600;
 }
 
 
 .student-profile p {
+    color: #c9d7e4;
 
-    color: #aaa0bd;
+    margin-top: 5px;
 
     font-size: 13px;
-
 }
 
 
-/* =========================
-   MAIN
-========================= */
+/* ==============================
+   NAVIGATION
+============================== */
 
-.main-content {
+nav a {
+    display: block;
 
-    margin-left: 250px;
+    padding: 12px 14px;
 
-    width: calc(100% - 250px);
+    margin-bottom: 7px;
 
-    padding: 40px;
+    border-radius: 6px;
 
-}
+    color: #dce7ef;
 
-
-/* =========================
-   HEADER
-========================= */
-
-.page-heading {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    margin-bottom: 30px;
-
-}
-
-
-.gold-text {
-
-    color: #d7b84d;
-
-    margin-bottom: 8px;
-
-}
-
-
-.page-heading h2 {
-
-    font-size: 38px;
-
-    color: #f4d77b;
-
-    margin-bottom: 8px;
-
-}
-
-
-.description {
-
-    color: #bdb2ce;
-
-}
-
-
-.heading-icon {
-
-    font-size: 65px;
-
-}
-
-
-/* =========================
-   WELCOME CARD
-========================= */
-
-.welcome-card {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #2b1948,
-            #1c102f
-        );
-
-    border:
-        1px solid #60477e;
-
-    border-radius: 18px;
-
-    padding: 25px;
-
-    margin-bottom: 25px;
-
-}
-
-
-.owl {
-
-    font-size: 55px;
-
-}
-
-
-.welcome-card p {
-
-    color: #aaa0b9;
-
-    margin-bottom: 3px;
-
-}
-
-
-.welcome-card h2 {
-
-    color: #f4d77b;
-
-    margin-bottom: 5px;
-
-}
-
-
-.welcome-card span {
-
-    color: #bdb2ce;
-
-}
-
-
-/* =========================
-   NOTIFICATION CARD
-========================= */
-
-.notifications-card {
-
-    background: #1c102f;
-
-    border:
-        1px solid #543c70;
-
-    border-radius: 18px;
-
-    padding: 25px;
-
-}
-
-
-.section-title {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    margin-bottom: 25px;
-
-}
-
-
-.section-title > span {
-
-    font-size: 30px;
-
-}
-
-
-.section-title h3 {
-
-    color: #f4d77b;
-
-    margin-bottom: 5px;
-
-}
-
-
-.section-title p {
-
-    color: #a99db9;
+    text-decoration: none;
 
     font-size: 14px;
 
+    transition: 0.2s ease;
 }
 
 
-/* =========================
-   NOTIFICATION ITEM
-========================= */
+nav a:hover {
+    background: #294f70;
 
-.notification-item {
+    color: #ffffff;
+}
 
+
+nav a.active {
+    background: #347db3;
+
+    color: #ffffff;
+
+    font-weight: 600;
+}
+
+
+/* ==============================
+   MAIN CONTENT
+============================== */
+
+.main-content {
+    margin-left: 250px;
+
+    padding: 40px;
+}
+
+
+/* ==============================
+   PAGE HEADER
+============================== */
+
+.page-heading {
+    margin-bottom: 25px;
+}
+
+
+.page-heading h1 {
+    color: #193b5a;
+
+    font-size: 32px;
+
+    font-weight: 600;
+}
+
+
+.page-heading p {
+    color: #687887;
+
+    margin-top: 8px;
+
+    font-size: 15px;
+}
+
+
+/* ==============================
+   WELCOME CARD
+============================== */
+
+.welcome-card {
     display: flex;
 
     align-items: center;
 
     gap: 18px;
 
-    padding: 20px;
+    background: #ffffff;
 
-    background: #25163e;
+    border: 1px solid #dce4eb;
 
-    border:
-        1px solid #48345e;
+    border-radius: 10px;
 
-    border-radius: 14px;
+    padding: 22px;
 
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 
-    transition: 0.3s;
+    box-shadow:
+        0 2px 8px rgba(25, 59, 90, 0.05);
+}
 
+
+.welcome-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1f8;
+
+    border-radius: 50%;
+
+    font-size: 29px;
+}
+
+
+.welcome-card p {
+    color: #687887;
+
+    font-size: 13px;
+
+    margin-bottom: 4px;
+}
+
+
+.welcome-card h2 {
+    color: #193b5a;
+
+    font-size: 22px;
+
+    margin-bottom: 5px;
+}
+
+
+.welcome-card span {
+    color: #687887;
+
+    font-size: 14px;
+}
+
+
+/* ==============================
+   NOTIFICATIONS CARD
+============================== */
+
+.notifications-card {
+    background: #ffffff;
+
+    border: 1px solid #dce4eb;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 2px 8px rgba(25, 59, 90, 0.05);
+}
+
+
+/* ==============================
+   SECTION HEADING
+============================== */
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+
+.section-heading h2 {
+    color: #193b5a;
+
+    font-size: 21px;
+
+    margin-bottom: 6px;
+}
+
+
+.section-heading p {
+    color: #687887;
+
+    font-size: 14px;
+}
+
+
+/* ==============================
+   NOTIFICATION ITEM
+============================== */
+
+.notification-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 17px;
+
+    margin-bottom: 12px;
+
+    background: #f8fafc;
+
+    border: 1px solid #dce4eb;
+
+    border-left: 4px solid #347db3;
+
+    border-radius: 8px;
+
+    transition: 0.2s ease;
+}
+
+
+.notification-item:last-child {
+    margin-bottom: 0;
 }
 
 
 .notification-item:hover {
+    background: #f5f9fc;
 
-    transform: translateX(5px);
-
-    border-color: #80625b;
-
+    border-color: #347db3;
 }
 
+
+/* ==============================
+   WARNING NOTIFICATION
+============================== */
 
 .notification-item.warning {
-
-    border-left:
-        4px solid #c9a227;
-
+    border-left-color: #d99a20;
 }
 
+
+/* ==============================
+   NOTIFICATION ICON
+============================== */
 
 .notification-icon {
+    width: 45px;
+    height: 45px;
 
-    font-size: 32px;
+    flex-shrink: 0;
 
-    min-width: 45px;
+    display: flex;
 
-    text-align: center;
+    align-items: center;
+    justify-content: center;
 
+    background: #e8f1f8;
+
+    border-radius: 8px;
+
+    font-size: 21px;
 }
 
 
+.notification-item.warning .notification-icon {
+    background: #fff4df;
+}
+
+
+/* ==============================
+   NOTIFICATION CONTENT
+============================== */
+
 .notification-content {
-
     flex: 1;
-
 }
 
 
 .notification-content h3 {
+    color: #193b5a;
 
-    color: #f4d77b;
+    font-size: 16px;
 
-    margin-bottom: 6px;
-
+    margin-bottom: 5px;
 }
 
 
 .notification-content p {
+    color: #687887;
 
-    color: #bdb2ce;
+    font-size: 14px;
 
     line-height: 1.5;
-
 }
 
 
-.notification-dot {
+/* ==============================
+   STATUS DOT
+============================== */
 
-    color: #d7b84d;
+.notification-status {
+    color: #347db3;
 
-    font-size: 18px;
-
+    font-size: 12px;
 }
 
 
-/* =========================
+.notification-item.warning .notification-status {
+    color: #d99a20;
+}
+
+
+/* ==============================
    FOOTER
-========================= */
+============================== */
 
 footer {
-
     text-align: center;
 
-    color: #8f829f;
+    color: #8796a3;
 
-    margin-top: 35px;
+    font-size: 12px;
 
-    font-size: 13px;
-
+    padding: 25px 0 10px;
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* ==============================
+   MOBILE
+============================== */
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
 
     .sidebar {
+        position: relative;
 
-        display: none;
+        width: 100%;
 
+        height: auto;
+
+        border-right: none;
+
+        border-bottom: 1px solid #d7e0e8;
     }
 
 
     .main-content {
-
         margin-left: 0;
 
-        width: 100%;
-
         padding: 20px;
-
     }
 
 
-    .page-heading h2 {
+    nav a {
+        display: inline-block;
 
-        font-size: 30px;
+        margin-right: 5px;
 
+        margin-bottom: 5px;
+    }
+
+}
+
+
+/* ==============================
+   SMALL MOBILE
+============================== */
+
+@media (max-width: 600px) {
+
+    .page-heading h1 {
+        font-size: 26px;
+    }
+
+
+    .welcome-card {
+        align-items: flex-start;
     }
 
 
     .notification-item {
-
         align-items: flex-start;
 
+        gap: 12px;
+
+        padding: 14px;
+    }
+
+
+    .notification-icon {
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
+    }
+
+
+    .notification-content h3 {
+        font-size: 15px;
+    }
+
+
+    .notification-content p {
+        font-size: 13px;
     }
 
 }

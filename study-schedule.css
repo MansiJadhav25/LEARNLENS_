@@ -1,21 +1,32 @@
+/* ==============================
+   BASIC RESET
+============================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* ==============================
+   BODY
+============================== */
+
 body {
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: Arial, Helvetica, sans-serif;
 
-    background: #100b20;
+    background: #f4f7fa;
 
-    color: #f5e6b3;
+    color: #263746;
 
     min-height: 100vh;
 }
 
 
-/* ================= SIDEBAR ================= */
+/* ==============================
+   SIDEBAR
+============================== */
 
 .sidebar {
     position: fixed;
@@ -26,13 +37,19 @@ body {
     width: 250px;
     height: 100vh;
 
-    background: #1b1235;
-
-    border-right: 2px solid #c9a227;
+    background: #193b5a;
 
     padding: 25px 18px;
+
+    border-right: 1px solid #d7e0e8;
+
+    overflow-y: auto;
 }
 
+
+/* ==============================
+   LOGO
+============================== */
 
 .logo-area {
     text-align: center;
@@ -42,88 +59,119 @@ body {
 
 
 .logo-area h1 {
-    color: #d4af37;
+    color: #ffffff;
 
     font-size: 25px;
+
+    font-weight: 600;
 }
 
 
 .logo-area p {
-    color: #b9a8d5;
+    color: #c9d7e4;
 
-    margin-top: 5px;
+    margin-top: 6px;
+
+    font-size: 13px;
 }
 
 
-/* PROFILE */
+/* ==============================
+   PROFILE
+============================== */
 
 .profile {
     text-align: center;
 
-    padding: 15px;
+    padding: 18px 10px;
 
-    border-top: 1px solid #5e4b86;
-    border-bottom: 1px solid #5e4b86;
+    border-top: 1px solid #42627d;
+
+    border-bottom: 1px solid #42627d;
 
     margin-bottom: 25px;
 }
 
 
 .profile-icon {
-    font-size: 40px;
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1f8;
+
+    border-radius: 50%;
+
+    font-size: 28px;
 }
 
 
 .profile h3 {
-    color: #d4af37;
+    color: #ffffff;
 
-    margin-top: 8px;
+    font-size: 16px;
+
+    font-weight: 600;
 }
 
 
 .profile p {
-    color: #b9a8d5;
+    color: #c9d7e4;
 
-    margin-top: 4px;
+    margin-top: 5px;
+
+    font-size: 13px;
 }
 
 
-/* NAVIGATION */
+/* ==============================
+   NAVIGATION
+============================== */
 
 nav a {
     display: block;
 
-    padding: 13px 15px;
+    padding: 12px 14px;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 
-    border-radius: 8px;
+    border-radius: 6px;
 
-    color: #e8dff5;
+    color: #dce7ef;
 
     text-decoration: none;
 
-    transition: 0.3s;
+    font-size: 14px;
+
+    transition: 0.2s ease;
 }
 
 
 nav a:hover {
-    background: #32205c;
+    background: #294f70;
 
-    color: #ffd95a;
+    color: #ffffff;
 }
 
 
 nav a.active {
-    background: #3a2768;
+    background: #347db3;
 
-    color: #ffd95a;
+    color: #ffffff;
 
-    border-left: 4px solid #d4af37;
+    font-weight: 600;
 }
 
 
-/* ================= MAIN CONTENT ================= */
+/* ==============================
+   MAIN CONTENT
+============================== */
 
 .main-content {
     margin-left: 250px;
@@ -132,7 +180,9 @@ nav a.active {
 }
 
 
-/* HEADER */
+/* ==============================
+   PAGE HEADER
+============================== */
 
 .page-header {
     margin-bottom: 25px;
@@ -140,20 +190,26 @@ nav a.active {
 
 
 .page-header h1 {
-    color: #d4af37;
+    color: #193b5a;
 
-    font-size: 34px;
+    font-size: 32px;
+
+    font-weight: 600;
 }
 
 
 .page-header p {
-    color: #b9a8d5;
+    color: #687887;
 
     margin-top: 8px;
+
+    font-size: 15px;
 }
 
 
-/* ================= STUDENT CARD ================= */
+/* ==============================
+   STUDENT CARD
+============================== */
 
 .student-card {
     display: flex;
@@ -162,80 +218,99 @@ nav a.active {
 
     gap: 18px;
 
-    background: #19112f;
+    background: #ffffff;
 
-    border: 1px solid #4d3975;
+    border: 1px solid #dce4eb;
 
-    border-radius: 15px;
+    border-radius: 10px;
 
     padding: 20px;
 
     margin-bottom: 25px;
+
+    box-shadow: 0 2px 8px rgba(25, 59, 90, 0.05);
 }
 
 
 .student-icon {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    background: #342254;
+    background: #e8f1f8;
 
     border-radius: 50%;
 
-    font-size: 32px;
+    font-size: 30px;
 }
 
 
 .student-card h2 {
-    color: #f1d77a;
+    color: #193b5a;
+
+    margin-bottom: 7px;
+
+    font-size: 21px;
+}
+
+
+.student-card p {
+    color: #687887;
+
+    font-size: 14px;
+}
+
+
+.student-card strong {
+    color: #347db3;
+}
+
+
+/* ==============================
+   SCHEDULE SECTION
+============================== */
+
+.schedule-section {
+    background: #ffffff;
+
+    border: 1px solid #dce4eb;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    box-shadow: 0 2px 8px rgba(25, 59, 90, 0.05);
+}
+
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+
+.section-heading h2 {
+    color: #193b5a;
+
+    font-size: 21px;
 
     margin-bottom: 7px;
 }
 
 
-.student-card p {
-    color: #b9a8d5;
+.section-heading p {
+    color: #687887;
+
+    font-size: 14px;
 }
 
 
-.student-card strong {
-    color: #d4af37;
-}
-
-
-/* ================= SCHEDULE ================= */
-
-.schedule-section {
-    background: #19112f;
-
-    border: 1px solid #4d3975;
-
-    border-radius: 15px;
-
-    padding: 25px;
-}
-
-
-.schedule-section h2 {
-    color: #f1d77a;
-
-    margin-bottom: 8px;
-}
-
-
-.section-description {
-    color: #a997c5;
-
-    margin-bottom: 25px;
-}
-
-
-/* ================= SCHEDULE CARD ================= */
+/* ==============================
+   SCHEDULE CARD
+============================== */
 
 .schedule-card {
     display: flex;
@@ -244,53 +319,61 @@ nav a.active {
 
     gap: 20px;
 
-    background: #21163d;
+    background: #f8fafc;
 
-    border: 1px solid #4d3975;
+    border: 1px solid #dce4eb;
 
-    border-radius: 12px;
+    border-radius: 8px;
 
     padding: 18px;
 
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 
-    transition: 0.3s;
+    transition: 0.2s ease;
+}
+
+
+.schedule-card:last-child {
+    margin-bottom: 0;
 }
 
 
 .schedule-card:hover {
-    border-color: #d4af37;
+    border-color: #347db3;
 
-    transform: translateX(4px);
+    background: #f5f9fc;
 }
 
 
-/* DAY NUMBER */
+/* ==============================
+   DAY NUMBER
+============================== */
 
 .day-number {
-    min-width: 55px;
-    height: 55px;
+    min-width: 52px;
+
+    height: 52px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    background: #342254;
-
-    border: 1px solid #8b6bb5;
+    background: #347db3;
 
     border-radius: 50%;
 
-    color: #d4af37;
+    color: #ffffff;
 
-    font-size: 20px;
+    font-size: 18px;
 
-    font-weight: bold;
+    font-weight: 600;
 }
 
 
-/* CONTENT */
+/* ==============================
+   SCHEDULE CONTENT
+============================== */
 
 .schedule-content {
     flex: 1;
@@ -298,29 +381,39 @@ nav a.active {
 
 
 .day {
-    color: #d4af37;
+    color: #347db3;
 
-    font-size: 13px;
+    font-size: 12px;
+
+    font-weight: 600;
 
     text-transform: uppercase;
+
+    letter-spacing: 0.5px;
 }
 
 
 .schedule-content h3 {
-    color: #eee4ff;
+    color: #193b5a;
 
     margin: 5px 0 7px;
+
+    font-size: 17px;
 }
 
 
 .schedule-content p {
-    color: #b9a8d5;
+    color: #687887;
 
     line-height: 1.5;
+
+    font-size: 14px;
 }
 
 
-/* TIME */
+/* ==============================
+   TIME
+============================== */
 
 .time {
     display: inline-block;
@@ -329,59 +422,107 @@ nav a.active {
 
     padding: 5px 10px;
 
-    background: #30204e;
+    background: #e8f1f8;
 
-    border-radius: 15px;
+    border-radius: 5px;
 
-    color: #f1d77a;
+    color: #347db3;
 
-    font-size: 13px;
+    font-size: 12px;
+
+    font-weight: 600;
 }
 
 
-/* ================= MOTIVATION ================= */
+/* ==============================
+   MOTIVATION CARD
+============================== */
 
 .motivation-card {
     text-align: center;
 
-    background: #19112f;
+    background: #ffffff;
 
-    border: 1px solid #d4af37;
+    border: 1px solid #dce4eb;
 
-    border-radius: 15px;
+    border-radius: 10px;
 
-    padding: 30px;
+    padding: 28px;
 
     margin-top: 25px;
+
+    box-shadow: 0 2px 8px rgba(25, 59, 90, 0.05);
 }
 
 
-.wand {
-    font-size: 40px;
+.motivation-icon {
+    width: 45px;
+    height: 45px;
 
-    margin-bottom: 10px;
+    margin: 0 auto 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e7f4ed;
+
+    color: #2e7d55;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+
+    font-weight: bold;
 }
 
 
 .motivation-card h2 {
-    color: #d4af37;
+    color: #193b5a;
 
     margin-bottom: 10px;
+
+    font-size: 20px;
 }
 
 
 .motivation-card p {
-    color: #b9a8d5;
+    color: #687887;
 
     max-width: 650px;
 
     margin: auto;
 
     line-height: 1.6;
+
+    font-size: 14px;
 }
 
 
-/* ================= MOBILE ================= */
+/* ==============================
+   TABLET
+============================== */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 220px;
+    }
+
+
+    .main-content {
+        margin-left: 220px;
+
+        padding: 30px;
+    }
+
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
 
 @media (max-width: 800px) {
 
@@ -391,6 +532,10 @@ nav a.active {
         width: 100%;
 
         height: auto;
+
+        border-right: none;
+
+        border-bottom: 1px solid #d7e0e8;
     }
 
 
@@ -400,20 +545,64 @@ nav a.active {
         padding: 20px;
     }
 
+
+    nav a {
+        display: inline-block;
+
+        margin-right: 5px;
+
+        margin-bottom: 5px;
+    }
+
 }
 
 
+/* ==============================
+   SMALL MOBILE
+============================== */
+
 @media (max-width: 600px) {
 
-    .schedule-card {
+    .page-header h1 {
+        font-size: 26px;
+    }
+
+
+    .student-card {
         align-items: flex-start;
     }
 
-    .day-number {
-        min-width: 45px;
-        height: 45px;
 
+    .schedule-section {
+        padding: 18px;
+    }
+
+
+    .schedule-card {
+        align-items: flex-start;
+
+        gap: 14px;
+
+        padding: 15px;
+    }
+
+
+    .day-number {
+        min-width: 44px;
+
+        height: 44px;
+
+        font-size: 15px;
+    }
+
+
+    .schedule-content h3 {
         font-size: 16px;
+    }
+
+
+    .schedule-content p {
+        font-size: 13px;
     }
 
 }

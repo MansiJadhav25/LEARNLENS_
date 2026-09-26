@@ -11,7 +11,7 @@
     <title>My Weak Areas | LearnLens</title>
 
     <link rel="stylesheet"
-          href="student-weak-areas.css">
+          href="./student-weak-areas.css">
 
 </head>
 
@@ -19,67 +19,31 @@
 <body>
 
 
-    <!-- =========================
-         SIDEBAR
-    ========================== -->
+    <!-- ================= SIDEBAR ================= -->
 
     <aside class="sidebar">
 
-        <div class="logo">
 
-            <div class="magic-symbol">
-                ✦
-            </div>
+        <div class="logo-area">
 
             <h1>
                 LearnLens
             </h1>
 
             <p>
-                Magical Learning
+                Adaptive Learning
             </p>
 
         </div>
 
 
-        <nav class="menu">
 
-            <a href="student-profile.html">
-                🏰 My Profile
-            </a>
-
-            <a href="student-performance.html">
-                📊 My Performance
-            </a>
-
-            <a href="student-weak-areas.html"
-               class="active">
-                ⚠️ Weak Areas
-            </a>
-
-            <a href="recommendations.html">
-                🎓 Recommendations
-            </a>
-
-            <a href="study-schedule.html">
-                📅 Study Schedule
-            </a>
-
-            <a href="student-reports.html">
-                📜 Reports
-            </a>
-
-            <a href="student-notifications.html">
-                🔔 Notifications
-            </a>
-
-        </nav>
-
+        <!-- STUDENT PROFILE -->
 
         <div class="student-profile">
 
             <div class="student-icon">
-                🧙‍♀️
+                👨‍🎓
             </div>
 
             <div>
@@ -89,7 +53,7 @@
                 </h3>
 
                 <p>
-                    Young Scholar
+                    Student
                 </p>
 
             </div>
@@ -97,50 +61,87 @@
         </div>
 
 
+
+        <!-- NAVIGATION -->
+
+        <nav class="menu">
+
+            <a href="student-profile.html">
+                🏠 My Profile
+            </a>
+
+
+            <a href="student-performance.html">
+                📊 Performance
+            </a>
+
+
+            <a href="student-weak-areas.html"
+               class="active">
+                ⚠️ Weak Areas
+            </a>
+
+
+            <a href="recommendations.html">
+                🎓 Recommendations
+            </a>
+
+
+            <a href="study-schedule.html">
+                📅 Study Schedule
+            </a>
+
+
+            <a href="student-reports.html">
+                📜 Reports
+            </a>
+
+
+            <a href="student-notifications.html">
+                🔔 Notifications
+            </a>
+
+        </nav>
+
+
     </aside>
 
 
 
-    <!-- =========================
-         MAIN CONTENT
-    ========================== -->
+    <!-- ================= MAIN CONTENT ================= -->
 
     <main class="main-content">
 
+
+        <!-- PAGE HEADER -->
 
         <header class="page-heading">
 
             <div>
 
-                <p class="gold-text">
-                    ✨ Personal Learning Analysis
-                </p>
-
-                <h2>
+                <h1>
                     My Weak Areas
-                </h2>
+                </h1>
 
-                <p class="description">
-                    Discover which subjects need a little more
-                    attention and improve them step by step.
+                <p>
+                    Identify the subjects that need more attention.
                 </p>
 
             </div>
 
 
             <div class="heading-icon">
-                ⚠️
+                !
             </div>
 
         </header>
 
 
 
-        <!-- =========================
-             STUDENT INTRODUCTION
-        ========================== -->
+        <!-- STUDENT INFORMATION -->
 
         <section class="student-card">
+
 
             <div>
 
@@ -149,20 +150,26 @@
                 </h2>
 
                 <p>
+
                     Roll Number:
+
                     <strong id="rollNumber">
                         -
                     </strong>
+
                 </p>
 
             </div>
 
 
+
             <div class="category-box">
 
+
                 <span id="categoryIcon">
-                    🪄
+                    ●
                 </span>
+
 
                 <div>
 
@@ -176,20 +183,21 @@
 
                 </div>
 
+
             </div>
+
 
         </section>
 
 
 
-        <!-- =========================
-             MAIN WEAK AREA
-        ========================== -->
+        <!-- MAIN FOCUS -->
 
         <section class="focus-card">
 
+
             <div class="focus-icon">
-                ⚠️
+                !
             </div>
 
 
@@ -209,21 +217,23 @@
 
             </div>
 
+
         </section>
 
 
 
-        <!-- =========================
-             MARKS CARD
-        ========================== -->
+        <!-- SUBJECT PERFORMANCE -->
 
         <section class="marks-card">
 
+
             <div class="section-title">
 
-                <span>
-                    📊
-                </span>
+
+                <div class="section-icon">
+                    %
+                </div>
+
 
                 <div>
 
@@ -237,26 +247,30 @@
 
                 </div>
 
+
             </div>
 
+
+
+            <!-- SUBJECTS WILL BE ADDED HERE -->
 
             <div id="subjectList"
                  class="subject-list">
 
             </div>
 
+
         </section>
 
 
 
-        <!-- =========================
-             RECOMMENDATION CARD
-        ========================== -->
+        <!-- RECOMMENDATION -->
 
         <section class="recommendation-card">
 
+
             <div class="recommendation-icon">
-                🪄
+                →
             </div>
 
 
@@ -268,24 +282,26 @@
 
                 <p>
                     Get videos, notes and learning resources
-                    specially selected for your weak subject.
+                    for your weak subject.
                 </p>
 
             </div>
 
 
             <button onclick="openRecommendations()">
-                🎓 Start Learning
+                Start Learning
             </button>
+
 
         </section>
 
 
 
+        <!-- FOOTER -->
+
         <footer>
 
-            ✨ LearnLens — Every weak area is
-            another opportunity to grow.
+            LearnLens — Improve step by step and keep learning.
 
         </footer>
 
@@ -293,6 +309,8 @@
     </main>
 
 
+
+    <!-- ================= JAVASCRIPT ================= -->
 
     <script>
 
@@ -310,7 +328,7 @@
         if (role !== "student") {
 
             alert(
-                "🔐 Please login as a student first."
+                "Please login as a student first."
             );
 
             window.location.href =
@@ -333,7 +351,7 @@
         if (!savedStudent) {
 
             alert(
-                "⚠️ Student information not found."
+                "Student information not found."
             );
 
             window.location.href =
@@ -378,7 +396,7 @@
         document.getElementById(
             "categoryIcon"
         ).textContent =
-            student.categoryIcon || "🪄";
+            student.categoryIcon || "●";
 
 
 
@@ -396,6 +414,7 @@
                     "MIS"
             },
 
+
             {
                 name:
                     "Database Management System",
@@ -403,6 +422,7 @@
                 short:
                     "DBMS"
             },
+
 
             {
                 name:
@@ -412,6 +432,7 @@
                     "CSF"
             },
 
+
             {
                 name:
                     "Universal Human Values",
@@ -419,6 +440,7 @@
                 short:
                     "UHV"
             },
+
 
             {
                 name:
@@ -568,6 +590,7 @@
                 }
 
 
+
                 const item =
                     document.createElement(
                         "div"
@@ -627,7 +650,7 @@
             if (!weakest) {
 
                 alert(
-                    "⚠️ No subject marks are available yet."
+                    "No subject marks are available yet."
                 );
 
                 return;

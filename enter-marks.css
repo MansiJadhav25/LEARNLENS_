@@ -1,10 +1,12 @@
-/* =================================
-   LEARNLENS - ENTER MARKS
-   Magical Wizard Theme
-================================= */
+/* =========================================
+   LEARNLENS - MINIMAL ACADEMIC THEME
+   ENTER MARKS
+========================================= */
 
 
-/* ---------- Basic settings ---------- */
+/* =========================================
+   BASIC RESET
+========================================= */
 
 * {
     margin: 0;
@@ -15,26 +17,24 @@
 
 body {
 
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f7fa;
+
+    color: #243447;
+
     min-height: 100vh;
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    color: #f3e7c8;
-
-    background:
-        radial-gradient(
-            circle at top right,
-            #3b2855,
-            #171426 45%,
-            #090911
-        );
 }
 
 
-/* ---------- Sidebar ---------- */
+
+/* =========================================
+   SIDEBAR
+========================================= */
 
 .sidebar {
 
@@ -43,68 +43,71 @@ body {
     left: 0;
     top: 0;
 
-    width: 245px;
+    width: 250px;
 
     height: 100vh;
 
-    padding: 25px 18px;
+    background: #193b5a;
 
-    background:
-        linear-gradient(
-            180deg,
-            #211832,
-            #100f1c
-        );
+    padding: 28px 16px;
 
-    border-right: 1px solid #66532c;
+    color: white;
 
     display: flex;
 
     flex-direction: column;
+
+    box-shadow:
+        3px 0 12px rgba(0, 0, 0, 0.08);
+
 }
 
 
-/* ---------- Logo ---------- */
 
-.logo {
+/* =========================================
+   LOGO
+========================================= */
+
+.logo-area {
 
     text-align: center;
 
-    margin-bottom: 30px;
+    padding-bottom: 24px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.15);
+
 }
 
 
-.logo-symbol {
+.logo-area h1 {
 
-    font-size: 25px;
+    color: #ffffff;
 
-    color: #e6c65e;
+    font-size: 26px;
+
+    font-weight: 700;
+
 }
 
 
-.logo h1 {
+.logo-area p {
 
-    font-size: 30px;
+    margin-top: 6px;
 
-    letter-spacing: 2px;
+    color: #cbd8e4;
 
-    color: #e5c567;
+    font-size: 13px;
+
 }
 
 
-.logo p {
 
-    color: #aa9b7e;
+/* =========================================
+   PROFILE
+========================================= */
 
-    font-size: 12px;
-
-    letter-spacing: 1px;
-}
-
-
-/* ---------- Teacher ---------- */
-
-.teacher-profile {
+.profile {
 
     display: flex;
 
@@ -112,23 +115,21 @@ body {
 
     gap: 12px;
 
-    padding: 14px;
+    padding: 18px 10px;
 
-    margin-bottom: 25px;
+    margin-bottom: 18px;
 
-    border-radius: 10px;
-
-    background: #2a203d;
-
-    border: 1px solid #4e4026;
 }
 
 
-.teacher-icon {
+.profile-icon {
 
     width: 45px;
-
     height: 45px;
+
+    border-radius: 50%;
+
+    background: #e9f2f8;
 
     display: flex;
 
@@ -136,237 +137,271 @@ body {
 
     justify-content: center;
 
-    border-radius: 50%;
-
-    background: #45345b;
-
     font-size: 23px;
+
 }
 
 
-.teacher-profile h3 {
+.profile h3 {
 
-    color: #e6c96c;
+    color: white;
 
-    font-size: 16px;
+    font-size: 15px;
+
 }
 
 
-.teacher-profile p {
+.profile p {
 
-    color: #a99b82;
+    color: #cbd8e4;
 
     font-size: 12px;
+
+    margin-top: 3px;
+
 }
 
 
-/* ---------- Navigation ---------- */
 
-.menu {
+/* =========================================
+   NAVIGATION
+========================================= */
 
-    display: flex;
+nav a {
 
-    flex-direction: column;
+    display: block;
 
-    gap: 7px;
-}
+    padding: 12px 14px;
 
+    margin-bottom: 5px;
 
-.menu a {
-
-    padding: 13px 12px;
+    border-radius: 7px;
 
     text-decoration: none;
 
-    color: #c9bda5;
-
-    border-radius: 8px;
+    color: #dce6ee;
 
     font-size: 14px;
 
-    transition: 0.3s;
+    transition: 0.2s ease;
+
 }
 
 
-.menu a:hover {
+nav a:hover {
 
-    background: #302444;
+    background: #27577f;
 
-    color: #f0d579;
+    color: white;
+
 }
 
 
-.menu a.active {
+nav a.active {
 
-    background: #403052;
+    background: #347db3;
 
-    color: #f0d579;
+    color: white;
 
-    border-left: 3px solid #e0be54;
+    border-left:
+        4px solid #f0c75e;
+
+    padding-left: 10px;
+
 }
 
 
-/* ---------- Logout ---------- */
+
+/* =========================================
+   LOGOUT
+========================================= */
 
 .logout {
 
     margin-top: auto;
+
+    padding-top: 18px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.12);
+
 }
 
 
 .logout a {
 
-    display: block;
-
-    padding: 12px;
-
     text-decoration: none;
 
-    color: #a99c86;
+    color: #cbd8e4;
 
     font-size: 13px;
 
-    border-top: 1px solid #3c3345;
+    padding: 10px;
+
+    display: block;
+
 }
 
 
-/* ---------- Main content ---------- */
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
 
 .main-content {
 
-    margin-left: 245px;
+    margin-left: 250px;
 
-    padding: 40px;
+    min-height: 100vh;
 
-    max-width: 1200px;
+    padding: 42px;
+
 }
 
 
-/* ---------- Page heading ---------- */
 
-.page-heading {
+/* =========================================
+   PAGE HEADER
+========================================= */
 
-    display: flex;
+.page-header {
 
-    justify-content: space-between;
+    margin-bottom: 28px;
 
-    align-items: center;
-
-    margin-bottom: 30px;
 }
 
 
-.gold-text {
+.page-label {
 
-    color: #b99b4e;
+    color: #347db3;
 
-    font-size: 12px;
+    font-size: 13px;
 
-    letter-spacing: 1px;
+    font-weight: 600;
 
     margin-bottom: 7px;
+
 }
 
 
-.page-heading h2 {
+.page-header h1 {
 
-    color: #ead17b;
+    color: #183b5b;
 
     font-size: 32px;
 
-    margin-bottom: 8px;
+    font-weight: 700;
+
 }
 
 
-.description {
+.page-description {
 
-    color: #a99d87;
+    color: #718096;
 
-    font-size: 14px;
+    margin-top: 8px;
 
-    line-height: 1.5;
+    font-size: 15px;
+
 }
 
 
-.scroll-icon {
 
-    font-size: 50px;
+/* =========================================
+   FORM CARD
+========================================= */
 
-    opacity: 0.8;
-}
+.form-card {
 
+    background: white;
 
-/* ---------- Main card ---------- */
+    border:
+        1px solid #dce5ec;
 
-.marks-card {
+    border-radius: 12px;
 
-    background: #211a31;
+    padding: 28px;
 
-    border: 1px solid #4c3d28;
-
-    border-radius: 15px;
-
-    padding: 30px;
+    margin-bottom: 24px;
 
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.3);
+        0 4px 14px rgba(27, 55, 79, 0.06);
+
 }
 
 
-/* ---------- Card titles ---------- */
 
-.card-title,
-.subjects-title {
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
 
     display: flex;
 
     align-items: center;
 
-    gap: 12px;
+    gap: 14px;
 
-    margin-bottom: 22px;
+    margin-bottom: 25px;
+
 }
 
 
-.card-title > span,
-.subjects-title > span {
+.section-icon {
 
-    font-size: 28px;
+    width: 44px;
+    height: 44px;
+
+    border-radius: 8px;
+
+    background: #edf5fa;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 21px;
+
 }
 
 
-.card-title h3,
-.subjects-title h3 {
+.section-heading h2 {
 
-    color: #dfca83;
+    color: #183b5b;
 
     font-size: 19px;
+
 }
 
 
-.card-title p,
-.subjects-title p {
+.section-heading p {
 
-    color: #8f8574;
+    color: #7b8794;
 
-    font-size: 12px;
+    font-size: 13px;
 
     margin-top: 4px;
+
 }
 
 
-/* ---------- Student details ---------- */
 
-.student-details {
+/* =========================================
+   STUDENT INFORMATION
+========================================= */
+
+.student-info-grid {
 
     display: grid;
 
     grid-template-columns:
-        2fr 1fr;
+        1fr 1fr;
 
-    gap: 20px;
+    gap: 22px;
 
-    margin-bottom: 35px;
 }
 
 
@@ -376,75 +411,71 @@ body {
 
     flex-direction: column;
 
-    gap: 8px;
 }
 
 
 .input-group label {
 
-    color: #b9aa8e;
+    color: #34495e;
 
-    font-size: 12px;
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
 }
 
 
 .input-group input {
 
-    padding: 13px;
+    width: 100%;
 
-    border-radius: 8px;
+    padding: 12px 14px;
 
-    border: 1px solid #4e402c;
+    border:
+        1px solid #ccd8e2;
+
+    border-radius: 7px;
+
+    background: white;
+
+    color: #243447;
+
+    font-size: 14px;
 
     outline: none;
 
-    background: #171323;
+    transition: 0.2s;
 
-    color: #f2e4c4;
-
-    font-family: inherit;
-
-    font-size: 14px;
 }
 
 
 .input-group input:focus {
 
-    border-color: #b99b4e;
+    border-color: #347db3;
 
     box-shadow:
-        0 0 10px rgba(185, 155, 78, 0.12);
-}
-
-
-.input-group input::placeholder {
-
-    color: #625c51;
-}
-
-
-/* ---------- Subject list ---------- */
-
-.subjects-title {
-
-    padding-top: 25px;
-
-    border-top: 1px solid #352d38;
+        0 0 0 3px rgba(52, 125, 179, 0.1);
 
 }
 
 
-.subjects {
+
+/* =========================================
+   SUBJECT LIST
+========================================= */
+
+.subjects-list {
 
     display: flex;
 
     flex-direction: column;
 
     gap: 12px;
+
 }
 
-
-/* ---------- Subject row ---------- */
 
 .subject-row {
 
@@ -454,27 +485,35 @@ body {
 
     justify-content: space-between;
 
+    gap: 20px;
+
     padding: 16px;
 
-    border-radius: 10px;
+    background: #f8fafc;
 
-    background: #191526;
+    border:
+        1px solid #e1e8ee;
 
-    border: 1px solid #37303b;
+    border-radius: 9px;
 
-    transition: 0.3s;
+    transition: 0.2s;
+
 }
 
 
 .subject-row:hover {
 
-    border-color: #69552d;
+    border-color: #b8cddd;
 
-    background: #201a30;
+    background: #f5f9fc;
+
 }
 
 
-/* ---------- Subject information ---------- */
+
+/* =========================================
+   SUBJECT INFORMATION
+========================================= */
 
 .subject-info {
 
@@ -482,15 +521,21 @@ body {
 
     align-items: center;
 
-    gap: 13px;
+    gap: 14px;
+
 }
 
 
 .subject-icon {
 
     width: 42px;
-
     height: 42px;
+
+    border-radius: 8px;
+
+    background: #eaf3f9;
+
+    color: #347db3;
 
     display: flex;
 
@@ -498,11 +543,10 @@ body {
 
     justify-content: center;
 
-    border-radius: 9px;
+    font-size: 13px;
 
-    background: #302440;
+    font-weight: 700;
 
-    font-size: 20px;
 }
 
 
@@ -510,25 +554,30 @@ body {
 
     display: block;
 
-    color: #d7c9a9;
+    color: #243b53;
 
     font-size: 14px;
+
 }
 
 
-.subject-info small {
+.subject-info span {
 
     display: block;
 
-    color: #817868;
-
     margin-top: 4px;
 
-    font-size: 11px;
+    color: #7b8794;
+
+    font-size: 12px;
+
 }
 
 
-/* ---------- Marks input ---------- */
+
+/* =========================================
+   MARK INPUT
+========================================= */
 
 .marks-input {
 
@@ -537,182 +586,194 @@ body {
     align-items: center;
 
     gap: 8px;
+
 }
 
 
 .marks-input input {
 
-    width: 65px;
+    width: 75px;
 
     padding: 10px;
 
     text-align: center;
 
+    border:
+        1px solid #ccd8e2;
+
     border-radius: 7px;
 
-    border: 1px solid #66532d;
+    font-size: 15px;
 
-    background: #110f19;
+    color: #243447;
 
-    color: #f0d477;
-
-    font-size: 16px;
+    background: white;
 
     outline: none;
+
 }
 
 
 .marks-input input:focus {
 
-    border-color: #d0ae50;
+    border-color: #347db3;
+
+    box-shadow:
+        0 0 0 3px rgba(52, 125, 179, 0.1);
+
 }
 
 
 .marks-input span {
 
-    color: #756c5d;
+    color: #718096;
 
-    font-size: 12px;
+    font-size: 13px;
+
 }
 
 
-/* ---------- Buttons ---------- */
+
+/* =========================================
+   BUTTONS
+========================================= */
 
 .form-actions {
 
     display: flex;
 
-    justify-content: space-between;
+    justify-content: flex-end;
 
-    margin-top: 30px;
+    gap: 12px;
+
+    margin-top: 26px;
+
 }
 
 
 .back-button,
-.analyse-button {
+.save-button {
 
-    padding: 12px 20px;
+    border: none;
 
-    border-radius: 8px;
+    border-radius: 7px;
 
-    font-family: inherit;
+    padding: 11px 20px;
+
+    font-size: 14px;
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition: 0.2s;
+
 }
 
 
 .back-button {
 
-    background: transparent;
+    background: #edf1f5;
 
-    border: 1px solid #4d402d;
+    color: #40566b;
 
-    color: #aaa08e;
 }
 
 
 .back-button:hover {
 
-    background: #2b223b;
+    background: #dfe6ec;
 
-    color: #e0ca7d;
 }
 
 
-.analyse-button {
+.save-button {
 
-    border: 1px solid #c5a84f;
+    background: #347db3;
 
-    background: #3a2a4b;
+    color: white;
 
-    color: #f1d477;
-
-    font-size: 14px;
 }
 
 
-.analyse-button:hover {
+.save-button:hover {
 
-    background: #503962;
+    background: #286b9c;
 
-    box-shadow:
-        0 0 18px rgba(224, 190, 84, 0.15);
 }
 
 
-/* ---------- Analysis message ---------- */
 
-.analysis-message {
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message {
 
     display: none;
 
-    align-items: center;
+    margin-top: 18px;
 
-    gap: 15px;
+    padding: 12px 15px;
 
-    margin-top: 25px;
-
-    padding: 18px;
-
-    border-radius: 10px;
-
-    background: #29213b;
-
-    border: 1px solid #65502b;
-}
-
-
-.analysis-message.show {
-
-    display: flex;
-}
-
-
-.analysis-message > span {
-
-    font-size: 30px;
-}
-
-
-.analysis-message strong {
-
-    color: #e3ca78;
+    border-radius: 7px;
 
     font-size: 14px;
+
 }
 
 
-.analysis-message p {
+.message.success {
 
-    color: #9d927e;
+    display: block;
 
-    font-size: 12px;
+    background: #edf8f1;
 
-    margin-top: 5px;
+    color: #287a4b;
 
-    line-height: 1.5;
+    border:
+        1px solid #c8e8d4;
+
 }
 
 
-/* ---------- Footer ---------- */
+.message.error {
+
+    display: block;
+
+    background: #fff1f1;
+
+    color: #b43b3b;
+
+    border:
+        1px solid #f0cccc;
+
+}
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
 
 footer {
 
     text-align: center;
 
-    margin-top: 25px;
-
-    color: #71695c;
+    color: #8493a1;
 
     font-size: 12px;
+
+    padding: 10px 0 25px;
+
 }
 
 
-/* ---------- Mobile ---------- */
 
-@media (max-width: 750px) {
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
 
     .sidebar {
 
@@ -729,28 +790,14 @@ footer {
 
         margin-left: 0;
 
-        padding: 25px 15px;
+        padding: 22px;
 
     }
 
 
-    .student-details {
+    .student-info-grid {
 
         grid-template-columns: 1fr;
-
-    }
-
-
-    .page-heading {
-
-        align-items: flex-start;
-
-    }
-
-
-    .scroll-icon {
-
-        display: none;
 
     }
 
@@ -759,71 +806,30 @@ footer {
 
         align-items: flex-start;
 
-        gap: 15px;
+        flex-direction: column;
 
     }
 
-}
-/* =========================================
-   ANALYSIS RESULT
-========================================= */
 
-.analysis-message {
+    .marks-input {
 
-    display: none;
+        width: 100%;
 
-    margin-top: 25px;
-
-    padding: 18px;
-
-    border-radius: 10px;
-
-    background: #29213b;
-
-    border: 1px solid #5c492b;
-
-    color: #d7c681;
-
-    align-items: center;
-
-    gap: 15px;
-
-}
+    }
 
 
-.analysis-message.show {
+    .form-actions {
 
-    display: flex;
+        flex-direction: column;
 
-}
-
-
-.analysis-message > span {
-
-    font-size: 30px;
-
-}
+    }
 
 
-.analysis-message strong {
+    .back-button,
+    .save-button {
 
-    display: block;
+        width: 100%;
 
-    color: #e4cb72;
-
-    font-size: 15px;
-
-    margin-bottom: 5px;
-
-}
-
-
-.analysis-message p {
-
-    color: #a69a82;
-
-    font-size: 11px;
-
-    line-height: 1.6;
+    }
 
 }

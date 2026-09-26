@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>LearnLens | Reports</title>
+
+    <link rel="stylesheet"
+          href="reports.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         SIDEBAR
+    ================================== -->
+
+    <aside class="sidebar">
+
+
+        <div class="logo-area">
+
+            <h1>LearnLens</h1>
+
+            <p>Adaptive Learning</p>
+
+        </div>
+
+
+        <div class="teacher-profile">
+
+            <div class="teacher-icon">
+                👨‍🏫
+            </div>
+
+            <div>
+
+                <h3>Professor</h3>
+
+                <p>Teacher</p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="teacher-dashboard.html">
+                🏠 Dashboard
+            </a>
+
+            <a href="my-student.html">
+                👨‍🎓 My Students
+            </a>
+
+            <a href="enter-marks.html">
+                📝 Enter Marks
+            </a>
+
+            <a href="performance.html">
+                📊 Performance
+            </a>
+
+            <a href="weak-areas.html">
+                ⚠️ Weak Areas
+            </a>
+
+            <a href="reports.html"
+               class="active">
+                📋 Reports
+            </a>
+
+            <a href="notifications.html">
+                🔔 Notifications
+            </a>
+
+        </nav>
+
+
+        <div class="logout">
+
+            <a href="index.html">
+                ← Return to Entrance
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =================================
+         MAIN CONTENT
+    ================================== -->
+
+    <main class="main-content">
+
+
+        <!-- PAGE HEADER -->
+
+        <header class="page-heading">
+
+            <div>
+
+                <p class="section-label">
+                    STUDENT RECORDS
+                </p>
+
+                <h2>
+                    Student Reports
+                </h2>
+
+                <p class="description">
+                    View a summary of student performance
+                    and academic progress.
+                </p>
+
+            </div>
+
+
+            <div class="heading-icon">
+                📋
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================
+             SUMMARY CARDS
+        ================================== -->
+
+        <section class="summary-grid">
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    👨‍🎓
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Students
+                    </span>
+
+                    <strong id="totalStudents">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    📊
+                </div>
+
+                <div>
+
+                    <span>
+                        Class Average
+                    </span>
+
+                    <strong id="classAverage">
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    📈
+                </div>
+
+                <div>
+
+                    <span>
+                        Highest Percentage
+                    </span>
+
+                    <strong id="highestPercentage">
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    ⚠️
+                </div>
+
+                <div>
+
+                    <span>
+                        Students Needing Attention
+                    </span>
+
+                    <strong id="attentionStudents">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             STUDENT REPORT TABLE
+        ================================== -->
+
+        <section class="report-card">
+
+
+            <div class="section-title">
+
+                <div class="section-icon">
+                    📊
+                </div>
+
+                <div>
+
+                    <h3>
+                        Student Performance Report
+                    </h3>
+
+                    <p>
+                        Overview of all students whose marks
+                        have been entered.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Student
+                            </th>
+
+                            <th>
+                                Roll Number
+                            </th>
+
+                            <th>
+                                Average
+                            </th>
+
+                            <th>
+                                Percentage
+                            </th>
+
+                            <th>
+                                Category
+                            </th>
+
+                            <th>
+                                Strongest Subject
+                            </th>
+
+                            <th>
+                                Weakest Subject
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="reportTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+
+            <!-- EMPTY STATE -->
+
+            <div id="emptyMessage"
+                 class="empty-message">
+
+                <div class="empty-icon">
+                    📋
+                </div>
+
+                <h3>
+                    No Student Reports Yet
+                </h3>
+
+                <p>
+                    Enter student marks to generate
+                    performance reports.
+                </p>
+
+                <a href="enter-marks.html">
+                    Enter Marks
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             REPORT INFORMATION
+        ================================== -->
+
+        <section class="info-card">
+
+            <div class="info-icon">
+                ℹ️
+            </div>
+
+            <div>
+
+                <h3>
+                    About These Reports
+                </h3>
+
+                <p>
+                    Reports are created from the student
+                    records stored in LearnLens. The report
+                    includes the student's average,
+                    percentage, learner category, strongest
+                    subject and weakest subject.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <footer>
+
+            LearnLens — Student performance reporting
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================== -->
+
+    <script>
+
+
+        // =================================
+        // CHECK TEACHER LOGIN
+        // =================================
+
+        const role =
+            localStorage.getItem(
+                "learnlensLoggedInRole"
+            );
+
+
+        if (role !== "teacher") {
+
+            alert(
+                "🔐 Please login as a teacher first."
+            );
+
+            window.location.href =
+                "login.html";
+
+        }
+
+
+
+        // =================================
+        // GET STUDENTS
+        // =================================
+
+        function getStudents() {
+
+            const savedStudents =
+                localStorage.getItem(
+                    "learnlensStudents"
+                );
+
+
+            if (!savedStudents) {
+
+                return [];
+
+            }
+
+
+            try {
+
+                return JSON.parse(
+                    savedStudents
+                );
+
+            }
+
+            catch (error) {
+
+                console.log(
+                    "Student data could not be loaded."
+                );
+
+                return [];
+
+            }
+
+        }
+
+
+
+        // =================================
+        // SHORT SUBJECT NAME
+        // =================================
+
+        function shortSubjectName(subject) {
+
+            if (!subject) {
+
+                return "-";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Mathematics"
+                )
+            ) {
+
+                return "MIS";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Database"
+                )
+            ) {
+
+                return "DBMS";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Computer System"
+                )
+            ) {
+
+                return "CSF";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Universal"
+                )
+            ) {
+
+                return "UHV";
+
+            }
+
+
+            return "Open Elective";
+
+        }
+
+
+
+        // =================================
+        // LOAD REPORT
+        // =================================
+
+        function loadReports() {
+
+
+            const students =
+                getStudents();
+
+
+            const table =
+                document.getElementById(
+                    "reportTable"
+                );
+
+
+            const emptyMessage =
+                document.getElementById(
+                    "emptyMessage"
+                );
+
+
+            table.innerHTML = "";
+
+
+
+            // =================================
+            // NO STUDENTS
+            // =================================
+
+            if (
+                students.length === 0
+            ) {
+
+                emptyMessage.style.display =
+                    "block";
+
+                updateSummary([]);
+
+                return;
+
+            }
+
+
+            emptyMessage.style.display =
+                "none";
+
+
+
+            // =================================
+            // CREATE TABLE ROWS
+            // =================================
+
+            students.forEach(
+                function(student) {
+
+
+                    const row =
+                        document.createElement(
+                            "tr"
+                        );
+
+
+                    const category =
+                        student.category ||
+                        "Not Available";
+
+
+                    const categoryIcon =
+                        student.categoryIcon ||
+                        "";
+
+
+                    row.innerHTML = `
+
+                        <td>
+                            <strong>
+                                ${student.name || "-"}
+                            </strong>
+                        </td>
+
+                        <td>
+                            ${student.rollNumber || "-"}
+                        </td>
+
+                        <td>
+                            ${Number(
+                                student.average || 0
+                            ).toFixed(1)}
+                        </td>
+
+                        <td>
+                            <strong>
+                                ${Number(
+                                    student.percentage || 0
+                                ).toFixed(1)}%
+                            </strong>
+                        </td>
+
+                        <td>
+                            <span class="category">
+                                ${categoryIcon}
+                                ${category}
+                            </span>
+                        </td>
+
+                        <td>
+                            ${shortSubjectName(
+                                student.strongestSubject
+                            )}
+                        </td>
+
+                        <td>
+                            ${shortSubjectName(
+                                student.weakestSubject
+                            )}
+                        </td>
+
+                    `;
+
+
+                    table.appendChild(row);
+
+                }
+            );
+
+
+
+            // =================================
+            // UPDATE SUMMARY
+            // =================================
+
+            updateSummary(students);
+
+        }
+
+
+
+        // =================================
+        // SUMMARY
+        // =================================
+
+        function updateSummary(students) {
+
+
+            const total =
+                students.length;
+
+
+            document.getElementById(
+                "totalStudents"
+            ).textContent =
+                total;
+
+
+
+            if (total === 0) {
+
+                document.getElementById(
+                    "classAverage"
+                ).textContent = "0%";
+
+                document.getElementById(
+                    "highestPercentage"
+                ).textContent = "0%";
+
+                document.getElementById(
+                    "attentionStudents"
+                ).textContent = "0";
+
+                return;
+
+            }
+
+
+
+            // CLASS AVERAGE
+
+            let totalPercentage = 0;
+
+
+            students.forEach(
+                function(student) {
+
+                    totalPercentage +=
+                        Number(
+                            student.percentage || 0
+                        );
+
+                }
+            );
+
+
+            const classAverage =
+                totalPercentage / total;
+
+
+            document.getElementById(
+                "classAverage"
+            ).textContent =
+                classAverage.toFixed(1) + "%";
+
+
+
+            // HIGHEST PERCENTAGE
+
+            const highest =
+                Math.max.apply(
+                    null,
+                    students.map(
+                        function(student) {
+
+                            return Number(
+                                student.percentage || 0
+                            );
+
+                        }
+                    )
+                );
+
+
+            document.getElementById(
+                "highestPercentage"
+            ).textContent =
+                highest.toFixed(1) + "%";
+
+
+
+            // STUDENTS NEEDING ATTENTION
+
+            const attention =
+                students.filter(
+                    function(student) {
+
+                        return Number(
+                            student.percentage || 0
+                        ) < 50;
+
+                    }
+                ).length;
+
+
+            document.getElementById(
+                "attentionStudents"
+            ).textContent =
+                attention;
+
+        }
+
+
+
+        // =================================
+        // START
+        // =================================
+
+        loadReports();
+
+    </script>
+
+
+</body>
+
+</html>

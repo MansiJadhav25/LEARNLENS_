@@ -2,91 +2,165 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Performance | LearnLens</title>
 
-    <link rel="stylesheet" href="performance.css">
+    <link rel="stylesheet"
+          href="performance.css">
 
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
+
 
 <body>
 
-    <!-- ================= SIDEBAR ================= -->
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
 
     <aside class="sidebar">
 
+
         <div class="logo-area">
-            <h1>🪄 LearnLens</h1>
-            <p>Magical Learning</p>
+
+            <h1>
+                LearnLens
+            </h1>
+
+            <p>
+                Academic Learning
+            </p>
+
         </div>
 
+
+
         <div class="profile">
-            <div class="profile-icon">👨‍🏫</div>
-            <h3>Professor</h3>
-            <p>Teacher</p>
+
+            <div class="profile-icon">
+                👩‍🏫
+            </div>
+
+            <div>
+
+                <h3>
+                    Professor
+                </h3>
+
+                <p>
+                    Teacher
+                </p>
+
+            </div>
+
         </div>
+
+
 
         <nav>
 
+
             <a href="teacher-dashboard.html">
-                🏰 Dashboard
+                🏠 Dashboard
             </a>
+
 
             <a href="my-student.html">
                 👨‍🎓 My Students
             </a>
 
+
             <a href="enter-marks.html">
-                ✍️ Enter Marks
+                📝 Enter Marks
             </a>
 
-            <a href="performance.html" class="active">
+
+            <a href="performance.html"
+               class="active">
                 📊 Performance
             </a>
 
+
             <a href="weak-areas.html">
-                🔮 Weak Areas
+                ⚠️ Weak Areas
             </a>
 
+
             <a href="reports.html">
-                📜 Reports
+                📋 Reports
             </a>
+
 
             <a href="notifications.html">
                 🔔 Notifications
             </a>
 
+
         </nav>
+
+
+        <div class="logout">
+
+            <a href="index.html">
+                🚪 Return to Entrance
+            </a>
+
+        </div>
+
 
     </aside>
 
 
-    <!-- ================= MAIN CONTENT ================= -->
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
 
     <main class="main-content">
 
+
+        <!-- PAGE HEADER -->
+
         <header class="page-header">
 
-            <h1>📊 Student Performance</h1>
+            <p class="page-label">
+                Student Analysis
+            </p>
 
-            <p>
-                Analyse your student's magical learning journey.
+            <h1>
+                Student Performance
+            </h1>
+
+            <p class="page-description">
+                Review the student's academic performance
+                across all subjects.
             </p>
 
         </header>
 
 
-        <!-- ================= STUDENT INFO ================= -->
+
+
+        <!-- =========================================
+             STUDENT INFORMATION
+        ========================================== -->
 
         <section class="student-header">
+
 
             <div class="student-icon">
                 👨‍🎓
             </div>
+
 
             <div>
 
@@ -96,21 +170,31 @@
 
                 <p>
                     Roll Number:
-                    <span id="rollNumber">-</span>
+                    <span id="rollNumber">
+                        -
+                    </span>
                 </p>
 
             </div>
 
+
         </section>
 
 
-        <!-- ================= SUMMARY ================= -->
+
+
+        <!-- =========================================
+             SUMMARY
+        ========================================== -->
 
         <section class="summary-grid">
 
+
             <div class="summary-card">
 
-                <span>📈 Percentage</span>
+                <span>
+                    Percentage
+                </span>
 
                 <strong id="percentage">
                     0%
@@ -119,9 +203,12 @@
             </div>
 
 
+
             <div class="summary-card">
 
-                <span>⭐ Average</span>
+                <span>
+                    Average
+                </span>
 
                 <strong id="average">
                     0
@@ -130,9 +217,12 @@
             </div>
 
 
+
             <div class="summary-card">
 
-                <span>🏆 Category</span>
+                <span>
+                    Learner Category
+                </span>
 
                 <strong id="category">
                     -
@@ -141,9 +231,12 @@
             </div>
 
 
+
             <div class="summary-card">
 
-                <span>🔻 Weakest Subject</span>
+                <span>
+                    Weakest Subject
+                </span>
 
                 <strong id="weakestSubject">
                     -
@@ -151,160 +244,259 @@
 
             </div>
 
+
         </section>
 
 
-        <!-- ================= BAR CHART ================= -->
+
+
+        <!-- =========================================
+             PERFORMANCE CHART
+        ========================================== -->
 
         <section class="chart-section">
 
-            <h2>📚 Subject-wise Performance</h2>
 
-            <p class="chart-description">
-                This chart shows how the student is performing
-                in each subject.
-            </p>
+            <div class="section-heading">
 
-            <div class="chart-box">
+                <div>
 
-                <canvas id="performanceChart"></canvas>
+                    <h2>
+                        Subject-wise Performance
+                    </h2>
+
+                    <p class="chart-description">
+                        Marks obtained by the student in each subject.
+                    </p>
+
+                </div>
 
             </div>
 
+
+
+            <div class="chart-box">
+
+                <canvas
+                    id="performanceChart">
+                </canvas>
+
+            </div>
+
+
         </section>
 
 
-        <!-- ================= STRONGEST SUBJECT ================= -->
+
+
+        <!-- =========================================
+             STRONGEST SUBJECT
+        ========================================== -->
 
         <section class="strength-card">
 
-            <h2>✨ Strongest Subject</h2>
 
-            <p id="strongestSubject">
-                -
-            </p>
+            <div class="info-icon">
+                ✓
+            </div>
 
-            <strong id="strongestMarks">
-                -
-            </strong>
+
+            <div>
+
+                <h2>
+                    Strongest Subject
+                </h2>
+
+                <p id="strongestSubject">
+                    -
+                </p>
+
+                <strong id="strongestMarks">
+                    -
+                </strong>
+
+            </div>
+
 
         </section>
 
 
-        <!-- ================= WEAK AREA ================= -->
+
+
+        <!-- =========================================
+             WEAK AREA
+        ========================================== -->
 
         <section class="weak-card">
 
-            <h2>🔮 Weak Area</h2>
 
-            <p>
-                Your weakest subject is:
-            </p>
+            <div class="info-icon">
+                !
+            </div>
 
-            <button
-                id="weakSubjectButton"
-                onclick="openRecommendations()"
-            >
-                🔮 <span id="weakSubjectButtonText">
-                    View Weak Subject
-                </span>
-            </button>
 
-            <p class="hint">
-                Click the button to get learning videos,
-                notes and study material.
-            </p>
+            <div class="weak-content">
+
+                <h2>
+                    Area Needing Attention
+                </h2>
+
+                <p>
+                    The student's current focus area is:
+                </p>
+
+
+                <button
+                    id="weakSubjectButton"
+                    onclick="openRecommendations()"
+                >
+
+                    <span id="weakSubjectButtonText">
+                        View Recommendations
+                    </span>
+
+                </button>
+
+
+                <p class="hint">
+                    Open recommendations to find
+                    learning videos, notes and study material.
+                </p>
+
+            </div>
+
 
         </section>
+
 
     </main>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
     <script>
 
-        // -----------------------------------------
-        // CHECK TEACHER LOGIN
-        // -----------------------------------------
+
+        /* =========================================
+           CHECK TEACHER LOGIN
+        ========================================== */
 
         const role =
-            localStorage.getItem("learnlensLoggedInRole");
+            localStorage.getItem(
+                "learnlensLoggedInRole"
+            );
+
 
         if (role !== "teacher") {
 
-            alert("🔐 Please login as a teacher first.");
+            alert(
+                "Please login as a teacher first."
+            );
 
-            window.location.href = "login.html";
+            window.location.href =
+                "login.html";
+
         }
 
 
-        // -----------------------------------------
-        // GET CURRENT STUDENT
-        // -----------------------------------------
+
+
+        /* =========================================
+           GET CURRENT STUDENT
+        ========================================== */
 
         const currentStudent =
             JSON.parse(
-                localStorage.getItem("learnlensCurrentStudent")
+                localStorage.getItem(
+                    "learnlensCurrentStudent"
+                )
             );
 
 
         if (!currentStudent) {
 
-            alert("⚠️ Please select a student first.");
+            alert(
+                "Please select a student first."
+            );
 
             window.location.href =
                 "my-student.html";
+
         }
 
 
-        // -----------------------------------------
-        // STUDENT INFORMATION
-        // -----------------------------------------
 
-        document.getElementById("studentName")
-            .textContent =
+
+        /* =========================================
+           STUDENT INFORMATION
+        ========================================== */
+
+        document.getElementById(
+            "studentName"
+        ).textContent =
             currentStudent.name;
 
-        document.getElementById("rollNumber")
-            .textContent =
+
+        document.getElementById(
+            "rollNumber"
+        ).textContent =
             currentStudent.rollNumber;
 
-        document.getElementById("percentage")
-            .textContent =
+
+        document.getElementById(
+            "percentage"
+        ).textContent =
             currentStudent.percentage + "%";
 
-        document.getElementById("average")
-            .textContent =
+
+        document.getElementById(
+            "average"
+        ).textContent =
             currentStudent.average;
 
-        document.getElementById("category")
-            .textContent =
+
+        document.getElementById(
+            "category"
+        ).textContent =
             (currentStudent.categoryIcon || "") +
             " " +
             currentStudent.category;
 
-        document.getElementById("weakestSubject")
-            .textContent =
+
+        document.getElementById(
+            "weakestSubject"
+        ).textContent =
             currentStudent.weakestSubject;
 
 
-        // -----------------------------------------
-        // STRONGEST SUBJECT
-        // -----------------------------------------
 
-        document.getElementById("strongestSubject")
-            .textContent =
+
+        /* =========================================
+           STRONGEST SUBJECT
+        ========================================== */
+
+        document.getElementById(
+            "strongestSubject"
+        ).textContent =
             currentStudent.strongestSubject;
 
-        document.getElementById("strongestMarks")
-            .textContent =
-            currentStudent.strongestMarks + " / 100";
+
+        document.getElementById(
+            "strongestMarks"
+        ).textContent =
+            currentStudent.strongestMarks +
+            " / 100";
 
 
-        // -----------------------------------------
-        // WEAK SUBJECT BUTTON
-        // -----------------------------------------
+
+
+        /* =========================================
+           RECOMMENDATION BUTTON
+        ========================================== */
 
         document.getElementById(
             "weakSubjectButtonText"
@@ -313,59 +505,80 @@
             " Recommendations";
 
 
-        // -----------------------------------------
-        // SUBJECT NAME
-        // -----------------------------------------
+
+
+        /* =========================================
+           SHORT SUBJECT NAME
+        ========================================== */
 
         function shortSubjectName(subject) {
 
+
             const names = {
+
 
                 "Mathematics for Intelligent System":
                     "MIS",
 
+
                 "Database Management System":
                     "DBMS",
+
 
                 "Computer System Fundamentals":
                     "CSF",
 
+
                 "Universal Human Values":
                     "UHV",
+
 
                 "Open Elective":
                     "Open Elective"
 
+
             };
 
+
             return names[subject] || subject;
+
         }
 
 
-        // -----------------------------------------
-        // PREPARE CHART DATA
-        // -----------------------------------------
+
+
+        /* =========================================
+           PREPARE CHART DATA
+        ========================================== */
 
         const subjects = [];
 
         const marks = [];
 
 
-        Object.entries(currentStudent.marks)
-            .forEach(function([subject, mark]) {
+        Object.entries(
+            currentStudent.marks
+        ).forEach(
+            function([subject, mark]) {
+
 
                 subjects.push(
                     shortSubjectName(subject)
                 );
 
+
                 marks.push(mark);
 
-            });
+
+            }
+        );
 
 
-        // -----------------------------------------
-        // CREATE BAR CHART
-        // -----------------------------------------
+
+
+        /* =========================================
+           CREATE BAR CHART
+        ========================================== */
 
         const chartArea =
             document.getElementById(
@@ -373,101 +586,119 @@
             );
 
 
-        new Chart(chartArea, {
+        new Chart(
+            chartArea,
+            {
 
-            type: "bar",
+                type: "bar",
 
-            data: {
 
-                labels: subjects,
+                data: {
 
-                datasets: [
+                    labels: subjects,
 
-                    {
 
-                        label: "Marks",
+                    datasets: [
 
-                        data: marks,
+                        {
 
-                        borderWidth: 1
+                            label: "Marks",
 
-                    }
+                            data: marks,
 
-                ]
+                            borderWidth: 1
 
-            },
+                        }
 
-            options: {
+                    ]
 
-                responsive: true,
+                },
 
-                maintainAspectRatio: false,
 
-                scales: {
+                options: {
 
-                    y: {
+                    responsive: true,
 
-                        beginAtZero: true,
+                    maintainAspectRatio: false,
 
-                        max: 100,
 
-                        title: {
+                    scales: {
 
-                            display: true,
+                        y: {
 
-                            text: "Marks"
+                            beginAtZero: true,
+
+                            max: 100,
+
+                            title: {
+
+                                display: true,
+
+                                text: "Marks"
+
+                            }
+
+                        },
+
+
+                        x: {
+
+                            title: {
+
+                                display: true,
+
+                                text: "Subjects"
+
+                            }
 
                         }
 
                     },
 
-                    x: {
 
-                        title: {
+                    plugins: {
 
-                            display: true,
+                        legend: {
 
-                            text: "Subjects"
+                            display: true
 
                         }
-
-                    }
-
-                },
-
-                plugins: {
-
-                    legend: {
-
-                        display: true
 
                     }
 
                 }
 
             }
+        );
 
-        });
 
 
-        // -----------------------------------------
-        // OPEN RECOMMENDATIONS
-        // -----------------------------------------
+
+        /* =========================================
+           OPEN RECOMMENDATIONS
+        ========================================== */
 
         function openRecommendations() {
 
+
             localStorage.setItem(
+
                 "learnlensRecommendationSubject",
+
                 currentStudent.weakestSubject
+
             );
+
 
             window.location.href =
                 "recommendations.html";
+
         }
 
+
     </script>
+
 
 </body>
 
 </html>
-

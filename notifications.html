@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>LearnLens | Notifications</title>
+
+    <link rel="stylesheet"
+          href="notifications.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         SIDEBAR
+    ================================== -->
+
+    <aside class="sidebar">
+
+
+        <div class="logo-area">
+
+            <h1>LearnLens</h1>
+
+            <p>Adaptive Learning</p>
+
+        </div>
+
+
+        <div class="teacher-profile">
+
+            <div class="teacher-icon">
+                👨‍🏫
+            </div>
+
+            <div>
+
+                <h3>Professor</h3>
+
+                <p>Teacher</p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="teacher-dashboard.html">
+                🏠 Dashboard
+            </a>
+
+            <a href="my-student.html">
+                👨‍🎓 My Students
+            </a>
+
+            <a href="enter-marks.html">
+                📝 Enter Marks
+            </a>
+
+            <a href="performance.html">
+                📊 Performance
+            </a>
+
+            <a href="weak-areas.html">
+                ⚠️ Weak Areas
+            </a>
+
+            <a href="reports.html">
+                📋 Reports
+            </a>
+
+            <a href="notifications.html"
+               class="active">
+                🔔 Notifications
+            </a>
+
+        </nav>
+
+
+        <div class="logout">
+
+            <a href="index.html">
+                ← Return to Entrance
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =================================
+         MAIN CONTENT
+    ================================== -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="page-heading">
+
+            <div>
+
+                <p class="section-label">
+                    UPDATES
+                </p>
+
+                <h2>
+                    Notifications
+                </h2>
+
+                <p class="description">
+                    Important updates about your students
+                    and their learning progress.
+                </p>
+
+            </div>
+
+
+            <div class="heading-icon">
+                🔔
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================
+             NOTIFICATION SUMMARY
+        ================================== -->
+
+        <section class="summary-card">
+
+
+            <div class="summary-icon">
+                🔔
+            </div>
+
+
+            <div>
+
+                <span>
+                    Current Updates
+                </span>
+
+                <strong id="notificationCount">
+                    0
+                </strong>
+
+                <p>
+                    Notifications generated from
+                    your student records.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             NOTIFICATION LIST
+        ================================== -->
+
+        <section class="notification-card">
+
+
+            <div class="section-title">
+
+                <div class="section-icon">
+                    📢
+                </div>
+
+                <div>
+
+                    <h3>
+                        Recent Notifications
+                    </h3>
+
+                    <p>
+                        Keep track of important student updates.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div id="notificationList"
+                 class="notification-list">
+
+            </div>
+
+
+            <!-- EMPTY MESSAGE -->
+
+            <div id="emptyMessage"
+                 class="empty-message">
+
+                <div class="empty-icon">
+                    🔔
+                </div>
+
+                <h3>
+                    No Notifications
+                </h3>
+
+                <p>
+                    Notifications will appear here when
+                    student records are available.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             QUICK LINKS
+        ================================== -->
+
+        <section class="quick-section">
+
+
+            <h3>
+                Quick Access
+            </h3>
+
+
+            <div class="quick-actions">
+
+
+                <a href="enter-marks.html"
+                   class="quick-card">
+
+                    <div class="quick-icon">
+                        📝
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Enter Marks
+                        </strong>
+
+                        <span>
+                            Add or update student marks
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="weak-areas.html"
+                   class="quick-card">
+
+                    <div class="quick-icon">
+                        ⚠️
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Weak Areas
+                        </strong>
+
+                        <span>
+                            Check subjects needing attention
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="reports.html"
+                   class="quick-card">
+
+                    <div class="quick-icon">
+                        📋
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Reports
+                        </strong>
+
+                        <span>
+                            View student performance reports
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <footer>
+
+            LearnLens — Keeping teachers informed
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================== -->
+
+    <script>
+
+
+        // =================================
+        // CHECK TEACHER LOGIN
+        // =================================
+
+        const role =
+            localStorage.getItem(
+                "learnlensLoggedInRole"
+            );
+
+
+        if (role !== "teacher") {
+
+            alert(
+                "🔐 Please login as a teacher first."
+            );
+
+            window.location.href =
+                "login.html";
+
+        }
+
+
+
+        // =================================
+        // GET STUDENTS
+        // =================================
+
+        function getStudents() {
+
+
+            const savedStudents =
+                localStorage.getItem(
+                    "learnlensStudents"
+                );
+
+
+            if (!savedStudents) {
+
+                return [];
+
+            }
+
+
+            try {
+
+                return JSON.parse(
+                    savedStudents
+                );
+
+            }
+
+            catch (error) {
+
+                console.log(
+                    "Student data could not be loaded."
+                );
+
+                return [];
+
+            }
+
+        }
+
+
+
+        // =================================
+        // CREATE NOTIFICATIONS
+        // =================================
+
+        function createNotifications() {
+
+
+            const students =
+                getStudents();
+
+
+            const notificationList =
+                document.getElementById(
+                    "notificationList"
+                );
+
+
+            const emptyMessage =
+                document.getElementById(
+                    "emptyMessage"
+                );
+
+
+            notificationList.innerHTML = "";
+
+
+
+            // =================================
+            // NO STUDENTS
+            // =================================
+
+            if (
+                students.length === 0
+            ) {
+
+                emptyMessage.style.display =
+                    "block";
+
+                document.getElementById(
+                    "notificationCount"
+                ).textContent =
+                    "0";
+
+                return;
+
+            }
+
+
+            emptyMessage.style.display =
+                "none";
+
+
+
+            const notifications = [];
+
+
+
+            // =================================
+            // WELCOME NOTIFICATION
+            // =================================
+
+            notifications.push({
+
+                type: "info",
+
+                icon: "👨‍🎓",
+
+                title: "Student Records Available",
+
+                message:
+                    students.length +
+                    " student record(s) are currently available in LearnLens."
+
+            });
+
+
+
+            // =================================
+            // CHECK EACH STUDENT
+            // =================================
+
+            students.forEach(
+                function(student) {
+
+
+                    const percentage =
+                        Number(
+                            student.percentage || 0
+                        );
+
+
+                    // Performance updated
+
+                    notifications.push({
+
+                        type: "success",
+
+                        icon: "📊",
+
+                        title:
+                            "Performance Updated",
+
+                        message:
+                            student.name +
+                            " has a recorded percentage of " +
+                            percentage.toFixed(1) +
+                            "%."
+
+                    });
+
+
+
+                    // Weak area
+
+                    if (
+                        student.weakestSubject
+                    ) {
+
+                        notifications.push({
+
+                            type: "warning",
+
+                            icon: "⚠️",
+
+                            title:
+                                "Weak Area Identified",
+
+                            message:
+                                student.name +
+                                " needs more attention in " +
+                                shortSubjectName(
+                                    student.weakestSubject
+                                ) +
+                                "."
+
+                        });
+
+                    }
+
+
+
+                    // Advanced learner
+
+                    if (
+                        percentage >= 80
+                    ) {
+
+                        notifications.push({
+
+                            type: "success",
+
+                            icon: "📈",
+
+                            title:
+                                "Strong Performance",
+
+                            message:
+                                student.name +
+                                " is currently classified as an Advanced Learner."
+
+                        });
+
+                    }
+
+
+
+                    // Slow learner
+
+                    else if (
+                        percentage < 50
+                    ) {
+
+                        notifications.push({
+
+                            type: "warning",
+
+                            icon: "📚",
+
+                            title:
+                                "Student Needs Support",
+
+                            message:
+                                student.name +
+                                " may need additional academic support."
+
+                        });
+
+                    }
+
+                }
+            );
+
+
+
+            // =================================
+            // DISPLAY
+            // =================================
+
+            document.getElementById(
+                "notificationCount"
+            ).textContent =
+                notifications.length;
+
+
+
+            notifications.forEach(
+                function(notification) {
+
+
+                    const item =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    item.className =
+                        "notification-item " +
+                        notification.type;
+
+
+                    item.innerHTML = `
+
+                        <div class="notification-icon">
+                            ${notification.icon}
+                        </div>
+
+                        <div class="notification-content">
+
+                            <h4>
+                                ${notification.title}
+                            </h4>
+
+                            <p>
+                                ${notification.message}
+                            </p>
+
+                        </div>
+
+                    `;
+
+
+                    notificationList.appendChild(
+                        item
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        // =================================
+        // SHORT SUBJECT NAME
+        // =================================
+
+        function shortSubjectName(subject) {
+
+
+            if (!subject) {
+
+                return "-";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Mathematics"
+                )
+            ) {
+
+                return "Mathematics for Intelligent System";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Database"
+                )
+            ) {
+
+                return "Database Management System";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Computer System"
+                )
+            ) {
+
+                return "Computer System Fundamentals";
+
+            }
+
+
+            if (
+                subject.includes(
+                    "Universal"
+                )
+            ) {
+
+                return "Universal Human Values";
+
+            }
+
+
+            return "Open Elective";
+
+        }
+
+
+
+        // =================================
+        // START
+        // =================================
+
+        createNotifications();
+
+    </script>
+
+
+</body>
+
+</html>

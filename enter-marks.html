@@ -5,7 +5,8 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>LearnLens | Enter Marks</title>
 
@@ -24,32 +25,24 @@
     <aside class="sidebar">
 
 
-        <!-- LearnLens Logo -->
-
-        <div class="logo">
-
-            <div class="magic-symbol">
-                ✦
-            </div>
+        <div class="logo-area">
 
             <h1>
                 LearnLens
             </h1>
 
             <p>
-                Magical Learning
+                Academic Learning
             </p>
 
         </div>
 
 
 
-        <!-- Teacher Profile -->
+        <div class="profile">
 
-        <div class="teacher-profile">
-
-            <div class="teacher-icon">
-                🧙‍♀️
+            <div class="profile-icon">
+                👩‍🏫
             </div>
 
             <div>
@@ -68,15 +61,11 @@
 
 
 
-        <!-- =========================================
-             NAVIGATION
-        ========================================== -->
-
-        <nav class="menu">
+        <nav>
 
 
             <a href="teacher-dashboard.html">
-                🏰 Dashboard
+                🏠 Dashboard
             </a>
 
 
@@ -85,7 +74,8 @@
             </a>
 
 
-            <a href="#" class="active">
+            <a href="enter-marks.html"
+               class="active">
                 📝 Enter Marks
             </a>
 
@@ -95,17 +85,17 @@
             </a>
 
 
-            <a href="#">
-                📚 Weak Areas
+            <a href="weak-areas.html">
+                ⚠️ Weak Areas
             </a>
 
 
-            <a href="#">
+            <a href="reports.html">
                 📋 Reports
             </a>
 
 
-            <a href="#">
+            <a href="notifications.html">
                 🔔 Notifications
             </a>
 
@@ -113,8 +103,6 @@
         </nav>
 
 
-
-        <!-- Return to Entrance -->
 
         <div class="logout">
 
@@ -129,6 +117,7 @@
 
 
 
+
     <!-- =========================================
          MAIN CONTENT
     ========================================== -->
@@ -136,65 +125,50 @@
     <main class="main-content">
 
 
-        <!-- =========================================
-             PAGE HEADING
-        ========================================== -->
-
-        <header class="page-heading">
-
+        <header class="page-header">
 
             <div>
 
-                <p class="gold-text">
+                <p class="page-label">
                     Student Records
                 </p>
 
-                <h2>
+                <h1>
                     Enter Student Marks
-                </h2>
+                </h1>
 
-                <p class="description">
-                    Record the student's marks and let LearnLens
-                    begin the performance analysis.
+                <p class="page-description">
+                    Add student details and enter marks for each subject.
                 </p>
 
             </div>
-
-
-            <div class="scroll-icon">
-                📜
-            </div>
-
 
         </header>
 
 
 
+
         <!-- =========================================
-             MARKS FORM
+             STUDENT INFORMATION
         ========================================== -->
 
-        <section class="marks-card">
+        <section class="form-card">
 
 
-            <!-- =====================================
-                 STUDENT INFORMATION
-            ====================================== -->
+            <div class="section-heading">
 
-            <div class="card-title">
-
-                <span>
-                    🪶
-                </span>
+                <div class="section-icon">
+                    👤
+                </div>
 
                 <div>
 
-                    <h3>
+                    <h2>
                         Student Information
-                    </h3>
+                    </h2>
 
                     <p>
-                        Enter the details of the student.
+                        Enter the basic details of the student.
                     </p>
 
                 </div>
@@ -203,10 +177,8 @@
 
 
 
-            <div class="student-details">
+            <div class="student-info-grid">
 
-
-                <!-- Student Name -->
 
                 <div class="input-group">
 
@@ -223,8 +195,6 @@
                 </div>
 
 
-
-                <!-- Roll Number -->
 
                 <div class="input-group">
 
@@ -244,22 +214,29 @@
             </div>
 
 
+        </section>
 
-            <!-- =====================================
-                 SUBJECT MARKS
-            ====================================== -->
 
-            <div class="subjects-title">
 
-                <span>
+
+        <!-- =========================================
+             SUBJECT MARKS
+        ========================================== -->
+
+        <section class="form-card">
+
+
+            <div class="section-heading">
+
+                <div class="section-icon">
                     📚
-                </span>
+                </div>
 
                 <div>
 
-                    <h3>
+                    <h2>
                         Subject Marks
-                    </h3>
+                    </h2>
 
                     <p>
                         Enter marks obtained out of 100.
@@ -271,21 +248,18 @@
 
 
 
-            <div class="subjects">
+            <div class="subjects-list">
 
 
-                <!-- =================================
-                     MIS
-                ================================== -->
+                <!-- MIS -->
 
                 <div class="subject-row">
 
-
                     <div class="subject-info">
 
-                        <span class="subject-icon">
-                            🧮
-                        </span>
+                        <div class="subject-icon">
+                            ∑
+                        </div>
 
                         <div>
 
@@ -293,9 +267,9 @@
                                 Mathematics for Intelligent System
                             </strong>
 
-                            <small>
+                            <span>
                                 MIS
-                            </small>
+                            </span>
 
                         </div>
 
@@ -318,23 +292,20 @@
 
                     </div>
 
-
                 </div>
 
 
 
-                <!-- =================================
-                     DBMS
-                ================================== -->
+
+                <!-- DBMS -->
 
                 <div class="subject-row">
 
-
                     <div class="subject-info">
 
-                        <span class="subject-icon">
-                            🗄️
-                        </span>
+                        <div class="subject-icon">
+                            DB
+                        </div>
 
                         <div>
 
@@ -342,9 +313,9 @@
                                 Database Management System
                             </strong>
 
-                            <small>
+                            <span>
                                 DBMS
-                            </small>
+                            </span>
 
                         </div>
 
@@ -367,23 +338,20 @@
 
                     </div>
 
-
                 </div>
 
 
 
-                <!-- =================================
-                     CSF
-                ================================== -->
+
+                <!-- CSF -->
 
                 <div class="subject-row">
 
-
                     <div class="subject-info">
 
-                        <span class="subject-icon">
-                            💻
-                        </span>
+                        <div class="subject-icon">
+                            PC
+                        </div>
 
                         <div>
 
@@ -391,9 +359,9 @@
                                 Computer System Fundamentals
                             </strong>
 
-                            <small>
+                            <span>
                                 CSF
-                            </small>
+                            </span>
 
                         </div>
 
@@ -416,23 +384,20 @@
 
                     </div>
 
-
                 </div>
 
 
 
-                <!-- =================================
-                     UHV
-                ================================== -->
+
+                <!-- UHV -->
 
                 <div class="subject-row">
 
-
                     <div class="subject-info">
 
-                        <span class="subject-icon">
-                            🕊️
-                        </span>
+                        <div class="subject-icon">
+                            UV
+                        </div>
 
                         <div>
 
@@ -440,9 +405,9 @@
                                 Universal Human Values
                             </strong>
 
-                            <small>
+                            <span>
                                 UHV
-                            </small>
+                            </span>
 
                         </div>
 
@@ -465,23 +430,20 @@
 
                     </div>
 
-
                 </div>
 
 
 
-                <!-- =================================
-                     OPEN ELECTIVE
-                ================================== -->
+
+                <!-- OPEN ELECTIVE -->
 
                 <div class="subject-row">
 
-
                     <div class="subject-info">
 
-                        <span class="subject-icon">
-                            ✨
-                        </span>
+                        <div class="subject-icon">
+                            OE
+                        </div>
 
                         <div>
 
@@ -489,9 +451,9 @@
                                 Open Elective
                             </strong>
 
-                            <small>
+                            <span>
                                 OE
-                            </small>
+                            </span>
 
                         </div>
 
@@ -514,7 +476,6 @@
 
                     </div>
 
-
                 </div>
 
 
@@ -522,35 +483,29 @@
 
 
 
-            <!-- =========================================
-                 FORM ACTION BUTTONS
-            ========================================== -->
+
+            <!-- =====================================
+                 ACTIONS
+            ====================================== -->
 
             <div class="form-actions">
 
 
-                <!-- Back button -->
-
                 <button
+                    type="button"
                     class="back-button"
                     onclick="window.location.href='teacher-dashboard.html'"
                 >
-
                     ← Back
-
                 </button>
 
-
-
-                <!-- Analyse button -->
 
                 <button
-                    class="analyse-button"
-                    onclick="analyseStudentMarks()"
+                    type="button"
+                    class="save-button"
+                    onclick="saveStudent()"
                 >
-
-                    ✨ Analyse Marks
-
+                    Save Student Marks
                 </button>
 
 
@@ -558,56 +513,28 @@
 
 
 
-            <!-- =========================================
-                 ANALYSIS RESULT
-            ========================================== -->
+            <!-- MESSAGE -->
 
             <div
-                id="analysisMessage"
-                class="analysis-message"
-            >
-
-                <span id="resultIcon">
-                    🔮
-                </span>
-
-
-                <div>
-
-                    <strong id="resultTitle">
-                        Ready for Analysis
-                    </strong>
-
-
-                    <p id="resultText">
-                        Enter the student's marks and click
-                        Analyse Marks.
-                    </p>
-
-
-                </div>
-
-
-            </div>
+                id="message"
+                class="message"
+            ></div>
 
 
         </section>
 
 
 
-        <!-- =========================================
-             FOOTER
-        ========================================== -->
 
         <footer>
 
-            ✨ Every mark tells a story.
-            LearnLens helps you discover it.
+            LearnLens — Helping teachers understand student performance.
 
         </footer>
 
 
     </main>
+
 
 
 
@@ -618,104 +545,100 @@
     <script>
 
 
-        /*
-         * =========================================
-         * LEARNLENS MARKS ANALYSIS
-         * =========================================
-         *
-         * This function:
-         *
-         * 1. Gets student information
-         * 2. Gets marks
-         * 3. Calculates average
-         * 4. Calculates percentage
-         * 5. Finds strongest subject
-         * 6. Finds weakest subject
-         * 7. Classifies the learner
-         * 8. Saves the student
-         */
+        /* =========================================
+           TEACHER LOGIN CHECK
+        ========================================== */
+
+        const loggedInRole =
+            localStorage.getItem(
+                "learnlensLoggedInRole"
+            );
 
 
-        function analyseStudentMarks() {
+        if (loggedInRole !== "teacher") {
+
+            alert(
+                "Please login as a teacher first."
+            );
+
+            window.location.href =
+                "login.html";
+
+        }
 
 
-            // =====================================
-            // STEP 1 — GET STUDENT INFORMATION
-            // =====================================
 
-            const studentName =
+
+        /* =========================================
+           GET MARK
+        ========================================== */
+
+        function getMark(id) {
+
+            const value =
+                document.getElementById(id).value.trim();
+
+
+            if (value === "") {
+
+                return null;
+
+            }
+
+
+            const mark =
+                Number(value);
+
+
+            if (
+                isNaN(mark) ||
+                mark < 0 ||
+                mark > 100
+            ) {
+
+                return null;
+
+            }
+
+
+            return mark;
+
+        }
+
+
+
+
+        /* =========================================
+           SAVE STUDENT
+        ========================================== */
+
+        function saveStudent() {
+
+
+            const name =
                 document
-                .getElementById("studentName")
-                .value
-                .trim();
+                    .getElementById("studentName")
+                    .value
+                    .trim();
 
 
             const rollNumber =
                 document
-                .getElementById("rollNumber")
-                .value
-                .trim();
+                    .getElementById("rollNumber")
+                    .value
+                    .trim();
 
 
 
-            // =====================================
-            // STEP 2 — GET SUBJECT MARKS
-            // =====================================
+            /* -------------------------------------
+               CHECK NAME
+            -------------------------------------- */
 
-            const marks = {
-
-                "Mathematics for Intelligent System":
-                    Number(
-                        document
-                        .getElementById("misMarks")
-                        .value
-                    ),
-
-                "Database Management System":
-                    Number(
-                        document
-                        .getElementById("dbmsMarks")
-                        .value
-                    ),
-
-                "Computer System Fundamentals":
-                    Number(
-                        document
-                        .getElementById("csfMarks")
-                        .value
-                    ),
-
-                "Universal Human Values":
-                    Number(
-                        document
-                        .getElementById("uhvMarks")
-                        .value
-                    ),
-
-                "Open Elective":
-                    Number(
-                        document
-                        .getElementById("oeMarks")
-                        .value
-                    )
-
-            };
-
-
-
-            // =====================================
-            // STEP 3 — CHECK STUDENT INFORMATION
-            // =====================================
-
-            if (
-                studentName === "" ||
-                rollNumber === ""
-            ) {
+            if (name === "") {
 
                 showMessage(
-                    "⚠️",
-                    "Missing Student Information",
-                    "Please enter the student's name and roll number."
+                    "Please enter the student name.",
+                    "error"
                 );
 
                 return;
@@ -724,157 +647,201 @@
 
 
 
-            // =====================================
-            // STEP 4 — CHECK MARKS
-            // =====================================
+            /* -------------------------------------
+               CHECK ROLL NUMBER
+            -------------------------------------- */
 
-            const subjectNames =
-                Object.keys(marks);
+            if (rollNumber === "") {
 
+                showMessage(
+                    "Please enter the roll number.",
+                    "error"
+                );
 
-            for (
-                let i = 0;
-                i < subjectNames.length;
-                i++
-            ) {
-
-
-                const subject =
-                    subjectNames[i];
-
-
-                const mark =
-                    marks[subject];
-
-
-                if (
-                    isNaN(mark) ||
-                    mark < 0 ||
-                    mark > 100
-                ) {
-
-                    showMessage(
-                        "⚠️",
-                        "Invalid Marks",
-                        "Please enter marks between 0 and 100 for every subject."
-                    );
-
-                    return;
-
-                }
+                return;
 
             }
 
 
 
-            // =====================================
-            // STEP 5 — CALCULATE TOTAL MARKS
-            // =====================================
+            /* -------------------------------------
+               GET SUBJECT MARKS
+            -------------------------------------- */
 
-            let totalMarks = 0;
+            const mis =
+                getMark("misMarks");
+
+            const dbms =
+                getMark("dbmsMarks");
+
+            const csf =
+                getMark("csfMarks");
+
+            const uhv =
+                getMark("uhvMarks");
+
+            const oe =
+                getMark("oeMarks");
 
 
-            for (
-                let subject in marks
+
+            /* -------------------------------------
+               CHECK ALL MARKS
+            -------------------------------------- */
+
+            if (
+                mis === null ||
+                dbms === null ||
+                csf === null ||
+                uhv === null ||
+                oe === null
             ) {
 
-                totalMarks += marks[subject];
+                showMessage(
+                    "Please enter valid marks for all five subjects.",
+                    "error"
+                );
+
+                return;
 
             }
 
 
 
-            // =====================================
-            // STEP 6 — CALCULATE AVERAGE
-            // =====================================
+            /* -------------------------------------
+               SUBJECT MARKS
+            -------------------------------------- */
 
-            const numberOfSubjects =
-                subjectNames.length;
+            const marks = {
 
+                "Mathematics for Intelligent System":
+                    mis,
+
+                "Database Management System":
+                    dbms,
+
+                "Computer System Fundamentals":
+                    csf,
+
+                "Universal Human Values":
+                    uhv,
+
+                "Open Elective":
+                    oe
+
+            };
+
+
+
+            /* -------------------------------------
+               TOTAL
+            -------------------------------------- */
+
+            const totalMarks =
+                mis +
+                dbms +
+                csf +
+                uhv +
+                oe;
+
+
+
+            /* -------------------------------------
+               AVERAGE
+            -------------------------------------- */
 
             const average =
-                totalMarks /
-                numberOfSubjects;
+                totalMarks / 5;
 
+
+
+            /* -------------------------------------
+               PERCENTAGE
+            -------------------------------------- */
 
             const percentage =
-                average;
+                (totalMarks / 500) * 100;
 
 
 
-            // =====================================
-            // STEP 7 — FIND STRONGEST SUBJECT
-            // =====================================
+            /* -------------------------------------
+               STRONGEST SUBJECT
+            -------------------------------------- */
 
             let strongestSubject =
-                subjectNames[0];
+                "Mathematics for Intelligent System";
+
+            let strongestMarks =
+                mis;
 
 
-            for (
-                let i = 1;
-                i < subjectNames.length;
-                i++
-            ) {
 
-                const currentSubject =
-                    subjectNames[i];
+            Object.keys(marks).forEach(
+                function(subject) {
 
+                    if (
+                        marks[subject] >
+                        strongestMarks
+                    ) {
 
-                if (
-                    marks[currentSubject] >
-                    marks[strongestSubject]
-                ) {
+                        strongestMarks =
+                            marks[subject];
 
-                    strongestSubject =
-                        currentSubject;
+                        strongestSubject =
+                            subject;
+
+                    }
 
                 }
-
-            }
-
+            );
 
 
-            // =====================================
-            // STEP 8 — FIND WEAKEST SUBJECT
-            // =====================================
+
+            /* -------------------------------------
+               WEAKEST SUBJECT
+            -------------------------------------- */
 
             let weakestSubject =
-                subjectNames[0];
+                "Mathematics for Intelligent System";
+
+            let weakestMarks =
+                mis;
 
 
-            for (
-                let i = 1;
-                i < subjectNames.length;
-                i++
-            ) {
 
-                const currentSubject =
-                    subjectNames[i];
+            Object.keys(marks).forEach(
+                function(subject) {
 
+                    if (
+                        marks[subject] <
+                        weakestMarks
+                    ) {
 
-                if (
-                    marks[currentSubject] <
-                    marks[weakestSubject]
-                ) {
+                        weakestMarks =
+                            marks[subject];
 
-                    weakestSubject =
-                        currentSubject;
+                        weakestSubject =
+                            subject;
+
+                    }
 
                 }
-
-            }
-
+            );
 
 
-            // =====================================
-            // STEP 9 — CLASSIFY THE STUDENT
-            // =====================================
 
-            let category;
-            let categoryIcon;
+            /* -------------------------------------
+               LEARNER CATEGORY
+            -------------------------------------- */
+
+            let category =
+                "Slow Learner";
+
+            let categoryIcon =
+                "🔴";
 
 
-            if (percentage >= 80) {
+            if (average >= 80) {
 
                 category =
                     "Advanced Learner";
@@ -884,7 +851,7 @@
 
             }
 
-            else if (percentage >= 50) {
+            else if (average >= 50) {
 
                 category =
                     "Moderate Learner";
@@ -894,25 +861,15 @@
 
             }
 
-            else {
-
-                category =
-                    "Slow Learner";
-
-                categoryIcon =
-                    "🔴";
-
-            }
 
 
+            /* -------------------------------------
+               CREATE STUDENT OBJECT
+            -------------------------------------- */
 
-            // =====================================
-            // STEP 10 — CREATE STUDENT RECORD
-            // =====================================
+            const student = {
 
-            const studentRecord = {
-
-                name: studentName,
+                name: name,
 
                 rollNumber: rollNumber,
 
@@ -932,51 +889,64 @@
 
                 category: category,
 
-                categoryIcon: categoryIcon,
+                categoryIcon:
+                    categoryIcon,
 
                 strongestSubject:
                     strongestSubject,
 
                 strongestMarks:
-                    marks[strongestSubject],
+                    strongestMarks,
 
                 weakestSubject:
                     weakestSubject,
 
                 weakestMarks:
-                    marks[weakestSubject],
+                    weakestMarks,
 
                 savedAt:
-                    new Date().toLocaleString()
+                    new Date().toISOString()
 
             };
 
 
 
-            // =====================================
-            // STEP 11 — GET OLD STUDENT RECORDS
-            // =====================================
+            /* -------------------------------------
+               GET EXISTING STUDENTS
+            -------------------------------------- */
 
-            let students =
-                JSON.parse(
-                    localStorage.getItem(
-                        "learnlensStudents"
-                    )
-                ) || [];
+            let students = [];
 
 
+            try {
 
-            // =====================================
-            // STEP 12 — CHECK IF ROLL NUMBER
-            //             ALREADY EXISTS
-            // =====================================
+                students =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "learnlensStudents"
+                        )
+                    ) || [];
 
-            const existingStudentIndex =
+            }
+
+            catch (error) {
+
+                students = [];
+
+            }
+
+
+
+            /* -------------------------------------
+               CHECK DUPLICATE ROLL NUMBER
+            -------------------------------------- */
+
+            const existingIndex =
                 students.findIndex(
-                    function(student) {
+                    function(item) {
 
                         return (
-                            student.rollNumber ===
+                            item.rollNumber ===
                             rollNumber
                         );
 
@@ -985,33 +955,37 @@
 
 
 
-            // =====================================
-            // STEP 13 — UPDATE OR ADD STUDENT
-            // =====================================
+            if (existingIndex !== -1) {
 
-            if (
-                existingStudentIndex !== -1
-            ) {
+                const replace =
+                    confirm(
+                        "A student with this roll number already exists.\n\nDo you want to update the existing student's marks?"
+                    );
 
-                students[
-                    existingStudentIndex
-                ] = studentRecord;
+
+                if (!replace) {
+
+                    return;
+
+                }
+
+
+                students[existingIndex] =
+                    student;
 
             }
 
             else {
 
-                students.push(
-                    studentRecord
-                );
+                students.push(student);
 
             }
 
 
 
-            // =====================================
-            // STEP 14 — SAVE TO BROWSER
-            // =====================================
+            /* -------------------------------------
+               SAVE
+            -------------------------------------- */
 
             localStorage.setItem(
                 "learnlensStudents",
@@ -1020,101 +994,107 @@
 
 
 
-            // =====================================
-            // STEP 15 — SAVE CURRENT STUDENT
-            // =====================================
+            /* -------------------------------------
+               SAVE CURRENT STUDENT
+            -------------------------------------- */
 
             localStorage.setItem(
                 "learnlensCurrentStudent",
-                JSON.stringify(studentRecord)
+                JSON.stringify(student)
             );
 
 
 
-            // =====================================
-            // STEP 16 — SHOW RESULT
-            // =====================================
+            /* -------------------------------------
+               SUCCESS MESSAGE
+            -------------------------------------- */
 
             showMessage(
-
-                categoryIcon,
-
-                "Analysis Complete! ✨",
-
-                studentName +
-                " has been classified as " +
-                category +
-                ". " +
-                "Percentage: " +
-                percentage.toFixed(2) +
-                "%. " +
-                "Strongest subject: " +
-                strongestSubject +
-                ". " +
-                "Weakest subject: " +
-                weakestSubject +
-                "."
-
+                "Student marks saved successfully.",
+                "success"
             );
+
+
+
+            /* -------------------------------------
+               CLEAR FORM
+            -------------------------------------- */
+
+            clearForm();
 
 
         }
 
 
 
-        /*
-         * =========================================
-         * SHOW RESULT MESSAGE
-         * =========================================
-         */
+
+        /* =========================================
+           MESSAGE
+        ========================================== */
 
         function showMessage(
-            icon,
-            title,
-            message
+            text,
+            type
         ) {
 
-
-            const resultBox =
+            const message =
                 document.getElementById(
-                    "analysisMessage"
+                    "message"
                 );
 
 
-            const resultIcon =
-                document.getElementById(
-                    "resultIcon"
-                );
+            message.textContent =
+                text;
 
 
-            const resultTitle =
-                document.getElementById(
-                    "resultTitle"
-                );
+            message.className =
+                "message " + type;
+
+        }
 
 
-            const resultText =
-                document.getElementById(
-                    "resultText"
-                );
 
 
-            resultIcon.textContent =
-                icon;
+        /* =========================================
+           CLEAR FORM
+        ========================================== */
+
+        function clearForm() {
 
 
-            resultTitle.textContent =
-                title;
+            document.getElementById(
+                "studentName"
+            ).value = "";
 
 
-            resultText.textContent =
-                message;
+            document.getElementById(
+                "rollNumber"
+            ).value = "";
 
 
-            resultBox.classList.add(
-                "show"
-            );
+            document.getElementById(
+                "misMarks"
+            ).value = "";
 
+
+            document.getElementById(
+                "dbmsMarks"
+            ).value = "";
+
+
+            document.getElementById(
+                "csfMarks"
+            ).value = "";
+
+
+            document.getElementById(
+                "uhvMarks"
+            ).value = "";
+
+
+            document.getElementById(
+                "oeMarks"
+            ).value = "";
 
         }
 

@@ -1,214 +1,148 @@
-/* =========================================
-   LEARNLENS
-   TEACHER DASHBOARD
-   HARRY POTTER THEME
-========================================= */
+/* =========================================================
+   LEARNLENS - TEACHER DASHBOARD
+   MINIMAL ACADEMIC THEME
+   ========================================================= */
 
 
-/* =========================================
+/* =========================
    RESET
-========================================= */
+   ========================= */
 
 * {
-
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
-
 }
 
+
+/* =========================
+   BODY
+   ========================= */
 
 body {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    background:
-        radial-gradient(
-            circle at top right,
-            #29203d,
-            #110e1c 45%,
-            #090811 100%
-        );
-
-    color: #d8c99a;
-
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #243447;
     min-height: 100vh;
-
 }
 
 
-/* =========================================
+/* =========================
    SIDEBAR
-========================================= */
+   ========================= */
 
 .sidebar {
-
     position: fixed;
-
     left: 0;
-
     top: 0;
 
     width: 240px;
-
     height: 100vh;
 
     padding: 25px 12px;
 
-    background:
-        linear-gradient(
-            180deg,
-            #171321,
-            #0e0b16
-        );
+    background: #17324d;
 
-    border-right: 1px solid #40344e;
+    border-right: 1px solid #d9e1e8;
 
+    color: #ffffff;
+
+    overflow-y: auto;
 }
 
 
-/* =========================================
+/* =========================
    LOGO
-========================================= */
+   ========================= */
 
 .logo {
-
     text-align: center;
-
     padding-bottom: 25px;
 
-    border-bottom:
-        1px solid #332a3d;
-
+    border-bottom: 1px solid rgba(255,255,255,0.12);
 }
-
 
 .logo-symbol {
-
-    color: #dfc875;
-
-    font-size: 28px;
-
-    margin-bottom: 4px;
-
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 5px;
 }
-
 
 .logo h1 {
-
-    color: #dfc875;
-
-    font-size: 30px;
-
-    letter-spacing: 1px;
-
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: 0;
 }
-
 
 .logo p {
-
-    color: #81768d;
-
+    color: #cbd7e3;
     font-size: 11px;
-
-    margin-top: 3px;
-
+    margin-top: 4px;
 }
 
 
-/* =========================================
+/* =========================
    TEACHER PROFILE
-========================================= */
+   ========================= */
 
 .teacher-profile {
-
     display: flex;
-
     align-items: center;
 
     gap: 12px;
 
     margin: 20px 0;
-
     padding: 12px;
 
-    background: #211a2d;
+    background: #234967;
 
-    border: 1px solid #493b27;
-
-    border-radius: 9px;
-
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
 }
 
-
 .teacher-icon {
-
     width: 44px;
-
     height: 44px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
-    background: #342747;
+    background: #edf4f8;
 
     border-radius: 50%;
 
-    font-size: 22px;
-
+    font-size: 21px;
 }
-
 
 .teacher-profile h3 {
-
-    color: #d9c171;
-
+    color: #ffffff;
     font-size: 14px;
-
 }
-
 
 .teacher-profile p {
-
-    color: #84798c;
-
+    color: #cbd7e3;
     font-size: 11px;
-
     margin-top: 3px;
-
 }
 
 
-/* =========================================
+/* =========================
    MENU
-========================================= */
+   ========================= */
 
 .menu {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 5px;
-
 }
 
-
 .menu a {
-
     display: block;
 
     text-decoration: none;
 
-    color: #b1a6b7;
+    color: #dce6ef;
 
     padding: 12px 14px;
 
@@ -216,55 +150,40 @@ body {
 
     font-size: 13px;
 
+    transition: 0.2s;
 }
-
 
 .menu a:hover {
-
-    background: #241c32;
-
-    color: #dfc875;
-
+    background: #234967;
+    color: #ffffff;
 }
-
 
 .menu a.active {
+    background: #2f78ad;
+    color: #ffffff;
 
-    background: #423253;
-
-    color: #e0c96e;
-
-    border-left:
-        3px solid #d2b24f;
-
+    border-left: 3px solid #f4c95d;
 }
 
 
-/* =========================================
+/* =========================
    LOGOUT
-========================================= */
+   ========================= */
 
 .logout {
-
     position: absolute;
 
     bottom: 25px;
-
     left: 12px;
-
     right: 12px;
 
-    border-top:
-        1px solid #332a3d;
+    border-top: 1px solid rgba(255,255,255,0.12);
 
     padding-top: 15px;
-
 }
 
-
 .logout a {
-
-    color: #9b909d;
+    color: #cbd7e3;
 
     text-decoration: none;
 
@@ -273,269 +192,214 @@ body {
     padding: 8px 14px;
 
     display: block;
-
 }
-
 
 .logout a:hover {
-
-    color: #dfc875;
-
+    color: #ffffff;
 }
 
 
-/* =========================================
+/* =========================
    MAIN CONTENT
-========================================= */
+   ========================= */
 
 .main-content {
-
     margin-left: 240px;
 
-    padding: 22px 38px;
+    padding: 30px 38px;
 
     min-height: 100vh;
 
+    background: #f5f7fa;
 }
 
 
-/* =========================================
+/* =========================
    TOP HEADING
-========================================= */
+   ========================= */
 
 .top-heading {
-
     display: flex;
 
     justify-content: space-between;
-
     align-items: center;
 
     margin-bottom: 28px;
-
 }
 
-
 .welcome {
-
-    color: #b99b4d;
+    color: #2f78ad;
 
     font-size: 13px;
 
-    margin-bottom: 3px;
-
+    margin-bottom: 4px;
 }
 
-
 .top-heading h2 {
-
-    color: #e0cb82;
+    color: #17324d;
 
     font-size: 31px;
 
-    font-weight: normal;
+    font-weight: 600;
+}
 
+.top-heading p {
+    color: #66788a;
+
+    margin-top: 5px;
 }
 
 
+/* =========================
+   STUDY HALL
+   ========================= */
+
 .study-hall {
-
     display: flex;
-
     align-items: center;
 
     gap: 12px;
 
     padding: 10px 18px;
 
-    background: #211a2d;
+    background: #ffffff;
 
-    border: 1px solid #51402b;
+    border: 1px solid #dce4eb;
 
-    border-radius: 9px;
+    border-radius: 8px;
 
+    box-shadow: 0 2px 8px rgba(23,50,77,0.05);
 }
-
 
 .study-hall > span {
-
-    font-size: 26px;
-
+    font-size: 25px;
 }
-
 
 .study-hall small {
-
     display: block;
 
-    color: #887d8e;
+    color: #66788a;
 
     font-size: 10px;
-
 }
 
-
 .study-hall strong {
-
     display: block;
 
-    color: #d5bd69;
+    color: #17324d;
 
     font-size: 12px;
 
     margin-top: 3px;
-
 }
 
 
-/* =========================================
+/* =========================
    SUMMARY CARDS
-========================================= */
+   ========================= */
 
 .summary-cards {
-
     display: grid;
 
-    grid-template-columns:
-        repeat(
-            4,
-            1fr
-        );
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 17px;
-
 }
 
-
 .summary-card {
-
     display: flex;
-
     align-items: center;
 
     gap: 13px;
 
     padding: 20px;
 
-    background: #211a2d;
+    background: #ffffff;
 
-    border: 1px solid #4b3b27;
+    border: 1px solid #dce4eb;
 
     border-radius: 10px;
 
+    box-shadow: 0 2px 8px rgba(23,50,77,0.06);
 }
 
-
 .summary-icon {
-
     width: 47px;
-
     height: 47px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
-    background: #302442;
+    background: #edf4f8;
 
-    border-radius: 10px;
+    border-radius: 9px;
 
     font-size: 22px;
-
 }
-
 
 .summary-card p {
-
-    color: #9b909e;
+    color: #66788a;
 
     font-size: 10px;
-
 }
 
-
 .summary-card h3 {
-
-    color: #e0c76d;
+    color: #17324d;
 
     font-size: 25px;
 
     margin: 3px 0;
 
-    font-weight: normal;
-
+    font-weight: 600;
 }
-
 
 .summary-card span {
-
-    color: #756b7b;
+    color: #8292a1;
 
     font-size: 9px;
-
 }
 
 
-/* =========================================
+/* =========================
    QUICK ACTIONS
-========================================= */
+   ========================= */
 
 .quick-section {
-
     margin-top: 32px;
-
 }
 
-
 .gold-text {
-
-    color: #b99b4d;
+    color: #2f78ad;
 
     font-size: 11px;
 
     text-transform: uppercase;
 
     letter-spacing: 1px;
-
 }
 
-
 .quick-section > h2 {
-
-    color: #e0cb82;
+    color: #17324d;
 
     font-size: 25px;
 
-    font-weight: normal;
+    font-weight: 600;
 
     margin-top: 4px;
-
     margin-bottom: 18px;
-
 }
-
 
 .quick-actions {
-
     display: grid;
 
-    grid-template-columns:
-        repeat(
-            3,
-            1fr
-        );
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 18px;
-
 }
 
-
 .quick-card {
-
     display: flex;
-
     align-items: center;
 
     gap: 15px;
@@ -544,95 +408,75 @@ body {
 
     padding: 18px 25px;
 
-    background: #211a2d;
+    background: #ffffff;
 
-    border: 1px solid #493a28;
+    border: 1px solid #dce4eb;
 
     border-radius: 10px;
 
     transition: 0.2s;
 
+    box-shadow: 0 2px 8px rgba(23,50,77,0.05);
 }
-
 
 .quick-card:hover {
-
     transform: translateY(-2px);
 
-    background: #292039;
+    background: #ffffff;
 
-    border-color: #806633;
+    border-color: #2f78ad;
 
+    box-shadow: 0 4px 12px rgba(23,50,77,0.10);
 }
-
 
 .quick-icon {
-
     font-size: 27px;
-
 }
 
-
 .quick-card h3 {
-
-    color: #dfc875;
+    color: #17324d;
 
     font-size: 14px;
 
     margin-bottom: 4px;
-
 }
-
 
 .quick-card p {
-
-    color: #81768a;
+    color: #66788a;
 
     font-size: 10px;
-
 }
 
 
-/* =========================================
+/* =========================
    RECENT PERFORMANCE
-========================================= */
+   ========================= */
 
 .recent-section {
-
     margin-top: 35px;
-
 }
 
-
 .section-heading {
-
     display: flex;
 
     justify-content: space-between;
-
     align-items: end;
 
     margin-bottom: 17px;
-
 }
 
-
 .section-heading h2 {
-
-    color: #e0cb82;
+    color: #17324d;
 
     font-size: 24px;
 
-    font-weight: normal;
+    font-weight: 600;
 
     margin-top: 4px;
-
 }
 
-
 .section-heading a {
-
-    color: #c6a74e;
+    color: #2f78ad;
 
     text-decoration: none;
 
@@ -640,104 +484,84 @@ body {
 
     padding: 9px 14px;
 
-    border: 1px solid #574427;
+    border: 1px solid #b8c9d8;
 
     border-radius: 6px;
 
+    background: #ffffff;
 }
-
 
 .section-heading a:hover {
+    background: #eef5fa;
 
-    background: #241c32;
-
+    border-color: #2f78ad;
 }
 
 
-/* =========================================
+/* =========================
    TABLE
-========================================= */
+   ========================= */
 
 .table-card {
+    background: #ffffff;
 
-    background: #17131f;
-
-    border: 1px solid #493a28;
+    border: 1px solid #dce4eb;
 
     border-radius: 10px;
 
     overflow: hidden;
 
+    box-shadow: 0 2px 8px rgba(23,50,77,0.06);
 }
 
-
 table {
-
     width: 100%;
 
     border-collapse: collapse;
-
 }
-
 
 thead {
-
-    background: #211a2d;
-
+    background: #eef3f7;
 }
 
-
 th {
-
     text-align: left;
 
     padding: 14px 16px;
 
-    color: #968a9d;
+    color: #40576b;
 
     font-size: 10px;
 
-    font-weight: normal;
-
+    font-weight: 600;
 }
 
-
 td {
-
     padding: 16px;
 
-    color: #a89e8c;
+    color: #34495e;
 
     font-size: 11px;
 
-    border-top:
-        1px solid #2c2435;
-
+    border-top: 1px solid #edf1f4;
 }
-
 
 td strong {
+    color: #17324d;
 
-    color: #d7c69a;
-
-    font-weight: normal;
-
+    font-weight: 600;
 }
-
 
 tbody tr:hover {
-
-    background: #1d1727;
-
+    background: #f7f9fb;
 }
 
 
-/* =========================================
+/* =========================
    CATEGORY BADGES
-========================================= */
+   ========================= */
 
 .category-badge {
-
     display: inline-block;
 
     padding: 5px 10px;
@@ -745,205 +569,161 @@ tbody tr:hover {
     border-radius: 20px;
 
     font-size: 9px;
-
 }
 
+
+/* Advanced */
 
 .category-badge.advanced {
+    background: #e8f4ed;
 
-    background: #26382e;
-
-    color: #8fc19c;
-
+    color: #28734d;
 }
 
+
+/* Moderate */
 
 .category-badge.moderate {
+    background: #fff5df;
 
-    background: #403523;
-
-    color: #d5bb69;
-
+    color: #8a6500;
 }
 
+
+/* Slow */
 
 .category-badge.slow {
+    background: #fdecec;
 
-    background: #402832;
-
-    color: #d28a98;
-
+    color: #a33a3a;
 }
 
 
-/* =========================================
+/* =========================
    EMPTY MESSAGE
-========================================= */
+   ========================= */
 
 .empty-message {
-
     display: none;
 
     text-align: center;
 
     padding: 45px 20px;
-
 }
 
-
 .empty-message > div {
-
     font-size: 40px;
 
     margin-bottom: 12px;
-
 }
-
 
 .empty-message h3 {
+    color: #17324d;
 
-    color: #d9c171;
-
-    font-weight: normal;
+    font-weight: 600;
 
     font-size: 17px;
-
 }
 
-
 .empty-message p {
-
-    color: #81768a;
+    color: #66788a;
 
     font-size: 11px;
 
     margin: 8px 0 17px;
-
 }
 
-
 .empty-message a {
-
     display: inline-block;
 
-    color: #d5b962;
+    color: #2f78ad;
 
     text-decoration: none;
 
     padding: 9px 15px;
 
-    border: 1px solid #70572f;
+    border: 1px solid #b8c9d8;
 
     border-radius: 6px;
 
     font-size: 11px;
 
+    background: #ffffff;
+}
+
+.empty-message a:hover {
+    background: #eef5fa;
 }
 
 
-/* =========================================
+/* =========================
    FOOTER
-========================================= */
+   ========================= */
 
 footer {
-
     text-align: center;
 
-    color: #62596b;
+    color: #8292a1;
 
     font-size: 10px;
 
     margin-top: 30px;
 
     padding-bottom: 10px;
-
 }
 
 
-/* =========================================
+/* =========================
    RESPONSIVE
-========================================= */
+   ========================= */
 
 @media (max-width: 1100px) {
 
-
     .summary-cards {
-
-        grid-template-columns:
-            repeat(
-                2,
-                1fr
-            );
-
+        grid-template-columns: repeat(2, 1fr);
     }
-
 
     .quick-actions {
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
     }
-
 }
 
 
 @media (max-width: 750px) {
 
-
     .sidebar {
-
         position: relative;
 
         width: 100%;
 
         height: auto;
-
     }
 
-
     .logout {
-
         position: static;
 
         margin-top: 15px;
-
     }
 
-
     .main-content {
-
         margin-left: 0;
 
         padding: 25px 15px;
-
     }
 
-
     .top-heading {
-
         flex-direction: column;
 
         align-items: flex-start;
 
         gap: 15px;
-
     }
-
 
     .summary-cards {
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
     }
-
 
     .table-card {
-
         overflow-x: auto;
-
     }
-
-
 }

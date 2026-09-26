@@ -2,210 +2,397 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Recommendations | LearnLens</title>
 
-    <link rel="stylesheet" href="recommendations.css">
+    <link rel="stylesheet"
+          href="./recommendations.css">
+
 </head>
+
 
 <body>
 
-    <!-- ================= SIDEBAR ================= -->
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
 
     <aside class="sidebar">
 
+
         <div class="logo-area">
-            <h1>🪄 LearnLens</h1>
-            <p>Magical Learning</p>
-        </div>
 
-        <div class="profile">
-            <div class="profile-icon">👨‍🎓</div>
-
-            <h3 id="studentName">
-                Student
-            </h3>
+            <h1>
+                LearnLens
+            </h1>
 
             <p>
-                Student
+                Adaptive Learning
             </p>
+
         </div>
 
-        <nav>
+
+
+        <!-- STUDENT PROFILE -->
+
+        <div class="profile">
+
+            <div class="profile-icon">
+                👨‍🎓
+            </div>
+
+            <div>
+
+                <h3 id="studentName">
+                    Student
+                </h3>
+
+                <p>
+                    Student
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="menu">
+
 
             <a href="student-profile.html">
-                🏰 Profile
+                🏠 My Profile
             </a>
+
 
             <a href="student-performance.html">
                 📊 Performance
             </a>
 
-            <a href="weak-areas.html">
-                🔮 Weak Areas
+
+            <a href="student-weak-areas.html">
+                ⚠️ Weak Areas
             </a>
 
-            <a href="recommendations.html" class="active">
-                📚 Recommendations
+
+            <a href="recommendations.html"
+               class="active">
+                🎓 Recommendations
             </a>
+
+
+            <a href="study-schedule.html">
+                📅 Study Schedule
+            </a>
+
 
             <a href="student-reports.html">
                 📜 Reports
             </a>
 
+
             <a href="student-notifications.html">
                 🔔 Notifications
             </a>
 
+
         </nav>
+
 
     </aside>
 
 
-    <!-- ================= MAIN CONTENT ================= -->
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
 
     <main class="main-content">
 
+
+        <!-- PAGE HEADER -->
+
         <header class="page-header">
 
-            <h1>📚 Magical Recommendations</h1>
+            <div>
 
-            <p>
-                Personalized learning resources based on your performance.
-            </p>
+                <h1>
+                    Learning Recommendations
+                </h1>
+
+                <p>
+                    Personalized resources based on your performance.
+                </p>
+
+            </div>
+
+
+            <div class="header-icon">
+                📚
+            </div>
 
         </header>
 
 
-        <!-- ================= WEAK SUBJECT ================= -->
+
+        <!-- =========================
+             WEAK SUBJECT
+        ========================== -->
 
         <section class="weak-subject-card">
 
-            <div class="magic-icon">
-                🔮
+
+            <div class="focus-icon">
+                !
             </div>
+
 
             <div>
 
                 <p class="small-title">
-                    Your focus area
+                    Your Focus Area
                 </p>
+
 
                 <h2 id="weakSubject">
                     Loading...
                 </h2>
 
+
                 <p id="weakMessage">
-                    Preparing your magical learning resources...
+                    Preparing your learning resources...
                 </p>
 
             </div>
 
+
         </section>
 
 
-        <!-- ================= VIDEOS ================= -->
+
+        <!-- =========================
+             VIDEOS
+        ========================== -->
 
         <section class="recommendation-section">
 
-            <h2>🎬 Recommended Videos</h2>
 
-            <p class="section-description">
-                Watch these videos to strengthen your understanding.
-            </p>
+            <div class="section-heading">
 
-            <div id="videoContainer" class="resource-grid">
-                <!-- Videos appear here -->
+                <div class="section-icon">
+                    ▶
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Recommended Videos
+                    </h2>
+
+                    <p class="section-description">
+                        Watch these resources to strengthen your understanding.
+                    </p>
+
+                </div>
+
             </div>
+
+
+
+            <div id="videoContainer"
+                 class="resource-grid">
+
+                <!-- Videos will appear here -->
+
+            </div>
+
 
         </section>
 
 
-        <!-- ================= NOTES ================= -->
+
+        <!-- =========================
+             NOTES
+        ========================== -->
 
         <section class="recommendation-section">
 
-            <h2>📖 Recommended Notes</h2>
 
-            <p class="section-description">
-                Use these notes for quick revision and practice.
-            </p>
+            <div class="section-heading">
 
-            <div id="notesContainer" class="notes-grid">
-                <!-- Notes appear here -->
+                <div class="section-icon">
+                    📖
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Recommended Notes
+                    </h2>
+
+                    <p class="section-description">
+                        Use these topics for revision and practice.
+                    </p>
+
+                </div>
+
             </div>
+
+
+
+            <div id="notesContainer"
+                 class="notes-grid">
+
+                <!-- Notes will appear here -->
+
+            </div>
+
 
         </section>
 
 
-        <!-- ================= STUDY SUGGESTION ================= -->
+
+        <!-- =========================
+             PROFESSOR ADVICE
+        ========================== -->
 
         <section class="study-tip">
 
-            <h2>🪄 Professor's Advice</h2>
 
-            <p id="studyAdvice">
-                Keep practising your weak subject regularly.
-            </p>
+            <div class="advice-icon">
+                ✓
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Study Guidance
+                </h2>
+
+
+                <p id="studyAdvice">
+                    Keep practising your weak subject regularly.
+                </p>
+
+            </div>
+
 
         </section>
 
 
-        <!-- ================= SCHEDULE BUTTON ================= -->
+
+        <!-- =========================
+             STUDY SCHEDULE
+        ========================== -->
 
         <section class="schedule-card">
 
-            <h2>📅 Ready to Study?</h2>
 
-            <p>
-                Follow a simple 7-day magical study plan.
-            </p>
+            <div>
+
+                <h2>
+                    Ready to Study?
+                </h2>
+
+
+                <p>
+                    Follow your personalized 7-day study schedule.
+                </p>
+
+            </div>
+
 
             <button onclick="openSchedule()">
-                🪄 View Today's Schedule
+                View Study Schedule
             </button>
 
+
         </section>
+
+
+        <footer>
+
+            LearnLens — Learn at your own pace.
+
+        </footer>
+
 
     </main>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
     <script>
 
-        // -----------------------------------------
-        // GET CURRENT STUDENT
-        // -----------------------------------------
 
-        const currentStudent =
-            JSON.parse(
-                localStorage.getItem(
-                    "learnlensCurrentStudent"
-                )
+        // =========================================
+        // CHECK STUDENT LOGIN
+        // =========================================
+
+        const role =
+            localStorage.getItem(
+                "learnlensLoggedInRole"
             );
 
 
-        // -----------------------------------------
-        // CHECK STUDENT
-        // -----------------------------------------
-
-        if (!currentStudent) {
+        if (role !== "student") {
 
             alert(
-                "⚠️ No student information found."
+                "Please login as a student first."
             );
 
             window.location.href =
                 "login.html";
+
         }
 
 
-        // -----------------------------------------
+
+        // =========================================
+        // GET CURRENT STUDENT
+        // =========================================
+
+        const savedStudent =
+            localStorage.getItem(
+                "learnlensCurrentStudent"
+            );
+
+
+        if (!savedStudent) {
+
+            alert(
+                "Student information not found."
+            );
+
+            window.location.href =
+                "student-profile.html";
+
+        }
+
+
+        const currentStudent =
+            JSON.parse(savedStudent);
+
+
+
+        // =========================================
         // DISPLAY STUDENT NAME
-        // -----------------------------------------
+        // =========================================
 
         document.getElementById(
             "studentName"
@@ -213,9 +400,10 @@
             currentStudent.name;
 
 
-        // -----------------------------------------
+
+        // =========================================
         // GET WEAK SUBJECT
-        // -----------------------------------------
+        // =========================================
 
         let weakSubject =
             localStorage.getItem(
@@ -223,20 +411,19 @@
             );
 
 
-        // If no subject was saved,
-        // use the student's weakest subject.
-
         if (!weakSubject) {
 
             weakSubject =
                 currentStudent.weakestSubject;
+
         }
+
 
 
         document.getElementById(
             "weakSubject"
         ).textContent =
-            weakSubject;
+            weakSubject || "No subject selected";
 
 
         document.getElementById(
@@ -246,11 +433,13 @@
             "Use the resources below to improve your understanding.";
 
 
-        // -----------------------------------------
+
+        // =========================================
         // RECOMMENDATION DATA
-        // -----------------------------------------
+        // =========================================
 
         const recommendationData = {
+
 
             "Mathematics for Intelligent System": {
 
@@ -264,6 +453,7 @@
                             "https://www.youtube.com/results?search_query=mathematics+for+machine+learning"
                     },
 
+
                     {
                         title:
                             "Linear Algebra Basics",
@@ -271,6 +461,7 @@
                         link:
                             "https://www.youtube.com/results?search_query=linear+algebra+for+machine+learning"
                     },
+
 
                     {
                         title:
@@ -282,6 +473,7 @@
 
                 ],
 
+
                 notes: [
 
                     "Matrices and Vectors",
@@ -292,9 +484,12 @@
 
                 ],
 
+
                 advice:
                     "Practise formulas first and then solve numerical problems every day."
+
             },
+
 
 
             "Database Management System": {
@@ -309,6 +504,7 @@
                             "https://www.youtube.com/results?search_query=DBMS+complete+course+for+beginners"
                     },
 
+
                     {
                         title:
                             "SQL for Beginners",
@@ -316,6 +512,7 @@
                         link:
                             "https://www.youtube.com/results?search_query=SQL+for+beginners"
                     },
+
 
                     {
                         title:
@@ -327,6 +524,7 @@
 
                 ],
 
+
                 notes: [
 
                     "Primary Key and Foreign Key",
@@ -337,9 +535,12 @@
 
                 ],
 
+
                 advice:
                     "Practise SQL queries regularly and revise database concepts with examples."
+
             },
+
 
 
             "Computer System Fundamentals": {
@@ -354,6 +555,7 @@
                             "https://www.youtube.com/results?search_query=computer+fundamentals+for+beginners"
                     },
 
+
                     {
                         title:
                             "Computer Organization",
@@ -361,6 +563,7 @@
                         link:
                             "https://www.youtube.com/results?search_query=computer+organization+basics"
                     },
+
 
                     {
                         title:
@@ -372,6 +575,7 @@
 
                 ],
 
+
                 notes: [
 
                     "Computer Components",
@@ -382,9 +586,12 @@
 
                 ],
 
+
                 advice:
                     "Understand the basic concepts first and use diagrams wherever possible."
+
             },
+
 
 
             "Universal Human Values": {
@@ -399,6 +606,7 @@
                             "https://www.youtube.com/results?search_query=Universal+Human+Values+basics"
                     },
 
+
                     {
                         title:
                             "Understanding Human Values",
@@ -406,6 +614,7 @@
                         link:
                             "https://www.youtube.com/results?search_query=human+values+engineering"
                     },
+
 
                     {
                         title:
@@ -417,6 +626,7 @@
 
                 ],
 
+
                 notes: [
 
                     "Intention and Competence",
@@ -427,9 +637,12 @@
 
                 ],
 
+
                 advice:
                     "Read the concepts carefully and connect them with simple real-life examples."
+
             },
+
 
 
             "Open Elective": {
@@ -444,6 +657,7 @@
                             "https://www.youtube.com/results?search_query=open+elective+study+resources"
                     },
 
+
                     {
                         title:
                             "Study Skills for Students",
@@ -451,6 +665,7 @@
                         link:
                             "https://www.youtube.com/results?search_query=study+skills+for+college+students"
                     },
+
 
                     {
                         title:
@@ -462,6 +677,7 @@
 
                 ],
 
+
                 notes: [
 
                     "Important Topics",
@@ -472,16 +688,20 @@
 
                 ],
 
+
                 advice:
                     "Revise important topics regularly and practise questions before exams."
+
             }
+
 
         };
 
 
-        // -----------------------------------------
+
+        // =========================================
         // GET RESOURCES
-        // -----------------------------------------
+        // =========================================
 
         const resources =
             recommendationData[weakSubject];
@@ -499,19 +719,27 @@
             );
 
 
-        // -----------------------------------------
-        // SHOW VIDEOS
-        // -----------------------------------------
+
+        // =========================================
+        // SHOW RESOURCES
+        // =========================================
 
         if (resources) {
 
+
+            // -------------------------------
+            // VIDEOS
+            // -------------------------------
+
             resources.videos.forEach(
                 function(video) {
+
 
                     const card =
                         document.createElement(
                             "div"
                         );
+
 
                     card.className =
                         "resource-card";
@@ -520,7 +748,7 @@
                     card.innerHTML = `
 
                         <div class="resource-icon">
-                            🎬
+                            ▶
                         </div>
 
                         <h3>
@@ -530,6 +758,7 @@
                         <a
                             href="${video.link}"
                             target="_blank"
+                            rel="noopener noreferrer"
                         >
                             Watch Video →
                         </a>
@@ -537,23 +766,28 @@
                     `;
 
 
-                    videoContainer.appendChild(card);
+                    videoContainer.appendChild(
+                        card
+                    );
 
                 }
             );
 
 
-            // -----------------------------------------
-            // SHOW NOTES
-            // -----------------------------------------
+
+            // -------------------------------
+            // NOTES
+            // -------------------------------
 
             resources.notes.forEach(
                 function(note) {
+
 
                     const card =
                         document.createElement(
                             "div"
                         );
+
 
                     card.className =
                         "note-card";
@@ -576,15 +810,18 @@
                     `;
 
 
-                    notesContainer.appendChild(card);
+                    notesContainer.appendChild(
+                        card
+                    );
 
                 }
             );
 
 
-            // -----------------------------------------
-            // SHOW ADVICE
-            // -----------------------------------------
+
+            // -------------------------------
+            // ADVICE
+            // -------------------------------
 
             document.getElementById(
                 "studyAdvice"
@@ -592,21 +829,25 @@
                 resources.advice;
 
         }
+
+
         else {
+
 
             videoContainer.innerHTML = `
 
-                <p>
-                    🪄 No recommendation data found
+                <p class="empty-message">
+                    No recommendation data found
                     for this subject yet.
                 </p>
 
             `;
 
+
             notesContainer.innerHTML = `
 
-                <p>
-                    📖 Notes for this subject
+                <p class="empty-message">
+                    Notes for this subject
                     will be added soon.
                 </p>
 
@@ -615,9 +856,10 @@
         }
 
 
-        // -----------------------------------------
+
+        // =========================================
         // OPEN STUDY SCHEDULE
-        // -----------------------------------------
+        // =========================================
 
         function openSchedule() {
 
@@ -626,7 +868,9 @@
 
         }
 
+
     </script>
+
 
 </body>
 
