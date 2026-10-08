@@ -10,208 +10,190 @@
 
     <title>LearnLens | Login</title>
 
-
     <style>
-
-        /* =========================================
-           BASIC RESET
-        ========================================== */
 
         * {
             box-sizing: border-box;
         }
 
-
         body {
-
             margin: 0;
 
             min-height: 100vh;
 
             display: flex;
-
             justify-content: center;
-
             align-items: center;
 
-            font-family: Georgia, serif;
+            padding: 25px;
 
-            background:
-                radial-gradient(
-                    circle at top,
-                    #30203f,
-                    #0e0b15 75%
-                );
+            font-family: Arial, Helvetica, sans-serif;
 
-            color: #e7d28a;
+            background: #f4f7fa;
 
+            color: #263746;
         }
-
-
-        /* =========================================
-           LOGIN CONTAINER
-        ========================================== */
 
         .login-container {
 
-            width: 90%;
-
-            max-width: 500px;
+            width: 100%;
+            max-width: 520px;
 
             padding: 35px;
 
-            background: #191321;
+            background: #ffffff;
 
-            border: 1px solid #806633;
+            border: 1px solid #dce4eb;
 
-            border-radius: 18px;
+            border-radius: 14px;
 
             box-shadow:
-                0 0 30px rgba(0, 0, 0, 0.5);
+                0 4px 18px rgba(25, 59, 90, 0.10);
 
             text-align: center;
-
         }
 
+        .logo-icon {
 
-        /* =========================================
-           LEARNLENS LOGO
-        ========================================== */
+            width: 65px;
+            height: 65px;
 
-        .magic-symbol {
+            margin: 0 auto 15px;
 
-            font-size: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-            margin-bottom: 5px;
+            background: #e8f1f8;
 
+            border-radius: 50%;
+
+            font-size: 30px;
         }
-
 
         .logo {
 
             margin: 0;
 
-            font-size: 36px;
+            color: #193b5a;
 
-            color: #e5c96b;
+            font-size: 32px;
 
+            font-weight: 600;
         }
-
 
         .tagline {
 
-            margin-top: 5px;
+            margin-top: 7px;
 
-            color: #998b9b;
+            color: #687887;
 
             font-size: 14px;
-
         }
-
-
-        /* =========================================
-           ROLE SELECTION
-        ========================================== */
 
         #roleSelection {
 
             display: block;
 
+            margin-top: 30px;
         }
-
 
         .login-container h2 {
 
-            margin-top: 30px;
+            color: #193b5a;
 
-            color: #e5c96b;
+            font-size: 22px;
 
-            font-size: 25px;
+            font-weight: 600;
 
+            margin-bottom: 8px;
         }
-
 
         .description {
 
-            color: #b9adb9;
+            color: #687887;
+
+            font-size: 14px;
 
             line-height: 1.5;
-
         }
-
 
         .role-container {
 
             display: grid;
 
-            grid-template-columns:
-                1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
 
-            gap: 15px;
+            gap: 18px;
 
             margin-top: 25px;
-
         }
-
 
         .role-card {
 
-            padding: 20px 10px;
+            padding: 25px 18px;
 
-            background: #241b30;
+            background: #ffffff;
 
-            border: 1px solid #554360;
+            border: 1px solid #dce4eb;
 
-            border-radius: 12px;
+            border-radius: 10px;
 
             cursor: pointer;
 
-            transition: 0.3s;
-
+            transition: 0.2s ease;
         }
-
 
         .role-card:hover {
 
-            transform: translateY(-4px);
+            border-color: #347db3;
 
-            border-color: #c5a84f;
+            box-shadow:
+                0 4px 14px rgba(52, 125, 179, 0.12);
 
-            background: #2d223a;
-
+            transform: translateY(-2px);
         }
-
 
         .role-icon {
 
-            font-size: 35px;
+            width: 60px;
+            height: 60px;
 
+            margin: 0 auto 15px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #e8f1f8;
+
+            border-radius: 50%;
+
+            font-size: 28px;
         }
-
 
         .role-card h3 {
 
-            color: #e4cc78;
+            margin: 0 0 8px;
 
-            margin: 10px 0 5px;
+            color: #193b5a;
 
+            font-size: 18px;
+
+            font-weight: 600;
         }
-
 
         .role-card p {
 
-            color: #9e91a0;
+            margin: 0;
+
+            color: #687887;
 
             font-size: 13px;
 
-            line-height: 1.4;
-
+            line-height: 1.5;
         }
-
-
-        /* =========================================
-           LOGIN FORMS
-        ========================================== */
 
         .login-form {
 
@@ -220,27 +202,25 @@
             margin-top: 25px;
 
             text-align: left;
-
         }
-
 
         .login-form.show {
 
             display: block;
-
         }
-
 
         .login-form h3 {
 
             text-align: center;
 
-            color: #e4cc78;
+            color: #193b5a;
 
             font-size: 22px;
 
-        }
+            font-weight: 600;
 
+            margin-bottom: 25px;
+        }
 
         label {
 
@@ -250,10 +230,12 @@
 
             margin-bottom: 7px;
 
-            color: #d8c98d;
+            color: #193b5a;
 
+            font-size: 13px;
+
+            font-weight: 600;
         }
-
 
         input {
 
@@ -261,33 +243,28 @@
 
             padding: 13px;
 
-            border-radius: 7px;
+            border-radius: 6px;
 
-            border: 1px solid #665474;
+            border: 1px solid #cbd6df;
 
-            background: #100c16;
+            background: #ffffff;
 
-            color: white;
+            color: #263746;
 
-            font-family: Georgia, serif;
+            font-family: Arial, Helvetica, sans-serif;
 
-            font-size: 15px;
+            font-size: 14px;
 
             outline: none;
-
         }
-
 
         input:focus {
 
-            border-color: #c6a84d;
+            border-color: #347db3;
 
+            box-shadow:
+                0 0 0 3px rgba(52, 125, 179, 0.10);
         }
-
-
-        /* =========================================
-           LOGIN BUTTON
-        ========================================== */
 
         .login-button {
 
@@ -299,92 +276,80 @@
 
             border: none;
 
-            border-radius: 7px;
+            border-radius: 6px;
 
-            background: #a48642;
+            background: #347db3;
 
-            color: #17121b;
+            color: #ffffff;
 
-            font-family: Georgia, serif;
+            font-family: Arial, Helvetica, sans-serif;
 
-            font-weight: bold;
+            font-size: 14px;
 
-            font-size: 15px;
+            font-weight: 600;
 
             cursor: pointer;
 
+            transition: 0.2s ease;
         }
-
 
         .login-button:hover {
 
-            background: #c4a75b;
-
+            background: #286895;
         }
 
+        .login-button:disabled {
 
-        /* =========================================
-           BACK BUTTON
-        ========================================== */
+            opacity: 0.65;
+
+            cursor: not-allowed;
+        }
 
         .back-button {
 
             display: block;
 
-            margin-top: 20px;
+            margin-top: 18px;
 
-            color: #aa9eac;
+            color: #687887;
 
             text-decoration: none;
 
             text-align: center;
 
+            font-size: 13px;
+
             cursor: pointer;
-
         }
-
 
         .back-button:hover {
 
-            color: #e5c96b;
-
+            color: #347db3;
         }
-
-
-        /* =========================================
-           SMALL INFORMATION
-        ========================================== */
 
         .small-note {
 
-            color: #918593;
+            color: #8796a3;
 
-            font-size: 13px;
+            font-size: 12px;
 
             line-height: 1.5;
 
-            margin-top: 10px;
-
+            margin-top: 9px;
         }
-
-
-        /* =========================================
-           MOBILE
-        ========================================== */
 
         @media (max-width: 600px) {
 
-            .login-container {
-
-                padding: 25px;
-
+            body {
+                padding: 15px;
             }
 
+            .login-container {
+                padding: 25px 20px;
+            }
 
             .role-container {
-
                 grid-template-columns: 1fr;
-
             }
 
         }
@@ -397,657 +362,483 @@
 <body>
 
 
-    <!-- =========================================
-         MAIN LOGIN BOX
-    ========================================== -->
-
-    <div class="login-container">
+<div class="login-container">
 
 
-        <!-- =====================================
-             LEARNLENS BRAND
-        ====================================== -->
-
-        <div class="magic-symbol">
-            ✦
-        </div>
+    <div class="logo-icon">
+        📚
+    </div>
 
 
-        <h1 class="logo">
-            LearnLens
-        </h1>
+    <h1 class="logo">
+        LearnLens
+    </h1>
 
 
-        <p class="tagline">
-            Magical Learning • Adaptive Recommendation
+    <p class="tagline">
+        Adaptive Learning Recommendation System
+    </p>
+
+
+    <!-- ROLE SELECTION -->
+
+    <div id="roleSelection">
+
+        <h2>
+            Welcome to LearnLens
+        </h2>
+
+        <p class="description">
+            Choose your profile to continue.
         </p>
 
 
-
-        <!-- =====================================
-             ROLE SELECTION
-        ====================================== -->
-
-        <div id="roleSelection">
+        <div class="role-container">
 
 
-            <h2>
-                🪄 Enter the Magical Learning Hall
-            </h2>
+            <div
+                class="role-card"
+                onclick="showTeacherLogin()"
+            >
 
-
-            <p class="description">
-
-                Choose your profile to continue
-                your learning journey.
-
-            </p>
-
-
-            <div class="role-container">
-
-
-                <!-- =================================
-                     TEACHER OPTION
-                ================================== -->
-
-                <div
-                    class="role-card"
-                    onclick="showTeacherLogin()"
-                >
-
-                    <div class="role-icon">
-                        🧙‍♀️
-                    </div>
-
-
-                    <h3>
-                        Teacher
-                    </h3>
-
-
-                    <p>
-                        Manage students and
-                        analyse performance.
-                    </p>
-
+                <div class="role-icon">
+                    👨‍🏫
                 </div>
 
+                <h3>
+                    Teacher
+                </h3>
+
+                <p>
+                    Manage students and analyse
+                    their learning performance.
+                </p>
+
+            </div>
 
 
-                <!-- =================================
-                     STUDENT OPTION
-                ================================== -->
+            <div
+                class="role-card"
+                onclick="showStudentLogin()"
+            >
 
-                <div
-                    class="role-card"
-                    onclick="showStudentLogin()"
-                >
-
-                    <div class="role-icon">
-                        🎓
-                    </div>
-
-
-                    <h3>
-                        Student
-                    </h3>
-
-
-                    <p>
-                        View your performance
-                        and learning path.
-                    </p>
-
+                <div class="role-icon">
+                    👨‍🎓
                 </div>
 
+                <h3>
+                    Student
+                </h3>
+
+                <p>
+                    View your performance and
+                    personalized learning path.
+                </p>
 
             </div>
 
 
         </div>
 
+    </div>
 
 
-        <!-- =====================================
-             TEACHER LOGIN
-        ====================================== -->
+    <!-- TEACHER LOGIN -->
 
-        <div
-            id="teacherLogin"
-            class="login-form"
+    <div
+        id="teacherLogin"
+        class="login-form"
+    >
+
+        <h3>
+            Teacher Login
+        </h3>
+
+
+        <label for="teacherUsername">
+            Teacher Name
+        </label>
+
+        <input
+            type="text"
+            id="teacherUsername"
+            placeholder="Enter teacher name"
         >
 
 
-            <h3>
-                🧙‍♀️ Professor's Login
-            </h3>
+        <label for="teacherPassword">
+            Password
+        </label>
 
-
-            <label for="teacherUsername">
-                Teacher Name
-            </label>
-
-
-            <input
-                type="text"
-                id="teacherUsername"
-                placeholder="Enter teacher name"
-            >
-
-
-            <label for="teacherPassword">
-                Password
-            </label>
-
-
-            <input
-                type="password"
-                id="teacherPassword"
-                placeholder="Enter password"
-            >
-
-
-            <button
-                class="login-button"
-                onclick="loginTeacher()"
-            >
-
-                ✨ Enter as Teacher
-
-            </button>
-
-
-            <a
-                class="back-button"
-                onclick="goBack()"
-            >
-
-                ← Choose another profile
-
-            </a>
-
-
-        </div>
-
-
-
-        <!-- =====================================
-             STUDENT LOGIN
-        ====================================== -->
-
-        <div
-            id="studentLogin"
-            class="login-form"
+        <input
+            type="password"
+            id="teacherPassword"
+            placeholder="Enter password"
         >
 
 
-            <h3>
-                🎓 Student Login
-            </h3>
+        <button
+            class="login-button"
+            onclick="loginTeacher()"
+        >
+            Login as Teacher
+        </button>
 
 
-            <label for="rollNumber">
-                Roll Number
-            </label>
-
-
-            <input
-                type="text"
-                id="rollNumber"
-                placeholder="Enter your roll number"
-            >
-
-
-            <p class="small-note">
-
-                Use the roll number given by
-                your teacher.
-
-            </p>
-
-
-            <button
-                class="login-button"
-                onclick="loginStudent()"
-            >
-
-                🪄 Enter as Student
-
-            </button>
-
-
-            <a
-                class="back-button"
-                onclick="goBack()"
-            >
-
-                ← Choose another profile
-
-            </a>
-
-
-        </div>
-
+        <a
+            class="back-button"
+            onclick="goBack()"
+        >
+            ← Choose another profile
+        </a>
 
     </div>
 
 
+    <!-- STUDENT LOGIN -->
 
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================== -->
+    <div
+        id="studentLogin"
+        class="login-form"
+    >
 
-    <script>
+        <h3>
+            Student Login
+        </h3>
 
 
-        /* =========================================
-           READ ROLE FROM URL
-        ========================================== */
+        <label for="rollNumber">
+            Roll Number
+        </label>
 
-        const urlParameters =
-            new URLSearchParams(
-                window.location.search
+        <input
+            type="text"
+            id="rollNumber"
+            placeholder="Enter your roll number"
+        >
+
+
+        <p class="small-note">
+            Use the roll number given by your teacher.
+        </p>
+
+
+        <button
+            id="studentLoginButton"
+            class="login-button"
+            onclick="loginStudent()"
+        >
+            Login as Student
+        </button>
+
+
+        <a
+            class="back-button"
+            onclick="goBack()"
+        >
+            ← Choose another profile
+        </a>
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+const API_URL =
+    "http://127.0.0.1:5000";
+
+
+const urlParameters =
+    new URLSearchParams(
+        window.location.search
+    );
+
+const selectedRole =
+    urlParameters.get("role");
+
+
+window.onload = function () {
+
+    if (selectedRole === "teacher") {
+
+        showTeacherLogin();
+
+    }
+
+    else if (selectedRole === "student") {
+
+        showStudentLogin();
+
+    }
+
+    else {
+
+        document
+            .getElementById("roleSelection")
+            .style.display = "block";
+
+    }
+
+};
+
+
+function showTeacherLogin() {
+
+    document
+        .getElementById("roleSelection")
+        .style.display = "none";
+
+    document
+        .getElementById("teacherLogin")
+        .classList.add("show");
+
+    document
+        .getElementById("studentLogin")
+        .classList.remove("show");
+
+}
+
+
+function showStudentLogin() {
+
+    document
+        .getElementById("roleSelection")
+        .style.display = "none";
+
+    document
+        .getElementById("studentLogin")
+        .classList.add("show");
+
+    document
+        .getElementById("teacherLogin")
+        .classList.remove("show");
+
+}
+
+
+function goBack() {
+
+    window.history.replaceState(
+        {},
+        document.title,
+        "login.html"
+    );
+
+    document
+        .getElementById("roleSelection")
+        .style.display = "block";
+
+    document
+        .getElementById("teacherLogin")
+        .classList.remove("show");
+
+    document
+        .getElementById("studentLogin")
+        .classList.remove("show");
+
+}
+
+
+function loginTeacher() {
+
+    const teacherName =
+        document
+            .getElementById("teacherUsername")
+            .value
+            .trim();
+
+    const password =
+        document
+            .getElementById("teacherPassword")
+            .value
+            .trim();
+
+
+    if (teacherName === "") {
+
+        alert("Please enter the teacher name.");
+
+        return;
+    }
+
+
+    if (password === "") {
+
+        alert("Please enter the password.");
+
+        return;
+    }
+
+
+    localStorage.setItem(
+        "learnlensLoggedInRole",
+        "teacher"
+    );
+
+
+    localStorage.setItem(
+        "learnlensLoggedInUser",
+        teacherName
+    );
+
+
+    window.location.href =
+        "teacher-dashboard.html";
+
+}
+
+
+async function loginStudent() {
+
+    const rollNumber =
+        document
+            .getElementById("rollNumber")
+            .value
+            .trim();
+
+
+    if (rollNumber === "") {
+
+        alert("Please enter your roll number.");
+
+        return;
+    }
+
+
+    const loginButton =
+        document.getElementById(
+            "studentLoginButton"
+        );
+
+
+    loginButton.disabled = true;
+
+    loginButton.textContent =
+        "Checking student...";
+
+
+    try {
+
+        const response =
+            await fetch(
+                `${API_URL}/student/${encodeURIComponent(rollNumber)}/recommendations`
             );
 
 
-        const selectedRole =
-            urlParameters.get("role");
+        const data =
+            await response.json();
 
 
+        if (!response.ok) {
 
-        /* =========================================
-           WHEN LOGIN PAGE LOADS
-        ========================================== */
+            throw new Error(
+                data.message ||
+                data.error ||
+                "Student not found."
+            );
 
-        window.onload = function () {
-
-
-            /*
-             * Teacher came from
-             * teacher enrollment
-             */
-
-            if (
-                selectedRole === "teacher"
-            ) {
-
-                showTeacherLogin();
-
-            }
+        }
 
 
-            /*
-             * Student came from
-             * student enrollment
-             */
+        const student = {
 
-            else if (
-                selectedRole === "student"
-            ) {
+            student_id:
+                data.student_id || null,
 
-                showStudentLogin();
+            name:
+                data.student_name,
 
-            }
+            student_name:
+                data.student_name,
 
+            rollNumber:
+                String(data.roll_number),
 
-            /*
-             * Login page opened directly
-             */
+            roll_number:
+                String(data.roll_number),
 
-            else {
+            percentage:
+                Number(data.average_marks || 0),
 
-                document
-                    .getElementById(
-                        "roleSelection"
-                    )
-                    .style.display = "block";
+            average_marks:
+                Number(data.average_marks || 0),
 
-            }
+            category:
+                data.category,
+
+            weakestSubject:
+                data.weakest_subject,
+
+            weakest_subject:
+                data.weakest_subject,
+
+            weakestMarks:
+                Number(data.weakest_marks || 0),
+
+            weakest_marks:
+                Number(data.weakest_marks || 0)
 
         };
 
 
+        localStorage.setItem(
+            "learnLensCurrentStudent",
+            JSON.stringify(student)
+        );
 
-        /* =========================================
-           SHOW TEACHER LOGIN
-        ========================================== */
 
-        function showTeacherLogin() {
+        localStorage.setItem(
+            "learnLensRollNumber",
+            String(data.roll_number)
+        );
 
 
-            document
-                .getElementById(
-                    "roleSelection"
-                )
-                .style.display = "none";
+        localStorage.setItem(
+            "learnlensLoggedInRole",
+            "student"
+        );
 
 
-            document
-                .getElementById(
-                    "teacherLogin"
-                )
-                .classList.add("show");
+        localStorage.setItem(
+            "learnlensLoggedInUser",
+            data.student_name
+        );
 
 
-            document
-                .getElementById(
-                    "studentLogin"
-                )
-                .classList.remove("show");
+        localStorage.setItem(
+            "learnlensStudents",
+            JSON.stringify([student])
+        );
 
-        }
 
+        window.location.href =
+            "student-profile.html";
 
+    }
 
-        /* =========================================
-           SHOW STUDENT LOGIN
-        ========================================== */
+    catch (error) {
 
-        function showStudentLogin() {
+        console.error(error);
 
+        alert(
+            error.message ||
+            "Unable to find student."
+        );
 
-            document
-                .getElementById(
-                    "roleSelection"
-                )
-                .style.display = "none";
+        loginButton.disabled = false;
 
+        loginButton.textContent =
+            "Login as Student";
 
-            document
-                .getElementById(
-                    "studentLogin"
-                )
-                .classList.add("show");
+    }
 
+}
 
-            document
-                .getElementById(
-                    "teacherLogin"
-                )
-                .classList.remove("show");
-
-        }
-
-
-
-        /* =========================================
-           GO BACK TO ROLE SELECTION
-        ========================================== */
-
-        function goBack() {
-
-
-            /*
-             * Remove ?role=teacher
-             * or ?role=student
-             */
-
-            window.history.replaceState(
-                {},
-                document.title,
-                "login.html"
-            );
-
-
-            document
-                .getElementById(
-                    "roleSelection"
-                )
-                .style.display = "block";
-
-
-            document
-                .getElementById(
-                    "teacherLogin"
-                )
-                .classList.remove("show");
-
-
-            document
-                .getElementById(
-                    "studentLogin"
-                )
-                .classList.remove("show");
-
-        }
-
-
-
-        /* =========================================
-           TEACHER LOGIN
-        ========================================== */
-
-        function loginTeacher() {
-
-
-            const teacherName =
-                document
-                .getElementById(
-                    "teacherUsername"
-                )
-                .value
-                .trim();
-
-
-            const password =
-                document
-                .getElementById(
-                    "teacherPassword"
-                )
-                .value
-                .trim();
-
-
-
-            /*
-             * Check teacher name
-             */
-
-            if (
-                teacherName === ""
-            ) {
-
-                alert(
-                    "⚠️ Please enter the teacher name."
-                );
-
-                return;
-
-            }
-
-
-
-            /*
-             * Check password
-             */
-
-            if (
-                password === ""
-            ) {
-
-                alert(
-                    "⚠️ Please enter the password."
-                );
-
-                return;
-
-            }
-
-
-
-            /*
-             * Save teacher login
-             */
-
-            localStorage.setItem(
-                "learnlensLoggedInRole",
-                "teacher"
-            );
-
-
-            localStorage.setItem(
-                "learnlensLoggedInUser",
-                teacherName
-            );
-
-
-
-            /*
-             * Open dashboard
-             */
-
-            window.location.href =
-                "teacher-dashboard.html";
-
-        }
-
-
-
-        /* =========================================
-           STUDENT LOGIN
-        ========================================== */
-
-        function loginStudent() {
-
-
-            /*
-             * Get roll number
-             */
-
-            const rollNumber =
-                document
-                .getElementById(
-                    "rollNumber"
-                )
-                .value
-                .trim();
-
-
-
-            /*
-             * Check roll number
-             */
-
-            if (
-                rollNumber === ""
-            ) {
-
-                alert(
-                    "⚠️ Please enter your roll number."
-                );
-
-                return;
-
-            }
-
-
-
-            /*
-             * Get all students
-             * entered by the teacher
-             */
-
-            const students =
-                JSON.parse(
-                    localStorage.getItem(
-                        "learnlensStudents"
-                    )
-                ) || [];
-
-
-
-            /*
-             * Find the correct student
-             * using roll number
-             */
-
-            const student =
-                students.find(
-                    function(item) {
-
-
-                        return (
-                            String(
-                                item.rollNumber
-                            ) ===
-                            String(
-                                rollNumber
-                            )
-                        );
-
-
-                    }
-                );
-
-
-
-            /*
-             * Student not found
-             */
-
-            if (!student) {
-
-
-                alert(
-                    "🪄 Student record not found.\n\n" +
-
-                    "Please ask your teacher to " +
-                    "enter your marks first."
-                );
-
-
-                return;
-
-            }
-
-
-
-            /*
-             * Save the correct student
-             * as the current student
-             */
-
-            localStorage.setItem(
-                "learnlensCurrentStudent",
-                JSON.stringify(student)
-            );
-
-
-
-            /*
-             * Save login role
-             */
-
-            localStorage.setItem(
-                "learnlensLoggedInRole",
-                "student"
-            );
-
-
-
-            /*
-             * Save student name
-             */
-
-            localStorage.setItem(
-                "learnlensLoggedInUser",
-                student.name
-            );
-
-
-
-            /*
-             * Open student profile
-             */
-
-            window.location.href =
-                "student-profile.html";
-
-        }
-
-
-    </script>
+</script>
 
 
 </body>

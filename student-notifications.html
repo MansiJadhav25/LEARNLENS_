@@ -73,7 +73,9 @@
                 ⚠️ Weak Areas
             </a>
 
-            <a href="recommendations.html">
+            <!-- FIXED RECOMMENDATION LINK -->
+
+            <a href="recommendation.html">
                 🎓 Recommendations
             </a>
 
@@ -249,19 +251,29 @@
 
 
         // =========================================
+        // GET STUDENT NAME
+        // =========================================
+
+        const studentName =
+            student.name ||
+            student.student_name ||
+            "Student";
+
+
+        // =========================================
         // DISPLAY STUDENT NAME
         // =========================================
 
         document.getElementById(
             "studentName"
         ).textContent =
-            student.name;
+            studentName;
 
 
         document.getElementById(
             "sidebarName"
         ).textContent =
-            student.name;
+            studentName;
 
 
 
@@ -276,6 +288,39 @@
 
 
         const notifications = [];
+
+
+
+        // =========================================
+        // GET PERFORMANCE
+        // =========================================
+
+        const percentage =
+            student.percentage !== undefined
+                ? student.percentage
+                : student.average_marks;
+
+
+
+        // =========================================
+        // GET WEAKEST SUBJECT
+        // =========================================
+
+        const weakestSubject =
+            student.weakestSubject ||
+            student.weakest_subject ||
+            "";
+
+
+
+        // =========================================
+        // GET WEAKEST MARKS
+        // =========================================
+
+        const weakestMarks =
+            student.weakestMarks !== undefined
+                ? student.weakestMarks
+                : student.weakest_marks;
 
 
 
@@ -304,7 +349,8 @@
         // =========================================
 
         if (
-            student.percentage !== undefined
+            percentage !== undefined &&
+            percentage !== null
         ) {
 
             notifications.push({
@@ -315,8 +361,35 @@
 
                 message:
                     "Your current overall performance is " +
-                    student.percentage +
+                    percentage +
                     "%. Keep working consistently!",
+
+                type: "normal"
+
+            });
+
+        }
+
+
+
+        // =========================================
+        // LEARNER CATEGORY NOTIFICATION
+        // =========================================
+
+        if (
+            student.category
+        ) {
+
+            notifications.push({
+
+                icon: "🎯",
+
+                title: "Your Learning Category",
+
+                message:
+                    "You are currently classified as a " +
+                    student.category +
+                    ". LearnLens uses this category to personalize your learning resources.",
 
                 type: "normal"
 
@@ -331,8 +404,28 @@
         // =========================================
 
         if (
-            student.weakestSubject
+            weakestSubject
         ) {
+
+            let weakMessage =
+                weakestSubject +
+                " is currently your weakest subject.";
+
+            if (
+                weakestMarks !== undefined &&
+                weakestMarks !== null
+            ) {
+
+                weakMessage +=
+                    " Your marks are " +
+                    weakestMarks +
+                    ".";
+
+            }
+
+            weakMessage +=
+                " Spend some extra study time on this subject.";
+
 
             notifications.push({
 
@@ -341,9 +434,7 @@
                 title: "Focus Area",
 
                 message:
-                    student.weakestSubject +
-                    " is currently your weakest subject. " +
-                    "Spend some extra study time on it.",
+                    weakMessage,
 
                 type: "warning"
 
@@ -364,8 +455,8 @@
             title: "New Learning Resources",
 
             message:
-                "Videos and study notes are available " +
-                "for your weak subject.",
+                "Personalized videos and study notes are available " +
+                "for your learning needs. Visit the Recommendations page to start learning.",
 
             type: "normal"
 
@@ -381,11 +472,11 @@
 
             icon: "📅",
 
-            title: "Study Schedule",
+            title: "Study Schedule Ready",
 
             message:
                 "Your 7-day personalized study schedule " +
-                "is ready. Follow it step by step.",
+                "is ready. Follow it step by step to improve your performance.",
 
             type: "normal"
 
@@ -423,18 +514,25 @@
                     <div class="notification-content">
 
                         <h3>
+
                             ${notification.title}
+
                         </h3>
 
+
                         <p>
+
                             ${notification.message}
+
                         </p>
 
                     </div>
 
 
                     <div class="notification-status">
+
                         ●
+
                     </div>
 
                 `;

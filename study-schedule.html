@@ -21,7 +21,6 @@
             <p>Student Learning Portal</p>
         </div>
 
-
         <!-- STUDENT PROFILE -->
 
         <div class="profile">
@@ -40,7 +39,6 @@
 
         </div>
 
-
         <!-- NAVIGATION -->
 
         <nav>
@@ -57,7 +55,8 @@
                 ⚠️ Weak Areas
             </a>
 
-            <a href="recommendations.html">
+            <!-- Keep your working recommendation page -->
+            <a href="recommendation.html">
                 🎓 Recommendations
             </a>
 
@@ -87,11 +86,15 @@
         <header class="page-header">
 
             <div>
-                <h1>Study Schedule</h1>
+
+                <h1>
+                    Study Schedule
+                </h1>
 
                 <p>
                     Follow your personalized 7-day learning plan.
                 </p>
+
             </div>
 
         </header>
@@ -127,7 +130,9 @@
 
             <div class="section-heading">
 
-                <h2>7-Day Study Plan</h2>
+                <h2>
+                    7-Day Study Plan
+                </h2>
 
                 <p>
                     Complete one task each day and improve your understanding step by step.
@@ -173,9 +178,9 @@
 
     <script>
 
-        // -----------------------------------------
+        // =====================================================
         // GET CURRENT STUDENT
-        // -----------------------------------------
+        // =====================================================
 
         const currentStudent =
             JSON.parse(
@@ -185,9 +190,9 @@
             );
 
 
-        // -----------------------------------------
-        // CHECK STUDENT INFORMATION
-        // -----------------------------------------
+        // =====================================================
+        // CHECK STUDENT LOGIN
+        // =====================================================
 
         if (!currentStudent) {
 
@@ -200,28 +205,45 @@
 
         } else {
 
-            // -----------------------------------------
+            // =================================================
             // DISPLAY STUDENT NAME
-            // -----------------------------------------
+            // =================================================
+
+            const studentName =
+                currentStudent.name ||
+                currentStudent.student_name ||
+                "Student";
+
 
             document.getElementById(
                 "studentName"
             ).textContent =
-                currentStudent.name;
+                studentName;
 
 
             document.getElementById(
                 "displayName"
             ).textContent =
-                currentStudent.name;
+                studentName;
 
 
-            // -----------------------------------------
+            // =================================================
+            // GET ROLL NUMBER
+            // =================================================
+
+            const rollNumber =
+                currentStudent.rollNumber ||
+                currentStudent.roll_number;
+
+
+            // =================================================
             // GET WEAK SUBJECT
-            // -----------------------------------------
+            // =================================================
 
             const weakSubject =
-                currentStudent.weakestSubject || "Your Focus Subject";
+                currentStudent.weakestSubject ||
+                currentStudent.weakest_subject ||
+                "Your Focus Subject";
 
 
             document.getElementById(
@@ -230,137 +252,504 @@
                 weakSubject;
 
 
-            // -----------------------------------------
-            // CREATE 7-DAY STUDY PLAN
-            // -----------------------------------------
+            // =================================================
+            // CREATE DEFAULT SCHEDULE
+            // =================================================
 
-            const schedule = [
-
-                {
-                    day: "Day 1",
-                    title: "Understand the Basics",
-                    task:
-                        "Read the basic concepts of " +
-                        weakSubject +
-                        " for 30 minutes.",
-                    time: "30 minutes"
-                },
-
-                {
-                    day: "Day 2",
-                    title: "Watch & Learn",
-                    task:
-                        "Watch one recommended learning video about " +
-                        weakSubject +
-                        " and write down important points.",
-                    time: "40 minutes"
-                },
-
-                {
-                    day: "Day 3",
-                    title: "Make Your Notes",
-                    task:
-                        "Create short notes for the important topics of " +
-                        weakSubject +
-                        ".",
-                    time: "30 minutes"
-                },
-
-                {
-                    day: "Day 4",
-                    title: "Practice",
-                    task:
-                        "Solve practice questions related to " +
-                        weakSubject +
-                        ".",
-                    time: "45 minutes"
-                },
-
-                {
-                    day: "Day 5",
-                    title: "Revise",
-                    task:
-                        "Revise the topics studied during the first four days.",
-                    time: "30 minutes"
-                },
-
-                {
-                    day: "Day 6",
-                    title: "Test Yourself",
-                    task:
-                        "Try solving questions without looking at your notes.",
-                    time: "45 minutes"
-                },
-
-                {
-                    day: "Day 7",
-                    title: "Final Review",
-                    task:
-                        "Review your mistakes and revise the topics that still feel difficult.",
-                    time: "40 minutes"
-                }
-
-            ];
+            let schedule = [];
 
 
-            // -----------------------------------------
-            // DISPLAY SCHEDULE
-            // -----------------------------------------
+            // =================================================
+            // LOAD PERSONALIZED RECOMMENDATIONS
+            // =================================================
 
-            const scheduleContainer =
-                document.getElementById(
-                    "scheduleContainer"
-                );
+            async function loadStudySchedule() {
 
+                try {
 
-            schedule.forEach(
-                function(item, index) {
+                    /*
+                     * We are ONLY READING the existing
+                     * recommendation API.
+                     *
+                     * Nothing else in the project is changed.
+                     */
 
-                    const card =
-                        document.createElement(
-                            "div"
+                    const response =
+                        await fetch(
+                            `http://127.0.0.1:5000/student/${encodeURIComponent(rollNumber)}/recommendations`
                         );
 
 
-                    card.className =
-                        "schedule-card";
+                    if (!response.ok) {
+
+                        throw new Error(
+                            "Unable to load recommendations."
+                        );
+
+                    }
 
 
-                    card.innerHTML = `
-
-                        <div class="day-number">
-                            ${index + 1}
-                        </div>
-
-                        <div class="schedule-content">
-
-                            <span class="day">
-                                ${item.day}
-                            </span>
-
-                            <h3>
-                                ${item.title}
-                            </h3>
-
-                            <p>
-                                ${item.task}
-                            </p>
-
-                            <div class="time">
-                                ⏱ ${item.time}
-                            </div>
-
-                        </div>
-
-                    `;
+                    const data =
+                        await response.json();
 
 
-                    scheduleContainer.appendChild(
-                        card
+                    // =============================================
+                    // GET TOPICS FROM EXISTING RECOMMENDATIONS
+                    // =============================================
+
+                    const recommendations =
+                        data.recommendations || [];
+
+
+                    const topics =
+                        recommendations.map(
+                            function(item) {
+
+                                return {
+                                    topic:
+                                        item.topic_name ||
+                                        "Recommended Topic",
+
+                                    subject:
+                                        item.subject_name ||
+                                        weakSubject
+                                };
+
+                            }
+                        );
+
+
+                    // =============================================
+                    // CREATE PERSONALIZED 7-DAY PLAN
+                    // =============================================
+
+                    if (topics.length >= 3) {
+
+                        schedule = [
+
+                            {
+                                day: "Day 1",
+                                title:
+                                    "Learn " + topics[0].topic,
+
+                                task:
+                                    "Study the basic concepts of " +
+                                    topics[0].topic +
+                                    " from your recommended learning material.",
+
+                                time:
+                                    "45 minutes"
+                            },
+
+
+                            {
+                                day: "Day 2",
+                                title:
+                                    "Watch & Learn",
+
+                                task:
+                                    "Watch the recommended videos for " +
+                                    topics[0].topic +
+                                    " and write down important points.",
+
+                                time:
+                                    "40 minutes"
+                            },
+
+
+                            {
+                                day: "Day 3",
+                                title:
+                                    "Learn " + topics[1].topic,
+
+                                task:
+                                    "Study the important concepts of " +
+                                    topics[1].topic +
+                                    " and make short notes.",
+
+                                time:
+                                    "45 minutes"
+                            },
+
+
+                            {
+                                day: "Day 4",
+                                title:
+                                    "Practice " + topics[1].topic,
+
+                                task:
+                                    "Review the videos and notes for " +
+                                    topics[1].topic +
+                                    " and practice what you learned.",
+
+                                time:
+                                    "45 minutes"
+                            },
+
+
+                            {
+                                day: "Day 5",
+                                title:
+                                    "Learn " + topics[2].topic,
+
+                                task:
+                                    "Study " +
+                                    topics[2].topic +
+                                    " and focus on the concepts you find difficult.",
+
+                                time:
+                                    "45 minutes"
+                            },
+
+
+                            {
+                                day: "Day 6",
+                                title:
+                                    "Revise All Topics",
+
+                                task:
+                                    "Revise " +
+                                    topics[0].topic +
+                                    ", " +
+                                    topics[1].topic +
+                                    " and " +
+                                    topics[2].topic +
+                                    ".",
+
+                                time:
+                                    "60 minutes"
+                            },
+
+
+                            {
+                                day: "Day 7",
+                                title:
+                                    "Final Review & Self-Test",
+
+                                task:
+                                    "Review your notes and test yourself on all three recommended topics.",
+
+                                time:
+                                    "45 minutes"
+                            }
+
+                        ];
+
+                    } else {
+
+                        // =========================================
+                        // FALLBACK SCHEDULE
+                        // =========================================
+
+                        schedule = [
+
+                            {
+                                day: "Day 1",
+                                title:
+                                    "Understand the Basics",
+
+                                task:
+                                    "Study the basic concepts of " +
+                                    weakSubject +
+                                    " for 30 minutes.",
+
+                                time:
+                                    "30 minutes"
+                            },
+
+
+                            {
+                                day: "Day 2",
+                                title:
+                                    "Watch & Learn",
+
+                                task:
+                                    "Watch one recommended learning video about " +
+                                    weakSubject +
+                                    " and write down important points.",
+
+                                time:
+                                    "40 minutes"
+                            },
+
+
+                            {
+                                day: "Day 3",
+                                title:
+                                    "Make Your Notes",
+
+                                task:
+                                    "Create short notes for the important topics of " +
+                                    weakSubject +
+                                    ".",
+
+                                time:
+                                    "30 minutes"
+                            },
+
+
+                            {
+                                day: "Day 4",
+                                title:
+                                    "Practice",
+
+                                task:
+                                    "Solve practice questions related to " +
+                                    weakSubject +
+                                    ".",
+
+                                time:
+                                    "45 minutes"
+                            },
+
+
+                            {
+                                day: "Day 5",
+                                title:
+                                    "Revise",
+
+                                task:
+                                    "Revise the topics studied during the first four days.",
+
+                                time:
+                                    "30 minutes"
+                            },
+
+
+                            {
+                                day: "Day 6",
+                                title:
+                                    "Test Yourself",
+
+                                task:
+                                    "Try solving questions without looking at your notes.",
+
+                                time:
+                                    "45 minutes"
+                            },
+
+
+                            {
+                                day: "Day 7",
+                                title:
+                                    "Final Review",
+
+                                task:
+                                    "Review your mistakes and revise the topics that still feel difficult.",
+
+                                time:
+                                    "40 minutes"
+                            }
+
+                        ];
+
+                    }
+
+
+                    // =============================================
+                    // DISPLAY SCHEDULE
+                    // =============================================
+
+                    displaySchedule();
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Study Schedule Error:",
+                        error
                     );
 
+
+                    /*
+                     * If the recommendation API is unavailable,
+                     * the student still gets the original schedule.
+                     */
+
+                    schedule = [
+
+                        {
+                            day: "Day 1",
+                            title:
+                                "Understand the Basics",
+
+                            task:
+                                "Study the basic concepts of " +
+                                weakSubject +
+                                ".",
+
+                            time:
+                                "30 minutes"
+                        },
+
+
+                        {
+                            day: "Day 2",
+                            title:
+                                "Watch & Learn",
+
+                            task:
+                                "Watch a recommended learning video about " +
+                                weakSubject +
+                                ".",
+
+                            time:
+                                "40 minutes"
+                        },
+
+
+                        {
+                            day: "Day 3",
+                            title:
+                                "Make Your Notes",
+
+                            task:
+                                "Create short notes for important concepts.",
+
+                            time:
+                                "30 minutes"
+                        },
+
+
+                        {
+                            day: "Day 4",
+                            title:
+                                "Practice",
+
+                            task:
+                                "Practice questions related to " +
+                                weakSubject +
+                                ".",
+
+                            time:
+                                "45 minutes"
+                        },
+
+
+                        {
+                            day: "Day 5",
+                            title:
+                                "Revise",
+
+                            task:
+                                "Revise everything studied so far.",
+
+                            time:
+                                "30 minutes"
+                        },
+
+
+                        {
+                            day: "Day 6",
+                            title:
+                                "Test Yourself",
+
+                            task:
+                                "Try solving questions without looking at your notes.",
+
+                            time:
+                                "45 minutes"
+                        },
+
+
+                        {
+                            day: "Day 7",
+                            title:
+                                "Final Review",
+
+                            task:
+                                "Review your mistakes and revise difficult topics.",
+
+                            time:
+                                "40 minutes"
+                        }
+
+                    ];
+
+
+                    displaySchedule();
+
                 }
-            );
+
+            }
+
+
+            // =================================================
+            // DISPLAY SCHEDULE FUNCTION
+            // =================================================
+
+            function displaySchedule() {
+
+                const scheduleContainer =
+                    document.getElementById(
+                        "scheduleContainer"
+                    );
+
+
+                // Clear old cards
+
+                scheduleContainer.innerHTML = "";
+
+
+                // Create new cards
+
+                schedule.forEach(
+                    function(item, index) {
+
+                        const card =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        card.className =
+                            "schedule-card";
+
+
+                        card.innerHTML = `
+
+                            <div class="day-number">
+                                ${index + 1}
+                            </div>
+
+                            <div class="schedule-content">
+
+                                <span class="day">
+                                    ${item.day}
+                                </span>
+
+                                <h3>
+                                    ${item.title}
+                                </h3>
+
+                                <p>
+                                    ${item.task}
+                                </p>
+
+                                <div class="time">
+                                    ⏱ ${item.time}
+                                </div>
+
+                            </div>
+
+                        `;
+
+
+                        scheduleContainer.appendChild(
+                            card
+                        );
+
+                    }
+                );
+
+            }
+
+
+            // =================================================
+            // START STUDY SCHEDULE
+            // =================================================
+
+            loadStudySchedule();
 
         }
 

@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Learning Recommendations - LearnLens</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fa;
+            color: #243447;
+        }
+
+        /* SIDEBAR */
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 240px;
+            height: 100vh;
+            background: #193b5a;
+            color: white;
+            padding: 25px 18px;
+        }
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-section h2 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .logo-section p {
+            font-size: 13px;
+            color: #cbd8e5;
+        }
+
+        .teacher-profile {
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 25px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 10px;
+        }
+
+        .teacher-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #347db3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .teacher-profile h3 {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .teacher-profile p {
+            font-size: 12px;
+            color: #cbd8e5;
+            margin-top: 4px;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-bottom: 7px;
+        }
+
+        .nav-menu a {
+            display: block;
+            padding: 11px 13px;
+            text-decoration: none;
+            color: #d9e5ef;
+            border-radius: 7px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .nav-menu a:hover {
+            background: #285879;
+            color: white;
+        }
+
+        .nav-menu a.active {
+            background: #347db3;
+            color: white;
+        }
+
+        /* MAIN */
+
+        .main-content {
+            margin-left: 240px;
+            padding: 35px;
+        }
+
+        .page-header {
+            margin-bottom: 25px;
+        }
+
+        .page-header h1 {
+            font-size: 28px;
+            color: #193b5a;
+            margin-bottom: 6px;
+        }
+
+        .page-header p {
+            color: #6b7c8f;
+            font-size: 14px;
+        }
+
+        /* CARDS */
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 22px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .card h2 {
+            color: #193b5a;
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+
+        .card-description {
+            color: #718096;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        /* FORM */
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            color: #34495e;
+            margin-bottom: 8px;
+        }
+
+        select,
+        input[type="text"],
+        input[type="file"] {
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid #ccd6e0;
+            border-radius: 6px;
+            background: white;
+            font-size: 14px;
+            color: #34495e;
+        }
+
+        select:focus,
+        input:focus {
+            outline: none;
+            border-color: #347db3;
+        }
+
+        /* TOPIC LIST */
+
+        .topic-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .topic-card {
+            border: 1px solid #d6dee7;
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: 0.2s;
+            background: #fff;
+        }
+
+        .topic-card:hover {
+            border-color: #347db3;
+            background: #f7fbff;
+        }
+
+        .topic-card.selected {
+            border-color: #347db3;
+            background: #edf6fc;
+        }
+
+        .topic-card input {
+            margin-right: 8px;
+            accent-color: #347db3;
+        }
+
+        .topic-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #193b5a;
+        }
+
+        .topic-number {
+            display: block;
+            margin-top: 7px;
+            font-size: 12px;
+            color: #718096;
+        }
+
+        .topic-empty {
+            padding: 20px;
+            background: #f7f9fb;
+            border-radius: 7px;
+            color: #718096;
+            font-size: 14px;
+        }
+
+        /* BUTTON */
+
+        .button-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        button {
+            border: none;
+            padding: 12px 22px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .primary-btn {
+            background: #347db3;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background: #286a9b;
+        }
+
+        .secondary-btn {
+            background: #e8edf2;
+            color: #34495e;
+        }
+
+        .secondary-btn:hover {
+            background: #dbe2e9;
+        }
+
+        /* MESSAGE */
+
+        .message {
+            display: none;
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin-top: 18px;
+            font-size: 14px;
+        }
+
+        .message.success {
+            display: block;
+            background: #e8f6ee;
+            color: #217346;
+            border: 1px solid #b8dfc8;
+        }
+
+        .message.error {
+            display: block;
+            background: #fdecec;
+            color: #b42318;
+            border: 1px solid #f1b5b5;
+        }
+
+        /* NOTES */
+
+        .notes-info {
+            background: #f4f8fb;
+            border-left: 4px solid #347db3;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #536577;
+            line-height: 1.5;
+        }
+
+        .selected-topic-display {
+            padding: 10px 12px;
+            background: #edf6fc;
+            border-radius: 6px;
+            color: #193b5a;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            color: #7a8998;
+            font-size: 12px;
+            padding: 15px 0;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .topic-list {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                width: 200px;
+            }
+
+            .main-content {
+                margin-left: 200px;
+                padding: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+    <div class="logo-section">
+        <h2>LearnLens</h2>
+        <p>Teacher Learning Portal</p>
+    </div>
+
+    <div class="teacher-profile">
+
+        <div class="teacher-icon">
+            P
+        </div>
+
+        <h3>Professor</h3>
+        <p>Teacher</p>
+
+    </div>
+
+    <ul class="nav-menu">
+
+        <li>
+            <a href="teacher-dashboard.html">
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="my-student.html">
+                My Students
+            </a>
+        </li>
+
+        <li>
+            <a href="enter-marks.html">
+                Enter Marks
+            </a>
+        </li>
+
+        <li>
+            <a href="performance.html">
+                Performance
+            </a>
+        </li>
+
+        <li>
+            <a href="weak-areas.html">
+                Weak Areas
+            </a>
+        </li>
+
+        <li>
+            <a href="teacher-recommendations.html" class="active">
+                Recommendations
+            </a>
+        </li>
+
+        <li>
+            <a href="reports.html">
+                Reports
+            </a>
+        </li>
+
+        <li>
+            <a href="notifications.html">
+                Notifications
+            </a>
+        </li>
+
+    </ul>
+
+</aside>
+
+
+<!-- MAIN CONTENT -->
+
+<main class="main-content">
+
+    <div class="page-header">
+
+        <h1>Learning Recommendations</h1>
+
+        <p>
+            Assign learning topics to students based on their learner category.
+        </p>
+
+    </div>
+
+
+    <!-- CATEGORY + SUBJECT -->
+
+    <div class="card">
+
+        <h2>Recommendation Settings</h2>
+
+        <p class="card-description">
+            Select the learner category and subject for which you want to create recommendations.
+        </p>
+
+
+        <div class="form-group">
+
+            <label for="categorySelect">
+                Learner Category
+            </label>
+
+            <select id="categorySelect">
+
+                <option value="">
+                    Select learner category
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="subjectSelect">
+                Subject
+            </label>
+
+            <select id="subjectSelect">
+
+                <option value="">
+                    Select subject
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOPICS -->
+
+    <div class="card">
+
+        <h2>Select 3 Learning Topics</h2>
+
+        <p class="card-description">
+            Choose exactly three topics. Videos linked to these topics will automatically be recommended.
+        </p>
+
+        <div id="topicList" class="topic-list">
+
+            <div class="topic-empty">
+                Select a subject first to view available topics.
+            </div>
+
+        </div>
+
+
+        <div class="button-row">
+
+            <button
+                class="primary-btn"
+                onclick="assignRecommendations()">
+
+                Assign Recommendations
+
+            </button>
+
+            <button
+                class="secondary-btn"
+                onclick="clearTopicSelection()">
+
+                Clear Selection
+
+            </button>
+
+        </div>
+
+
+        <div id="recommendationMessage" class="message"></div>
+
+    </div>
+
+
+    <!-- NOTES -->
+
+    <div class="card">
+
+        <h2>Professor's Notes</h2>
+
+        <p class="card-description">
+            Upload a PDF note for one of the selected learning topics.
+        </p>
+
+
+        <div class="notes-info">
+
+            Notes are linked to the selected learner category and topic.
+            Students belonging to that category can access the notes from their recommendations.
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="notesTopicSelect">
+                Topic for Notes
+            </label>
+
+            <select id="notesTopicSelect">
+
+                <option value="">
+                    Select a topic
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="notesTitle">
+                Notes Title
+            </label>
+
+            <input
+                type="text"
+                id="notesTitle"
+                placeholder="Example: SQL Joins Notes"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="notesFile">
+                Upload PDF
+            </label>
+
+            <input
+                type="file"
+                id="notesFile"
+                accept=".pdf"
+            >
+
+        </div>
+
+
+        <button
+            class="primary-btn"
+            onclick="uploadNotes()">
+
+            Save Professor's Notes
+
+        </button>
+
+
+        <div id="notesMessage" class="message"></div>
+
+    </div>
+
+
+    <footer>
+
+        © 2026 LearnLens — Adaptive Learning Recommendation System
+
+    </footer>
+
+</main>
+
+
+<script>
+
+const API_URL = "http://127.0.0.1:5000";
+
+let allTopics = [];
+
+
+// --------------------------------------------------
+// LOAD OPTIONS
+// --------------------------------------------------
+
+async function loadOptions() {
+
+    try {
+
+        const response = await fetch(
+            `${API_URL}/teacher/recommendation-options`
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+
+            throw new Error(
+                data.message || "Unable to load options."
+            );
+
+        }
+
+
+        const categorySelect =
+            document.getElementById("categorySelect");
+
+        const subjectSelect =
+            document.getElementById("subjectSelect");
+
+
+        // Categories
+
+        data.categories.forEach(category => {
+
+            const option =
+                document.createElement("option");
+
+            option.value = category.category_id;
+
+            option.textContent =
+                category.category_name;
+
+            categorySelect.appendChild(option);
+
+        });
+
+
+        // Subjects
+
+        data.subjects.forEach(subject => {
+
+            const option =
+                document.createElement("option");
+
+            option.value = subject.subject_id;
+
+            option.textContent =
+                subject.subject_name;
+
+            subjectSelect.appendChild(option);
+
+        });
+
+
+        allTopics = data.topics;
+
+    }
+
+    catch (error) {
+
+        showMessage(
+            "recommendationMessage",
+            "Unable to load recommendation options. Make sure Flask is running.",
+            "error"
+        );
+
+        console.error(error);
+
+    }
+
+}
+
+
+// --------------------------------------------------
+// SUBJECT CHANGE
+// --------------------------------------------------
+
+document
+    .getElementById("subjectSelect")
+    .addEventListener("change", function () {
+
+        const subjectId = this.value;
+
+        const topicList =
+            document.getElementById("topicList");
+
+        const notesTopicSelect =
+            document.getElementById("notesTopicSelect");
+
+
+        topicList.innerHTML = "";
+
+        notesTopicSelect.innerHTML =
+            `<option value="">Select a topic</option>`;
+
+
+        if (!subjectId) {
+
+            topicList.innerHTML = `
+                <div class="topic-empty">
+                    Select a subject first to view available topics.
+                </div>
+            `;
+
+            return;
+
+        }
+
+
+        const subjectTopics =
+            allTopics.filter(
+                topic =>
+                    String(topic.subject_id) ===
+                    String(subjectId)
+            );
+
+
+        if (subjectTopics.length === 0) {
+
+            topicList.innerHTML = `
+                <div class="topic-empty">
+                    No topics are available for this subject.
+                </div>
+            `;
+
+            return;
+
+        }
+
+
+        subjectTopics.forEach((topic, index) => {
+
+            const topicCard =
+                document.createElement("label");
+
+            topicCard.className = "topic-card";
+
+            topicCard.innerHTML = `
+
+                <input
+                    type="checkbox"
+                    class="topic-checkbox"
+                    value="${topic.topic_id}"
+                    onchange="handleTopicSelection(this)"
+                >
+
+                <span class="topic-name">
+                    ${topic.topic_name}
+                </span>
+
+                <span class="topic-number">
+                    Topic ${index + 1}
+                </span>
+
+            `;
+
+            topicList.appendChild(topicCard);
+
+        });
+
+    });
+
+
+// --------------------------------------------------
+// TOPIC SELECTION
+// --------------------------------------------------
+
+function handleTopicSelection(checkbox) {
+
+    const checkboxes =
+        document.querySelectorAll(".topic-checkbox");
+
+    const selected =
+        document.querySelectorAll(
+            ".topic-checkbox:checked"
+        );
+
+
+    if (selected.length > 3) {
+
+        checkbox.checked = false;
+
+        showMessage(
+            "recommendationMessage",
+            "You can select exactly 3 topics only.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    checkboxes.forEach(box => {
+
+        const card =
+            box.closest(".topic-card");
+
+        if (box.checked) {
+
+            card.classList.add("selected");
+
+        } else {
+
+            card.classList.remove("selected");
+
+        }
+
+    });
+
+
+    updateNotesTopics();
+
+}
+
+
+// --------------------------------------------------
+// UPDATE NOTES TOPIC DROPDOWN
+// --------------------------------------------------
+
+function updateNotesTopics() {
+
+    const notesTopicSelect =
+        document.getElementById("notesTopicSelect");
+
+    const selectedTopics =
+        document.querySelectorAll(
+            ".topic-checkbox:checked"
+        );
+
+
+    notesTopicSelect.innerHTML =
+        `<option value="">Select a topic</option>`;
+
+
+    selectedTopics.forEach(checkbox => {
+
+        const topic =
+            allTopics.find(
+                item =>
+                    String(item.topic_id) ===
+                    String(checkbox.value)
+            );
+
+        if (topic) {
+
+            const option =
+                document.createElement("option");
+
+            option.value = topic.topic_id;
+
+            option.textContent =
+                topic.topic_name;
+
+            notesTopicSelect.appendChild(option);
+
+        }
+
+    });
+
+}
+
+
+// --------------------------------------------------
+// ASSIGN RECOMMENDATIONS
+// --------------------------------------------------
+
+async function assignRecommendations() {
+
+    const categoryId =
+        document.getElementById("categorySelect").value;
+
+    const subjectId =
+        document.getElementById("subjectSelect").value;
+
+    const selectedTopics =
+        document.querySelectorAll(
+            ".topic-checkbox:checked"
+        );
+
+
+    if (!categoryId) {
+
+        showMessage(
+            "recommendationMessage",
+            "Please select a learner category.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if (!subjectId) {
+
+        showMessage(
+            "recommendationMessage",
+            "Please select a subject.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if (selectedTopics.length !== 3) {
+
+        showMessage(
+            "recommendationMessage",
+            "Please select exactly 3 topics.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    const topicIds =
+        Array.from(selectedTopics).map(
+            checkbox => Number(checkbox.value)
+        );
+
+
+    try {
+
+        const response = await fetch(
+            `${API_URL}/teacher/recommendations`,
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+
+                    category_id: Number(categoryId),
+
+                    subject_id: Number(subjectId),
+
+                    topic_ids: topicIds
+
+                })
+            }
+        );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                data.message ||
+                data.error ||
+                "Unable to assign recommendations."
+            );
+
+        }
+
+
+        showMessage(
+            "recommendationMessage",
+            "Recommendations assigned successfully. Students in this learner category can now receive these topics and videos.",
+            "success"
+        );
+
+    }
+
+    catch (error) {
+
+        showMessage(
+            "recommendationMessage",
+            error.message,
+            "error"
+        );
+
+        console.error(error);
+
+    }
+
+}
+
+
+// --------------------------------------------------
+// UPLOAD NOTES
+// --------------------------------------------------
+
+async function uploadNotes() {
+
+    const categoryId =
+        document.getElementById("categorySelect").value;
+
+    const subjectId =
+        document.getElementById("subjectSelect").value;
+
+    const topicId =
+        document.getElementById("notesTopicSelect").value;
+
+    const notesTitle =
+        document.getElementById("notesTitle").value.trim();
+
+    const notesFile =
+        document.getElementById("notesFile").files[0];
+
+
+    if (!categoryId) {
+
+        showMessage(
+            "notesMessage",
+            "Please select a learner category.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if (!subjectId) {
+
+        showMessage(
+            "notesMessage",
+            "Please select a subject.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if (!topicId) {
+
+        showMessage(
+            "notesMessage",
+            "Please select a topic for the notes.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if (!notesTitle) {
+
+        showMessage(
+            "notesMessage",
+            "Please enter a notes title.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if (!notesFile) {
+
+        showMessage(
+            "notesMessage",
+            "Please select a PDF file.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if (
+        !notesFile.name
+            .toLowerCase()
+            .endsWith(".pdf")
+    ) {
+
+        showMessage(
+            "notesMessage",
+            "Only PDF files are allowed.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    const formData =
+        new FormData();
+
+    formData.append(
+        "category_id",
+        categoryId
+    );
+
+    formData.append(
+        "subject_id",
+        subjectId
+    );
+
+    formData.append(
+        "topic_id",
+        topicId
+    );
+
+    formData.append(
+        "notes_title",
+        notesTitle
+    );
+
+    formData.append(
+        "notes_file",
+        notesFile
+    );
+
+
+    try {
+
+        const response =
+            await fetch(
+                `${API_URL}/teacher/notes`,
+                {
+                    method: "POST",
+                    body: formData
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                data.message ||
+                data.error ||
+                "Unable to save notes."
+            );
+
+        }
+
+
+        showMessage(
+            "notesMessage",
+            "Professor's notes saved successfully.",
+            "success"
+        );
+
+
+        document.getElementById(
+            "notesTitle"
+        ).value = "";
+
+        document.getElementById(
+            "notesFile"
+        ).value = "";
+
+    }
+
+    catch (error) {
+
+        showMessage(
+            "notesMessage",
+            error.message,
+            "error"
+        );
+
+        console.error(error);
+
+    }
+
+}
+
+
+// --------------------------------------------------
+// CLEAR TOPICS
+// --------------------------------------------------
+
+function clearTopicSelection() {
+
+    const checkboxes =
+        document.querySelectorAll(
+            ".topic-checkbox"
+        );
+
+
+    checkboxes.forEach(checkbox => {
+
+        checkbox.checked = false;
+
+        checkbox
+            .closest(".topic-card")
+            .classList.remove("selected");
+
+    });
+
+
+    document.getElementById(
+        "notesTopicSelect"
+    ).innerHTML =
+        `<option value="">Select a topic</option>`;
+
+
+    document.getElementById(
+        "recommendationMessage"
+    ).className = "message";
+
+}
+
+
+// --------------------------------------------------
+// MESSAGE FUNCTION
+// --------------------------------------------------
+
+function showMessage(
+    elementId,
+    message,
+    type
+) {
+
+    const element =
+        document.getElementById(elementId);
+
+    element.textContent = message;
+
+    element.className =
+        `message ${type}`;
+
+}
+
+
+// --------------------------------------------------
+// START
+// --------------------------------------------------
+
+loadOptions();
+
+</script>
+
+</body>
+</html>

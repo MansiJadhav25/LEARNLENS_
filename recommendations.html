@@ -10,8 +10,456 @@
 
     <title>Recommendations | LearnLens</title>
 
-    <link rel="stylesheet"
-          href="./recommendations.css">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fa;
+            color: #243447;
+        }
+
+        /* =========================
+           SIDEBAR
+        ========================= */
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 240px;
+            height: 100vh;
+            background: #193b5a;
+            color: white;
+            padding: 25px 18px;
+        }
+
+        .logo-area {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-area h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .logo-area p {
+            font-size: 13px;
+            color: #cbd8e5;
+        }
+
+        .profile {
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 25px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 10px;
+        }
+
+        .profile-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #347db3;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: auto;
+
+            font-size: 23px;
+        }
+
+        .profile h3 {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .profile p {
+            margin-top: 4px;
+            font-size: 12px;
+            color: #cbd8e5;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #d9e5ef;
+
+            padding: 11px 13px;
+
+            border-radius: 7px;
+
+            font-size: 14px;
+        }
+
+        .menu a:hover {
+            background: #285879;
+            color: white;
+        }
+
+        .menu a.active {
+            background: #347db3;
+            color: white;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .main-content {
+            margin-left: 240px;
+            padding: 35px;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 25px;
+        }
+
+        .page-header h1 {
+            font-size: 28px;
+            color: #193b5a;
+            margin-bottom: 6px;
+        }
+
+        .page-header p {
+            color: #6b7c8f;
+            font-size: 14px;
+        }
+
+        .header-icon {
+            font-size: 38px;
+        }
+
+        /* =========================
+           STUDENT INFO
+        ========================= */
+
+        .student-info {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+
+            margin-bottom: 25px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 10px;
+            padding: 18px;
+
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .info-card span {
+            display: block;
+            color: #718096;
+            font-size: 12px;
+            margin-bottom: 7px;
+        }
+
+        .info-card strong {
+            color: #193b5a;
+            font-size: 17px;
+        }
+
+        /* =========================
+           FOCUS CARD
+        ========================= */
+
+        .focus-card {
+            background: #edf6fc;
+            border-left: 5px solid #347db3;
+
+            padding: 20px;
+
+            border-radius: 8px;
+
+            margin-bottom: 25px;
+        }
+
+        .focus-card h2 {
+            color: #193b5a;
+            margin-bottom: 7px;
+        }
+
+        .focus-card p {
+            color: #536577;
+            font-size: 14px;
+        }
+
+        /* =========================
+           TOPIC SECTION
+        ========================= */
+
+        .topic-section {
+            background: white;
+            padding: 25px;
+
+            border-radius: 10px;
+
+            margin-bottom: 25px;
+
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .topic-section h2 {
+            color: #193b5a;
+            font-size: 20px;
+
+            margin-bottom: 7px;
+        }
+
+        .topic-description {
+            color: #718096;
+            font-size: 13px;
+
+            margin-bottom: 20px;
+        }
+
+        .topic-card {
+            border: 1px solid #d6dee7;
+            border-radius: 8px;
+
+            margin-bottom: 25px;
+
+            overflow: hidden;
+        }
+
+        .topic-header {
+            background: #f4f8fb;
+
+            padding: 16px 18px;
+
+            border-bottom: 1px solid #d6dee7;
+        }
+
+        .topic-header h3 {
+            color: #193b5a;
+            font-size: 17px;
+        }
+
+        .topic-header p {
+            margin-top: 5px;
+            color: #718096;
+            font-size: 12px;
+        }
+
+        /* =========================
+           VIDEOS
+        ========================= */
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+
+            padding: 18px;
+        }
+
+        .video-card {
+            border: 1px solid #dce3ea;
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            background: white;
+        }
+
+        .video-player {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+
+            background: #111;
+        }
+
+        .video-player iframe {
+            width: 100%;
+            height: 100%;
+
+            border: none;
+        }
+
+        .video-info {
+            padding: 13px;
+        }
+
+        .video-info h4 {
+            color: #193b5a;
+            font-size: 14px;
+
+            line-height: 1.4;
+
+            margin-bottom: 10px;
+        }
+
+        .watch-button {
+            display: inline-block;
+
+            background: #347db3;
+            color: white;
+
+            text-decoration: none;
+
+            padding: 8px 12px;
+
+            border-radius: 5px;
+
+            font-size: 12px;
+        }
+
+        .watch-button:hover {
+            background: #286a9b;
+        }
+
+        .video-status {
+            padding: 12px 18px;
+
+            color: #718096;
+            font-size: 13px;
+        }
+
+        /* =========================
+           NOTES
+        ========================= */
+
+        .notes-box {
+            margin: 0 18px 18px;
+
+            background: #f8fafc;
+
+            border: 1px solid #dce3ea;
+
+            border-radius: 7px;
+
+            padding: 15px;
+        }
+
+        .notes-box h4 {
+            color: #193b5a;
+            margin-bottom: 8px;
+        }
+
+        .notes-box p {
+            color: #536577;
+            font-size: 13px;
+
+            margin-bottom: 10px;
+        }
+
+        .notes-button {
+            display: inline-block;
+
+            background: #2d7a50;
+            color: white;
+
+            text-decoration: none;
+
+            padding: 8px 12px;
+
+            border-radius: 5px;
+
+            font-size: 12px;
+        }
+
+        /* =========================
+           EMPTY / ERROR
+        ========================= */
+
+        .message-box {
+            background: white;
+
+            border-radius: 10px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+
+            color: #718096;
+        }
+
+        .error-box {
+            background: #fff0f0;
+
+            border: 1px solid #efc2c2;
+
+            color: #a33a3a;
+
+            padding: 15px;
+
+            border-radius: 7px;
+
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            color: #7a8998;
+
+            font-size: 12px;
+
+            padding: 20px 0;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 1100px) {
+
+            .video-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .student-info {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media (max-width: 800px) {
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -19,857 +467,1027 @@
 <body>
 
 
-    <!-- =========================
-         SIDEBAR
-    ========================== -->
+<!-- =========================
+     SIDEBAR
+========================= -->
 
-    <aside class="sidebar">
+<aside class="sidebar">
+
+    <div class="logo-area">
+
+        <h1>
+            LearnLens
+        </h1>
+
+        <p>
+            Adaptive Learning
+        </p>
+
+    </div>
 
 
-        <div class="logo-area">
+    <div class="profile">
+
+        <div class="profile-icon">
+            🎓
+        </div>
+
+        <h3 id="sideStudentName">
+            Student
+        </h3>
+
+        <p>
+            Student
+        </p>
+
+    </div>
+
+
+    <nav class="menu">
+
+        <a href="student-profile.html">
+            🏠 My Profile
+        </a>
+
+        <a href="student-performance.html">
+            📊 Performance
+        </a>
+
+        <a href="student-weak-areas.html">
+            ⚠️ Weak Areas
+        </a>
+
+        <a href="recommendation.html"
+           class="active">
+            🎓 Recommendations
+        </a>
+
+        <a href="study-schedule.html">
+            📅 Study Schedule
+        </a>
+
+        <a href="student-reports.html">
+            📜 Reports
+        </a>
+
+        <a href="student-notifications.html">
+            🔔 Notifications
+        </a>
+
+    </nav>
+
+</aside>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="main-content">
+
+
+    <header class="page-header">
+
+        <div>
 
             <h1>
-                LearnLens
+                Learning Recommendations
             </h1>
 
             <p>
-                Adaptive Learning
+                Personalized resources based on your performance.
             </p>
 
         </div>
 
+        <div class="header-icon">
+            📚
+        </div>
+
+    </header>
 
 
-        <!-- STUDENT PROFILE -->
+    <!-- STUDENT INFORMATION -->
 
-        <div class="profile">
+    <section class="student-info">
 
-            <div class="profile-icon">
-                👨‍🎓
-            </div>
+        <div class="info-card">
 
-            <div>
+            <span>
+                Student
+            </span>
 
-                <h3 id="studentName">
-                    Student
-                </h3>
+            <strong id="studentName">
+                -
+            </strong>
 
-                <p>
-                    Student
-                </p>
+        </div>
+
+
+        <div class="info-card">
+
+            <span>
+                Roll Number
+            </span>
+
+            <strong id="studentRoll">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span>
+                Percentage
+            </span>
+
+            <strong id="studentPercentage">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span>
+                Learner Category
+            </span>
+
+            <strong id="studentCategory">
+                -
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOCUS -->
+
+    <section class="focus-card">
+
+        <h2>
+            Your Focus Area
+        </h2>
+
+        <p>
+
+            Your weakest subject is
+
+            <strong id="weakSubject">
+                Loading...
+            </strong>
+
+            with
+
+            <strong id="weakMarks">
+                -
+            </strong>
+
+            marks.
+
+        </p>
+
+    </section>
+
+
+    <!-- MESSAGE -->
+
+    <div id="pageMessage"></div>
+
+
+    <!-- RECOMMENDATIONS -->
+
+    <section class="topic-section">
+
+        <h2>
+            Recommended Learning Resources
+        </h2>
+
+        <p class="topic-description">
+
+            These topics were assigned by your Professor
+            according to your learner category.
+
+        </p>
+
+
+        <div id="recommendationsContainer">
+
+            <div class="message-box">
+
+                Loading your recommendations...
 
             </div>
 
         </div>
 
+    </section>
 
 
-        <!-- NAVIGATION -->
+    <footer>
 
-        <nav class="menu">
+        LearnLens — Personalized learning resources.
 
+    </footer>
 
-            <a href="student-profile.html">
-                🏠 My Profile
-            </a>
 
+</main>
 
-            <a href="student-performance.html">
-                📊 Performance
-            </a>
 
+<script>
 
-            <a href="student-weak-areas.html">
-                ⚠️ Weak Areas
-            </a>
 
+const API_URL =
+    "http://127.0.0.1:5000";
 
-            <a href="recommendations.html"
-               class="active">
-                🎓 Recommendations
-            </a>
 
+// ==================================================
+// CHECK LOGIN
+// ==================================================
 
-            <a href="study-schedule.html">
-                📅 Study Schedule
-            </a>
+const role =
+    localStorage.getItem(
+        "learnlensLoggedInRole"
+    );
 
 
-            <a href="student-reports.html">
-                📜 Reports
-            </a>
+if (role !== "student") {
 
+    alert(
+        "Please login as a student first."
+    );
 
-            <a href="student-notifications.html">
-                🔔 Notifications
-            </a>
+    window.location.href =
+        "login.html";
 
+}
 
-        </nav>
 
+// ==================================================
+// GET STUDENT
+// ==================================================
 
-    </aside>
+const savedStudent =
+    localStorage.getItem(
+        "learnLensCurrentStudent"
+    );
 
 
+if (!savedStudent) {
 
-    <!-- =========================
-         MAIN CONTENT
-    ========================== -->
+    alert(
+        "Student information not found."
+    );
 
-    <main class="main-content">
+    window.location.href =
+        "login.html";
 
+}
 
-        <!-- PAGE HEADER -->
 
-        <header class="page-header">
+const student =
+    JSON.parse(savedStudent);
 
-            <div>
 
-                <h1>
-                    Learning Recommendations
-                </h1>
+// ==================================================
+// STUDENT ROLL NUMBER
+// ==================================================
 
-                <p>
-                    Personalized resources based on your performance.
-                </p>
+const rollNumber =
+    student.rollNumber ||
+    student.roll_number ||
+    localStorage.getItem(
+        "learnLensRollNumber"
+    );
 
-            </div>
 
+if (!rollNumber) {
 
-            <div class="header-icon">
-                📚
-            </div>
+    showError(
+        "Student roll number was not found. Please login again."
+    );
 
-        </header>
+}
 
 
+// ==================================================
+// DISPLAY STUDENT
+// ==================================================
 
-        <!-- =========================
-             WEAK SUBJECT
-        ========================== -->
+document.getElementById(
+    "sideStudentName"
+).textContent =
+    student.name ||
+    student.student_name ||
+    "Student";
 
-        <section class="weak-subject-card">
-
-
-            <div class="focus-icon">
-                !
-            </div>
-
-
-            <div>
-
-                <p class="small-title">
-                    Your Focus Area
-                </p>
-
-
-                <h2 id="weakSubject">
-                    Loading...
-                </h2>
-
-
-                <p id="weakMessage">
-                    Preparing your learning resources...
-                </p>
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =========================
-             VIDEOS
-        ========================== -->
-
-        <section class="recommendation-section">
-
-
-            <div class="section-heading">
-
-                <div class="section-icon">
-                    ▶
-                </div>
-
-
-                <div>
-
-                    <h2>
-                        Recommended Videos
-                    </h2>
-
-                    <p class="section-description">
-                        Watch these resources to strengthen your understanding.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div id="videoContainer"
-                 class="resource-grid">
-
-                <!-- Videos will appear here -->
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =========================
-             NOTES
-        ========================== -->
-
-        <section class="recommendation-section">
-
-
-            <div class="section-heading">
-
-                <div class="section-icon">
-                    📖
-                </div>
-
-
-                <div>
-
-                    <h2>
-                        Recommended Notes
-                    </h2>
-
-                    <p class="section-description">
-                        Use these topics for revision and practice.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div id="notesContainer"
-                 class="notes-grid">
-
-                <!-- Notes will appear here -->
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =========================
-             PROFESSOR ADVICE
-        ========================== -->
-
-        <section class="study-tip">
-
-
-            <div class="advice-icon">
-                ✓
-            </div>
-
-
-            <div>
-
-                <h2>
-                    Study Guidance
-                </h2>
-
-
-                <p id="studyAdvice">
-                    Keep practising your weak subject regularly.
-                </p>
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =========================
-             STUDY SCHEDULE
-        ========================== -->
-
-        <section class="schedule-card">
-
-
-            <div>
-
-                <h2>
-                    Ready to Study?
-                </h2>
-
-
-                <p>
-                    Follow your personalized 7-day study schedule.
-                </p>
-
-            </div>
-
-
-            <button onclick="openSchedule()">
-                View Study Schedule
-            </button>
-
-
-        </section>
-
-
-        <footer>
-
-            LearnLens — Learn at your own pace.
-
-        </footer>
-
-
-    </main>
-
-
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
-
-    <script>
-
-
-        // =========================================
-        // CHECK STUDENT LOGIN
-        // =========================================
-
-        const role =
-            localStorage.getItem(
-                "learnlensLoggedInRole"
+document.getElementById(
+    "studentName"
+).textContent =
+    student.name ||
+    student.student_name ||
+    "-";
+
+document.getElementById(
+    "studentRoll"
+).textContent =
+    rollNumber || "-";
+
+document.getElementById(
+    "studentPercentage"
+).textContent =
+    (
+        student.percentage ??
+        student.average_marks ??
+        "-"
+    ) + "%";
+
+document.getElementById(
+    "studentCategory"
+).textContent =
+    student.category ||
+    "-";
+
+document.getElementById(
+    "weakSubject"
+).textContent =
+    student.weakestSubject ||
+    student.weakest_subject ||
+    "Loading...";
+
+document.getElementById(
+    "weakMarks"
+).textContent =
+    (
+        student.weakestMarks ??
+        student.weakest_marks ??
+        "-"
+    ) + "/100";
+
+
+// ==================================================
+// LOAD RECOMMENDATIONS FROM FLASK + MYSQL
+// ==================================================
+
+async function loadRecommendations() {
+
+    if (!rollNumber) {
+        return;
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                `${API_URL}/student/${encodeURIComponent(
+                    rollNumber
+                )}/recommendations`
             );
 
 
-        if (role !== "student") {
+        const data =
+            await response.json();
 
-            alert(
-                "Please login as a student first."
+
+        if (!response.ok) {
+
+            throw new Error(
+                data.message ||
+                data.error ||
+                "Unable to load recommendations."
             );
-
-            window.location.href =
-                "login.html";
 
         }
 
 
-
-        // =========================================
-        // GET CURRENT STUDENT
-        // =========================================
-
-        const savedStudent =
-            localStorage.getItem(
-                "learnlensCurrentStudent"
-            );
-
-
-        if (!savedStudent) {
-
-            alert(
-                "Student information not found."
-            );
-
-            window.location.href =
-                "student-profile.html";
-
-        }
-
-
-        const currentStudent =
-            JSON.parse(savedStudent);
-
-
-
-        // =========================================
-        // DISPLAY STUDENT NAME
-        // =========================================
+        // Update information from database
 
         document.getElementById(
             "studentName"
         ).textContent =
-            currentStudent.name;
+            data.student_name ||
+            student.name ||
+            "Student";
 
 
-
-        // =========================================
-        // GET WEAK SUBJECT
-        // =========================================
-
-        let weakSubject =
-            localStorage.getItem(
-                "learnlensRecommendationSubject"
-            );
+        document.getElementById(
+            "sideStudentName"
+        ).textContent =
+            data.student_name ||
+            student.name ||
+            "Student";
 
 
-        if (!weakSubject) {
+        document.getElementById(
+            "studentRoll"
+        ).textContent =
+            data.roll_number ||
+            rollNumber;
 
-            weakSubject =
-                currentStudent.weakestSubject;
 
-        }
+        document.getElementById(
+            "studentPercentage"
+        ).textContent =
+            Number(
+                data.average_marks || 0
+            ).toFixed(2) + "%";
 
+
+        document.getElementById(
+            "studentCategory"
+        ).textContent =
+            data.category ||
+            "-";
 
 
         document.getElementById(
             "weakSubject"
         ).textContent =
-            weakSubject || "No subject selected";
+            data.weakest_subject ||
+            "-";
 
 
         document.getElementById(
-            "weakMessage"
+            "weakMarks"
         ).textContent =
-            "This subject needs a little more attention. " +
-            "Use the resources below to improve your understanding.";
+            (
+                data.weakest_marks ??
+                "-"
+            ) + "/100";
 
 
+        renderRecommendations(
+            data.recommendations || []
+        );
 
-        // =========================================
-        // RECOMMENDATION DATA
-        // =========================================
-
-        const recommendationData = {
-
-
-            "Mathematics for Intelligent System": {
-
-                videos: [
-
-                    {
-                        title:
-                            "Mathematics for Machine Learning",
-
-                        link:
-                            "https://www.youtube.com/results?search_query=mathematics+for+machine+learning"
-                    },
+    }
 
 
-                    {
-                        title:
-                            "Linear Algebra Basics",
+    catch (error) {
 
-                        link:
-                            "https://www.youtube.com/results?search_query=linear+algebra+for+machine+learning"
-                    },
+        console.error(
+            "Recommendation error:",
+            error
+        );
 
 
-                    {
-                        title:
-                            "Probability and Statistics",
+        showError(
+            "Unable to load recommendations. Please make sure Flask is running."
+        );
 
-                        link:
-                            "https://www.youtube.com/results?search_query=probability+statistics+for+machine+learning"
+    }
+
+}
+
+
+// ==================================================
+// DISPLAY RECOMMENDATIONS
+// ==================================================
+
+function renderRecommendations(
+    recommendations
+) {
+
+    const container =
+        document.getElementById(
+            "recommendationsContainer"
+        );
+
+
+    container.innerHTML = "";
+
+
+    if (
+        !recommendations ||
+        recommendations.length === 0
+    ) {
+
+        container.innerHTML = `
+
+            <div class="message-box">
+
+                <h3>
+                    No recommendations available
+                </h3>
+
+                <p>
+                    Your Professor has not assigned
+                    learning topics for your category
+                    and weak subject yet.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    recommendations.forEach(
+        function(recommendation) {
+
+            const topicCard =
+                document.createElement(
+                    "div"
+                );
+
+
+            topicCard.className =
+                "topic-card";
+
+
+            const topicHeader =
+                document.createElement(
+                    "div"
+                );
+
+
+            topicHeader.className =
+                "topic-header";
+
+
+            topicHeader.innerHTML = `
+
+                <h3>
+                    ${escapeHTML(
+                        recommendation.topic_name ||
+                        "Learning Topic"
+                    )}
+                </h3>
+
+                <p>
+                    ${
+                        escapeHTML(
+                            recommendation.subject_name ||
+                            ""
+                        )
                     }
+                </p>
 
-                ],
+            `;
 
 
-                notes: [
+            topicCard.appendChild(
+                topicHeader
+            );
 
-                    "Matrices and Vectors",
 
-                    "Probability Formulas",
+            // ------------------------------
+            // VIDEOS
+            // ------------------------------
 
-                    "Statistics and Important Numericals"
+            const videos =
+                recommendation.videos ||
+                [];
 
-                ],
 
+            const videoGrid =
+                document.createElement(
+                    "div"
+                );
 
-                advice:
-                    "Practise formulas first and then solve numerical problems every day."
 
-            },
+            videoGrid.className =
+                "video-grid";
 
 
+            if (videos.length === 0) {
 
-            "Database Management System": {
+                videoGrid.innerHTML = `
 
-                videos: [
+                    <div class="video-status">
 
-                    {
-                        title:
-                            "DBMS Complete Basics",
+                        No videos have been assigned
+                        to this topic yet.
 
-                        link:
-                            "https://www.youtube.com/results?search_query=DBMS+complete+course+for+beginners"
-                    },
+                    </div>
 
-
-                    {
-                        title:
-                            "SQL for Beginners",
-
-                        link:
-                            "https://www.youtube.com/results?search_query=SQL+for+beginners"
-                    },
-
-
-                    {
-                        title:
-                            "Database Normalization",
-
-                        link:
-                            "https://www.youtube.com/results?search_query=DBMS+normalization+explained"
-                    }
-
-                ],
-
-
-                notes: [
-
-                    "Primary Key and Foreign Key",
-
-                    "SELECT, INSERT, UPDATE and DELETE",
-
-                    "Normalization and Database Concepts"
-
-                ],
-
-
-                advice:
-                    "Practise SQL queries regularly and revise database concepts with examples."
-
-            },
-
-
-
-            "Computer System Fundamentals": {
-
-                videos: [
-
-                    {
-                        title:
-                            "Computer Fundamentals",
-
-                        link:
-                            "https://www.youtube.com/results?search_query=computer+fundamentals+for+beginners"
-                    },
-
-
-                    {
-                        title:
-                            "Computer Organization",
-
-                        link:
-                            "https://www.youtube.com/results?search_query=computer+organization+basics"
-                    },
-
-
-                    {
-                        title:
-                            "Operating System Basics",
-
-                        link:
-                            "https://www.youtube.com/results?search_query=operating+system+basics+for+beginners"
-                    }
-
-                ],
-
-
-                notes: [
-
-                    "Computer Components",
-
-                    "Computer Organization",
-
-                    "Operating System Basics"
-
-                ],
-
-
-                advice:
-                    "Understand the basic concepts first and use diagrams wherever possible."
-
-            },
-
-
-
-            "Universal Human Values": {
-
-                videos: [
-
-                    {
-                        title:
-                            "Universal Human Values Basics",
-
-                        link:
-                            "https://www.youtube.com/results?search_query=Universal+Human+Values+basics"
-                    },
-
-
-                    {
-                        title:
-                            "Understanding Human Values",
-
-                        link:
-                            "https://www.youtube.com/results?search_query=human+values+engineering"
-                    },
-
-
-                    {
-                        title:
-                            "Harmony and Human Values",
-
-                        link:
-                            "https://www.youtube.com/results?search_query=harmony+universal+human+values"
-                    }
-
-                ],
-
-
-                notes: [
-
-                    "Intention and Competence",
-
-                    "Harmony in Human Relationships",
-
-                    "Understanding Human Values"
-
-                ],
-
-
-                advice:
-                    "Read the concepts carefully and connect them with simple real-life examples."
-
-            },
-
-
-
-            "Open Elective": {
-
-                videos: [
-
-                    {
-                        title:
-                            "Open Elective Learning Resources",
-
-                        link:
-                            "https://www.youtube.com/results?search_query=open+elective+study+resources"
-                    },
-
-
-                    {
-                        title:
-                            "Study Skills for Students",
-
-                        link:
-                            "https://www.youtube.com/results?search_query=study+skills+for+college+students"
-                    },
-
-
-                    {
-                        title:
-                            "Effective Revision Techniques",
-
-                        link:
-                            "https://www.youtube.com/results?search_query=effective+revision+techniques"
-                    }
-
-                ],
-
-
-                notes: [
-
-                    "Important Topics",
-
-                    "Quick Revision Notes",
-
-                    "Practice Questions"
-
-                ],
-
-
-                advice:
-                    "Revise important topics regularly and practise questions before exams."
+                `;
 
             }
 
 
-        };
+            videos
+                .slice(0, 3)
+                .forEach(
+                    function(video) {
 
-
-
-        // =========================================
-        // GET RESOURCES
-        // =========================================
-
-        const resources =
-            recommendationData[weakSubject];
-
-
-        const videoContainer =
-            document.getElementById(
-                "videoContainer"
-            );
-
-
-        const notesContainer =
-            document.getElementById(
-                "notesContainer"
-            );
-
-
-
-        // =========================================
-        // SHOW RESOURCES
-        // =========================================
-
-        if (resources) {
-
-
-            // -------------------------------
-            // VIDEOS
-            // -------------------------------
-
-            resources.videos.forEach(
-                function(video) {
-
-
-                    const card =
-                        document.createElement(
-                            "div"
+                        videoGrid.appendChild(
+                            createVideoCard(
+                                video
+                            )
                         );
 
+                    }
+                );
 
-                    card.className =
-                        "resource-card";
+
+            topicCard.appendChild(
+                videoGrid
+            );
 
 
-                    card.innerHTML = `
+            // ------------------------------
+            // NOTES
+            // ------------------------------
 
-                        <div class="resource-icon">
-                            ▶
-                        </div>
+            if (
+                recommendation.notes
+            ) {
 
-                        <h3>
-                            ${video.title}
-                        </h3>
+                const notes =
+                    recommendation.notes;
 
+
+                const notesBox =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                notesBox.className =
+                    "notes-box";
+
+
+                let notesURL =
+                    notes.notes_file_url ||
+                    notes.file_url ||
+                    "";
+
+
+                if (
+                    notesURL &&
+                    !notesURL.startsWith("http")
+                ) {
+
+                    notesURL =
+                        API_URL +
+                        (
+                            notesURL.startsWith("/")
+                                ? notesURL
+                                : "/" + notesURL
+                        );
+
+                }
+
+
+                notesBox.innerHTML = `
+
+                    <h4>
+                        📄 Professor's Notes
+                    </h4>
+
+                    <p>
+                        ${
+                            escapeHTML(
+                                notes.notes_title ||
+                                "Study Notes"
+                            )
+                        }
+                    </p>
+
+                    ${
+                        notesURL
+                        ?
+
+                        `
                         <a
-                            href="${video.link}"
+                            class="notes-button"
+                            href="${notesURL}"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Watch Video →
+                            Open PDF Notes
                         </a>
+                        `
 
-                    `;
+                        :
+
+                        ""
+                    }
+
+                `;
 
 
-                    videoContainer.appendChild(
-                        card
-                    );
+                topicCard.appendChild(
+                    notesBox
+                );
 
-                }
+            }
+
+
+            container.appendChild(
+                topicCard
             );
 
-
-
-            // -------------------------------
-            // NOTES
-            // -------------------------------
-
-            resources.notes.forEach(
-                function(note) {
-
-
-                    const card =
-                        document.createElement(
-                            "div"
-                        );
-
-
-                    card.className =
-                        "note-card";
-
-
-                    card.innerHTML = `
-
-                        <div class="note-icon">
-                            📖
-                        </div>
-
-                        <h3>
-                            ${note}
-                        </h3>
-
-                        <p>
-                            Revise this topic carefully.
-                        </p>
-
-                    `;
-
-
-                    notesContainer.appendChild(
-                        card
-                    );
-
-                }
-            );
-
-
-
-            // -------------------------------
-            // ADVICE
-            // -------------------------------
-
-            document.getElementById(
-                "studyAdvice"
-            ).textContent =
-                resources.advice;
-
         }
+    );
+
+}
 
 
-        else {
+// ==================================================
+// CREATE VIDEO CARD
+// ==================================================
+
+function createVideoCard(
+    video
+) {
+
+    const card =
+        document.createElement(
+            "div"
+        );
 
 
-            videoContainer.innerHTML = `
+    card.className =
+        "video-card";
 
-                <p class="empty-message">
-                    No recommendation data found
-                    for this subject yet.
+
+    const title =
+        video.video_title ||
+        video.title ||
+        "Recommended Learning Video";
+
+
+    const originalURL =
+        video.youtube_url ||
+        video.url ||
+        "";
+
+
+    const videoId =
+        extractYouTubeId(
+            originalURL
+        );
+
+
+    if (!videoId) {
+
+        card.innerHTML = `
+
+            <div class="video-info">
+
+                <h4>
+                    ${escapeHTML(title)}
+                </h4>
+
+                <p class="video-status">
+                    Invalid YouTube link.
                 </p>
 
-            `;
+            </div>
+
+        `;
+
+        return card;
+
+    }
 
 
-            notesContainer.innerHTML = `
+    const embedURL =
+        "https://www.youtube-nocookie.com/embed/" +
+        videoId +
+        "?origin=http://127.0.0.1:5500";
 
-                <p class="empty-message">
-                    Notes for this subject
-                    will be added soon.
-                </p>
 
-            `;
+    card.innerHTML = `
+
+        <div class="video-player">
+
+            <iframe
+
+                src="${embedURL}"
+
+                title="${escapeHTML(title)}"
+
+                loading="lazy"
+
+                referrerpolicy="strict-origin-when-cross-origin"
+
+                allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share
+                "
+
+                allowfullscreen>
+
+            </iframe>
+
+        </div>
+
+
+        <div class="video-info">
+
+            <h4>
+                ${escapeHTML(title)}
+            </h4>
+
+            <a
+
+                class="watch-button"
+
+                href="${escapeAttribute(
+                    originalURL
+                )}"
+
+                target="_blank"
+
+                rel="noopener noreferrer"
+
+            >
+                Watch on YouTube
+            </a>
+
+        </div>
+
+    `;
+
+
+    return card;
+
+}
+
+
+// ==================================================
+// EXTRACT YOUTUBE ID
+// ==================================================
+
+function extractYouTubeId(
+    url
+) {
+
+    if (!url) {
+        return null;
+    }
+
+
+    try {
+
+        const parsed =
+            new URL(url);
+
+
+        const hostname =
+            parsed.hostname
+                .toLowerCase();
+
+
+        // youtube.com/watch?v=ID
+
+        if (
+            hostname.includes(
+                "youtube.com"
+            )
+        ) {
+
+            const videoId =
+                parsed.searchParams.get(
+                    "v"
+                );
+
+
+            if (videoId) {
+                return videoId;
+            }
+
+
+            // youtube.com/embed/ID
+
+            const parts =
+                parsed.pathname.split(
+                    "/"
+                );
+
+
+            const embedIndex =
+                parts.indexOf(
+                    "embed"
+                );
+
+
+            if (
+                embedIndex !== -1 &&
+                parts[embedIndex + 1]
+            ) {
+
+                return parts[
+                    embedIndex + 1
+                ];
+
+            }
 
         }
 
 
+        // youtu.be/ID
 
-        // =========================================
-        // OPEN STUDY SCHEDULE
-        // =========================================
+        if (
+            hostname ===
+            "youtu.be"
+        ) {
 
-        function openSchedule() {
-
-            window.location.href =
-                "study-schedule.html";
+            return parsed.pathname
+                .replace("/", "")
+                .split("/")[0];
 
         }
 
+    }
 
-    </script>
+    catch (error) {
+
+        console.error(
+            "Invalid YouTube URL:",
+            error
+        );
+
+    }
+
+
+    return null;
+
+}
+
+
+// ==================================================
+// ESCAPE HTML
+// ==================================================
+
+function escapeHTML(
+    value
+) {
+
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+}
+
+
+// ==================================================
+// ESCAPE ATTRIBUTE
+// ==================================================
+
+function escapeAttribute(
+    value
+) {
+
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;");
+
+}
+
+
+// ==================================================
+// ERROR
+// ==================================================
+
+function showError(
+    message
+) {
+
+    document.getElementById(
+        "pageMessage"
+    ).innerHTML = `
+
+        <div class="error-box">
+
+            ${escapeHTML(message)}
+
+        </div>
+
+    `;
+
+}
+
+
+// ==================================================
+// START
+// ==================================================
+
+loadRecommendations();
+
+
+</script>
 
 
 </body>

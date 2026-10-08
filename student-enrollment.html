@@ -5,7 +5,8 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>LearnLens | Student Enrollment</title>
 
@@ -16,129 +17,124 @@
         }
 
         body {
-
             margin: 0;
-
             min-height: 100vh;
 
-            font-family: Georgia, serif;
+            font-family: Arial, Helvetica, sans-serif;
 
-            background:
-                radial-gradient(
-                    circle at top,
-                    #30213f,
-                    #100d16 70%
-                );
-
-            color: #e5d49a;
+            background: #f4f7fa;
+            color: #263746;
 
             display: flex;
-
             justify-content: center;
-
             align-items: center;
 
+            padding: 30px;
         }
 
-
         .enrollment-card {
-
-            width: 420px;
+            width: 100%;
+            max-width: 480px;
 
             padding: 35px;
 
-            background: #19131f;
+            background: #ffffff;
 
-            border: 1px solid #806633;
-
-            border-radius: 15px;
+            border: 1px solid #dce4eb;
+            border-radius: 14px;
 
             box-shadow:
-                0 0 30px rgba(190, 160, 80, 0.15);
-
+                0 4px 18px rgba(25, 59, 90, 0.10);
         }
 
+        .page-icon {
+            width: 65px;
+            height: 65px;
 
-        .magic-icon {
+            margin: 0 auto 15px;
 
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-            font-size: 42px;
+            background: #e8f1f8;
 
-            margin-bottom: 10px;
-
-        }
-
-
-        h1 {
-
-            text-align: center;
-
-            margin: 0;
+            border-radius: 50%;
 
             font-size: 30px;
-
-            color: #e3cb7b;
-
         }
 
-
-        .subtitle {
-
+        h1 {
             text-align: center;
 
-            color: #918593;
+            margin: 0 0 8px;
 
-            font-size: 13px;
+            font-size: 28px;
 
-            margin-bottom: 28px;
+            color: #193b5a;
 
+            font-weight: 600;
         }
 
+        .subtitle {
+            text-align: center;
+
+            color: #687887;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            margin: 0 0 25px;
+        }
 
         label {
-
             display: block;
 
             margin-top: 16px;
-
             margin-bottom: 7px;
 
-            color: #d8c27c;
+            color: #193b5a;
 
             font-size: 13px;
 
+            font-weight: 600;
         }
 
-
         input {
-
             width: 100%;
 
-            padding: 12px;
+            padding: 12px 13px;
 
-            border-radius: 7px;
+            border-radius: 6px;
 
-            border: 1px solid #51422b;
+            border: 1px solid #cbd6df;
 
-            background: #241c2d;
+            background: #ffffff;
 
-            color: white;
+            color: #263746;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 14px;
 
             outline: none;
 
+            transition: 0.2s ease;
         }
-
 
         input:focus {
+            border-color: #347db3;
 
-            border-color: #b99b4d;
-
+            box-shadow:
+                0 0 0 3px rgba(52, 125, 179, 0.10);
         }
 
+        input::placeholder {
+            color: #9aa7b2;
+        }
 
         button {
-
             width: 100%;
 
             margin-top: 25px;
@@ -147,50 +143,58 @@
 
             border: none;
 
-            border-radius: 7px;
+            border-radius: 6px;
 
-            background: #9b7d3f;
+            background: #347db3;
 
-            color: #17131c;
+            color: #ffffff;
 
-            font-family: Georgia, serif;
+            font-family: Arial, Helvetica, sans-serif;
 
             font-size: 14px;
 
-            font-weight: bold;
+            font-weight: 600;
 
             cursor: pointer;
 
+            transition: 0.2s ease;
         }
-
 
         button:hover {
-
-            background: #c4a85b;
-
+            background: #286895;
         }
 
-
         .back {
-
             display: block;
 
             text-align: center;
 
             margin-top: 18px;
 
-            color: #8d8190;
+            color: #687887;
 
             text-decoration: none;
 
-            font-size: 12px;
-
+            font-size: 13px;
         }
 
-
         .back:hover {
+            color: #347db3;
+        }
 
-            color: #d9c171;
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .enrollment-card {
+                padding: 25px 22px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
 
         }
 
@@ -205,7 +209,7 @@
     <div class="enrollment-card">
 
 
-        <div class="magic-icon">
+        <div class="page-icon">
             🎓
         </div>
 
@@ -216,17 +220,11 @@
 
 
         <p class="subtitle">
-
-            Begin your magical learning journey
-            with LearnLens ✨
-
+            Create your LearnLens student account
         </p>
 
 
-
-        <form
-            id="studentForm"
-        >
+        <form id="studentForm">
 
 
             <label for="studentName">
@@ -241,7 +239,6 @@
             >
 
 
-
             <label for="studentRoll">
                 Roll Number
             </label>
@@ -252,7 +249,6 @@
                 placeholder="Enter your roll number"
                 required
             >
-
 
 
             <label for="studentEmail">
@@ -267,7 +263,6 @@
             >
 
 
-
             <label for="studentUsername">
                 Create Username
             </label>
@@ -278,7 +273,6 @@
                 placeholder="Choose a username"
                 required
             >
-
 
 
             <label for="studentPassword">
@@ -293,25 +287,19 @@
             >
 
 
-
             <button type="submit">
-
-                ✨ Create Student Account
-
+                Create Student Account
             </button>
 
 
         </form>
 
 
-
         <a
             href="index.html"
             class="back"
         >
-
             ← Return to LearnLens Entrance
-
         </a>
 
 
@@ -321,13 +309,11 @@
 
     <script>
 
-
         document
             .getElementById("studentForm")
             .addEventListener(
                 "submit",
                 function(event) {
-
 
                     event.preventDefault();
 
@@ -336,41 +322,31 @@
 
                         name:
                             document
-                            .getElementById(
-                                "studentName"
-                            )
+                            .getElementById("studentName")
                             .value
                             .trim(),
 
                         rollNumber:
                             document
-                            .getElementById(
-                                "studentRoll"
-                            )
+                            .getElementById("studentRoll")
                             .value
                             .trim(),
 
                         email:
                             document
-                            .getElementById(
-                                "studentEmail"
-                            )
+                            .getElementById("studentEmail")
                             .value
                             .trim(),
 
                         username:
                             document
-                            .getElementById(
-                                "studentUsername"
-                            )
+                            .getElementById("studentUsername")
                             .value
                             .trim(),
 
                         password:
                             document
-                            .getElementById(
-                                "studentPassword"
-                            )
+                            .getElementById("studentPassword")
                             .value
 
                     };
@@ -383,18 +359,15 @@
 
 
                     alert(
-                        "✨ Student account created successfully!"
+                        "Student account created successfully!"
                     );
 
 
-                    // Go to login page
-
-                    window.location.href = "login.html?role=student";
-
+                    window.location.href =
+                        "login.html?role=student";
 
                 }
             );
-
 
     </script>
 

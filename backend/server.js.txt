@@ -1,0 +1,35 @@
+const express = require("express");
+const mysql = require("mysql2");
+
+const app = express();
+
+const PORT = 3000;
+
+console.log("Testing MySQL connection...");
+
+// Connect to LearnLens MySQL database
+const db = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "learnlens"
+});
+
+// Test MySQL connection
+db.connect((err) => {
+    if (err) {
+        console.log("❌ MySQL connection failed:");
+        console.log(err.message);
+        return;
+    }
+
+    console.log("✅ MySQL connected successfully!");
+});
+
+app.get("/", (req, res) => {
+    res.send("LearnLens Backend is Running!");
+});
+
+app.listen(PORT, () => {
+    console.log(`LearnLens backend running at http://localhost:${PORT}`);
+});
